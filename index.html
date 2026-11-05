@@ -277,7 +277,7 @@
             `;
 
             category.questions.forEach((item, index) => {
-                const uniqueId = `mermaid-${categoryId}-${index}`;
+                const uniqueId = `mermaid-${category.id}-${index}`;
                 
                 html += `
                     <details class="group bg-white dark:bg-darkcard border border-gray-200 dark:border-darkborder rounded-2xl shadow-sm [&_summary::-webkit-details-marker]:hidden overflow-hidden transition-all duration-200">
