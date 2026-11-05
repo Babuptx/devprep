@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prep Pro | Technical Interview Guide</title>
+    <meta name="description" content="Interactive technical interview study guide covering system design, databases, AI engineering, and reliability." />
+    
+    <!-- GitHub Pages release: external CDN assets require internet access -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Fonts and Colors -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkbg: '#0f172a',
+                        darkcard: '#1e293b',
+                        darkborder: '#334155'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        html { scroll-behavior: smooth; }
+        body { transition: background-color 0.3s, color 0.3s; }
+        
+        /* Details/Summary styling */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-8px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+            padding: 1.5rem;
+            background: #ffffff;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+        }
+        .dark .mermaid-container {
+            background: #0b1120;
+            border-color: #334155;
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.5);
+        }
+        
+        /* Force Mermaid SVG to scale properly */
+        .mermaid-target svg {
+            width: 100% !important;
+            max-width: 850px !important;
+            height: auto !important;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Dynamic Font Sizes */
+        .app-text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .app-text-base { font-size: 1rem; line-height: 1.5rem; }
+        .app-text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        
+        .content-container p, .content-container li {
+            margin-bottom: 0.75em;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased dark:bg-darkbg dark:text-gray-100 flex h-screen overflow-hidden text-base" id="app-body">
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-20 hidden lg:hidden" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="bg-white dark:bg-darkcard border-r border-gray-200 dark:border-darkborder w-72 flex-shrink-0 fixed inset-y-0 left-0 transform -translate-x-full lg:relative lg:translate-x-0 z-30 transition-transform duration-300 ease-in-out flex flex-col shadow-lg lg:shadow-none">
+        <div class="h-16 flex items-center justify-between px-6 border-b border-gray-200 dark:border-darkborder">
+            <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                Prep Pro
+            </h1>
+            <button class="lg:hidden text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" onclick="toggleSidebar()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4">
+            <nav id="nav-menu" class="space-y-1.5 text-sm font-medium">
+                <!-- Navigation items injected here by JS -->
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+        
+        <!-- Header / Toolbar -->
+        <header class="h-16 bg-white dark:bg-darkcard border-b border-gray-200 dark:border-darkborder flex items-center justify-between px-4 lg:px-8 shrink-0 shadow-sm z-10">
+            <div class="flex items-center">
+                <button class="mr-4 lg:hidden text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onclick="toggleSidebar()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <h2 id="header-title" class="text-xl font-semibold hidden sm:block text-gray-800 dark:text-gray-100">Knowledge Base</h2>
+            </div>
+            
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <!-- Expand/Collapse All -->
+                <button id="toggleAllBtn" onclick="toggleAllAnswers()" class="px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 dark:text-blue-300 dark:bg-blue-900/30 dark:border-blue-800 dark:hover:bg-blue-900/50 transition shadow-sm">
+                    Expand All
+                </button>
+
+                <!-- Font Size Selector -->
+                <div class="relative flex items-center bg-gray-100 dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 p-0.5 shadow-sm">
+                    <svg class="w-4 h-4 text-gray-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                    <select id="fontSizeSelector" onchange="changeFontSize()" class="appearance-none bg-transparent border-none text-gray-700 text-sm focus:ring-0 block pl-2 pr-6 py-1 dark:text-gray-200 cursor-pointer outline-none">
+                        <option value="app-text-sm">Small</option>
+                        <option value="app-text-base" selected>Medium</option>
+                        <option value="app-text-lg">Large</option>
+                    </select>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button onclick="toggleDarkMode()" class="p-2 rounded-md bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 transition shadow-sm border border-gray-200 dark:border-gray-700" aria-label="Toggle Dark Mode">
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 3.22a1 1 0 011.415 0l.708.708a1 1 0 01-1.414 1.414l-.708-.708a1 1 0 010-1.414zM16 10a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zm-3.22 4.22a1 1 0 010 1.415l-.708.708a1 1 0 11-1.414-1.414l.708-.708a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-3.22a1 1 0 01-1.415 0l-.708-.708a1 1 0 111.414-1.414l.708.708a1 1 0 010 1.414zM4 10a1 1 0 01-1 1H2a1 1 0 110-2h1a1 1 0 011 1zm3.22-4.22a1 1 0 010-1.415l.708-.708a1 1 0 111.414 1.414l-.708.708a1 1 0 01-1.414 0z"></path><path d="M10 15a5 5 0 100-10 5 5 0 000 10z"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 block dark:hidden text-gray-700" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Scrollable Content -->
+        <div id="scrollableContent" class="flex-1 overflow-y-auto p-4 lg:p-8 relative w-full">
+            <div class="max-w-4xl mx-auto space-y-8" id="content-container">
+                <!-- Content injected here by JS -->
+            </div>
+            <!-- Spacer -->
+            <div class="h-32"></div>
+        </div>
+        
+        <!-- Go To Top Button -->
+        <button id="goToTopBtn" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl transition-all transform translate-y-20 opacity-0 focus:outline-none z-40" aria-label="Go to top">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+
+    </main>
+
+    <!-- Data and Application Logic -->
+    <script>
+        // --- 1. Data Source ---
+        // Load only the small navigation manifest on initial visit.
+        let contentData = [];
+        let currentCategoryId = null;
+        let navigationVersion = 0;
+        const categoryCache = new Map();
+
+        async function fetchJson(path) {
+            const response = await fetch(path, { cache: 'no-cache' });
+            if (!response.ok) throw new Error(`Unable to load ${path} (HTTP ${response.status})`);
+            return response.json();
+        }
+
+        async function getCategory(id) {
+            const meta = contentData.find(c => c.id === id);
+            if (!meta) throw new Error('Unknown category');
+            if (!categoryCache.has(id)) {
+                const load = fetchJson(meta.file).then(payload => {
+                    if (payload.id !== id || !Array.isArray(payload.questions)) throw new Error('Invalid topic data');
+                    return { ...meta, questions: payload.questions };
+                }).catch(error => { categoryCache.delete(id); throw error; });
+                categoryCache.set(id, load);
+            }
+            return categoryCache.get(id);
+        }
+
+        function displayLoadError(error) {
+            document.getElementById('content-container').innerHTML =
+              `<div class="p-6 rounded-xl border border-red-300 bg-red-50 text-red-900">` +
+              `<h2 class="text-xl font-semibold mb-3">Could not load this topic</h2>` +
+              `<p class="mb-4">Check your connection and try again. ${String(error.message || 'Unknown error').replace(/[<>&]/g, '')}</p>` +
+              `<button class="underline font-semibold" onclick="selectCategory(currentCategoryId)">Retry</button></div>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            mermaid.initialize({ startOnLoad: false,
+                theme: document.documentElement.classList.contains('dark') ? 'dark' : 'base',
+                securityLevel: 'strict' });
+            try {
+                const manifest = await fetchJson('data/manifest.json');
+                if (!Array.isArray(manifest.categories) || !manifest.categories.length) throw new Error('Invalid topic manifest');
+                contentData = manifest.categories;
+                renderSidebar();
+                await selectCategory(contentData[0].id);
+            } catch (error) { displayLoadError(error); }
+        });
+
+        // --- 3. Render Functions ---
+        function renderSidebar() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.innerHTML = '';
+            
+            contentData.forEach(cat => {
+                const isActive = cat.id === currentCategoryId;
+                const activeClass = isActive 
+                    ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400 border-r-4 border-blue-600 dark:border-blue-400' 
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-white border-r-4 border-transparent';
+                
+                navMenu.innerHTML += `
+                    <a href="#" onclick="selectCategory('${cat.id}', event)" class="flex items-center px-4 py-3 transition-colors ${activeClass}">
+                        <span class="mr-3 ${isActive ? '' : 'opacity-70'}">${cat.icon}</span>
+                        ${cat.title}
+                    </a>
+                `;
+            });
+        }
+
+        async function selectCategory(id, event) {
+            if (event) event.preventDefault();
+            const version = ++navigationVersion;
+            currentCategoryId = id;
+            themeRevision++;
+            renderSidebar();
+            const container = document.getElementById('content-container');
+            container.innerHTML = '<div role="status" class="p-5 text-gray-500">Loading topic…</div>';
+            const categoryMeta = contentData.find(c => c.id === id);
+            document.getElementById('header-title').textContent = categoryMeta?.title || 'Knowledge Base';
+            const sidebar = document.getElementById('sidebar');
+            if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 1024) toggleSidebar();
+            allExpanded = false;
+            document.getElementById('toggleAllBtn').textContent = 'Expand All';
+            scrollToTop();
+            try {
+                const category = await getCategory(id);
+                if (version !== navigationVersion) return;
+                renderContent(category);
+            } catch (error) {
+                if (version === navigationVersion) displayLoadError(error);
+            }
+        }
+
+        function renderContent(category) {
+            themeRevision++;
+            const container = document.getElementById('content-container');
+            if (!category) return;
+            document.getElementById('header-title').textContent = category.title;
+
+            // Build HTML string
+            let html = `
+                <div class="mb-8 border-b border-gray-200 dark:border-darkborder pb-4 mt-2">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2 flex items-center tracking-tight">
+                        ${category.title}
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400">${category.desc}</p>
+                </div>
+                <div class="space-y-5 content-container">
+            `;
+
+            category.questions.forEach((item, index) => {
+                const uniqueId = `mermaid-${categoryId}-${index}`;
+                
+                html += `
+                    <details class="group bg-white dark:bg-darkcard border border-gray-200 dark:border-darkborder rounded-2xl shadow-sm [&_summary::-webkit-details-marker]:hidden overflow-hidden transition-all duration-200">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 lg:p-6 text-gray-900 dark:text-gray-100 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors select-none">
+                            <h3 class="font-semibold text-lg lg:text-xl flex items-start pr-4 leading-tight">
+                                <span class="text-blue-600 dark:text-blue-400 mr-3 mt-0.5 shrink-0 font-bold">Q:</span>
+                                ${item.q}
+                            </h3>
+                            <span class="shrink-0 transition duration-300 group-open:-rotate-180 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-full p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </span>
+                        </summary>
+
+                        <div class="p-5 lg:p-6 pt-0 border-t border-gray-100 dark:border-gray-800 mt-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            
+                            <!-- Basic Answer -->
+                            <div class="mb-6 mt-4 opacity-75">
+                                <h4 class="text-sm font-bold text-red-600 dark:text-red-400 mb-1 flex items-center uppercase tracking-wide">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                    Basic Answer
+                                </h4>
+                                <p class="italic">"${item.basic}"</p>
+                            </div>
+
+                            <!-- Strong Answer -->
+                            <div class="mb-8">
+                                <h4 class="text-sm font-bold text-emerald-600 dark:text-emerald-400 mb-3 flex items-center uppercase tracking-wide">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Strong Answer
+                                </h4>
+                                <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-xl border border-gray-100 dark:border-gray-700/50">
+                                    ${item.strong}
+                                </div>
+                            </div>
+
+                            <!-- Key Takeaway -->
+                            <div class="mb-8 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded-r-xl text-blue-900 dark:text-blue-100 font-medium">
+                                <span class="block text-xs uppercase text-blue-600 dark:text-blue-400 font-bold tracking-wider mb-1">Key Takeaway 👇</span>
+                                ${item.takeaway}
+                            </div>
+
+                            <!-- Further reading for valid HTTPS references -->
+                            ${Array.isArray(item.links) && item.links.some(link => link.url.startsWith('https://')) ? `
+                              <div class="mb-5 text-sm"><h4 class="font-semibold mb-2">Further Reading</h4>
+                                ${item.links.filter(link => link.url.startsWith('https://')).map(link => `<a class="text-blue-600 dark:text-blue-400 underline mr-4" href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a>`).join('')}
+                              </div>` : ''}
+
+                            <!-- Mermaid Diagram container -->
+                            <div class="mt-8 mb-6">
+                                <h4 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 text-center">Architecture Visualization</h4>
+                                <div class="mermaid-container">
+                                    <div class="mermaid-target" id="${uniqueId}" data-graph-def="${encodeURIComponent(item.mermaid)}">
+                                        <!-- Graph will render here on open -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                `;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+
+            // Attach event listeners to new details tags for Mermaid rendering
+            document.querySelectorAll('#content-container details').forEach(detail => {
+                detail.addEventListener('toggle', (e) => {
+                    if(e.target.open) {
+                        // Give browser a tiny tick to paint the block open so Mermaid can calculate dimensions
+                        setTimeout(() => renderMermaidDiagrams(e.target), 50);
+                    }
+                });
+            });
+        }
+
+        // --- 4. Mermaid Rendering Engine ---
+        // Serialize Mermaid renders to prevent SVG ID collisions during Expand All.
+        let diagramQueue = Promise.resolve();
+        let diagramSerial = 0;
+        let themeRevision = 0;
+
+        function renderMermaidDiagrams(container) {
+            if (!window.mermaid) {
+                container.querySelectorAll('.mermaid-target').forEach(target => {
+                    target.textContent = 'Diagram temporarily unavailable. The explanation above is still readable.';
+                });
+                return Promise.resolve();
+            }
+            const targets = [...container.querySelectorAll('.mermaid-target')];
+            targets.forEach(target => {
+                if (target.dataset.rendered === 'true' || target.dataset.pending === 'true') return;
+                target.dataset.pending = 'true';
+                diagramQueue = diagramQueue.catch(() => {}).then(async () => {
+                    if (!target.isConnected) return;
+                    // Ignore work queued before a theme change or navigation.
+                    const revision = themeRevision;
+                    try {
+                        const graphDefinition = decodeURIComponent(target.dataset.graphDef || '');
+                        if (!graphDefinition) return;
+                        const dark = document.documentElement.classList.contains('dark');
+                        mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'base', securityLevel: 'strict' });
+                        const uniqueId = `prep-diagram-${++diagramSerial}`;
+                        const result = await mermaid.render(uniqueId, graphDefinition);
+                        if (!target.isConnected || revision !== themeRevision) return;
+                        target.innerHTML = result.svg;
+                        target.dataset.rendered = 'true';
+                    } catch (error) {
+                        console.warn('Diagram could not be rendered:', error);
+                        if (target.isConnected && revision === themeRevision) {
+                            target.textContent = 'Diagram unavailable; please use the written explanation.';
+                        }
+                    } finally {
+                        delete target.dataset.pending;
+                    }
+                });
+            });
+            return diagramQueue;
+        }
+
+        // --- 5. UI Controls ---
+        
+        // Sidebar Toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            
+            if (sidebar.classList.contains('-translate-x-full')) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Dark Mode Logic
+        function toggleDarkMode() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            try { localStorage.theme = isDark ? 'dark' : 'light'; } catch (_) {}
+            themeRevision++;
+            document.querySelectorAll('.mermaid-target').forEach(target => {
+                target.replaceChildren();
+                delete target.dataset.rendered;
+                delete target.dataset.pending;
+            });
+            document.querySelectorAll('#content-container details[open]').forEach(detail => renderMermaidDiagrams(detail));
+        }
+
+        // Init Dark Mode
+        if ((() => { try { return localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches); } catch (_) { return false; } })()) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Font Size Logic
+        function changeFontSize() {
+            const selector = document.getElementById('fontSizeSelector');
+            const body = document.getElementById('app-body');
+            
+            body.classList.remove('app-text-sm', 'app-text-base', 'app-text-lg');
+            body.classList.add(selector.value);
+        }
+
+        // Expand/Collapse All
+        let allExpanded = false;
+        function toggleAllAnswers() {
+            const details = document.querySelectorAll('#content-container details');
+            const btn = document.getElementById('toggleAllBtn');
+            
+            allExpanded = !allExpanded;
+            
+            details.forEach(detail => {
+                detail.open = allExpanded;
+
+            });
+            
+            btn.textContent = allExpanded ? "Collapse All" : "Expand All";
+        }
+
+        // Scroll to Top Logic
+        const scrollableContent = document.getElementById('scrollableContent');
+        const goToTopBtn = document.getElementById('goToTopBtn');
+
+        scrollableContent.addEventListener('scroll', () => {
+            if (scrollableContent.scrollTop > 300) {
+                goToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                goToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        function scrollToTop() {
+            scrollableContent.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

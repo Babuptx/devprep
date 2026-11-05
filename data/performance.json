@@ -1,0 +1,21 @@
+{
+  "id": "performance",
+  "questions": [
+    {
+      "q": "What is Graceful Degradation?",
+      "basic": "Graceful degradation means the system continues working with reduced functionality when something fails.",
+      "strong": "<strong>Graceful degradation</strong> means <strong>keeping the core application usable</strong> even when some non-critical functionality fails.<br><br>\n                                <strong>Imagine an e-commerce website</strong> where the recommendation service goes down. Instead of breaking the entire product page, we can simply hide the <strong>\"Recommended for you\"</strong> section while the product and checkout still work.<br><br>\n                                This prevents a failure in one dependency from becoming a complete user-facing outage.<br><br>\n                                It's especially useful when building systems with many independent services.",
+      "takeaway": "When something fails, degrade the experience—not the entire application.",
+      "mermaid": "graph TD\n                            classDef core fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;\n                            classDef fail fill:#ef4444,stroke:#b91c1c,stroke-width:2px,color:#fff;\n                            \n                            Client --> Web[Web Frontend]\n                            Web --> Catalog[Catalog Service - UP]:::core\n                            Web --> Checkout[Checkout Service - UP]:::core\n                            Web -.-x Recs[Recommendations - DOWN]:::fail\n                            \n                            Web --> Fallback[Hide Recommendations, Keep Core Features]:::core",
+      "links": []
+    },
+    {
+      "q": "What is Latency?",
+      "basic": "Latency is the time taken to receive a response.",
+      "strong": "<strong>Latency</strong> is the <strong>time it takes for an operation to complete</strong> or for a request to receive a response.<br><br>\n                                For <strong>example</strong>, if a user clicks a button and receives the API response 200 milliseconds later, the request has roughly 200 ms of latency.<br><br>\n                                <strong>High latency</strong> can come from things like <strong>slow database queries, network distance, overloaded services, or expensive processing.</strong><br><br>\n                                In production, we don't just look at average latency. Metrics like <strong>p95 or p99 latency</strong> are often more useful because they show what slower users are experiencing.",
+      "takeaway": "Average latency can hide problems. p95/p99 tells you about the slow users.",
+      "mermaid": "graph LR\n                            classDef time fill:#fbbf24,stroke:#d97706,stroke-width:2px,color:#000;\n                            \n                            User -->|Req Sent T=0| Network[Network Travel]\n                            Network -->|Arrives T=50ms| Server[Server Processing]\n                            Server -->|DB Query| DB[(Database)]\n                            DB -->|Query Done T=150ms| Server\n                            Server -->|Res Sent T=160ms| Network2[Network Travel]\n                            Network2 -->|Res Rcvd T=210ms| User\n                            \n                            Network2 --> Total[Total Latency: 210 ms]:::time",
+      "links": []
+    }
+  ]
+}

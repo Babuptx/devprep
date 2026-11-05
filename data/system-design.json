@@ -1,0 +1,29 @@
+{
+  "id": "system-design",
+  "questions": [
+    {
+      "q": "How Would You Design an API for High Traffic?",
+      "basic": "I would use multiple servers, a load balancer, caching, and a scalable database.",
+      "strong": "I'd start by keeping the API servers <strong>stateless</strong>, so they can be horizontally scaled behind a load balancer.<br><br>\n                                Then I'd identify <strong>read-heavy operations and introduce caching where it makes sense</strong>. Database queries would need proper indexing, connection pooling, and possibly read replicas as traffic grows.<br><br>\n                                For expensive background operations, I'd use a queue instead of making the user wait.<br><br>\n                                <strong>I'd also add rate limiting, monitoring, timeouts, and health checks.</strong><br><br>\n                                The important part is that high traffic isn't solved by one technology. It's about making sure <strong>each layer can handle the expected load.</strong>",
+      "takeaway": "High-scale APIs require capacity at every layer, not just more servers.",
+      "mermaid": "graph TD\n                            classDef edge fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff;\n                            classDef compute fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;\n                            classDef data fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff;\n                            \n                            Client((Client)) --> LB{Load Balancer}:::edge\n                            LB --> API1[Stateless API]:::compute\n                            LB --> API2[Stateless API]:::compute\n                            \n                            API1 --> Cache[(Redis Cache)]:::data\n                            API2 --> Cache\n                            \n                            API1 --> Queue[Message Queue]:::compute\n                            API2 --> Queue\n                            \n                            API1 --> DB_W[(Primary DB Write)]:::data\n                            API2 --> DB_R[(Replica DB Read)]:::data",
+      "links": []
+    },
+    {
+      "q": "What is a Distributed System?",
+      "basic": "A distributed system is a system where multiple computers work together.",
+      "strong": "A <strong>distributed system</strong> is an application where <strong>multiple independent machines or services</strong> work together to provide one overall system.<br><br>\n                                For <strong>example</strong>, an e-commerce platform might have separate servers for APIs, payments, search, databases, and notifications.<br><br>\n                                The <strong>benefit</strong> is that we can <strong>scale components independently</strong> and <strong>improve availability</strong>.<br><br>\n                                But now we have new problems: networks can fail, messages can be delayed, services can become unavailable, and different machines may have different views of the data.<br><br>\n                                That's why distributed systems require concepts like <strong>timeouts, retries, replication, consistency,</strong> and <strong>fault tolerance.</strong>",
+      "takeaway": "Distribution buys scalability and availability, but costs complexity in coordination and failure handling.",
+      "mermaid": "graph LR\n                            classDef sys fill:#6366f1,stroke:#4338ca,stroke-width:2px,color:#fff;\n                            classDef db fill:#0ea5e9,stroke:#0369a1,stroke-width:2px,color:#fff;\n\n                            User --> Gateway{API Gateway}:::sys\n                            Gateway --> Auth[Auth Service]:::sys\n                            Gateway --> Order[Order Service]:::sys\n                            Gateway --> Pay[Payment Service]:::sys\n                            \n                            Order <-->|Network Comm| Auth\n                            Order --> OrderDB[(Order DB)]:::db\n                            Pay --> PayDB[(Pay DB)]:::db",
+      "links": []
+    },
+    {
+      "q": "Your API Suddenly Gets 10X More Traffic. What Would You Do?",
+      "basic": "I would add more servers and use a load balancer to distribute the traffic.",
+      "strong": "First, I wouldn't immediately add servers. I'd find out where the bottleneck actually is.<br><br>\n                                I'd check metrics for CPU, memory, database load, latency, error rate, and traffic patterns.<br><br>\n                                If the API servers are the bottleneck, I'd scale them horizontally behind a load balancer. If the database is struggling, I'd look at caching, query optimization, read replicas, or connection limits.<br><br>\n                                I'd also consider rate limiting and queues if the traffic spike is causing expensive operations.<br><br>\n                                The important thing is to <strong>measure first, then scale the component that's actually limiting the system.</strong>",
+      "takeaway": "Don't scale blindly. Find the bottleneck first.",
+      "mermaid": "graph TD\n                            classDef metric fill:#ec4899,stroke:#be185d,stroke-width:2px,color:#fff;\n                            classDef action fill:#14b8a6,stroke:#0f766e,stroke-width:2px,color:#fff;\n\n                            Spike[10X Traffic Spike] --> Measure{Measure Telemetry}:::metric\n                            Measure -->|High CPU/Mem| ScaleAPI[Horizontally Scale APIs]:::action\n                            Measure -->|Slow Queries| ScaleDB[Add Read Replicas / Cache]:::action\n                            Measure -->|Overwhelmed| Limit[Apply Rate Limits & Queues]:::action",
+      "links": []
+    }
+  ]
+}

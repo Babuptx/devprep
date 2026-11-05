@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "system-design",
+      "title": "System Design & Architecture",
+      "desc": "Foundational concepts for building scalable, highly available systems.",
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\"></path></svg>",
+      "file": "data/system-design.json",
+      "questionCount": 3
+    },
+    {
+      "id": "databases",
+      "title": "Databases & Caching",
+      "desc": "Data storage, retrieval, persistence, and state management.",
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4\"></path></svg>",
+      "file": "data/databases.json",
+      "questionCount": 2
+    },
+    {
+      "id": "ai-engineering",
+      "title": "AI Engineering",
+      "desc": "LLMs, Vectors, Prompt Engineering, and AI Infrastructure.",
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg>",
+      "file": "data/ai-engineering.json",
+      "questionCount": 2
+    },
+    {
+      "id": "performance",
+      "title": "Performance & Reliability",
+      "desc": "Ensuring systems are fast, resilient, and degrade gracefully.",
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+      "file": "data/performance.json",
+      "questionCount": 2
+    }
+  ]
+}

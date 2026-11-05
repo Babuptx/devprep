@@ -1,0 +1,21 @@
+{
+  "id": "databases",
+  "questions": [
+    {
+      "q": "How Would You Prevent a Cache Stampede?",
+      "basic": "I would use cache expiration carefully and avoid too many requests hitting the database.",
+      "strong": "A cache stampede happens when a popular cached item expires and <strong>many requests simultaneously try to rebuild it.</strong><br><br>\n                                Imagine a product page receiving thousands of requests per second. If its cache expires, all those requests could suddenly hit the database.<br><br>\n                                We can reduce this using techniques like <strong>request coalescing, locking, staggered expiration, early refresh, or serving slightly stale data.</strong><br><br>\n                                The idea is simple: instead of letting thousands of requests rebuild the same cache entry, <strong>one request does the work while others reuse the result.</strong>",
+      "takeaway": "The problem isn't cache expiration itself—it's everyone refreshing the cache at once.",
+      "mermaid": "sequenceDiagram\n                            participant Clients\n                            participant Cache\n                            participant DB\n                            \n                            Clients->>Cache: Req Item A (Expired)\n                            Note over Cache,DB: Request Coalescing / Locking\n                            Cache-->>Clients: Lock acquired by Thread 1, others wait\n                            Cache->>DB: Thread 1 queries DB\n                            DB-->>Cache: Returns Item A\n                            Cache-->>Clients: Threads 2..N served newly cached Item A",
+      "links": []
+    },
+    {
+      "q": "How Would You Handle a Database Failure?",
+      "basic": "I would use database replication and backups.",
+      "strong": "First, I'd distinguish between <strong>temporary failure and complete database failure.</strong><br><br>\n                                For availability, we can use replicas and automatic failover so another database instance can take over if the primary fails.<br><br>\n                                I'd also make sure we have backups for recovery from data corruption or accidental deletion.<br><br>\n                                At the application level, I'd use appropriate timeouts, retries, and circuit breakers rather than allowing every request to wait indefinitely.<br><br>\n                                The exact design depends on how much downtime and data loss the business can tolerate.",
+      "takeaway": "Database reliability isn't just replication—it's failover + recovery + clear failure handling.",
+      "mermaid": "graph TD\n                            classDef app fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;\n                            classDef dbPrimary fill:#ef4444,stroke:#b91c1c,stroke-width:2px,color:#fff;\n                            classDef dbReplica fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;\n\n                            App[Application + Circuit Breaker]:::app -->|Write Fails| DB_P[(Primary DB - DOWN)]:::dbPrimary\n                            App -.->|Automatic Failover| DB_S[(Standby Replica - UP)]:::dbReplica\n                            DB_P -. Sync .-> DB_S",
+      "links": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ai-engineering",
+  "questions": [
+    {
+      "q": "How Does Approximate Nearest-Neighbor (ANN) Search Work?",
+      "basic": "ANN search finds vectors that are close to a query without comparing it with every stored vector.",
+      "strong": "If we compare a query with every vector, it becomes slow when we have millions of vectors.<br><br>\n                                <strong>Approximate Nearest-Neighbor (ANN)</strong> search uses an index to quickly find the most likely similar vectors without checking everything.<br><br>\n                                Techniques like HNSW and IVF help narrow down the search area, making it much faster.<br><br>\n                                <strong>For example, instead of searching through 100 million embeddings, ANN can quickly focus on a smaller relevant group.</strong><br><br>\n                                The trade-off is that we may lose a little accuracy for much better speed and scalability.",
+      "takeaway": "ANN = Faster vector search by checking only the most relevant candidates instead of everything.",
+      "mermaid": "graph LR\n                            classDef query fill:#f43f5e,stroke:#be123c,stroke-width:2px,color:#fff;\n                            classDef index fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff;\n                            \n                            Q[Query Vector]:::query --> Index[ANN Index / HNSW]:::index\n                            Index --> Cluster[Relevant Sub-Cluster]\n                            Cluster --> V1[Result 1]\n                            Cluster --> V2[Result 2]\n                            Cluster --> V3[Result 3]",
+      "links": []
+    },
+    {
+      "q": "How would you reduce token usage through prompt optimization?",
+      "basic": "We can remove unnecessary text, shorten instructions, and reduce the amount of context.",
+      "strong": "I'd start by measuring where the tokens are going. Often the biggest opportunities are repeated instructions, unnecessary conversation history, oversized retrieved chunks, and examples that don't actually improve the output.<br><br>\n                                For example, in a RAG chatbot, instead of sending ten large document chunks, I might improve retrieval and send the three most relevant ones. I could also summarize older conversation history and shorten verbose system instructions.<br><br>\n                                But I wouldn't optimize purely for the lowest token count. If removing context causes accuracy to drop, the saving isn't useful.<br><br>\n                                In production, I'd track tokens per request alongside quality, latency, and cost so optimization doesn't silently degrade the user experience.",
+      "takeaway": "Measure first. Optimize RAG chunks and history, but balance cost savings against output quality.",
+      "mermaid": "graph TD\n                            classDef raw fill:#94a3b8,stroke:#475569,stroke-width:2px,color:#fff;\n                            classDef opt fill:#22c55e,stroke:#15803d,stroke-width:2px,color:#fff;\n\n                            Raw[Raw Input: 10 Chunks + Full History]:::raw --> Filter{Optimization Pipeline}\n                            Filter -->|Semantic Re-ranking| Keep3[Keep Top 3 Chunks]:::opt\n                            Filter -->|Summarization| SumHist[Summarize History]:::opt\n                            Keep3 --> Final[Optimized Prompt to LLM]\n                            SumHist --> Final",
+      "links": []
+    }
+  ]
+}
