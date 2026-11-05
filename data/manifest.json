@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "curriculumVersion": "2.0",
-  "targetQuestionCount": 200,
+  "curriculumVersion": "3.0",
+  "targetQuestionCount": 700,
   "groups": [
     {
       "id": "software-engineering",
@@ -56,7 +56,7 @@
       "title": "Data Structures & Algorithms",
       "desc": "Data structures, complexity, coding patterns and technical reasoning.",
       "file": "data/algorithms.json",
-      "questionCount": 13,
+      "questionCount": 45,
       "target": 13,
       "group": "software-engineering"
     },
@@ -65,7 +65,7 @@
       "title": "Programming Fundamentals & OOP",
       "desc": "Language mechanics, design principles and object-oriented software.",
       "file": "data/oop.json",
-      "questionCount": 13,
+      "questionCount": 45,
       "target": 13,
       "group": "software-engineering"
     },
@@ -74,7 +74,7 @@
       "title": "Web & System Architecture",
       "desc": "Scalable designs, distributed systems and architecture tradeoffs.",
       "file": "data/system-design.json",
-      "questionCount": 17,
+      "questionCount": 49,
       "target": 17,
       "group": "software-engineering"
     },
@@ -83,7 +83,7 @@
       "title": "API Design & Backend Engineering",
       "desc": "Protocols, data contracts, service boundaries and API reliability.",
       "file": "data/api.json",
-      "questionCount": 12,
+      "questionCount": 44,
       "target": 12,
       "group": "software-engineering"
     },
@@ -92,7 +92,7 @@
       "title": "Frontend & Mobile Engineering",
       "desc": "Browser fundamentals, accessible interfaces and mobile development.",
       "file": "data/frontend.json",
-      "questionCount": 10,
+      "questionCount": 41,
       "target": 10,
       "group": "software-engineering"
     },
@@ -101,7 +101,7 @@
       "title": "Infrastructure & DevOps",
       "desc": "Containers, orchestration, automation and deployment operations.",
       "file": "data/infra.json",
-      "questionCount": 12,
+      "questionCount": 43,
       "target": 12,
       "group": "infrastructure-cloud"
     },
@@ -110,7 +110,7 @@
       "title": "Cloud Computing",
       "desc": "Cloud architecture, identity, cost, resilience and managed services.",
       "file": "data/cloud.json",
-      "questionCount": 11,
+      "questionCount": 42,
       "target": 11,
       "group": "infrastructure-cloud"
     },
@@ -119,7 +119,7 @@
       "title": "Networking & Operating Systems",
       "desc": "Network protocols, Linux, processes, threads and memory.",
       "file": "data/networking.json",
-      "questionCount": 12,
+      "questionCount": 43,
       "target": 12,
       "group": "infrastructure-cloud"
     },
@@ -128,7 +128,7 @@
       "title": "CI/CD, Testing & Quality",
       "desc": "Testing strategies, build pipelines, delivery and validation.",
       "file": "data/cicd.json",
-      "questionCount": 12,
+      "questionCount": 43,
       "target": 12,
       "group": "infrastructure-cloud"
     },
@@ -137,7 +137,7 @@
       "title": "Database Management & SQL",
       "desc": "Relational modeling, query design, transactions and caching.",
       "file": "data/databases.json",
-      "questionCount": 14,
+      "questionCount": 45,
       "target": 14,
       "group": "data-ai"
     },
@@ -146,7 +146,7 @@
       "title": "Data Engineering & Analytics",
       "desc": "ETL, streaming, quality, warehouses and metrics.",
       "file": "data/data-engineering.json",
-      "questionCount": 12,
+      "questionCount": 43,
       "target": 12,
       "group": "data-ai"
     },
@@ -155,7 +155,7 @@
       "title": "Machine Learning & AI",
       "desc": "Model fundamentals, evaluation, data leakage and deployment.",
       "file": "data/ml.json",
-      "questionCount": 13,
+      "questionCount": 44,
       "target": 13,
       "group": "data-ai"
     },
@@ -164,7 +164,7 @@
       "title": "AI Engineering & LLMs",
       "desc": "Retrieval, vector search, agents, prompt safety and AI systems.",
       "file": "data/ai-engineering.json",
-      "questionCount": 16,
+      "questionCount": 47,
       "target": 16,
       "group": "data-ai"
     },
@@ -173,7 +173,7 @@
       "title": "Security & Compliance",
       "desc": "Secure architecture, access control, privacy and risk.",
       "file": "data/security.json",
-      "questionCount": 9,
+      "questionCount": 40,
       "target": 9,
       "group": "security-reliability"
     },
@@ -182,7 +182,7 @@
       "title": "Performance, Scalability & Reliability",
       "desc": "Profiling, caching, tail latency, failure handling and SLOs.",
       "file": "data/performance.json",
-      "questionCount": 14,
+      "questionCount": 45,
       "target": 14,
       "group": "security-reliability"
     },
@@ -191,9 +191,10 @@
       "title": "Behavioral & Leadership",
       "desc": "STAR stories, judgment, teamwork, ownership and communication.",
       "file": "data/behavioral.json",
-      "questionCount": 10,
+      "questionCount": 41,
       "target": 10,
       "group": "career-interview"
     }
-  ]
+  ],
+  "sourcePolicy": "Public-source-informed, original practice questions; no frequency ranking or verified company attribution."
 }

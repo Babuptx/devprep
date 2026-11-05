@@ -72,6 +72,448 @@
       "takeaway": "Add preventive scanning and revise access scope.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you defend an insurance customer portal against broken object authorization?",
+      "basic": "Enforce identity, tenant, and ownership checks in every object query and mutation.",
+      "strong": "Enforce identity, tenant, and ownership checks in every object query and mutation. Test whether one customer's identifier can access another customer's record.",
+      "takeaway": "Test whether one customer's identifier can access another customer's record.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is zero trust in a corporate network?",
+      "basic": "Continuously authorize access using identity, device posture, and context rather than trusting a network location.",
+      "strong": "Continuously authorize access using identity, device posture, and context rather than trusting a network location. Segment workloads and monitor requests.",
+      "takeaway": "Segment workloads and monitor requests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle privileged access for utility control systems?",
+      "basic": "Use isolated administrative paths, least privilege, MFA where operationally feasible, and approved maintenance procedures.",
+      "strong": "Use isolated administrative paths, least privilege, MFA where operationally feasible, and approved maintenance procedures. Safety and availability constraints are critical.",
+      "takeaway": "Safety and availability constraints are critical.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between encryption at rest and in transit?",
+      "basic": "At-rest encryption protects stored media and backups; in-transit encryption protects communication paths.",
+      "strong": "At-rest encryption protects stored media and backups; in-transit encryption protects communication paths. Access control and key management are still necessary.",
+      "takeaway": "Access control and key management are still necessary.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a secrets rotation policy?",
+      "basic": "Replace credentials or keys on a defined schedule and promptly after compromise, with automated rollout and verification.",
+      "strong": "Replace credentials or keys on a defined schedule and promptly after compromise, with automated rollout and verification. Preserve service continuity during overlap.",
+      "takeaway": "Preserve service continuity during overlap.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should logs handle sensitive insurance claim data?",
+      "basic": "Mask or omit unnecessary personal information, apply retention, and restrict access.",
+      "strong": "Mask or omit unnecessary personal information, apply retention, and restrict access. Correlation IDs should not encode secrets or identifiers.",
+      "takeaway": "Correlation IDs should not encode secrets or identifiers.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is defense in depth?",
+      "basic": "Layer independent controls so failure of one does not expose the system immediately.",
+      "strong": "Layer independent controls so failure of one does not expose the system immediately. Identity, network segmentation, application validation, and monitoring complement each other.",
+      "takeaway": "Identity, network segmentation, application validation, and monitoring complement each other.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you implement a secure software supply chain?",
+      "basic": "Pin dependencies, scan for vulnerabilities, sign artifacts, verify provenance, and isolate build environments.",
+      "strong": "Pin dependencies, scan for vulnerabilities, sign artifacts, verify provenance, and isolate build environments. Review transitive dependencies and privileged workflows.",
+      "takeaway": "Review transitive dependencies and privileged workflows.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a vulnerability versus an exploit?",
+      "basic": "A vulnerability is a weakness; an exploit is a method to abuse it.",
+      "strong": "A vulnerability is a weakness; an exploit is a method to abuse it. Prioritize by exposure, impact, likelihood, and available mitigations.",
+      "takeaway": "Prioritize by exposure, impact, likelihood, and available mitigations.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you triage a zero-day affecting a public API?",
+      "basic": "Inventory affected components, assess exposure and exploitability, apply containment or mitigations, and patch/test promptly.",
+      "strong": "Inventory affected components, assess exposure and exploitability, apply containment or mitigations, and patch/test promptly. Communicate evidence-based status.",
+      "takeaway": "Communicate evidence-based status.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you audit accumulated excessive permissions in a large enterprise?",
+      "basic": "Grant each identity only permissions needed for its functions and duration.",
+      "strong": "Grant each identity only permissions needed for its functions and duration. Regularly review accumulated grants and exceptions.",
+      "takeaway": "Regularly review accumulated grants and exceptions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you segment a manufacturing network?",
+      "basic": "Define IT/OT zones and controlled conduits with firewalls and jump access, preserving required deterministic traffic.",
+      "strong": "Define IT/OT zones and controlled conduits with firewalls and jump access, preserving required deterministic traffic. Follow operational safety requirements.",
+      "takeaway": "Follow operational safety requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you secure OT remote vendor access?",
+      "basic": "Use temporary approved sessions, identity verification, monitored jump paths, restricted commands, and rapid revocation.",
+      "strong": "Use temporary approved sessions, identity verification, monitored jump paths, restricted commands, and rapid revocation. Maintain an audit trail.",
+      "takeaway": "Maintain an audit trail.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is phishing-resistant MFA?",
+      "basic": "Authentication using cryptographic origin-bound methods such as FIDO2/WebAuthn resists credential replay on fake sites.",
+      "strong": "Authentication using cryptographic origin-bound methods such as FIDO2/WebAuthn resists credential replay on fake sites. SMS codes have different risks.",
+      "takeaway": "SMS codes have different risks.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a SIEM used for?",
+      "basic": "It collects and correlates security events to detect patterns and support investigation.",
+      "strong": "It collects and correlates security events to detect patterns and support investigation. Effective rules require tuning and response ownership.",
+      "takeaway": "Effective rules require tuning and response ownership.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does an EDR tool differ from a firewall?",
+      "basic": "Endpoint detection monitors host processes and behavior; firewalls filter network flows.",
+      "strong": "Endpoint detection monitors host processes and behavior; firewalls filter network flows. Both cover different attack stages.",
+      "takeaway": "Both cover different attack stages.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an incident-response containment phase?",
+      "basic": "Limit attacker access and damage while preserving evidence and critical services.",
+      "strong": "Limit attacker access and damage while preserving evidence and critical services. Coordinate containment with business operations.",
+      "takeaway": "Coordinate containment with business operations.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle suspected compromised credentials?",
+      "basic": "Disable or revoke affected sessions, rotate secrets, investigate usage, and audit downstream access.",
+      "strong": "Disable or revoke affected sessions, rotate secrets, investigate usage, and audit downstream access. Avoid relying solely on a password reset.",
+      "takeaway": "Avoid relying solely on a password reset.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you threat-model a new insurance claims upload workflow?",
+      "basic": "Systematically identify assets, trust boundaries, attack paths, and mitigations before or during design.",
+      "strong": "Systematically identify assets, trust boundaries, attack paths, and mitigations before or during design. Revisit when architecture or exposures change.",
+      "takeaway": "Revisit when architecture or exposures change.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you protect a public API from injection attacks?",
+      "basic": "Validate schemas, parameterize queries, avoid unsafe command execution, and encode outputs by context.",
+      "strong": "Validate schemas, parameterize queries, avoid unsafe command execution, and encode outputs by context. Add monitoring and least privilege.",
+      "takeaway": "Add monitoring and least privilege.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is CSRF and when does it apply?",
+      "basic": "Cross-site request forgery abuses a browser's authenticated session to submit unwanted requests.",
+      "strong": "Cross-site request forgery abuses a browser's authenticated session to submit unwanted requests. SameSite cookies, anti-CSRF tokens, and origin checks help.",
+      "takeaway": "SameSite cookies, anti-CSRF tokens, and origin checks help.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you investigate suspicious network exfiltration?",
+      "basic": "Correlate egress traffic, endpoint activity, identities, and access logs while preserving evidence.",
+      "strong": "Correlate egress traffic, endpoint activity, identities, and access logs while preserving evidence. Coordinate with incident response rather than prematurely destroying artifacts.",
+      "takeaway": "Coordinate with incident response rather than prematurely destroying artifacts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is data classification?",
+      "basic": "Categorize data by sensitivity and obligations, then apply controls for storage, sharing, retention, and deletion.",
+      "strong": "Categorize data by sensitivity and obligations, then apply controls for storage, sharing, retention, and deletion. Classification must be kept current.",
+      "takeaway": "Classification must be kept current.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you validate backups against ransomware risk?",
+      "basic": "Ensure immutable or isolated copies, separate administrative credentials, and tested recovery procedures.",
+      "strong": "Ensure immutable or isolated copies, separate administrative credentials, and tested recovery procedures. Backups reachable by compromised identities are vulnerable.",
+      "takeaway": "Backups reachable by compromised identities are vulnerable.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a security exception process?",
+      "basic": "Document compensating controls, owner, risk acceptance, expiration, and review date.",
+      "strong": "Document compensating controls, owner, risk acceptance, expiration, and review date. Permanent undocumented exceptions defeat policy.",
+      "takeaway": "Permanent undocumented exceptions defeat policy.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you test authorization for an internal dashboard?",
+      "basic": "Use positive and negative tests across roles, departments, and tenants, including direct API calls.",
+      "strong": "Use positive and negative tests across roles, departments, and tenants, including direct API calls. Hiding UI elements is insufficient.",
+      "takeaway": "Hiding UI elements is insufficient.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between hashing and encryption?",
+      "basic": "Hashing is one-way and used for integrity or password verification with appropriate schemes; encryption is reversible with a key.",
+      "strong": "Hashing is one-way and used for integrity or password verification with appropriate schemes; encryption is reversible with a key. Passwords need salted adaptive hashing.",
+      "takeaway": "Passwords need salted adaptive hashing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is certificate validation important?",
+      "basic": "TLS encryption without authenticating the intended peer can enable interception.",
+      "strong": "TLS encryption without authenticating the intended peer can enable interception. Verify trust chain, hostnames, and validity dates.",
+      "takeaway": "Verify trust chain, hostnames, and validity dates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does a third-party risk assessment cover?",
+      "basic": "Evaluate vendor data access, security controls, incident notification, resilience, compliance, and subcontractors.",
+      "strong": "Evaluate vendor data access, security controls, incident notification, resilience, compliance, and subcontractors. Contractual promises need evidence.",
+      "takeaway": "Contractual promises need evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle retention and deletion requests?",
+      "basic": "Map data locations including caches and backups, apply applicable policy and legal holds, and audit completion.",
+      "strong": "Map data locations including caches and backups, apply applicable policy and legal holds, and audit completion. Deletion may have lawful exceptions.",
+      "takeaway": "Deletion may have lawful exceptions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What are RTO and RPO in security recovery?",
+      "basic": "RTO is the target recovery time; RPO is the maximum tolerable data-loss window.",
+      "strong": "RTO is the target recovery time; RPO is the maximum tolerable data-loss window. They drive recovery architecture and exercise design.",
+      "takeaway": "They drive recovery architecture and exercise design.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

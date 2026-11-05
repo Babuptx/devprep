@@ -96,6 +96,440 @@
       "takeaway": "Error budgets help teams decide when reliability work should take precedence over release velocity.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you diagnose intermittent application failures after a deployment?",
+      "basic": "Compare rollout timestamps with error metrics, logs, config changes, and dependency health.",
+      "strong": "Compare rollout timestamps with error metrics, logs, config changes, and dependency health. Mitigate with rollback when user impact requires it, then isolate root cause.",
+      "takeaway": "Mitigate with rollback when user impact requires it, then isolate root cause.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is infrastructure as code drift?",
+      "basic": "Drift occurs when actual resources differ from declared configuration.",
+      "strong": "Drift occurs when actual resources differ from declared configuration. Detect with plans or audits and reconcile deliberately rather than overwrite unknown changes blindly.",
+      "takeaway": "Detect with plans or audits and reconcile deliberately rather than overwrite unknown changes blindly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design secure developer access to production?",
+      "basic": "Use federated identity, short-lived credentials, least privilege, MFA, approvals for sensitive changes, and full audit trails.",
+      "strong": "Use federated identity, short-lived credentials, least privilege, MFA, approvals for sensitive changes, and full audit trails. Avoid shared accounts.",
+      "takeaway": "Avoid shared accounts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can containers improve deployment consistency?",
+      "basic": "Package applications with runtime dependencies into versioned images.",
+      "strong": "Package applications with runtime dependencies into versioned images. They reduce environment mismatch but do not eliminate configuration, resource, or kernel differences.",
+      "takeaway": "They reduce environment mismatch but do not eliminate configuration, resource, or kernel differences.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you investigate a Kubernetes CrashLoopBackOff?",
+      "basic": "Inspect pod events, previous container logs, readiness versus startup behavior, resource limits, and configuration.",
+      "strong": "Inspect pod events, previous container logs, readiness versus startup behavior, resource limits, and configuration. Fix the failing process rather than simply raising restart limits.",
+      "takeaway": "Fix the failing process rather than simply raising restart limits.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between liveness and readiness probes?",
+      "basic": "Readiness controls whether traffic should be sent; liveness determines whether a stuck process should restart.",
+      "strong": "Readiness controls whether traffic should be sent; liveness determines whether a stuck process should restart. Misconfigured liveness probes can cause cascading failures.",
+      "takeaway": "Misconfigured liveness probes can cause cascading failures.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a Kubernetes deployment rollout strategy?",
+      "basic": "Update replicas gradually while respecting health and availability limits.",
+      "strong": "Update replicas gradually while respecting health and availability limits. Monitor error budgets and retain rollback capability during progressive rollout.",
+      "takeaway": "Monitor error budgets and retain rollback capability during progressive rollout.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you preserve secrets in an infrastructure pipeline?",
+      "basic": "Store them in a dedicated secret manager, inject only at runtime or job scope, and avoid printing them in logs or artifacts.",
+      "strong": "Store them in a dedicated secret manager, inject only at runtime or job scope, and avoid printing them in logs or artifacts. Rotate on exposure.",
+      "takeaway": "Rotate on exposure.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you roll out OS patches across hundreds of servers?",
+      "basic": "Inventory versions, patch a canary ring, check service health, and stage larger waves with rollback plans.",
+      "strong": "Inventory versions, patch a canary ring, check service health, and stage larger waves with rollback plans. Maintenance windows and criticality differ by host.",
+      "takeaway": "Maintenance windows and criticality differ by host.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you reduce snowflake server configuration?",
+      "basic": "Use immutable images or configuration automation and record desired state in version control.",
+      "strong": "Use immutable images or configuration automation and record desired state in version control. Keep emergency exceptions visible and time-bounded.",
+      "takeaway": "Keep emergency exceptions visible and time-bounded.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is blue-green deployment?",
+      "basic": "Maintain two environments, deploy and test the inactive one, then switch traffic.",
+      "strong": "Maintain two environments, deploy and test the inactive one, then switch traffic. Database compatibility and rollback state require extra planning.",
+      "takeaway": "Database compatibility and rollback state require extra planning.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a canary deployment?",
+      "basic": "Route a small fraction of traffic to a new release and compare health metrics before expanding.",
+      "strong": "Route a small fraction of traffic to a new release and compare health metrics before expanding. Include guardrails for low-traffic and rare-error cases.",
+      "takeaway": "Include guardrails for low-traffic and rare-error cases.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you diagnose unexpected disk growth on a Linux host?",
+      "basic": "Check filesystem and inode utilization, identify growth by directory and process, and inspect logs/temp files.",
+      "strong": "Check filesystem and inode utilization, identify growth by directory and process, and inspect logs/temp files. Avoid deleting open files blindly.",
+      "takeaway": "Avoid deleting open files blindly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a runbook versus a playbook?",
+      "basic": "A runbook specifies repeatable operational steps; a playbook coordinates decisions for broader incident scenarios.",
+      "strong": "A runbook specifies repeatable operational steps; a playbook coordinates decisions for broader incident scenarios. Both should be tested and updated after incidents.",
+      "takeaway": "Both should be tested and updated after incidents.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you build an immutable deployment artifact?",
+      "basic": "Build once in CI, identify by digest, and promote that same artifact between environments.",
+      "strong": "Build once in CI, identify by digest, and promote that same artifact between environments. Rebuilding per environment undermines reproducibility.",
+      "takeaway": "Rebuilding per environment undermines reproducibility.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What are resource requests and limits in Kubernetes?",
+      "basic": "Requests influence scheduling guarantees; limits cap consumption, with different CPU throttling and memory termination effects.",
+      "strong": "Requests influence scheduling guarantees; limits cap consumption, with different CPU throttling and memory termination effects. Set from observed workload behavior.",
+      "takeaway": "Set from observed workload behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a backup strategy for a manufacturing MES?",
+      "basic": "Set recovery objectives, capture application and database consistency, protect copies offline/immutably, and test restores against production workflows.",
+      "strong": "Set recovery objectives, capture application and database consistency, protect copies offline/immutably, and test restores against production workflows.",
+      "takeaway": "Set recovery objectives, capture application and database consistency, protect copies offline/immutably, and test restores against production workflows.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you keep infrastructure inventory accurate?",
+      "basic": "Automate discovery from cloud and configuration sources and reconcile ownership metadata.",
+      "strong": "Automate discovery from cloud and configuration sources and reconcile ownership metadata. A stale spreadsheet alone is not a reliable source of truth.",
+      "takeaway": "A stale spreadsheet alone is not a reliable source of truth.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the purpose of a bastion host or zero-trust access proxy?",
+      "basic": "It centralizes and audits limited administrative access to protected networks.",
+      "strong": "It centralizes and audits limited administrative access to protected networks. Modern identity-aware access can reduce exposed network paths.",
+      "takeaway": "Modern identity-aware access can reduce exposed network paths.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you prevent CI runners from becoming an attack vector?",
+      "basic": "Isolate untrusted jobs, use ephemeral runners, scope credentials tightly, and prevent unreviewed code from reading production secrets.",
+      "strong": "Isolate untrusted jobs, use ephemeral runners, scope credentials tightly, and prevent unreviewed code from reading production secrets.",
+      "takeaway": "Isolate untrusted jobs, use ephemeral runners, scope credentials tightly, and prevent unreviewed code from reading production secrets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a sidecar container pattern?",
+      "basic": "Run a helper alongside an application within the same pod for logging, proxying, or similar functions.",
+      "strong": "Run a helper alongside an application within the same pod for logging, proxying, or similar functions. It introduces lifecycle and resource coupling.",
+      "takeaway": "It introduces lifecycle and resource coupling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle an expired production TLS certificate?",
+      "basic": "Restore service through approved certificate renewal or safe traffic rerouting, verify chain and expiration, then automate monitoring and renewal to prevent recurrence.",
+      "strong": "Restore service through approved certificate renewal or safe traffic rerouting, verify chain and expiration, then automate monitoring and renewal to prevent recurrence.",
+      "takeaway": "Restore service through approved certificate renewal or safe traffic rerouting, verify chain and expiration, then automate monitoring and renewal to prevent recurrence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you decide whether to scale vertically or horizontally?",
+      "basic": "Vertical scaling increases per-node resources but may hit limits; horizontal scaling adds replicas but requires statelessness and coordination.",
+      "strong": "Vertical scaling increases per-node resources but may hit limits; horizontal scaling adds replicas but requires statelessness and coordination. Choose based on bottlenecks.",
+      "takeaway": "Choose based on bottlenecks.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is configuration as code versus infrastructure as code?",
+      "basic": "Infrastructure as code provisions resources; configuration as code defines software/system settings on them.",
+      "strong": "Infrastructure as code provisions resources; configuration as code defines software/system settings on them. Both should be versioned and reviewed.",
+      "takeaway": "Both should be versioned and reviewed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you isolate noisy-neighbor workloads?",
+      "basic": "Use resource quotas, priorities, dedicated pools, or tenant throttles.",
+      "strong": "Use resource quotas, priorities, dedicated pools, or tenant throttles. Measure impact before expensive isolation changes.",
+      "takeaway": "Measure impact before expensive isolation changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a disaster-recovery tabletop exercise?",
+      "basic": "Walk stakeholders through a hypothetical failure using documented plans and decision points.",
+      "strong": "Walk stakeholders through a hypothetical failure using documented plans and decision points. Follow with actual restore/failover testing for technical confidence.",
+      "takeaway": "Follow with actual restore/failover testing for technical confidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you investigate repeated service restarts?",
+      "basic": "Check process exits, kernel OOM events, health checks, recent deployments, and upstream dependencies.",
+      "strong": "Check process exits, kernel OOM events, health checks, recent deployments, and upstream dependencies. Restarting alone erases symptoms without solving causes.",
+      "takeaway": "Restarting alone erases symptoms without solving causes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What should be in a deployment rollback plan?",
+      "basic": "Identify prior immutable artifact, compatibility assumptions, database migration behavior, decision thresholds, ownership, and verification steps.",
+      "strong": "Identify prior immutable artifact, compatibility assumptions, database migration behavior, decision thresholds, ownership, and verification steps.",
+      "takeaway": "Identify prior immutable artifact, compatibility assumptions, database migration behavior, decision thresholds, ownership, and verification steps.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you observe a fleet of distributed services?",
+      "basic": "Collect metrics, logs, and traces with consistent service labels and correlation IDs.",
+      "strong": "Collect metrics, logs, and traces with consistent service labels and correlation IDs. Align alerting to customer impact rather than every noisy symptom.",
+      "takeaway": "Align alerting to customer impact rather than every noisy symptom.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an error budget in operations?",
+      "basic": "An error budget translates an SLO into allowed unreliability over a period.",
+      "strong": "An error budget translates an SLO into allowed unreliability over a period. Teams use burn rate to guide release risk and recovery focus.",
+      "takeaway": "Teams use burn rate to guide release risk and recovery focus.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you plan an infrastructure migration with near-zero downtime?",
+      "basic": "Replicate state, keep versions compatible, shift traffic gradually, verify data integrity, and retain a clear cutback path.",
+      "strong": "Replicate state, keep versions compatible, shift traffic gradually, verify data integrity, and retain a clear cutback path. Test failure modes ahead of the move.",
+      "takeaway": "Test failure modes ahead of the move.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

@@ -104,6 +104,442 @@
       "takeaway": "Document intended use, limitations, monitoring, and rollback criteria.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you detect data leakage in a customer churn model?",
+      "basic": "Check whether training features include information unavailable at prediction time.",
+      "strong": "Check whether training features include information unavailable at prediction time. Split data temporally or by customer when required and audit feature creation.",
+      "takeaway": "Split data temporally or by customer when required and audit feature creation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is precision versus recall for fraud detection?",
+      "basic": "Precision measures how many flagged cases are truly positive; recall measures how many true cases are found.",
+      "strong": "Precision measures how many flagged cases are truly positive; recall measures how many true cases are found. The right balance depends on investigation capacity and missed-loss cost.",
+      "takeaway": "The right balance depends on investigation capacity and missed-loss cost.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you choose a model threshold for insurance fraud review?",
+      "basic": "Optimize expected operational cost under investigation constraints, then monitor false positives by cohort.",
+      "strong": "Optimize expected operational cost under investigation constraints, then monitor false positives by cohort. A ranking score alone does not select business policy.",
+      "takeaway": "A ranking score alone does not select business policy.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is accuracy insufficient for rare failures?",
+      "basic": "A classifier predicting the majority class can look accurate while missing almost every rare event.",
+      "strong": "A classifier predicting the majority class can look accurate while missing almost every rare event. Use precision-recall, detection cost, and calibration.",
+      "takeaway": "Use precision-recall, detection cost, and calibration.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is concept drift?",
+      "basic": "The relationship between inputs and outcomes changes over time.",
+      "strong": "The relationship between inputs and outcomes changes over time. Monitor performance where labels eventually arrive and retrain only with governed evidence.",
+      "takeaway": "Monitor performance where labels eventually arrive and retrain only with governed evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is covariate shift?",
+      "basic": "The distribution of input features changes while target relationships may remain similar.",
+      "strong": "The distribution of input features changes while target relationships may remain similar. Detect drift and test whether resulting model quality actually degrades.",
+      "takeaway": "Detect drift and test whether resulting model quality actually degrades.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you evaluate a predictive-maintenance model?",
+      "basic": "Use time-respecting splits, account for early-warning lead time, and measure false alarms and missed failures.",
+      "strong": "Use time-respecting splits, account for early-warning lead time, and measure false alarms and missed failures. Include maintenance action feasibility.",
+      "takeaway": "Include maintenance action feasibility.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is cross-validation and when can it mislead?",
+      "basic": "It assesses generalization across folds, but random folds leak temporal or group dependence in some domains.",
+      "strong": "It assesses generalization across folds, but random folds leak temporal or group dependence in some domains. Match validation to real deployment conditions.",
+      "takeaway": "Match validation to real deployment conditions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does regularization do?",
+      "basic": "It penalizes model complexity to reduce overfitting, often trading some training fit for better generalization.",
+      "strong": "It penalizes model complexity to reduce overfitting, often trading some training fit for better generalization. Tune on validation data.",
+      "takeaway": "Tune on validation data.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does L1 differ from L2 regularization?",
+      "basic": "L1 encourages sparse coefficients; L2 shrinks coefficients smoothly.",
+      "strong": "L1 encourages sparse coefficients; L2 shrinks coefficients smoothly. Feature correlation and optimization behavior differ.",
+      "takeaway": "Feature correlation and optimization behavior differ.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why scale numerical features?",
+      "basic": "Distance-based and gradient-based models can be sensitive to magnitude.",
+      "strong": "Distance-based and gradient-based models can be sensitive to magnitude. Fit scalers only on training data to prevent leakage.",
+      "takeaway": "Fit scalers only on training data to prevent leakage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does class imbalance do to training?",
+      "basic": "A model may overfit majority examples and under-detect rare outcomes.",
+      "strong": "A model may overfit majority examples and under-detect rare outcomes. Consider loss weighting, sampling, thresholding, and appropriate metrics.",
+      "takeaway": "Consider loss weighting, sampling, thresholding, and appropriate metrics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is calibration of probabilistic predictions?",
+      "basic": "Calibrated probabilities match observed event frequencies across bins.",
+      "strong": "Calibrated probabilities match observed event frequencies across bins. Measure reliability separately from ranking quality.",
+      "takeaway": "Measure reliability separately from ranking quality.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you explain a model decision to an insurance regulator?",
+      "basic": "Document approved inputs, rationale, validation, limitations, and appropriate explanation techniques.",
+      "strong": "Document approved inputs, rationale, validation, limitations, and appropriate explanation techniques. Do not confuse feature attributions with causal proof.",
+      "takeaway": "Do not confuse feature attributions with causal proof.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is SHAP and what are its limits?",
+      "basic": "SHAP assigns local feature contributions relative to a reference distribution.",
+      "strong": "SHAP assigns local feature contributions relative to a reference distribution. Correlated features and model assumptions affect interpretation.",
+      "takeaway": "Correlated features and model assumptions affect interpretation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you monitor a deployed ML model?",
+      "basic": "Track input distributions, prediction rates, delayed labels, drift, latency, error rates, and fairness signals where justified.",
+      "strong": "Track input distributions, prediction rates, delayed labels, drift, latency, error rates, and fairness signals where justified. Establish retraining and rollback triggers.",
+      "takeaway": "Establish retraining and rollback triggers.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an online feature store?",
+      "basic": "It serves low-latency model features during inference, ideally consistent with offline training definitions.",
+      "strong": "It serves low-latency model features during inference, ideally consistent with offline training definitions. Monitor freshness and missing values.",
+      "takeaway": "Monitor freshness and missing values.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is train-serving skew?",
+      "basic": "Training and production use inconsistent transformations, data availability, or feature definitions.",
+      "strong": "Training and production use inconsistent transformations, data availability, or feature definitions. Reuse versioned pipelines and compare live feature samples.",
+      "takeaway": "Reuse versioned pipelines and compare live feature samples.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you protect PII in model training?",
+      "basic": "Minimize collected data, enforce access, encrypt storage, and document retention and deletion workflows.",
+      "strong": "Minimize collected data, enforce access, encrypt storage, and document retention and deletion workflows. Check model artifacts for memorization risks.",
+      "takeaway": "Check model artifacts for memorization risks.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is gradient boosting?",
+      "basic": "It builds an ensemble of models sequentially to reduce residual error under an objective.",
+      "strong": "It builds an ensemble of models sequentially to reduce residual error under an objective. Tune depth, learning rate, and regularization carefully.",
+      "takeaway": "Tune depth, learning rate, and regularization carefully.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Random forest versus gradient boosting for tabular data?",
+      "basic": "Random forests average diverse trees and are robust baselines; boosting sequentially optimizes errors and may yield higher accuracy with tuning.",
+      "strong": "Random forests average diverse trees and are robust baselines; boosting sequentially optimizes errors and may yield higher accuracy with tuning. Test both against deployment constraints.",
+      "takeaway": "Test both against deployment constraints.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you explain a fraud classifier confusion matrix to an investigator?",
+      "basic": "It counts true and false positives and negatives, making specific error tradeoffs visible.",
+      "strong": "It counts true and false positives and negatives, making specific error tradeoffs visible. In multi-class settings inspect class-wise behavior.",
+      "takeaway": "In multi-class settings inspect class-wise behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why can ROC-AUC be misleading for rare positives?",
+      "basic": "It may look strong while precision at operational thresholds remains poor.",
+      "strong": "It may look strong while precision at operational thresholds remains poor. Precision-recall curves better expose rare-positive workload tradeoffs.",
+      "takeaway": "Precision-recall curves better expose rare-positive workload tradeoffs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an embeddings model?",
+      "basic": "It maps inputs into dense vectors so semantic relationships can be compared numerically.",
+      "strong": "It maps inputs into dense vectors so semantic relationships can be compared numerically. Domain shifts and evaluation quality determine usefulness.",
+      "takeaway": "Domain shifts and evaluation quality determine usefulness.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When would unsupervised clustering be more useful than supervised prediction?",
+      "basic": "Supervised learning uses target labels; unsupervised learning finds structure without provided outcome labels.",
+      "strong": "Supervised learning uses target labels; unsupervised learning finds structure without provided outcome labels. Goals and validation methods differ.",
+      "takeaway": "Goals and validation methods differ.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is k-means sensitive to?",
+      "basic": "It depends on feature scaling, initialization, outliers, and chosen cluster count.",
+      "strong": "It depends on feature scaling, initialization, outliers, and chosen cluster count. Clusters are not automatically meaningful business segments.",
+      "takeaway": "Clusters are not automatically meaningful business segments.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you decide whether to use deep learning?",
+      "basic": "Compare with simpler baselines considering dataset size, structure, interpretability, latency, and maintenance.",
+      "strong": "Compare with simpler baselines considering dataset size, structure, interpretability, latency, and maintenance. Complexity must earn measurable benefit.",
+      "takeaway": "Complexity must earn measurable benefit.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you prevent repeated patient or customer leakage across splits?",
+      "basic": "Group observations by underlying entity before splitting.",
+      "strong": "Group observations by underlying entity before splitting. Otherwise repeated records can make test performance artificially high.",
+      "takeaway": "Otherwise repeated records can make test performance artificially high.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is uplift modeling?",
+      "basic": "It estimates incremental effect of an intervention rather than only outcome probability.",
+      "strong": "It estimates incremental effect of an intervention rather than only outcome probability. It requires careful causal assumptions or experimental evidence.",
+      "takeaway": "It requires careful causal assumptions or experimental evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you manage model versions and reproducibility?",
+      "basic": "Record data snapshot, code, features, hyperparameters, environment, metrics, and artifact digest.",
+      "strong": "Record data snapshot, code, features, hyperparameters, environment, metrics, and artifact digest. Treat deployment as an auditable change.",
+      "takeaway": "Treat deployment as an auditable change.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle an ML model with disparate error rates across groups?",
+      "basic": "Evaluate whether differences are material and legally relevant, investigate feature/label bias, and apply approved mitigation.",
+      "strong": "Evaluate whether differences are material and legally relevant, investigate feature/label bias, and apply approved mitigation. Document tradeoffs and monitor after release.",
+      "takeaway": "Document tradeoffs and monitor after release.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

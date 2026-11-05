@@ -112,6 +112,449 @@
       "takeaway": "SLO definitions must reflect actual user experience and not be easy to game.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "What are the four golden signals in service monitoring?",
+      "basic": "Latency, traffic, errors, and saturation measure user-facing service health.",
+      "strong": "Latency, traffic, errors, and saturation measure user-facing service health. Alert on actionable deviations rather than raw infrastructure noise.",
+      "takeaway": "Alert on actionable deviations rather than raw infrastructure noise.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you diagnose rising p99 latency with stable averages?",
+      "basic": "Inspect tail requests, queueing, noisy neighbors, slow queries, and dependency fan-out.",
+      "strong": "Inspect tail requests, queueing, noisy neighbors, slow queries, and dependency fan-out. Averages can hide a small severe tail.",
+      "takeaway": "Averages can hide a small severe tail.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between throughput and latency?",
+      "basic": "Throughput counts completed work per time; latency measures individual completion time.",
+      "strong": "Throughput counts completed work per time; latency measures individual completion time. Batching can improve throughput while increasing wait time.",
+      "takeaway": "Batching can improve throughput while increasing wait time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you detect whether a service is CPU-bound?",
+      "basic": "Use profilers, CPU saturation, run queues, and per-request timing.",
+      "strong": "Use profilers, CPU saturation, run queues, and per-request timing. Confirm that faster CPU or code optimization changes user-visible latency.",
+      "takeaway": "Confirm that faster CPU or code optimization changes user-visible latency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you identify memory pressure?",
+      "basic": "Monitor working set, allocation rates, garbage collection, swapping, and OOM events.",
+      "strong": "Monitor working set, allocation rates, garbage collection, swapping, and OOM events. Distinguish leaks from legitimate cache growth.",
+      "takeaway": "Distinguish leaks from legitimate cache growth.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is backpressure in a stream processor?",
+      "basic": "Consumers signal or enforce limits so producers do not overwhelm buffers.",
+      "strong": "Consumers signal or enforce limits so producers do not overwhelm buffers. Durable queues and rate controls can absorb bursts within capacity.",
+      "takeaway": "Durable queues and rate controls can absorb bursts within capacity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle a sudden tenfold traffic surge?",
+      "basic": "Measure which resource saturates, protect dependencies, and scale or shed load at the actual bottleneck.",
+      "strong": "Measure which resource saturates, protect dependencies, and scale or shed load at the actual bottleneck. Rate limiting and queues may preserve core functions.",
+      "takeaway": "Rate limiting and queues may preserve core functions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is Little's Law in queueing?",
+      "basic": "For stable systems, average items in system equal arrival rate times average time in system.",
+      "strong": "For stable systems, average items in system equal arrival rate times average time in system. It relates concurrency, throughput, and latency.",
+      "takeaway": "It relates concurrency, throughput, and latency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does Amdahl's Law limit optimizations?",
+      "basic": "Speedup is bounded by the portion of total runtime improved.",
+      "strong": "Speedup is bounded by the portion of total runtime improved. Optimizing a tiny code path rarely changes end-to-end latency materially.",
+      "takeaway": "Optimizing a tiny code path rarely changes end-to-end latency materially.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you diagnose a cache-hit collapse?",
+      "basic": "Inspect key changes, TTL policy, invalidation events, hot keys, and cache capacity.",
+      "strong": "Inspect key changes, TTL policy, invalidation events, hot keys, and cache capacity. Prevent stampedes while restoring correct hit behavior.",
+      "takeaway": "Prevent stampedes while restoring correct hit behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a circuit breaker and how is it different from a retry?",
+      "basic": "A retry repeats an operation after failure; a breaker temporarily stops calls to an unhealthy dependency.",
+      "strong": "A retry repeats an operation after failure; a breaker temporarily stops calls to an unhealthy dependency. Both need strict budgets and observability.",
+      "takeaway": "Both need strict budgets and observability.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is graceful degradation for utility outage applications?",
+      "basic": "Preserve core outage lookup when maps or optional personalization fail.",
+      "strong": "Preserve core outage lookup when maps or optional personalization fail. Clearly label unavailable data rather than fabricate status.",
+      "takeaway": "Clearly label unavailable data rather than fabricate status.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you define availability in an SLO?",
+      "basic": "Measure the fraction of valid user requests meeting an agreed success criterion over a window.",
+      "strong": "Measure the fraction of valid user requests meeting an agreed success criterion over a window. Choose indicators that represent customer experience.",
+      "takeaway": "Choose indicators that represent customer experience.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an error budget burn rate?",
+      "basic": "It is the pace at which a service consumes allowed unreliability compared with the SLO window.",
+      "strong": "It is the pace at which a service consumes allowed unreliability compared with the SLO window. Fast burn suggests urgent mitigation.",
+      "takeaway": "Fast burn suggests urgent mitigation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why do retries sometimes cause cascading failures?",
+      "basic": "Many clients retry an overloaded dependency simultaneously, increasing demand.",
+      "strong": "Many clients retry an overloaded dependency simultaneously, increasing demand. Use bounded backoff, jitter, and load shedding.",
+      "takeaway": "Use bounded backoff, jitter, and load shedding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you test disaster recovery for a billing platform?",
+      "basic": "Simulate component or region failure, measure recovery time and data loss, and reconcile transactions afterward.",
+      "strong": "Simulate component or region failure, measure recovery time and data loss, and reconcile transactions afterward. Document deviations from RTO/RPO.",
+      "takeaway": "Document deviations from RTO/RPO.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you prioritize customer actions when load shedding during a storm?",
+      "basic": "Refuse or defer lower-priority work before saturation collapses the entire service.",
+      "strong": "Refuse or defer lower-priority work before saturation collapses the entire service. Protect essential traffic and give transparent retry signals.",
+      "takeaway": "Protect essential traffic and give transparent retry signals.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does a bulkhead pattern improve resilience?",
+      "basic": "Isolate resource pools so one failing dependency or tenant cannot consume every worker or connection.",
+      "strong": "Isolate resource pools so one failing dependency or tenant cannot consume every worker or connection. Reserve capacity for critical paths.",
+      "takeaway": "Reserve capacity for critical paths.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you optimize a database-bound API?",
+      "basic": "Inspect query plans, index selectivity, transaction duration, pool limits, and read patterns.",
+      "strong": "Inspect query plans, index selectivity, transaction duration, pool limits, and read patterns. Profile before adding caches or replicas.",
+      "takeaway": "Profile before adding caches or replicas.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why might a faster algorithm not improve production speed?",
+      "basic": "Network, disk, serialization, or contention may dominate runtime.",
+      "strong": "Network, disk, serialization, or contention may dominate runtime. Measure end-to-end service time to find the true limiting stage.",
+      "takeaway": "Measure end-to-end service time to find the true limiting stage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a memory leak in a garbage-collected language?",
+      "basic": "Objects remain reachable unintentionally, so GC cannot reclaim them.",
+      "strong": "Objects remain reachable unintentionally, so GC cannot reclaim them. Common causes include caches and long-lived listeners.",
+      "takeaway": "Common causes include caches and long-lived listeners.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is horizontal scalability?",
+      "basic": "Add independent instances to handle more work.",
+      "strong": "Add independent instances to handle more work. It often requires state externalization, partitioning, or coordination.",
+      "takeaway": "It often requires state externalization, partitioning, or coordination.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle hot keys in a distributed cache?",
+      "basic": "Identify skew with per-key metrics, apply local caching or key replication where safe, and protect backing stores.",
+      "strong": "Identify skew with per-key metrics, apply local caching or key replication where safe, and protect backing stores. Avoid inconsistent writes.",
+      "takeaway": "Avoid inconsistent writes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is performance regression testing?",
+      "basic": "Measure key latency, throughput, and resource metrics against a reproducible baseline.",
+      "strong": "Measure key latency, throughput, and resource metrics against a reproducible baseline. Set useful thresholds and inspect variance.",
+      "takeaway": "Set useful thresholds and inspect variance.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you measure mobile app performance under weak connectivity?",
+      "basic": "Test representative RTT, bandwidth, loss, and offline transitions.",
+      "strong": "Test representative RTT, bandwidth, loss, and offline transitions. Observe time to useful content and reliable submission recovery.",
+      "takeaway": "Observe time to useful content and reliable submission recovery.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why can connection pools become a bottleneck?",
+      "basic": "Pool exhaustion queues requests even when downstream CPU seems idle.",
+      "strong": "Pool exhaustion queues requests even when downstream CPU seems idle. Tune concurrency according to dependency capacity.",
+      "takeaway": "Tune concurrency according to dependency capacity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you diagnose a factory historian lag?",
+      "basic": "Check source scan rates, gateway buffers, network links, ingestion backlog, and storage writes.",
+      "strong": "Check source scan rates, gateway buffers, network links, ingestion backlog, and storage writes. Preserve timestamp and quality to avoid misleading trends.",
+      "takeaway": "Preserve timestamp and quality to avoid misleading trends.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a saturation metric?",
+      "basic": "It quantifies how close a constrained resource is to capacity, such as queue depth, connection use, or disk IOPS.",
+      "strong": "It quantifies how close a constrained resource is to capacity, such as queue depth, connection use, or disk IOPS. High saturation often precedes errors.",
+      "takeaway": "High saturation often precedes errors.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you measure the resilience of a message queue?",
+      "basic": "Track publish durability, consumer lag, redelivery, dead letters, and failure recovery.",
+      "strong": "Track publish durability, consumer lag, redelivery, dead letters, and failure recovery. Test producer and consumer restarts.",
+      "takeaway": "Test producer and consumer restarts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the impact of stop-the-world garbage collection?",
+      "basic": "Some runtimes pause application threads, causing latency spikes.",
+      "strong": "Some runtimes pause application threads, causing latency spikes. Tune allocation patterns and collectors based on measured pause goals.",
+      "takeaway": "Tune allocation patterns and collectors based on measured pause goals.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you choose an SLO for an enterprise internal tool?",
+      "basic": "Define the user journey, criticality, measurement scope, and error budget with stakeholders.",
+      "strong": "Define the user journey, criticality, measurement scope, and error budget with stakeholders. Avoid copying external consumer-service targets blindly.",
+      "takeaway": "Avoid copying external consumer-service targets blindly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

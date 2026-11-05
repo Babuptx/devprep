@@ -1,32 +1,29 @@
-# DevPrep / Prep Pro — 200 Technical Interview Q&As
+# DevPrep / Prep Pro — 700 interview practice questions
 
-**Version 2.0** · Public static study app covering 16 knowledge areas organized into five groups.
+**v3.0 (2026-11-05):** Adds 500 original, scenario-based interview practice Q&As across the existing 16 knowledge areas, for 700 total. Five collapsible navigation groups and all original 200 questions remain intact.
 
-## Architecture
+- Q&A data remains split across 16 JSON topic files and fetched only on selection.
+- The topic sidebar displays actual question counts; local topic search filters the selected subject without downloading other categories.
+- Each new item includes an interview-style question, direct baseline answer, deeper explanation, takeaway, topical tags and provenance.
+- Original practice synthesis is informed by public 2025–26 interview accounts and engineering references, **not** a claim that questions were personally asked by specific employers or ranked by measured frequency.
+- See `research/SOURCES.md` for research provenance and caveats.
+- No backend, API credentials or personal candidate records are required.
 
-- `index.html` is the lightweight UI shell and JavaScript renderer; it does not embed the question bank.
-- `data/manifest.json` is the grouped navigation manifest, listing topic files and question counts.
-- `data/<topic>.json` is the independent Q&A content for each of the 16 knowledge areas.
-- Topic JSON is fetched only upon selection and cached for the browser session.
-- 200 total Q&As, including all nine original POC entries; each item includes a quick answer, strong answer and takeaway. Diagrams appear when provided and are intentionally optional for nonvisual questions.
-- No accounts, API keys, backend, or personal candidate details are required.
+## GitHub Pages
 
-## Publish
+Repo: https://github.com/Babuptx/devprep  
+Site: https://babuptx.github.io/devprep/
 
-GitHub Pages project: https://babuptx.github.io/devprep/.
-GitHub repository: https://github.com/Babuptx/devprep.
+Deploy `main` / `(root)` via Settings → Pages. Use an HTTP server when previewing locally (fetching topic JSON from `file://` is restricted in browsers).
 
-Pages settings: Settings → Pages → Deploy from a branch → `main` → `/(root)`.
+## Repository structure
 
-## Editing Q&A content
+`index.html` contains the lightweight UI and navigation logic; `data/manifest.json` contains all categories and counts; 16 `data/*.json` files contain question records; `research/SOURCES.md` explains research sourcing.
 
-Add a question to the appropriate file inside `data/`, maintaining the schema keys `q`, `basic`, `strong`, `takeaway`, `mermaid`, `links`. Update `questionCount` in the manifest to keep sidebar counts correct. Keep strong answers technically accurate, concise, and meaningful; include constraints and tradeoffs. When attaching a Mermaid definition, validate it before release.
+## Future scope
 
-For local preview, run `python -m http.server 8000` in the repo root and open http://localhost:8000; direct `file://` preview may block JSON fetches.
+The requested separate section for **coding prompts with algorithmic hints or pseudocode rather than complete solutions** is intentionally deferred to the next release. Do not blend its format into these 500 conceptual and scenario questions.
 
-## Quality criteria
+## Content and rights
 
-- All JSON files parse; manifest entries point to real topic files.
-- Categories are organized into the five approved collapsible groups.
-- All Q&A records have unique questions within their topic, valid fields and readable answers.
-- HTML and JavaScript syntax pass validation; verify behavior in a live browser after deployment.
+Questions are original study prompts; public community reports are inspiration, not verified private interview records. Reuse only with suitable attribution of cited sources and without copying proprietary question banks.

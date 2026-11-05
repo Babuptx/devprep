@@ -88,6 +88,445 @@
       "takeaway": "Establish baselines, dashboards, and on-call response paths before relying on alerts alone.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How do you choose between managed databases and self-managed VMs?",
+      "basic": "Managed services reduce patching and operational burden but constrain customization and may change costs.",
+      "strong": "Managed services reduce patching and operational burden but constrain customization and may change costs. Evaluate recovery, security, feature, and portability requirements.",
+      "takeaway": "Evaluate recovery, security, feature, and portability requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an availability zone compared with a region?",
+      "basic": "Zones are separate failure domains within a geographic region.",
+      "strong": "Zones are separate failure domains within a geographic region. Multi-zone deployment addresses zone failures; regional disaster recovery requires more.",
+      "takeaway": "Multi-zone deployment addresses zone failures; regional disaster recovery requires more.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you design multi-account cloud isolation?",
+      "basic": "Separate production and nonproduction with account boundaries, guardrails, centralized audit, and narrowly delegated access.",
+      "strong": "Separate production and nonproduction with account boundaries, guardrails, centralized audit, and narrowly delegated access. Account separation complements network segmentation.",
+      "takeaway": "Account separation complements network segmentation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is a cloud object store not a POSIX filesystem?",
+      "basic": "Object stores use key-based APIs and different update/listing semantics from mounted filesystems.",
+      "strong": "Object stores use key-based APIs and different update/listing semantics from mounted filesystems. Applications should not assume filesystem locking or rename behavior.",
+      "takeaway": "Applications should not assume filesystem locking or rename behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you enforce cloud least privilege at scale?",
+      "basic": "Use role-based temporary credentials, service identities, policy boundaries, and access analysis.",
+      "strong": "Use role-based temporary credentials, service identities, policy boundaries, and access analysis. Remove wildcard grants and unused permissions.",
+      "takeaway": "Remove wildcard grants and unused permissions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you diagnose a sudden rise in cloud spend?",
+      "basic": "Break cost down by service, region, account, tag, and usage dimension; correlate with deployments and anomalies.",
+      "strong": "Break cost down by service, region, account, tag, and usage dimension; correlate with deployments and anomalies. Optimize after identifying the real driver.",
+      "takeaway": "Optimize after identifying the real driver.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is serverless cold-start latency?",
+      "basic": "A function may need initialization after idle periods or scaling, increasing first-request latency.",
+      "strong": "A function may need initialization after idle periods or scaling, increasing first-request latency. Provisioned concurrency or architecture changes can help where justified.",
+      "takeaway": "Provisioned concurrency or architecture changes can help where justified.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When should you use a queue instead of directly invoking a function?",
+      "basic": "Queues decouple bursts and enable durable retries and backpressure.",
+      "strong": "Queues decouple bursts and enable durable retries and backpressure. Immediate synchronous workflows may need direct calls with strict deadlines.",
+      "takeaway": "Immediate synchronous workflows may need direct calls with strict deadlines.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you choose subnet boundaries within a cloud VPC?",
+      "basic": "A VPC defines an isolated logical network with subnets, routes, and security controls.",
+      "strong": "A VPC defines an isolated logical network with subnets, routes, and security controls. It does not automatically make every workload secure.",
+      "takeaway": "It does not automatically make every workload secure.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do security groups differ from network ACLs?",
+      "basic": "Security groups commonly apply stateful workload-level filtering; network ACLs apply subnet-level stateless rules in AWS.",
+      "strong": "Security groups commonly apply stateful workload-level filtering; network ACLs apply subnet-level stateless rules in AWS. Both need correct routing.",
+      "takeaway": "Both need correct routing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design cloud backups against ransomware?",
+      "basic": "Use separate permissions, immutable or locked copies, monitored retention, and tested restoration.",
+      "strong": "Use separate permissions, immutable or locked copies, monitored retention, and tested restoration. A backup controlled by the compromised account may not be sufficient.",
+      "takeaway": "A backup controlled by the compromised account may not be sufficient.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you secure public object storage?",
+      "basic": "Block unintended public access, scope identity policies, encrypt and audit access, and review signed URL lifetime.",
+      "strong": "Block unintended public access, scope identity policies, encrypt and audit access, and review signed URL lifetime. Test effective permissions rather than trusting labels.",
+      "takeaway": "Test effective permissions rather than trusting labels.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between autoscaling and load balancing?",
+      "basic": "Autoscaling adjusts available capacity; load balancing spreads requests across healthy capacity.",
+      "strong": "Autoscaling adjusts available capacity; load balancing spreads requests across healthy capacity. One does not replace the other.",
+      "takeaway": "One does not replace the other.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you manage cloud IAM permission changes safely?",
+      "basic": "Use reviewed infrastructure code, policy simulation, least-privilege baselines, and audit logs.",
+      "strong": "Use reviewed infrastructure code, policy simulation, least-privilege baselines, and audit logs. Plan rollback and avoid self-lockout.",
+      "takeaway": "Plan rollback and avoid self-lockout.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a spot instance tradeoff?",
+      "basic": "Spare-capacity compute costs less but can be interrupted.",
+      "strong": "Spare-capacity compute costs less but can be interrupted. Use it for checkpointable or fault-tolerant work, not unprotected critical state.",
+      "takeaway": "Use it for checkpointable or fault-tolerant work, not unprotected critical state.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When might a CDN reduce API latency?",
+      "basic": "It caches safe cacheable responses near users and reduces origin load.",
+      "strong": "It caches safe cacheable responses near users and reduces origin load. Personalized or mutable API results require careful cache keys and privacy controls.",
+      "takeaway": "Personalized or mutable API results require careful cache keys and privacy controls.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you implement cross-region data replication?",
+      "basic": "Choose async or sync based on latency and recovery requirements, define conflict rules, and test failover.",
+      "strong": "Choose async or sync based on latency and recovery requirements, define conflict rules, and test failover. Backups remain necessary even with replication.",
+      "takeaway": "Backups remain necessary even with replication.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is cloud shared responsibility?",
+      "basic": "The provider secures its infrastructure; customers remain responsible for workload configuration, identity, data, and varying platform layers.",
+      "strong": "The provider secures its infrastructure; customers remain responsible for workload configuration, identity, data, and varying platform layers. The boundary depends on service type.",
+      "takeaway": "The boundary depends on service type.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you select object storage lifecycle policies?",
+      "basic": "Classify access frequency, compliance retention, and restore-time needs.",
+      "strong": "Classify access frequency, compliance retention, and restore-time needs. Transition or expire only after validating legal and business recovery requirements.",
+      "takeaway": "Transition or expire only after validating legal and business recovery requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is cloud-native observability?",
+      "basic": "Collect contextual metrics, structured logs, traces, and cloud events with consistent identities.",
+      "strong": "Collect contextual metrics, structured logs, traces, and cloud events with consistent identities. Use service-level signals to distinguish user impact from noisy resources.",
+      "takeaway": "Use service-level signals to distinguish user impact from noisy resources.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you connect an on-prem factory to cloud services securely?",
+      "basic": "Use segmented connectivity, encrypted tunnels or private links, explicit egress control, and buffering during outages.",
+      "strong": "Use segmented connectivity, encrypted tunnels or private links, explicit egress control, and buffering during outages. Avoid making safety-critical controls dependent on WAN reachability.",
+      "takeaway": "Avoid making safety-critical controls dependent on WAN reachability.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is a private endpoint useful?",
+      "basic": "It connects to supported cloud services over private networking, reducing public exposure.",
+      "strong": "It connects to supported cloud services over private networking, reducing public exposure. Identity authorization is still required.",
+      "takeaway": "Identity authorization is still required.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an immutable infrastructure pattern in the cloud?",
+      "basic": "Replace hosts or containers with new versioned images instead of patching live instances ad hoc.",
+      "strong": "Replace hosts or containers with new versioned images instead of patching live instances ad hoc. It improves reproducibility and rollback.",
+      "takeaway": "It improves reproducibility and rollback.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you implement tag-based cloud governance?",
+      "basic": "Enforce owner, environment, cost center, and data classification tags at provisioning.",
+      "strong": "Enforce owner, environment, cost center, and data classification tags at provisioning. Monitor policy drift and exceptions.",
+      "takeaway": "Monitor policy drift and exceptions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a cloud landing zone?",
+      "basic": "It is an initial governed multi-account or multi-subscription foundation for networking, identity, logging, billing, and policy.",
+      "strong": "It is an initial governed multi-account or multi-subscription foundation for networking, identity, logging, billing, and policy. Customize it to organization constraints.",
+      "takeaway": "Customize it to organization constraints.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you avoid cloud vendor lock-in without overengineering?",
+      "basic": "Keep domain logic portable, use open interfaces when valuable, and document managed-service exit costs.",
+      "strong": "Keep domain logic portable, use open interfaces when valuable, and document managed-service exit costs. Portability has an ongoing implementation price.",
+      "takeaway": "Portability has an ongoing implementation price.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you use infrastructure templates for ephemeral test environments?",
+      "basic": "Provision isolated environments per test or branch and tear them down automatically.",
+      "strong": "Provision isolated environments per test or branch and tear them down automatically. Control secrets, budgets, and test data exposure.",
+      "takeaway": "Control secrets, budgets, and test data exposure.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you right-size database compute?",
+      "basic": "Measure CPU, memory, IOPS, query latency, and growth over representative periods.",
+      "strong": "Measure CPU, memory, IOPS, query latency, and growth over representative periods. Larger instances can mask inefficient queries.",
+      "takeaway": "Larger instances can mask inefficient queries.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is regional quota exhaustion?",
+      "basic": "Providers cap resources per account or region, and scaling can fail at those quotas.",
+      "strong": "Providers cap resources per account or region, and scaling can fail at those quotas. Monitor headroom and request increases before planned surges.",
+      "takeaway": "Monitor headroom and request increases before planned surges.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you assess the cloud resilience of a utility outage app?",
+      "basic": "Test zone failure, region loss, queue durability, and dependency disruption against agreed RTO/RPO.",
+      "strong": "Test zone failure, region loss, queue durability, and dependency disruption against agreed RTO/RPO. Account for storm-driven demand spikes.",
+      "takeaway": "Account for storm-driven demand spikes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you compare reserved pricing to on-demand cloud use?",
+      "basic": "Commit discounts suit predictable steady usage, while on-demand supports variable demand.",
+      "strong": "Commit discounts suit predictable steady usage, while on-demand supports variable demand. Model utilization and flexibility rather than choosing only by sticker price.",
+      "takeaway": "Model utilization and flexibility rather than choosing only by sticker price.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

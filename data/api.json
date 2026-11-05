@@ -96,6 +96,465 @@
       "takeaway": "Include invalid inputs, empty responses, pagination, and idempotent retry cases.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you version a public API without breaking mobile clients?",
+      "basic": "Prefer additive changes and explicit deprecation windows; use semantic contracts and versioned paths or headers when truly incompatible.",
+      "strong": "Prefer additive changes and explicit deprecation windows; use semantic contracts and versioned paths or headers when truly incompatible. Monitor old-client usage before removal.",
+      "takeaway": "Monitor old-client usage before removal.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you secure an API receiving insurance customer information?",
+      "basic": "Require strong authentication, fine-grained authorization, TLS, schema validation, and redacted logs.",
+      "strong": "Require strong authentication, fine-grained authorization, TLS, schema validation, and redacted logs. Enforce authorization on each resource, not only at the gateway.",
+      "takeaway": "Enforce authorization on each resource, not only at the gateway.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle duplicate POST requests caused by retries?",
+      "basic": "Accept an idempotency key and persist the first completed result.",
+      "strong": "Accept an idempotency key and persist the first completed result. Match retries to the original request body and reject conflicting reuse.",
+      "takeaway": "Match retries to the original request body and reject conflicting reuse.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What should a pagination contract expose for millions of records?",
+      "basic": "Use cursor pagination based on stable sort keys and return next-page tokens.",
+      "strong": "Use cursor pagination based on stable sort keys and return next-page tokens. Offset pagination can become slow and inconsistent under concurrent changes.",
+      "takeaway": "Offset pagination can become slow and inconsistent under concurrent changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design safe partial updates to customer profiles?",
+      "basic": "Use PATCH with field-level validation and optimistic concurrency using an ETag or version.",
+      "strong": "Use PATCH with field-level validation and optimistic concurrency using an ETag or version. Prevent clients from editing server-owned or restricted fields.",
+      "takeaway": "Prevent clients from editing server-owned or restricted fields.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you choose REST, gRPC, or event messaging?",
+      "basic": "REST fits broad HTTP interoperability, gRPC fits typed internal calls, and events fit decoupled workflows.",
+      "strong": "REST fits broad HTTP interoperability, gRPC fits typed internal calls, and events fit decoupled workflows. Select based on consumers and operational requirements.",
+      "takeaway": "Select based on consumers and operational requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What makes error responses useful to API consumers?",
+      "basic": "Return stable machine-readable codes, actionable messages, correlation IDs, and appropriate HTTP status.",
+      "strong": "Return stable machine-readable codes, actionable messages, correlation IDs, and appropriate HTTP status. Avoid leaking internal stack traces or private data.",
+      "takeaway": "Avoid leaking internal stack traces or private data.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you implement rate limiting for partner APIs?",
+      "basic": "Apply per-client quotas using token buckets and emit clear retry information.",
+      "strong": "Apply per-client quotas using token buckets and emit clear retry information. Separate abuse protection from contractual usage limits.",
+      "takeaway": "Separate abuse protection from contractual usage limits.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you avoid timeouts during long-running report generation?",
+      "basic": "Return an accepted job ID, process asynchronously, and expose polling or notifications.",
+      "strong": "Return an accepted job ID, process asynchronously, and expose polling or notifications. Store job status durably with expiration policies.",
+      "takeaway": "Store job status durably with expiration policies.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you design safe webhook delivery?",
+      "basic": "Sign payloads, send stable event IDs, retry with backoff, and document out-of-order delivery.",
+      "strong": "Sign payloads, send stable event IDs, retry with backoff, and document out-of-order delivery. Receivers must deduplicate and authenticate sender signatures.",
+      "takeaway": "Receivers must deduplicate and authenticate sender signatures.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle API request validation?",
+      "basic": "Validate syntax, types, ranges, and cross-field constraints at trust boundaries.",
+      "strong": "Validate syntax, types, ranges, and cross-field constraints at trust boundaries. Reject ambiguous inputs with clear field-level errors.",
+      "takeaway": "Reject ambiguous inputs with clear field-level errors.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you distinguish authentication from authorization in APIs?",
+      "basic": "Authentication establishes the caller identity; authorization checks each requested action and resource.",
+      "strong": "Authentication establishes the caller identity; authorization checks each requested action and resource. A valid token must not imply access to all objects.",
+      "takeaway": "A valid token must not imply access to all objects.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is a gateway insufficient as the only authorization layer?",
+      "basic": "A gateway may validate identity but lack business object context.",
+      "strong": "A gateway may validate identity but lack business object context. Services must enforce owner, tenant, and role authorization on sensitive operations.",
+      "takeaway": "Services must enforce owner, tenant, and role authorization on sensitive operations.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you avoid N+1 database reads in a REST endpoint?",
+      "basic": "Batch related lookups or use deliberate joins/data loaders.",
+      "strong": "Batch related lookups or use deliberate joins/data loaders. Measure query counts and avoid huge eager fetches.",
+      "takeaway": "Measure query counts and avoid huge eager fetches.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you design a safe file-download endpoint?",
+      "basic": "Check the requester's access and issue short-lived scoped URLs rather than exposing storage paths.",
+      "strong": "Check the requester's access and issue short-lived scoped URLs rather than exposing storage paths. Audit sensitive downloads and control response caching.",
+      "takeaway": "Audit sensitive downloads and control response caching.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is content negotiation in HTTP?",
+      "basic": "Clients indicate acceptable representations using headers and servers respond with a matching content type.",
+      "strong": "Clients indicate acceptable representations using headers and servers respond with a matching content type. Define defaults and return clear unsupported-media errors.",
+      "takeaway": "Define defaults and return clear unsupported-media errors.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should you implement API timeouts and retries?",
+      "basic": "Use an overall deadline and bounded, jittered retries only for safe transient failures.",
+      "strong": "Use an overall deadline and bounded, jittered retries only for safe transient failures. Otherwise retries can duplicate operations and amplify outages.",
+      "takeaway": "Otherwise retries can duplicate operations and amplify outages.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why are contract tests useful across service teams?",
+      "basic": "They verify that providers honor the interface assumptions consumers depend on.",
+      "strong": "They verify that providers honor the interface assumptions consumers depend on. Run them in CI and manage incompatible changes explicitly.",
+      "takeaway": "Run them in CI and manage incompatible changes explicitly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you implement auditability for policy changes?",
+      "basic": "Record actor, timestamp, before-and-after fields, reason, and correlation ID in controlled audit storage.",
+      "strong": "Record actor, timestamp, before-and-after fields, reason, and correlation ID in controlled audit storage. Protect sensitive fields and write ordering.",
+      "takeaway": "Protect sensitive fields and write ordering.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the risk of exposing database IDs as API authorization?",
+      "basic": "Guessable or opaque IDs do not grant permission; every fetch/update must check access.",
+      "strong": "Guessable or opaque IDs do not grant permission; every fetch/update must check access. Broken object-level authorization is a common API flaw.",
+      "takeaway": "Broken object-level authorization is a common API flaw.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle monetary values in JSON?",
+      "basic": "Represent an exact decimal string or integer minor units and include currency.",
+      "strong": "Represent an exact decimal string or integer minor units and include currency. Avoid floating-point accumulation and unspecified rounding behavior.",
+      "takeaway": "Avoid floating-point accumulation and unspecified rounding behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design an API supporting regional outages?",
+      "basic": "Serve cached non-sensitive reads if acceptable, fail closed on unsafe writes, and document degraded states.",
+      "strong": "Serve cached non-sensitive reads if acceptable, fail closed on unsafe writes, and document degraded states. Recovery plans need explicit region ownership.",
+      "takeaway": "Recovery plans need explicit region ownership.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you implement conditional GET?",
+      "basic": "Send ETag or Last-Modified metadata and honor If-None-Match / If-Modified-Since.",
+      "strong": "Send ETag or Last-Modified metadata and honor If-None-Match / If-Modified-Since. Clients can avoid retransferring unchanged representations.",
+      "takeaway": "Clients can avoid retransferring unchanged representations.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you protect a login API from credential stuffing?",
+      "basic": "Combine rate limits, anomaly checks, MFA, account monitoring, and safe error wording.",
+      "strong": "Combine rate limits, anomaly checks, MFA, account monitoring, and safe error wording. Avoid revealing whether usernames exist.",
+      "takeaway": "Avoid revealing whether usernames exist.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a correlation ID and where should it travel?",
+      "basic": "An opaque identifier links logs and traces across request boundaries.",
+      "strong": "An opaque identifier links logs and traces across request boundaries. Propagate it consistently but avoid treating user-supplied IDs as trusted security context.",
+      "takeaway": "Propagate it consistently but avoid treating user-supplied IDs as trusted security context.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can circuit breakers protect API dependencies?",
+      "basic": "Stop sending calls to a repeatedly failing dependency for a bounded period and probe recovery.",
+      "strong": "Stop sending calls to a repeatedly failing dependency for a bounded period and probe recovery. Pair them with timeouts and controlled fallbacks.",
+      "takeaway": "Pair them with timeouts and controlled fallbacks.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you validate webhook signatures safely?",
+      "basic": "Verify the provider's signature over the exact raw payload using current keys and constant-time comparison.",
+      "strong": "Verify the provider's signature over the exact raw payload using current keys and constant-time comparison. Check timestamps/replay windows where supported.",
+      "takeaway": "Check timestamps/replay windows where supported.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design an endpoint for bulk imports?",
+      "basic": "Accept a batch or upload token, validate individual records, and report partial failures clearly.",
+      "strong": "Accept a batch or upload token, validate individual records, and report partial failures clearly. Use async processing and idempotent submission IDs for large jobs.",
+      "takeaway": "Use async processing and idempotent submission IDs for large jobs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you implement fine-grained authorization for multi-tenant APIs?",
+      "basic": "Derive tenant context from trusted identity and enforce both tenant and object permissions at every data-access path.",
+      "strong": "Derive tenant context from trusted identity and enforce both tenant and object permissions at every data-access path. Test cross-tenant attempts explicitly.",
+      "takeaway": "Test cross-tenant attempts explicitly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When would you use GraphQL rather than REST?",
+      "basic": "GraphQL helps diverse clients select nested data shapes but requires careful query depth, cost, caching, and authorization controls.",
+      "strong": "GraphQL helps diverse clients select nested data shapes but requires careful query depth, cost, caching, and authorization controls. It is not automatically faster.",
+      "takeaway": "It is not automatically faster.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should APIs communicate deprecation?",
+      "basic": "Publish explicit sunset schedules, headers or docs, migration guides, and usage metrics.",
+      "strong": "Publish explicit sunset schedules, headers or docs, migration guides, and usage metrics. Give consumers a tested replacement before removal.",
+      "takeaway": "Give consumers a tested replacement before removal.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an outbox pattern for API-triggered events?",
+      "basic": "Commit the state update and an outbox event in one database transaction.",
+      "strong": "Commit the state update and an outbox event in one database transaction. A separate publisher retries delivery so the event is not lost after a successful write.",
+      "takeaway": "A separate publisher retries delivery so the event is not lost after a successful write.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

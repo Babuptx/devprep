@@ -96,6 +96,442 @@
       "takeaway": "Keep workflow permissions minimal and treat external contributions as untrusted.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you design a CI pipeline for a regulated insurance application?",
+      "basic": "Run reproducible builds, automated tests, dependency scans, and policy checks with traceable approvals.",
+      "strong": "Run reproducible builds, automated tests, dependency scans, and policy checks with traceable approvals. Preserve immutable evidence for audit without exposing secrets.",
+      "takeaway": "Preserve immutable evidence for audit without exposing secrets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between unit and contract tests?",
+      "basic": "Unit tests verify small behaviors in isolation; contract tests verify agreed interfaces between components.",
+      "strong": "Unit tests verify small behaviors in isolation; contract tests verify agreed interfaces between components. Both catch different failure classes.",
+      "takeaway": "Both catch different failure classes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you test a retry mechanism deterministically?",
+      "basic": "Use a fake clock and controlled dependency failures to assert attempts, backoff, and stopping conditions.",
+      "strong": "Use a fake clock and controlled dependency failures to assert attempts, backoff, and stopping conditions. Avoid sleep-based tests that become flaky.",
+      "takeaway": "Avoid sleep-based tests that become flaky.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a flaky test and why is it dangerous?",
+      "basic": "A flaky test changes outcome without meaningful code changes, often due to timing or shared state.",
+      "strong": "A flaky test changes outcome without meaningful code changes, often due to timing or shared state. It erodes trust and masks real regressions.",
+      "takeaway": "It erodes trust and masks real regressions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you test a billing rounding rule?",
+      "basic": "Use boundary values, currencies with different minor units, and property checks against an authoritative rule.",
+      "strong": "Use boundary values, currencies with different minor units, and property checks against an authoritative rule. Avoid binary floating-point assumptions.",
+      "takeaway": "Avoid binary floating-point assumptions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is mutation testing?",
+      "basic": "A tool deliberately changes code and checks whether tests detect the behavioral difference.",
+      "strong": "A tool deliberately changes code and checks whether tests detect the behavioral difference. It can reveal weak assertions but is computationally expensive.",
+      "takeaway": "It can reveal weak assertions but is computationally expensive.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle integration-test dependencies?",
+      "basic": "Use disposable containers or controlled test services with known data and cleanup.",
+      "strong": "Use disposable containers or controlled test services with known data and cleanup. Contract tests can reduce dependence on every external environment.",
+      "takeaway": "Contract tests can reduce dependence on every external environment.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the value of a test pyramid?",
+      "basic": "Many fast unit tests and fewer expensive end-to-end tests provide useful feedback economics.",
+      "strong": "Many fast unit tests and fewer expensive end-to-end tests provide useful feedback economics. The right balance changes with system architecture.",
+      "takeaway": "The right balance changes with system architecture.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you test a distributed event consumer?",
+      "basic": "Cover duplicates, reordering, retries, poison messages, and consumer restarts.",
+      "strong": "Cover duplicates, reordering, retries, poison messages, and consumer restarts. Validate resulting state, not only that an event handler was invoked.",
+      "takeaway": "Validate resulting state, not only that an event handler was invoked.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should CI handle secrets from external pull requests?",
+      "basic": "Never give untrusted code production credentials; use isolated jobs and tightly scoped tokens.",
+      "strong": "Never give untrusted code production credentials; use isolated jobs and tightly scoped tokens. Separate trusted release workflows from contributor validation.",
+      "takeaway": "Separate trusted release workflows from contributor validation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you make builds reproducible?",
+      "basic": "Pin dependencies and tools, control environments, and produce immutable artifacts with provenance.",
+      "strong": "Pin dependencies and tools, control environments, and produce immutable artifacts with provenance. Avoid silently fetching floating latest versions.",
+      "takeaway": "Avoid silently fetching floating latest versions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a software bill of materials?",
+      "basic": "An SBOM inventories application dependencies and versions to aid vulnerability and supply-chain response.",
+      "strong": "An SBOM inventories application dependencies and versions to aid vulnerability and supply-chain response. It is not proof that software is secure.",
+      "takeaway": "It is not proof that software is secure.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you measure automated-test effectiveness?",
+      "basic": "Track escaped defects, coverage of critical risks, mutation score where useful, and failure diagnosis speed.",
+      "strong": "Track escaped defects, coverage of critical risks, mutation score where useful, and failure diagnosis speed. Raw test count is a weak metric.",
+      "takeaway": "Raw test count is a weak metric.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you test backward-compatible database migrations?",
+      "basic": "Run old and new application versions against intermediate schemas with representative data.",
+      "strong": "Run old and new application versions against intermediate schemas with representative data. Practice rollback or forward-only recovery as appropriate.",
+      "takeaway": "Practice rollback or forward-only recovery as appropriate.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does progressive delivery mean?",
+      "basic": "Release changes gradually through canaries, flags, or traffic shifts and observe quality signals.",
+      "strong": "Release changes gradually through canaries, flags, or traffic shifts and observe quality signals. Deployment and feature exposure can be separate controls.",
+      "takeaway": "Deployment and feature exposure can be separate controls.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can static analysis help before runtime tests?",
+      "basic": "It identifies patterns such as type errors, unsafe calls, and policy violations without executing code.",
+      "strong": "It identifies patterns such as type errors, unsafe calls, and policy violations without executing code. Findings still need tuning and review.",
+      "takeaway": "Findings still need tuning and review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do SAST and DAST differ?",
+      "basic": "SAST examines code or binaries; DAST probes a running application.",
+      "strong": "SAST examines code or binaries; DAST probes a running application. They detect overlapping but different vulnerabilities.",
+      "takeaway": "They detect overlapping but different vulnerabilities.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you test API rate limits?",
+      "basic": "Send controlled bursts from separate identities and validate thresholds, reset behavior, fairness, and retry headers.",
+      "strong": "Send controlled bursts from separate identities and validate thresholds, reset behavior, fairness, and retry headers. Avoid load tests against production without approval.",
+      "takeaway": "Avoid load tests against production without approval.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you validate an infrastructure deployment?",
+      "basic": "Run plan review, policy checks, deployment in a test environment, smoke checks, and drift detection.",
+      "strong": "Run plan review, policy checks, deployment in a test environment, smoke checks, and drift detection. Use least-privilege credentials.",
+      "takeaway": "Use least-privilege credentials.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you test manufacturing software without risking machinery?",
+      "basic": "Use simulators, digital twins, hardware-in-the-loop, and controlled acceptance tests.",
+      "strong": "Use simulators, digital twins, hardware-in-the-loop, and controlled acceptance tests. Never assume a simulation proves physical safety.",
+      "takeaway": "Never assume a simulation proves physical safety.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is FAT versus SAT in industrial systems?",
+      "basic": "Factory acceptance testing checks agreed requirements before installation; site acceptance testing validates the integrated system onsite.",
+      "strong": "Factory acceptance testing checks agreed requirements before installation; site acceptance testing validates the integrated system onsite. Both need traceable test evidence.",
+      "takeaway": "Both need traceable test evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you test utility meter ingestion after an outage?",
+      "basic": "Replay a bounded backlog with duplicates, late events, and changed order.",
+      "strong": "Replay a bounded backlog with duplicates, late events, and changed order. Check correct billing totals and alert behavior.",
+      "takeaway": "Check correct billing totals and alert behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you catch accessibility regressions in CI?",
+      "basic": "Run static accessibility rules and component checks automatically; supplement with manual keyboard and screen-reader tests.",
+      "strong": "Run static accessibility rules and component checks automatically; supplement with manual keyboard and screen-reader tests. Automation cannot cover every usability issue.",
+      "takeaway": "Automation cannot cover every usability issue.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a golden test dataset?",
+      "basic": "A stable representative input/output set used to detect behavioral regressions.",
+      "strong": "A stable representative input/output set used to detect behavioral regressions. Include edge cases and keep the reference results independently validated.",
+      "takeaway": "Include edge cases and keep the reference results independently validated.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle a critical security scan finding late in release?",
+      "basic": "Assess exploitability, exposure, and business risk; block or mitigate when necessary.",
+      "strong": "Assess exploitability, exposure, and business risk; block or mitigate when necessary. Document exception decisions and short remediation deadlines.",
+      "takeaway": "Document exception decisions and short remediation deadlines.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why are performance tests part of delivery?",
+      "basic": "A functionally correct release can still exceed latency or resource budgets.",
+      "strong": "A functionally correct release can still exceed latency or resource budgets. Run representative load and watch for regressions against baselines.",
+      "takeaway": "Run representative load and watch for regressions against baselines.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you prevent test-data privacy violations?",
+      "basic": "Use synthetic or properly de-identified data and restrictive access controls.",
+      "strong": "Use synthetic or properly de-identified data and restrictive access controls. Masking alone may not prevent re-identification.",
+      "takeaway": "Masking alone may not prevent re-identification.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a smoke test after deployment?",
+      "basic": "A small set of critical end-to-end checks confirms that key paths respond correctly.",
+      "strong": "A small set of critical end-to-end checks confirms that key paths respond correctly. It complements, rather than replaces, full tests.",
+      "takeaway": "It complements, rather than replaces, full tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you validate rollbacks safely?",
+      "basic": "Exercise rollback in staging with realistic schema and state transitions.",
+      "strong": "Exercise rollback in staging with realistic schema and state transitions. Some irreversible migrations require forward recovery instead.",
+      "takeaway": "Some irreversible migrations require forward recovery instead.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why use branch protection and required checks?",
+      "basic": "They enforce review and validation before changes reach protected branches.",
+      "strong": "They enforce review and validation before changes reach protected branches. Administrators and bypass policies need deliberate governance.",
+      "takeaway": "Administrators and bypass policies need deliberate governance.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What should a release provenance record contain?",
+      "basic": "Identify source revision, build inputs, signed artifact digest, test evidence, approver, and deployment environment.",
+      "strong": "Identify source revision, build inputs, signed artifact digest, test evidence, approver, and deployment environment. It supports audits and incident tracing.",
+      "takeaway": "It supports audits and incident tracing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

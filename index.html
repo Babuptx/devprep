@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prep Pro | 200 Technical Interview Questions</title>
+    <title>Prep Pro | 700 Technical Interview Questions</title>
     <meta name="description" content="Interactive technical interview study guide covering system design, databases, AI engineering, and reliability." />
     
     <!-- GitHub Pages release: external CDN assets require internet access -->
@@ -312,6 +312,12 @@
                     </h2>
                     <p class="text-gray-600 dark:text-gray-400">${category.desc}</p>
                 </div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Practice questions are original educational formulations informed by public interview themes; they are not claimed to be verbatim questions or verified company-frequency rankings.</p>
+                <div class="mb-5 flex items-center gap-3">
+                  <label for="topicFilter" class="text-xs font-semibold text-gray-500 dark:text-gray-300 shrink-0">Find in this topic</label>
+                  <input id="topicFilter" type="search" oninput="filterTopicQuestions(this.value)" placeholder="Search questions and answers" class="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100" autocomplete="off" />
+                  <span id="filterCount" class="text-xs text-gray-500 shrink-0" aria-live="polite"></span>
+                </div>
                 <div class="space-y-5 content-container">
             `;
 
@@ -383,6 +389,7 @@ ${item.mermaid ? `
 
             html += `</div>`;
             container.innerHTML = html;
+            filterTopicQuestions('');
 
             // Attach event listeners to new details tags for Mermaid rendering
             document.querySelectorAll('#content-container details').forEach(detail => {
@@ -393,6 +400,22 @@ ${item.mermaid ? `
                     }
                 });
             });
+        }
+
+
+        // A topic is loaded only when selected; filter its currently rendered cards in memory.
+        function filterTopicQuestions(value) {
+            const cards = document.querySelectorAll('#content-container .content-container > details');
+            const query = (value || '').trim().toLocaleLowerCase();
+            let visible = 0;
+            cards.forEach(card => {
+                const found = !query || card.textContent.toLocaleLowerCase().includes(query);
+                card.hidden = !found;
+                card.style.display = found ? '' : 'none';
+                if (found) visible++;
+            });
+            const count = document.getElementById('filterCount');
+            if (count) count.textContent = `${visible}/${cards.length}`;
         }
 
         // --- 4. Mermaid Rendering Engine ---

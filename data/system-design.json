@@ -136,6 +136,463 @@
       "takeaway": "Retrying indefinitely or hiding critical failures can make the outage worse, so distinguish safe degradation from correctness-critical operations.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you design a fault-tolerant insurance quote service?",
+      "basic": "Keep stateless quote workers behind a load balancer and isolate rating rules from customer data.",
+      "strong": "Keep stateless quote workers behind a load balancer and isolate rating rules from customer data. Define cache validity and graceful fallback when external data providers fail.",
+      "takeaway": "Define cache validity and graceful fallback when external data providers fail.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design idempotent claims intake during network retries?",
+      "basic": "Assign a stable request idempotency key and persist its outcome transactionally with claim creation.",
+      "strong": "Assign a stable request idempotency key and persist its outcome transactionally with claim creation. Return the same result on retry rather than create duplicate claims.",
+      "takeaway": "Return the same result on retry rather than create duplicate claims.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance",
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you support a million smart-meter telemetry events per minute?",
+      "basic": "Use partitioned ingestion, durable queues, and horizontally scalable consumers.",
+      "strong": "Use partitioned ingestion, durable queues, and horizontally scalable consumers. Define event-time semantics, backpressure, retention, and late-arrival handling.",
+      "takeaway": "Define event-time semantics, backpressure, retention, and late-arrival handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you architect telecom call-detail record processing?",
+      "basic": "Ingest immutable records to a durable stream, validate and deduplicate, and partition by subscriber or event key.",
+      "strong": "Ingest immutable records to a durable stream, validate and deduplicate, and partition by subscriber or event key. Separate billing correctness from low-latency analytics.",
+      "takeaway": "Separate billing correctness from low-latency analytics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a plant maintenance scheduling platform?",
+      "basic": "Model assets, technicians, work orders, and blackout windows; enforce scheduling conflicts centrally.",
+      "strong": "Model assets, technicians, work orders, and blackout windows; enforce scheduling conflicts centrally. Offline-friendly updates and audit history matter on the factory floor.",
+      "takeaway": "Offline-friendly updates and audit history matter on the factory floor.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a global feature-flag service?",
+      "basic": "Use highly available local evaluations and periodic config distribution so request paths do not depend on a central lookup.",
+      "strong": "Use highly available local evaluations and periodic config distribution so request paths do not depend on a central lookup. Include safe defaults and staged rollouts.",
+      "takeaway": "Include safe defaults and staged rollouts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a system that sends outage alerts to utility customers?",
+      "basic": "Ingest validated outage events, derive affected customers, and queue channel-specific notifications.",
+      "strong": "Ingest validated outage events, derive affected customers, and queue channel-specific notifications. Use deduplication and rate caps so repeated status changes do not flood recipients.",
+      "takeaway": "Use deduplication and rate caps so repeated status changes do not flood recipients.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a multi-tenant B2B SaaS platform?",
+      "basic": "Choose tenant isolation boundaries, authorization checks, and noisy-neighbor controls from the start.",
+      "strong": "Choose tenant isolation boundaries, authorization checks, and noisy-neighbor controls from the start. Enforce tenant scoping in every query and log.",
+      "takeaway": "Enforce tenant scoping in every query and log.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a distributed rate limiter?",
+      "basic": "Use token buckets or sliding-window counters keyed by identity, ideally near ingress.",
+      "strong": "Use token buckets or sliding-window counters keyed by identity, ideally near ingress. Consider clock skew, partition tolerance, and the risk of a centralized hot key.",
+      "takeaway": "Consider clock skew, partition tolerance, and the risk of a centralized hot key.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a retryable payment processing flow?",
+      "basic": "Store transaction state durably and require idempotency keys for every create operation.",
+      "strong": "Store transaction state durably and require idempotency keys for every create operation. Handle unknown outcomes with reconciliation rather than blindly retrying charges.",
+      "takeaway": "Handle unknown outcomes with reconciliation rather than blindly retrying charges.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design high-availability configuration distribution?",
+      "basic": "Publish immutable versioned snapshots and have clients retain last-known-good configuration.",
+      "strong": "Publish immutable versioned snapshots and have clients retain last-known-good configuration. Add signature checks, rollout controls, and rollback paths.",
+      "takeaway": "Add signature checks, rollout controls, and rollback paths.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a globally accessible document upload service?",
+      "basic": "Use signed uploads to object storage, validate type and malware risk asynchronously, and store metadata transactionally.",
+      "strong": "Use signed uploads to object storage, validate type and malware risk asynchronously, and store metadata transactionally. Ensure authorization for download links.",
+      "takeaway": "Ensure authorization for download links.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a customer-notification preferences service?",
+      "basic": "Maintain versioned consent and channel preferences as authoritative data.",
+      "strong": "Maintain versioned consent and channel preferences as authoritative data. Every send path must check current rules and record an auditable decision.",
+      "takeaway": "Every send path must check current rules and record an auditable decision.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design an audit log that cannot be silently modified?",
+      "basic": "Append events to protected storage with restricted write access and immutable retention controls.",
+      "strong": "Append events to protected storage with restricted write access and immutable retention controls. Hash chaining can help detect tampering but does not replace governance.",
+      "takeaway": "Hash chaining can help detect tampering but does not replace governance.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a resilient file-processing pipeline?",
+      "basic": "Decouple upload, validation, transformation, and publish stages with durable job states.",
+      "strong": "Decouple upload, validation, transformation, and publish stages with durable job states. Make each stage idempotent and expose dead-letter recovery.",
+      "takeaway": "Make each stage idempotent and expose dead-letter recovery.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a URL shortener for high read traffic?",
+      "basic": "Use unique generated keys and an indexed key-to-URL store, with edge caching for popular redirects.",
+      "strong": "Use unique generated keys and an indexed key-to-URL store, with edge caching for popular redirects. Protect against abuse and unsafe redirect targets.",
+      "takeaway": "Protect against abuse and unsafe redirect targets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a digital queue for high-demand service appointments?",
+      "basic": "Use reservation tokens with atomic capacity checks and expirations.",
+      "strong": "Use reservation tokens with atomic capacity checks and expirations. Handle abandonments and fairness separately from UI polling.",
+      "takeaway": "Handle abandonments and fairness separately from UI polling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a search service for millions of service tickets?",
+      "basic": "Index normalized searchable fields separately from transactional storage.",
+      "strong": "Index normalized searchable fields separately from transactional storage. Plan for eventual index consistency and document authorization at query time.",
+      "takeaway": "Plan for eventual index consistency and document authorization at query time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a real-time dashboard for production lines?",
+      "basic": "Stream event aggregates to a read-optimized store and push updates to clients.",
+      "strong": "Stream event aggregates to a read-optimized store and push updates to clients. Display data freshness and quality so stale readings are not mistaken for live state.",
+      "takeaway": "Display data freshness and quality so stale readings are not mistaken for live state.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a recommendation system with graceful degradation?",
+      "basic": "Make recommendations a noncritical dependency with a short timeout.",
+      "strong": "Make recommendations a noncritical dependency with a short timeout. Fall back to popular or cached items while core purchasing stays usable.",
+      "takeaway": "Fall back to popular or cached items while core purchasing stays usable.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a message broker for multiple producers and consumers?",
+      "basic": "Define partitioning, ordering scope, at-least-once semantics, retention, backpressure, and acknowledgment.",
+      "strong": "Define partitioning, ordering scope, at-least-once semantics, retention, backpressure, and acknowledgment. Exactly-once end-to-end requires consumer-side discipline too.",
+      "takeaway": "Exactly-once end-to-end requires consumer-side discipline too.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a distributed scheduler?",
+      "basic": "Use a durable job registry and leases or ownership records to prevent duplicate active workers.",
+      "strong": "Use a durable job registry and leases or ownership records to prevent duplicate active workers. Build retries and idempotency around failure recovery.",
+      "takeaway": "Build retries and idempotency around failure recovery.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you migrate a legacy monolith into services?",
+      "basic": "Identify bounded capabilities and move one slice behind a stable interface at a time.",
+      "strong": "Identify bounded capabilities and move one slice behind a stable interface at a time. Use observability, compatibility tests, and incremental traffic routing.",
+      "takeaway": "Use observability, compatibility tests, and incremental traffic routing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you manage schema changes across many independent services?",
+      "basic": "Use backward-compatible additions, staged consumers, and expand-migrate-contract.",
+      "strong": "Use backward-compatible additions, staged consumers, and expand-migrate-contract. Avoid deleting old fields before every dependent reader has migrated.",
+      "takeaway": "Avoid deleting old fields before every dependent reader has migrated.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle duplicate events in an event-driven architecture?",
+      "basic": "Expect at-least-once delivery and deduplicate by stable event identifiers or unique constraints.",
+      "strong": "Expect at-least-once delivery and deduplicate by stable event identifiers or unique constraints. Make handlers idempotent and observable.",
+      "takeaway": "Make handlers idempotent and observable.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a multi-region active-passive application?",
+      "basic": "Define primary ownership, asynchronous replication, failover triggers, and explicit RTO/RPO.",
+      "strong": "Define primary ownership, asynchronous replication, failover triggers, and explicit RTO/RPO. Practice failover because DNS and data lag complicate recovery.",
+      "takeaway": "Practice failover because DNS and data lag complicate recovery.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a multi-region active-active application?",
+      "basic": "Partition ownership or resolve concurrent writes deliberately.",
+      "strong": "Partition ownership or resolve concurrent writes deliberately. Availability comes with consistency and conflict-resolution complexity.",
+      "takeaway": "Availability comes with consistency and conflict-resolution complexity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a service discovery mechanism?",
+      "basic": "Register healthy instances with bounded freshness and resolve them at clients or proxies.",
+      "strong": "Register healthy instances with bounded freshness and resolve them at clients or proxies. Handle stale membership and startup races.",
+      "takeaway": "Handle stale membership and startup races.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you avoid a thundering herd after cache expiry?",
+      "basic": "Use request coalescing, jittered TTLs, or stale-while-revalidate.",
+      "strong": "Use request coalescing, jittered TTLs, or stale-while-revalidate. Protect the downstream store with bounded concurrency.",
+      "takeaway": "Protect the downstream store with bounded concurrency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a service with strict data residency?",
+      "basic": "Map data types to allowed regions and control storage, logs, backups, and processors.",
+      "strong": "Map data types to allowed regions and control storage, logs, backups, and processors. Residency applies to telemetry and support workflows too.",
+      "takeaway": "Residency applies to telemetry and support workflows too.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design an internal developer portal?",
+      "basic": "Provide service ownership, runbooks, API contracts, and deployment links from maintained metadata.",
+      "strong": "Provide service ownership, runbooks, API contracts, and deployment links from maintained metadata. Avoid becoming a stale catalog by integrating with existing pipelines.",
+      "takeaway": "Avoid becoming a stale catalog by integrating with existing pipelines.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you decide between synchronous APIs and asynchronous messaging?",
+      "basic": "Use synchronous calls for immediate request-response needs and events for decoupled durable work.",
+      "strong": "Use synchronous calls for immediate request-response needs and events for decoupled durable work. Consider retries, failure propagation, ordering, and latency budgets.",
+      "takeaway": "Consider retries, failure propagation, ordering, and latency budgets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

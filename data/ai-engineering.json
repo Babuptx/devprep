@@ -128,6 +128,444 @@
       "takeaway": "Detect prompt, corpus, and model-version changes that affect behavior.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you design a RAG assistant for internal engineering runbooks?",
+      "basic": "Index approved documents with permissions metadata, retrieve relevant current passages, and cite evidence.",
+      "strong": "Index approved documents with permissions metadata, retrieve relevant current passages, and cite evidence. Add evaluation, access filtering, and abstention behavior.",
+      "takeaway": "Add evaluation, access filtering, and abstention behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you prevent a RAG assistant from leaking other teams' documents?",
+      "basic": "Apply identity-scoped retrieval authorization before content reaches the model.",
+      "strong": "Apply identity-scoped retrieval authorization before content reaches the model. Post-generation filtering alone cannot undo disclosure.",
+      "takeaway": "Post-generation filtering alone cannot undo disclosure.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is prompt injection and why does it matter?",
+      "basic": "Untrusted content may try to override system instructions or induce tool misuse.",
+      "strong": "Untrusted content may try to override system instructions or induce tool misuse. Separate data from authority and restrict tools by policy and permissions.",
+      "takeaway": "Separate data from authority and restrict tools by policy and permissions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you evaluate a production LLM support assistant?",
+      "basic": "Use a curated test set for factuality, groundedness, safety, task completion, latency, and cost.",
+      "strong": "Use a curated test set for factuality, groundedness, safety, task completion, latency, and cost. Include human review for high-risk cases.",
+      "takeaway": "Include human review for high-risk cases.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a hallucination in language model output?",
+      "basic": "A plausible-looking statement unsupported by evidence or inconsistent with fact.",
+      "strong": "A plausible-looking statement unsupported by evidence or inconsistent with fact. Retrieval, verification, and refusal can reduce but not eliminate it.",
+      "takeaway": "Retrieval, verification, and refusal can reduce but not eliminate it.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do token limits influence application architecture?",
+      "basic": "Large contexts increase cost and latency and may dilute relevant information.",
+      "strong": "Large contexts increase cost and latency and may dilute relevant information. Use retrieval, concise state, and explicit truncation policies.",
+      "takeaway": "Use retrieval, concise state, and explicit truncation policies.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a vector database index used for?",
+      "basic": "It accelerates nearest-neighbor search over embeddings.",
+      "strong": "It accelerates nearest-neighbor search over embeddings. Retrieval quality also depends on chunking, metadata filters, and re-ranking.",
+      "takeaway": "Retrieval quality also depends on chunking, metadata filters, and re-ranking.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "HNSW versus IVF in approximate nearest-neighbor search?",
+      "basic": "HNSW navigates graph neighborhoods with high recall at memory cost; IVF partitions vectors into searched cells.",
+      "strong": "HNSW navigates graph neighborhoods with high recall at memory cost; IVF partitions vectors into searched cells. Evaluate recall, memory, update rate, and latency.",
+      "takeaway": "Evaluate recall, memory, update rate, and latency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is hybrid search?",
+      "basic": "It combines lexical search signals with vector similarity.",
+      "strong": "It combines lexical search signals with vector similarity. This often helps when precise identifiers and semantic meaning both matter.",
+      "takeaway": "This often helps when precise identifiers and semantic meaning both matter.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is re-ranking useful after vector retrieval?",
+      "basic": "A more expensive model scores a small candidate set with richer query-document interactions.",
+      "strong": "A more expensive model scores a small candidate set with richer query-document interactions. It can improve precision at added latency cost.",
+      "takeaway": "It can improve precision at added latency cost.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should you chunk technical documents for RAG?",
+      "basic": "Split at semantic boundaries while preserving section titles, version, and metadata.",
+      "strong": "Split at semantic boundaries while preserving section titles, version, and metadata. Compare retrieval quality across chunk sizes.",
+      "takeaway": "Compare retrieval quality across chunk sizes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is embedding drift?",
+      "basic": "Changes in embedding models or input domains alter vector relationships.",
+      "strong": "Changes in embedding models or input domains alter vector relationships. Reindex when needed and validate retrieval quality.",
+      "takeaway": "Reindex when needed and validate retrieval quality.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you version LLM prompts in production?",
+      "basic": "Store prompt templates alongside model/version settings, evaluation cases, and release history.",
+      "strong": "Store prompt templates alongside model/version settings, evaluation cases, and release history. Treat changes as tested artifacts.",
+      "takeaway": "Treat changes as tested artifacts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between tool calling and plain text generation?",
+      "basic": "Tool calling invokes a validated external operation through a constrained interface; text alone does not execute actions.",
+      "strong": "Tool calling invokes a validated external operation through a constrained interface; text alone does not execute actions. Permissions and argument checks remain essential.",
+      "takeaway": "Permissions and argument checks remain essential.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you secure an LLM agent that can create tickets?",
+      "basic": "Limit allowed actions, validate destinations and fields, require confirmation for consequential changes, and log each tool action.",
+      "strong": "Limit allowed actions, validate destinations and fields, require confirmation for consequential changes, and log each tool action. Untrusted text must not grant authority.",
+      "takeaway": "Untrusted text must not grant authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why should an AI agent avoid unrestricted filesystem access?",
+      "basic": "Broad access amplifies accidental deletion, secrets disclosure, and prompt-injection effects.",
+      "strong": "Broad access amplifies accidental deletion, secrets disclosure, and prompt-injection effects. Sandboxing and least privilege bound damage.",
+      "takeaway": "Sandboxing and least privilege bound damage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle unreliable tool results in an agent?",
+      "basic": "Validate schemas, retry transient failures judiciously, and mark partial completion accurately.",
+      "strong": "Validate schemas, retry transient failures judiciously, and mark partial completion accurately. Never claim an external action succeeded without confirmation.",
+      "takeaway": "Never claim an external action succeeded without confirmation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a model fallback strategy?",
+      "basic": "Switch to a compatible alternative when primary inference fails, honoring safety and latency constraints.",
+      "strong": "Switch to a compatible alternative when primary inference fails, honoring safety and latency constraints. Different model outputs need regression evaluation.",
+      "takeaway": "Different model outputs need regression evaluation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you cap LLM costs for high-volume requests?",
+      "basic": "Use token budgets, caching, model routing, retrieval filtering, and request quotas.",
+      "strong": "Use token budgets, caching, model routing, retrieval filtering, and request quotas. Track quality so cost cuts do not degrade usefulness.",
+      "takeaway": "Track quality so cost cuts do not degrade usefulness.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is structured output validation?",
+      "basic": "Parse against an explicit schema and reject or repair invalid outputs within bounded attempts.",
+      "strong": "Parse against an explicit schema and reject or repair invalid outputs within bounded attempts. Even schema-valid content can be factually wrong.",
+      "takeaway": "Even schema-valid content can be factually wrong.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you evaluate a summarization model?",
+      "basic": "Test coverage of key facts, omission of critical warnings, unsupported additions, readability, and consistency across documents.",
+      "strong": "Test coverage of key facts, omission of critical warnings, unsupported additions, readability, and consistency across documents. Domain reviewers define severity.",
+      "takeaway": "Domain reviewers define severity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you detect PII in prompts and responses?",
+      "basic": "Apply data classification and policy controls before sending requests and on outputs, with protected audit.",
+      "strong": "Apply data classification and policy controls before sending requests and on outputs, with protected audit. Automated redaction needs false-negative testing.",
+      "takeaway": "Automated redaction needs false-negative testing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is temperature in text generation?",
+      "basic": "It controls randomness in token sampling, with low settings often yielding more repeatable output.",
+      "strong": "It controls randomness in token sampling, with low settings often yielding more repeatable output. It does not guarantee truth or determinism.",
+      "takeaway": "It does not guarantee truth or determinism.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is top-p sampling?",
+      "basic": "It restricts choices to a probability mass before sampling.",
+      "strong": "It restricts choices to a probability mass before sampling. Its effect interacts with temperature and model behavior.",
+      "takeaway": "Its effect interacts with temperature and model behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you make answers traceable to source documents?",
+      "basic": "Attach document IDs, excerpts, and versions for retrieved evidence and clearly label unsupported inferences.",
+      "strong": "Attach document IDs, excerpts, and versions for retrieved evidence and clearly label unsupported inferences. Verify citations point to actual supporting text.",
+      "takeaway": "Verify citations point to actual supporting text.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a context-window overflow mitigation?",
+      "basic": "Trim low-value turns, summarize older state with provenance, and retrieve targeted data as needed.",
+      "strong": "Trim low-value turns, summarize older state with provenance, and retrieve targeted data as needed. Never silently discard required constraints.",
+      "takeaway": "Never silently discard required constraints.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you test an LLM prompt against adversarial instructions?",
+      "basic": "Include untrusted retrieved text that attempts role spoofing, exfiltration, or tool misuse and verify boundaries hold.",
+      "strong": "Include untrusted retrieved text that attempts role spoofing, exfiltration, or tool misuse and verify boundaries hold. Red-team tests should use sandboxed tools.",
+      "takeaway": "Red-team tests should use sandboxed tools.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is quantization in model inference?",
+      "basic": "It reduces numerical precision for weights or activations to save memory and accelerate computation.",
+      "strong": "It reduces numerical precision for weights or activations to save memory and accelerate computation. Validate accuracy and hardware compatibility.",
+      "takeaway": "Validate accuracy and hardware compatibility.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you optimize inference latency?",
+      "basic": "Measure tokenization, prefill, decoding, retrieval, and network costs separately.",
+      "strong": "Measure tokenization, prefill, decoding, retrieval, and network costs separately. Batch, cache, quantize, or route models based on the bottleneck.",
+      "takeaway": "Batch, cache, quantize, or route models based on the bottleneck.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecom",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is KV-cache memory in transformer serving?",
+      "basic": "It stores attention keys and values from prior tokens to avoid recomputation during decoding.",
+      "strong": "It stores attention keys and values from prior tokens to avoid recomputation during decoding. Long contexts and concurrent requests can make it a major memory cost.",
+      "takeaway": "Long contexts and concurrent requests can make it a major memory cost.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an AI model card?",
+      "basic": "A record of intended use, training/evaluation context, limitations, risks, and governance.",
+      "strong": "A record of intended use, training/evaluation context, limitations, risks, and governance. It supports responsible deployment but needs ongoing updates.",
+      "takeaway": "It supports responsible deployment but needs ongoing updates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

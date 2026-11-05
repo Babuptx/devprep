@@ -96,6 +96,454 @@
       "takeaway": "Be aware of exit status behavior, quoting, and binary versus text streams.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you diagnose a subscriber portal that resolves DNS but cannot connect?",
+      "basic": "Check resolved IP, routing, TCP handshake, TLS negotiation, and backend health in order.",
+      "strong": "Check resolved IP, routing, TCP handshake, TLS negotiation, and backend health in order. DNS success proves only name resolution.",
+      "takeaway": "DNS success proves only name resolution.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the practical difference between TCP and UDP?",
+      "basic": "TCP provides ordered reliable byte delivery with congestion control; UDP provides datagrams without those guarantees.",
+      "strong": "TCP provides ordered reliable byte delivery with congestion control; UDP provides datagrams without those guarantees. Applications like streaming or DNS choose based on requirements.",
+      "takeaway": "Applications like streaming or DNS choose based on requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What happens during a TCP three-way handshake?",
+      "basic": "Client sends SYN, server replies SYN-ACK, client sends ACK.",
+      "strong": "Client sends SYN, server replies SYN-ACK, client sends ACK. This establishes connection state before application data flows.",
+      "takeaway": "This establishes connection state before application data flows.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why can packet loss cause TCP latency spikes?",
+      "basic": "Loss triggers retransmission and congestion-window reduction, decreasing throughput and increasing response time.",
+      "strong": "Loss triggers retransmission and congestion-window reduction, decreasing throughput and increasing response time. Measure RTT, loss, and retransmits together.",
+      "takeaway": "Measure RTT, loss, and retransmits together.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is MTU and why can path-MTU issues be intermittent?",
+      "basic": "MTU limits packet size on a link; larger packets may require fragmentation or be dropped.",
+      "strong": "MTU limits packet size on a link; larger packets may require fragmentation or be dropped. Blocked path-MTU discovery can break only some payloads.",
+      "takeaway": "Blocked path-MTU discovery can break only some payloads.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do VLANs and subnets differ?",
+      "basic": "A VLAN defines a layer-2 broadcast domain; a subnet defines an IP address range at layer 3.",
+      "strong": "A VLAN defines a layer-2 broadcast domain; a subnet defines an IP address range at layer 3. They often align but are not identical concepts.",
+      "takeaway": "They often align but are not identical concepts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a default gateway used for?",
+      "basic": "A host forwards traffic for nonlocal IP networks to its configured next hop.",
+      "strong": "A host forwards traffic for nonlocal IP networks to its configured next hop. Wrong gateways break off-subnet connectivity even when local traffic works.",
+      "takeaway": "Wrong gateways break off-subnet connectivity even when local traffic works.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you distinguish DNS failure from TLS failure?",
+      "basic": "Inspect whether name resolution succeeds before testing TCP and certificate negotiation.",
+      "strong": "Inspect whether name resolution succeeds before testing TCP and certificate negotiation. Use targeted tools rather than assuming every connection error is DNS.",
+      "takeaway": "Use targeted tools rather than assuming every connection error is DNS.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is BGP's primary job?",
+      "basic": "BGP exchanges reachable IP prefixes and routing policy between autonomous systems.",
+      "strong": "BGP exchanges reachable IP prefixes and routing policy between autonomous systems. Policy and path selection matter more than minimum hop count.",
+      "takeaway": "Policy and path selection matter more than minimum hop count.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When does OSPF fit an enterprise network?",
+      "basic": "OSPF is an interior routing protocol using link-state topology and area design.",
+      "strong": "OSPF is an interior routing protocol using link-state topology and area design. It supports dynamic route convergence inside controlled domains.",
+      "takeaway": "It supports dynamic route convergence inside controlled domains.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is network address translation?",
+      "basic": "NAT rewrites IP addresses and sometimes ports across a network boundary.",
+      "strong": "NAT rewrites IP addresses and sometimes ports across a network boundary. It does not substitute for firewall authorization.",
+      "takeaway": "It does not substitute for firewall authorization.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you plan redundant telecom network paths?",
+      "basic": "Avoid shared physical conduits, power, and devices, not just duplicate logical routes.",
+      "strong": "Avoid shared physical conduits, power, and devices, not just duplicate logical routes. Test failover and monitor reconvergence time.",
+      "takeaway": "Test failover and monitor reconvergence time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does a network load balancer do differently from an application balancer?",
+      "basic": "Layer-4 balancing routes based on transport connections; layer-7 routing can use HTTP paths and headers.",
+      "strong": "Layer-4 balancing routes based on transport connections; layer-7 routing can use HTTP paths and headers. Choose according to protocol and policy needs.",
+      "takeaway": "Choose according to protocol and policy needs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "telecom",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does TLS protect data in transit?",
+      "basic": "TLS authenticates endpoints as configured and encrypts/integrity-protects communications.",
+      "strong": "TLS authenticates endpoints as configured and encrypts/integrity-protects communications. Certificate trust and hostname verification are essential.",
+      "takeaway": "Certificate trust and hostname verification are essential.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is mutual TLS?",
+      "basic": "Both client and server present certificates and authenticate each other.",
+      "strong": "Both client and server present certificates and authenticate each other. It identifies workloads but authorization still depends on service policy.",
+      "takeaway": "It identifies workloads but authorization still depends on service policy.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a split-horizon DNS design?",
+      "basic": "Different networks may receive different DNS answers for the same name.",
+      "strong": "Different networks may receive different DNS answers for the same name. It supports internal routing but complicates troubleshooting and change management.",
+      "takeaway": "It supports internal routing but complicates troubleshooting and change management.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is NTP time synchronization important?",
+      "basic": "Accurate clocks support certificates, logs, distributed tracing, and industrial event correlation.",
+      "strong": "Accurate clocks support certificates, logs, distributed tracing, and industrial event correlation. Clock drift creates misleading incident timelines.",
+      "takeaway": "Clock drift creates misleading incident timelines.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a subnet CIDR prefix?",
+      "basic": "A prefix such as /24 specifies the number of leading network bits.",
+      "strong": "A prefix such as /24 specifies the number of leading network bits. Address counts and usable ranges depend on subnet and provider rules.",
+      "takeaway": "Address counts and usable ranges depend on subnet and provider rules.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you diagnose a routing loop?",
+      "basic": "Inspect TTL expiry, traceroute behavior, route tables, and recent topology changes.",
+      "strong": "Inspect TTL expiry, traceroute behavior, route tables, and recent topology changes. Eliminate conflicting routes or incorrect advertisements.",
+      "takeaway": "Eliminate conflicting routes or incorrect advertisements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is QoS on a congested WAN?",
+      "basic": "Quality-of-service classification and scheduling prioritize important traffic when links are saturated.",
+      "strong": "Quality-of-service classification and scheduling prioritize important traffic when links are saturated. It cannot create bandwidth that does not exist.",
+      "takeaway": "It cannot create bandwidth that does not exist.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can jitter affect voice-over-IP quality?",
+      "basic": "Variable packet delay disrupts playout timing.",
+      "strong": "Variable packet delay disrupts playout timing. Jitter buffers smooth variation but increase latency and cannot repair severe loss.",
+      "takeaway": "Jitter buffers smooth variation but increase latency and cannot repair severe loss.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a firewall state table?",
+      "basic": "It tracks connection state so permitted return traffic can be distinguished from unsolicited packets.",
+      "strong": "It tracks connection state so permitted return traffic can be distinguished from unsolicited packets. Exhaustion can cause intermittent failures under load.",
+      "takeaway": "Exhaustion can cause intermittent failures under load.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you isolate an industrial OT network from corporate IT?",
+      "basic": "Use zones/conduits, firewalls, jump paths, and monitored access while preserving safety and deterministic control traffic.",
+      "strong": "Use zones/conduits, firewalls, jump paths, and monitored access while preserving safety and deterministic control traffic. Avoid unrestricted flat connectivity.",
+      "takeaway": "Avoid unrestricted flat connectivity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is OPC UA in industrial integration?",
+      "basic": "It is a platform-independent industrial communications framework with information models and security capabilities.",
+      "strong": "It is a platform-independent industrial communications framework with information models and security capabilities. Implementations still require careful identity and certificate management.",
+      "takeaway": "Implementations still require careful identity and certificate management.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does Modbus differ from modern authenticated protocols?",
+      "basic": "Traditional Modbus has simple register-oriented messaging and lacks built-in modern authentication/encryption.",
+      "strong": "Traditional Modbus has simple register-oriented messaging and lacks built-in modern authentication/encryption. Isolate and wrap it with suitable network controls.",
+      "takeaway": "Isolate and wrap it with suitable network controls.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you investigate dropped packets between two data centers?",
+      "basic": "Compare interface errors, congestion, MTU, routing, firewall counters, and timestamped traces on both sides.",
+      "strong": "Compare interface errors, congestion, MTU, routing, firewall counters, and timestamped traces on both sides. Localize the first failing hop.",
+      "takeaway": "Localize the first failing hop.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between bandwidth and throughput?",
+      "basic": "Bandwidth is theoretical link capacity; throughput is achieved data delivery.",
+      "strong": "Bandwidth is theoretical link capacity; throughput is achieved data delivery. Protocol overhead, contention, loss, and application limits reduce throughput.",
+      "takeaway": "Protocol overhead, contention, loss, and application limits reduce throughput.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you diagnose an overloaded DNS resolver?",
+      "basic": "Inspect query rates, cache hit ratio, latency, upstream health, and error codes.",
+      "strong": "Inspect query rates, cache hit ratio, latency, upstream health, and error codes. Add caching capacity or fix unusual client query patterns.",
+      "takeaway": "Add caching capacity or fix unusual client query patterns.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is anycast routing?",
+      "basic": "Multiple sites advertise the same address and routing directs clients to a nearby or policy-preferred site.",
+      "strong": "Multiple sites advertise the same address and routing directs clients to a nearby or policy-preferred site. Failover behavior depends on BGP convergence and health withdrawal.",
+      "takeaway": "Failover behavior depends on BGP convergence and health withdrawal.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an east-west traffic flow?",
+      "basic": "East-west is service-to-service communication within an environment, unlike north-south ingress or egress.",
+      "strong": "East-west is service-to-service communication within an environment, unlike north-south ingress or egress. Internal segmentation protects it from lateral movement.",
+      "takeaway": "Internal segmentation protects it from lateral movement.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What matters when documenting a network change?",
+      "basic": "Record intent, affected paths, implementation sequence, expected metrics, rollback, approval, and post-change verification.",
+      "strong": "Record intent, affected paths, implementation sequence, expected metrics, rollback, approval, and post-change verification. Test critical communication paths.",
+      "takeaway": "Test critical communication paths.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

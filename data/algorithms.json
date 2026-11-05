@@ -104,6 +104,457 @@
       "takeaway": "If stuck, explain what you tried and use feedback.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you find duplicate policy numbers in millions of records without sorting?",
+      "basic": "Use a hash set while streaming records, emitting a value when seen previously; memory is proportional to distinct keys.",
+      "strong": "Use a hash set while streaming records, emitting a value when seen previously; memory is proportional to distinct keys. If memory is constrained, external sort or partition by hash.",
+      "takeaway": "If memory is constrained, external sort or partition by hash.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When is a two-pointer scan better than a hash lookup?",
+      "basic": "If input is already sorted, converging pointers can find a pair with linear time and constant extra space.",
+      "strong": "If input is already sorted, converging pointers can find a pair with linear time and constant extra space. Hashing avoids sorting but needs memory.",
+      "takeaway": "Hashing avoids sorting but needs memory.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you detect a cycle in a service-dependency graph?",
+      "basic": "Run DFS with active-visit states or use topological sorting.",
+      "strong": "Run DFS with active-visit states or use topological sorting. A back-edge or incomplete topological order proves a directed cycle.",
+      "takeaway": "A back-edge or incomplete topological order proves a directed cycle.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you compute a minimum number of hops in an unweighted network?",
+      "basic": "Use breadth-first search from the source; its first visit to each node gives shortest edge count.",
+      "strong": "Use breadth-first search from the source; its first visit to each node gives shortest edge count. Weighted links require a different algorithm.",
+      "takeaway": "Weighted links require a different algorithm.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you find the ten highest-volume customers in a stream?",
+      "basic": "Maintain counts by customer and then a size-ten min-heap.",
+      "strong": "Maintain counts by customer and then a size-ten min-heap. For unbounded unique keys, approximate heavy-hitter sketches may be necessary.",
+      "takeaway": "For unbounded unique keys, approximate heavy-hitter sketches may be necessary.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you merge overlapping maintenance windows?",
+      "basic": "Sort intervals by start time, then extend the current interval while the next start overlaps its end.",
+      "strong": "Sort intervals by start time, then extend the current interval while the next start overlaps its end. Complexity is dominated by sorting.",
+      "takeaway": "Complexity is dominated by sorting.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can you locate the first failed deployment in ordered build history?",
+      "basic": "Use binary search when pass/fail is monotonic across revisions.",
+      "strong": "Use binary search when pass/fail is monotonic across revisions. If tests are flaky or outcomes non-monotonic, binary search assumptions fail.",
+      "takeaway": "If tests are flaky or outcomes non-monotonic, binary search assumptions fail.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you maintain the median of streaming sensor readings?",
+      "basic": "Keep a max-heap for lower values and a min-heap for upper values, balancing sizes.",
+      "strong": "Keep a max-heap for lower values and a min-heap for upper values, balancing sizes. Their roots define the median in logarithmic update time.",
+      "takeaway": "Their roots define the median in logarithmic update time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you find strongly connected components in a telecom topology?",
+      "basic": "Use Tarjan's or Kosaraju's algorithm in linear graph time.",
+      "strong": "Use Tarjan's or Kosaraju's algorithm in linear graph time. Condensing components can reveal cycles and failure domains.",
+      "takeaway": "Condensing components can reveal cycles and failure domains.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When does union-find help with connectivity questions?",
+      "basic": "Disjoint-set union tracks whether nodes belong to the same connected component under edge additions.",
+      "strong": "Disjoint-set union tracks whether nodes belong to the same connected component under edge additions. Path compression and union by rank give near-constant amortized operations.",
+      "takeaway": "Path compression and union by rank give near-constant amortized operations.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How could a trie improve prefix matching of product SKUs?",
+      "basic": "Store one edge per character and follow the query prefix directly.",
+      "strong": "Store one edge per character and follow the query prefix directly. A trie trades memory for efficient shared-prefix lookup.",
+      "takeaway": "A trie trades memory for efficient shared-prefix lookup.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What makes an LRU cache possible in constant time?",
+      "basic": "Combine a hash map for item lookup with a doubly linked list for recency ordering.",
+      "strong": "Combine a hash map for item lookup with a doubly linked list for recency ordering. Every get or put updates both structures consistently.",
+      "takeaway": "Every get or put updates both structures consistently.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you solve shortest path with nonnegative link costs?",
+      "basic": "Use Dijkstra's algorithm with a priority queue and relax outgoing edges.",
+      "strong": "Use Dijkstra's algorithm with a priority queue and relax outgoing edges. Negative weights violate its assumptions.",
+      "takeaway": "Negative weights violate its assumptions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When is Bellman-Ford preferable to Dijkstra?",
+      "basic": "Use it when negative edge weights may occur and negative-cycle detection matters.",
+      "strong": "Use it when negative edge weights may occur and negative-cycle detection matters. It is slower but supports broader edge constraints.",
+      "takeaway": "It is slower but supports broader edge constraints.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you schedule jobs with prerequisite constraints?",
+      "basic": "Build a directed graph and run topological sort.",
+      "strong": "Build a directed graph and run topological sort. Detect cycles and report that no valid schedule exists if the order is incomplete.",
+      "takeaway": "Detect cycles and report that no valid schedule exists if the order is incomplete.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is a heap useful for merging sorted log streams?",
+      "basic": "Keep the next element from each source in a min-heap.",
+      "strong": "Keep the next element from each source in a min-heap. Extract the minimum and advance only its source, yielding O(N log k).",
+      "takeaway": "Extract the minimum and advance only its source, yielding O(N log k).",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you find the longest unique-character substring?",
+      "basic": "Use a sliding window with last-seen indices, advancing its left edge after duplicates.",
+      "strong": "Use a sliding window with last-seen indices, advancing its left edge after duplicates. Each character is processed only a constant number of times.",
+      "takeaway": "Each character is processed only a constant number of times.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you compute the minimum number of coins for a target value?",
+      "basic": "Use dynamic programming over achievable amounts, comparing each allowed denomination.",
+      "strong": "Use dynamic programming over achievable amounts, comparing each allowed denomination. Greedy choice is not optimal for arbitrary coin systems.",
+      "takeaway": "Greedy choice is not optimal for arbitrary coin systems.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why might dynamic programming beat recursive brute force?",
+      "basic": "Overlapping subproblems cause repeated computation in naïve recursion.",
+      "strong": "Overlapping subproblems cause repeated computation in naïve recursion. Memoization or tabulation computes each state once.",
+      "takeaway": "Memoization or tabulation computes each state once.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you count connected regions in a binary grid?",
+      "basic": "Run DFS or BFS from each unvisited active cell and mark every reached neighbor.",
+      "strong": "Run DFS or BFS from each unvisited active cell and mark every reached neighbor. Complexity is linear in grid cells.",
+      "takeaway": "Complexity is linear in grid cells.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between BFS tree distance and weighted shortest path?",
+      "basic": "BFS minimizes edge count, not accumulated cost.",
+      "strong": "BFS minimizes edge count, not accumulated cost. A two-hop route can be more expensive than a four-hop route.",
+      "takeaway": "A two-hop route can be more expensive than a four-hop route.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you check whether parentheses and brackets are balanced?",
+      "basic": "Push opening delimiters on a stack and match every closing delimiter to the top.",
+      "strong": "Push opening delimiters on a stack and match every closing delimiter to the top. Reject mismatches or a nonempty stack at the end.",
+      "takeaway": "Reject mismatches or a nonempty stack at the end.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How could you find the first nonrepeating character in an input?",
+      "basic": "Count frequencies, then scan in original order for count one.",
+      "strong": "Count frequencies, then scan in original order for count one. A single pass is possible with additional ordered bookkeeping.",
+      "takeaway": "A single pass is possible with additional ordered bookkeeping.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle missing or duplicate values in a sorted sequence?",
+      "basic": "Binary search can locate boundaries with lower_bound and upper_bound variants.",
+      "strong": "Binary search can locate boundaries with lower_bound and upper_bound variants. Always define behavior for empty input and all-equal keys.",
+      "takeaway": "Always define behavior for empty input and all-equal keys.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why can quickselect find the kth element faster than sorting?",
+      "basic": "Partition around a pivot and recurse only into the side containing k.",
+      "strong": "Partition around a pivot and recurse only into the side containing k. Expected time is linear, though worst case can be quadratic.",
+      "takeaway": "Expected time is linear, though worst case can be quadratic.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you search a large log file for a fixed pattern?",
+      "basic": "Use a linear-time string matcher such as KMP when repeated rescanning matters.",
+      "strong": "Use a linear-time string matcher such as KMP when repeated rescanning matters. In practice verify encoding, line boundaries, and whether streaming is required.",
+      "takeaway": "In practice verify encoding, line boundaries, and whether streaming is required.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the benefit of monotonic stacks?",
+      "basic": "They discard candidates that cannot become a nearest greater or smaller element.",
+      "strong": "They discard candidates that cannot become a nearest greater or smaller element. This yields linear-time solutions for many span and histogram problems.",
+      "takeaway": "This yields linear-time solutions for many span and histogram problems.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you detect duplicate events with bounded memory?",
+      "basic": "Deduplicate by event ID within a time window; evict old IDs by timestamp.",
+      "strong": "Deduplicate by event ID within a time window; evict old IDs by timestamp. A Bloom filter saves memory but can yield false positives.",
+      "takeaway": "A Bloom filter saves memory but can yield false positives.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you select non-overlapping tasks to maximize task count?",
+      "basic": "Sort by earliest finishing time and greedily accept compatible tasks.",
+      "strong": "Sort by earliest finishing time and greedily accept compatible tasks. The optimality depends on the objective being count rather than total value.",
+      "takeaway": "The optimality depends on the objective being count rather than total value.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does a segment tree help with changing metrics?",
+      "basic": "It stores summaries over intervals and supports point updates plus range queries in logarithmic time.",
+      "strong": "It stores summaries over intervals and supports point updates plus range queries in logarithmic time. Use only if simpler prefix sums cannot handle updates.",
+      "takeaway": "Use only if simpler prefix sums cannot handle updates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you find a path through a factory floor with blocked cells?",
+      "basic": "Use BFS for equal-cost moves or A* with an admissible heuristic for faster goal-directed search.",
+      "strong": "Use BFS for equal-cost moves or A* with an admissible heuristic for faster goal-directed search. Include safety boundaries and dynamic obstacles.",
+      "takeaway": "Include safety boundaries and dynamic obstacles.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you explain algorithm complexity while live-coding?",
+      "basic": "State input size, count dominant loops or graph visits, then separate runtime from auxiliary memory.",
+      "strong": "State input size, count dominant loops or graph visits, then separate runtime from auxiliary memory. Mention worst-case versus expected complexity explicitly.",
+      "takeaway": "Mention worst-case versus expected complexity explicitly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

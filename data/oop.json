@@ -104,6 +104,455 @@
       "takeaway": "Both approaches require careful design of resource lifetime and object references.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "Why can composition be safer than deep inheritance hierarchies?",
+      "basic": "Composition assembles behavior through small interfaces without exposing parent-class assumptions.",
+      "strong": "Composition assembles behavior through small interfaces without exposing parent-class assumptions. Deep inheritance can couple changes and make testing harder.",
+      "takeaway": "Deep inheritance can couple changes and make testing harder.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When would you define an interface for a payment gateway?",
+      "basic": "Use an interface when callers should depend on stable operations rather than vendor-specific details.",
+      "strong": "Use an interface when callers should depend on stable operations rather than vendor-specific details. Multiple implementations can support testing and replacement.",
+      "takeaway": "Multiple implementations can support testing and replacement.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do generics improve type safety in an enterprise application?",
+      "basic": "Generics express reusable operations while retaining compile-time type constraints.",
+      "strong": "Generics express reusable operations while retaining compile-time type constraints. They reduce casts but do not replace runtime validation at external boundaries.",
+      "takeaway": "They reduce casts but do not replace runtime validation at external boundaries.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between class invariants and method preconditions?",
+      "basic": "An invariant must hold for valid object states; a precondition must hold before a method call.",
+      "strong": "An invariant must hold for valid object states; a precondition must hold before a method call. Tests should exercise both and failure behavior.",
+      "takeaway": "Tests should exercise both and failure behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you avoid exposing mutable internal collections?",
+      "basic": "Return immutable views or defensive copies where needed.",
+      "strong": "Return immutable views or defensive copies where needed. Otherwise callers may change object state without passing through validated methods.",
+      "takeaway": "Otherwise callers may change object state without passing through validated methods.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is dependency injection useful for testing?",
+      "basic": "Inject collaborators instead of constructing them inside business logic.",
+      "strong": "Inject collaborators instead of constructing them inside business logic. Tests can substitute deterministic fakes and isolate failure paths.",
+      "takeaway": "Tests can substitute deterministic fakes and isolate failure paths.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the open-closed principle in practical terms?",
+      "basic": "Design stable extension points so new behavior can be added without rewriting tested core logic.",
+      "strong": "Design stable extension points so new behavior can be added without rewriting tested core logic. Do not over-abstract speculative future requirements.",
+      "takeaway": "Do not over-abstract speculative future requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the Liskov substitution principle?",
+      "basic": "A subtype should preserve the behavioral contract expected of its base type.",
+      "strong": "A subtype should preserve the behavioral contract expected of its base type. Violating input/output promises makes polymorphism unsafe.",
+      "takeaway": "Violating input/output promises makes polymorphism unsafe.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is interface segregation?",
+      "basic": "Prefer small interfaces focused on consumer needs so implementations do not depend on irrelevant methods.",
+      "strong": "Prefer small interfaces focused on consumer needs so implementations do not depend on irrelevant methods. Large interfaces make changes and mocks brittle.",
+      "takeaway": "Large interfaces make changes and mocks brittle.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is single responsibility more than one method per class?",
+      "basic": "A component should have one coherent reason to change, not necessarily be tiny.",
+      "strong": "A component should have one coherent reason to change, not necessarily be tiny. Split unrelated business rules, persistence, and presentation concerns.",
+      "takeaway": "Split unrelated business rules, persistence, and presentation concerns.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between deep and shallow copy?",
+      "basic": "A shallow copy duplicates outer references but may share nested objects; deep copy duplicates relevant nested state.",
+      "strong": "A shallow copy duplicates outer references but may share nested objects; deep copy duplicates relevant nested state. Define which identity and ownership must remain shared.",
+      "takeaway": "Define which identity and ownership must remain shared.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can an exception-safe constructor handle partial resource acquisition?",
+      "basic": "Use RAII-managed members so already-acquired resources clean themselves up if later construction fails.",
+      "strong": "Use RAII-managed members so already-acquired resources clean themselves up if later construction fails. Avoid manual cleanup chains.",
+      "takeaway": "Avoid manual cleanup chains.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When does reference counting fail to reclaim objects?",
+      "basic": "Cycles can retain objects even after external references disappear.",
+      "strong": "Cycles can retain objects even after external references disappear. Use weak references for non-owning back-links or break cycles intentionally.",
+      "takeaway": "Use weak references for non-owning back-links or break cycles intentionally.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do immutability and concurrency interact?",
+      "basic": "Immutable values can be shared without synchronization for modifications.",
+      "strong": "Immutable values can be shared without synchronization for modifications. Shared references and mutable nested members still need scrutiny.",
+      "takeaway": "Shared references and mutable nested members still need scrutiny.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between static and dynamic dispatch?",
+      "basic": "Static dispatch resolves a target using compile-time types; dynamic dispatch selects an overridden implementation at runtime.",
+      "strong": "Static dispatch resolves a target using compile-time types; dynamic dispatch selects an overridden implementation at runtime. The latter adds flexibility and some indirection.",
+      "takeaway": "The latter adds flexibility and some indirection.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a value object in domain-driven design?",
+      "basic": "A value object is identified by its attributes rather than persistent identity, such as a money amount and currency.",
+      "strong": "A value object is identified by its attributes rather than persistent identity, such as a money amount and currency. Make it immutable and validate invariants.",
+      "takeaway": "Make it immutable and validate invariants.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you model an insurance claim state machine?",
+      "basic": "Represent allowed transitions explicitly, such as submitted, reviewed, approved, or denied.",
+      "strong": "Represent allowed transitions explicitly, such as submitted, reviewed, approved, or denied. Prevent invalid transitions and record who performed each change.",
+      "takeaway": "Prevent invalid transitions and record who performed each change.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can you prevent invalid currency arithmetic?",
+      "basic": "Use decimal or integer minor units rather than binary floats for money.",
+      "strong": "Use decimal or integer minor units rather than binary floats for money. Track currency and rounding policy as part of the type or value object.",
+      "takeaway": "Track currency and rounding policy as part of the type or value object.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When should you favor sealed or final classes?",
+      "basic": "Use finalization when extension would violate invariants or is not part of the supported contract.",
+      "strong": "Use finalization when extension would violate invariants or is not part of the supported contract. Keep extensibility intentional rather than assumed.",
+      "takeaway": "Keep extensibility intentional rather than assumed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does virtual method overriding risk in a constructor?",
+      "basic": "The most-derived object may not yet be fully initialized, so dynamic dispatch can behave unexpectedly.",
+      "strong": "The most-derived object may not yet be fully initialized, so dynamic dispatch can behave unexpectedly. Avoid invoking overridable operations during construction.",
+      "takeaway": "Avoid invoking overridable operations during construction.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you distinguish identity equality from value equality?",
+      "basic": "Identity equality means same object; value equality means equivalent content under a defined contract.",
+      "strong": "Identity equality means same object; value equality means equivalent content under a defined contract. Hashing must agree with value equality.",
+      "takeaway": "Hashing must agree with value equality.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is nullability part of API design?",
+      "basic": "Callers need to know when values may be absent and how to handle them.",
+      "strong": "Callers need to know when values may be absent and how to handle them. Optional types and explicit validation reduce hidden null-pointer paths.",
+      "takeaway": "Optional types and explicit validation reduce hidden null-pointer paths.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should an object expose asynchronous operations?",
+      "basic": "Use an explicit future, promise, or callback contract with cancellation, timeout, and error semantics.",
+      "strong": "Use an explicit future, promise, or callback contract with cancellation, timeout, and error semantics. Avoid blocking surprises and unobserved failures.",
+      "takeaway": "Avoid blocking surprises and unobserved failures.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a factory method good for?",
+      "basic": "It centralizes object creation when construction varies by configuration or subtype.",
+      "strong": "It centralizes object creation when construction varies by configuration or subtype. Use it when it reduces coupling, not as a mandatory pattern.",
+      "takeaway": "Use it when it reduces coupling, not as a mandatory pattern.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What problem does the strategy pattern solve?",
+      "basic": "It swaps algorithms behind a consistent interface, such as multiple pricing policies.",
+      "strong": "It swaps algorithms behind a consistent interface, such as multiple pricing policies. Strategies can be tested independently and selected at runtime.",
+      "takeaway": "Strategies can be tested independently and selected at runtime.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between adapter and facade patterns?",
+      "basic": "An adapter converts one interface into another; a facade simplifies access to a complex subsystem.",
+      "strong": "An adapter converts one interface into another; a facade simplifies access to a complex subsystem. They solve different coupling problems.",
+      "takeaway": "They solve different coupling problems.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the repository pattern?",
+      "basic": "It presents persistence through domain-oriented operations and hides storage details.",
+      "strong": "It presents persistence through domain-oriented operations and hides storage details. A repository is not an excuse to recreate every database capability abstractly.",
+      "takeaway": "A repository is not an excuse to recreate every database capability abstractly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does optimistic concurrency control work in object persistence?",
+      "basic": "Write updates only when a version matches the previously read version.",
+      "strong": "Write updates only when a version matches the previously read version. On conflict, retry or surface a meaningful concurrency decision.",
+      "takeaway": "On conflict, retry or surface a meaningful concurrency decision.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why should serialization not expose every object field?",
+      "basic": "Public wire contracts should include only deliberate fields and stable types.",
+      "strong": "Public wire contracts should include only deliberate fields and stable types. Internal fields may reveal secrets or create compatibility commitments.",
+      "takeaway": "Internal fields may reveal secrets or create compatibility commitments.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the cost of premature abstraction?",
+      "basic": "An abstraction created before real variation is understood may add indirection and constrain future work.",
+      "strong": "An abstraction created before real variation is understood may add indirection and constrain future work. Extract shared behavior after observing genuine repetition.",
+      "takeaway": "Extract shared behavior after observing genuine repetition.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you design a testable feature-flag client?",
+      "basic": "Expose a narrow evaluation interface and inject a deterministic implementation into tests.",
+      "strong": "Expose a narrow evaluation interface and inject a deterministic implementation into tests. Treat missing flags and rollout fallback explicitly.",
+      "takeaway": "Treat missing flags and rollout fallback explicitly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you decide whether an enum is sufficient for a domain state?",
+      "basic": "Use an enum for finite states with simple behavior; use state-specific objects when transitions and operations differ substantially.",
+      "strong": "Use an enum for finite states with simple behavior; use state-specific objects when transitions and operations differ substantially. Keep rules enforceable and observable.",
+      "takeaway": "Keep rules enforceable and observable.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

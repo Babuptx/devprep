@@ -96,6 +96,443 @@
       "takeaway": "Test metrics against manually audited samples.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you ingest millions of claim events daily?",
+      "basic": "Land immutable raw events, validate schema and provenance, and process through partitioned pipelines.",
+      "strong": "Land immutable raw events, validate schema and provenance, and process through partitioned pipelines. Track completeness, deduplication, and late arrivals.",
+      "takeaway": "Track completeness, deduplication, and late arrivals.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is ETL versus ELT?",
+      "basic": "ETL transforms before loading into target storage; ELT loads then transforms within the analytics platform.",
+      "strong": "ETL transforms before loading into target storage; ELT loads then transforms within the analytics platform. Security and cost affect which is preferable.",
+      "takeaway": "Security and cost affect which is preferable.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle schema drift in partner data feeds?",
+      "basic": "Detect added, removed, or type-changed fields at ingestion, quarantine incompatible records, and use versioned contracts.",
+      "strong": "Detect added, removed, or type-changed fields at ingestion, quarantine incompatible records, and use versioned contracts. Never silently discard critical columns.",
+      "takeaway": "Never silently discard critical columns.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What makes a data pipeline idempotent?",
+      "basic": "Reprocessing the same batch or event produces the same final state.",
+      "strong": "Reprocessing the same batch or event produces the same final state. Use stable record IDs, merge semantics, and reproducible transforms.",
+      "takeaway": "Use stable record IDs, merge semantics, and reproducible transforms.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the role of a DAG in workflow orchestration?",
+      "basic": "A directed acyclic graph models task dependencies and permissible execution order.",
+      "strong": "A directed acyclic graph models task dependencies and permissible execution order. Retries, backfills, and task state are equally important.",
+      "takeaway": "Retries, backfills, and task state are equally important.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do Airflow schedules differ from actual task execution times?",
+      "basic": "Schedules define logical data intervals and intended runs; executors launch tasks when resources allow.",
+      "strong": "Schedules define logical data intervals and intended runs; executors launch tasks when resources allow. Understand catch-up, backfills, and late sources.",
+      "takeaway": "Understand catch-up, backfills, and late sources.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a watermark in stream processing?",
+      "basic": "A watermark estimates event-time progress and determines when windows may close.",
+      "strong": "A watermark estimates event-time progress and determines when windows may close. Late data needs an explicit correction policy.",
+      "takeaway": "Late data needs an explicit correction policy.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle out-of-order utility meter readings?",
+      "basic": "Order events by source timestamps and meter sequence where available; keep correction windows.",
+      "strong": "Order events by source timestamps and meter sequence where available; keep correction windows. Do not assume arrival time reflects consumption time.",
+      "takeaway": "Do not assume arrival time reflects consumption time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a slowly changing dimension type 2?",
+      "basic": "Retain prior dimension values as dated versions instead of overwriting.",
+      "strong": "Retain prior dimension values as dated versions instead of overwriting. Facts can join to the dimension state valid at event time.",
+      "takeaway": "Facts can join to the dimension state valid at event time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you design reproducible daily aggregates?",
+      "basic": "Use partitioned inputs, deterministic business rules, explicit cutoff times, and versioned transformations.",
+      "strong": "Use partitioned inputs, deterministic business rules, explicit cutoff times, and versioned transformations. Support backfill without double counting.",
+      "takeaway": "Support backfill without double counting.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a dead-letter queue for data pipelines?",
+      "basic": "It isolates records repeatedly failing processing so healthy messages continue.",
+      "strong": "It isolates records repeatedly failing processing so healthy messages continue. Review and reprocess failures with documented ownership.",
+      "takeaway": "Review and reprocess failures with documented ownership.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you choose a warehouse partition key?",
+      "basic": "Choose a field aligned to common filters and retention, often event date.",
+      "strong": "Choose a field aligned to common filters and retention, often event date. Beware skew, tiny partitions, and costly repartitioning.",
+      "takeaway": "Beware skew, tiny partitions, and costly repartitioning.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you control exploding joins in analytics?",
+      "basic": "Check join cardinalities, duplicate keys, and expected relationships before execution.",
+      "strong": "Check join cardinalities, duplicate keys, and expected relationships before execution. Pre-aggregate or deduplicate intentionally and validate counts.",
+      "takeaway": "Pre-aggregate or deduplicate intentionally and validate counts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can data lineage speed up troubleshooting a failed regulatory report?",
+      "basic": "Lineage records how datasets arise from source systems, transformations, and versions.",
+      "strong": "Lineage records how datasets arise from source systems, transformations, and versions. It helps impact analysis, debugging, and auditability.",
+      "takeaway": "It helps impact analysis, debugging, and auditability.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you measure data freshness?",
+      "basic": "Track last successful source arrival and end-to-end event delay against SLAs.",
+      "strong": "Track last successful source arrival and end-to-end event delay against SLAs. A succeeded job can still produce stale data.",
+      "takeaway": "A succeeded job can still produce stale data.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you establish data quality rules?",
+      "basic": "Define required fields, ranges, uniqueness, referential integrity, and reconciliation measures for each dataset.",
+      "strong": "Define required fields, ranges, uniqueness, referential integrity, and reconciliation measures for each dataset. Alert on meaningful threshold breaches.",
+      "takeaway": "Alert on meaningful threshold breaches.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a late-arriving dimension?",
+      "basic": "A fact arrives before its referenced descriptive dimension record.",
+      "strong": "A fact arrives before its referenced descriptive dimension record. Resolve with an unknown surrogate and update later or delay processing per business policy.",
+      "takeaway": "Resolve with an unknown surrogate and update later or delay processing per business policy.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why can exactly-once stream claims be misleading?",
+      "basic": "A platform may guarantee processing semantics internally while external side effects can duplicate.",
+      "strong": "A platform may guarantee processing semantics internally while external side effects can duplicate. End-to-end correctness needs transactional or idempotent sinks.",
+      "takeaway": "End-to-end correctness needs transactional or idempotent sinks.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a lakehouse architecture?",
+      "basic": "It brings table management, schema and transaction features to object-backed analytics datasets.",
+      "strong": "It brings table management, schema and transaction features to object-backed analytics datasets. It still requires governance and performance design.",
+      "takeaway": "It still requires governance and performance design.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you ingest plant historian data into cloud analytics?",
+      "basic": "Use buffered, segmented gateways with timestamps, quality flags, and replay capability.",
+      "strong": "Use buffered, segmented gateways with timestamps, quality flags, and replay capability. Avoid cloud dependencies in safety-critical control loops.",
+      "takeaway": "Avoid cloud dependencies in safety-critical control loops.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a data contract between producers and consumers?",
+      "basic": "A versioned agreement on schema, semantics, quality, freshness, and ownership.",
+      "strong": "A versioned agreement on schema, semantics, quality, freshness, and ownership. It reduces surprise breaking changes.",
+      "takeaway": "It reduces surprise breaking changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between batch and streaming analytics?",
+      "basic": "Batch handles bounded data at intervals; streaming processes ongoing events with state and event-time complexity.",
+      "strong": "Batch handles bounded data at intervals; streaming processes ongoing events with state and event-time complexity. Pick based on latency and cost requirements.",
+      "takeaway": "Pick based on latency and cost requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you decide retention for sensitive claims data?",
+      "basic": "Apply legal and business retention rules with data minimization, encryption, and access controls.",
+      "strong": "Apply legal and business retention rules with data minimization, encryption, and access controls. Logs and backups require aligned retention.",
+      "takeaway": "Logs and backups require aligned retention.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you validate a migrated dataset?",
+      "basic": "Compare record counts, keys, aggregates, null distributions, and representative joins; reconcile exceptions.",
+      "strong": "Compare record counts, keys, aggregates, null distributions, and representative joins; reconcile exceptions. A successful load is not proof of equivalence.",
+      "takeaway": "A successful load is not proof of equivalence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does partition pruning achieve?",
+      "basic": "It skips irrelevant partitions using predicates and metadata.",
+      "strong": "It skips irrelevant partitions using predicates and metadata. Expressions that obscure partition columns may prevent pruning.",
+      "takeaway": "Expressions that obscure partition columns may prevent pruning.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is change-data-capture lag?",
+      "basic": "The delay between source mutation and downstream visibility.",
+      "strong": "The delay between source mutation and downstream visibility. Monitor lag plus retained log capacity to avoid unrecoverable gaps.",
+      "takeaway": "Monitor lag plus retained log capacity to avoid unrecoverable gaps.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you design a data backfill without disrupting production?",
+      "basic": "Bound concurrency and partitions, replay reproducibly, and monitor source load.",
+      "strong": "Bound concurrency and partitions, replay reproducibly, and monitor source load. Make writes idempotent and validate reconciled totals.",
+      "takeaway": "Make writes idempotent and validate reconciled totals.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a medallion-style raw/curated/serving layout?",
+      "basic": "Raw retains source fidelity, curated enforces cleaning and standardization, and serving optimizes business consumption.",
+      "strong": "Raw retains source fidelity, curated enforces cleaning and standardization, and serving optimizes business consumption. Quality gates separate layers.",
+      "takeaway": "Quality gates separate layers.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you anonymize data for analytics?",
+      "basic": "Remove direct identifiers, reduce quasi-identifiers, and assess re-identification risk and purpose limitation.",
+      "strong": "Remove direct identifiers, reduce quasi-identifiers, and assess re-identification risk and purpose limitation. Pseudonymization is not automatic anonymity.",
+      "takeaway": "Pseudonymization is not automatic anonymity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle differing time zones in billing data?",
+      "basic": "Keep precise event instants and source-zone context; calculate billing calendar boundaries using explicit jurisdiction rules.",
+      "strong": "Keep precise event instants and source-zone context; calculate billing calendar boundaries using explicit jurisdiction rules. Daylight saving transitions need tests.",
+      "takeaway": "Daylight saving transitions need tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you detect silent pipeline data loss?",
+      "basic": "Compare source offsets, received counts, partition completeness, and downstream checkpoints.",
+      "strong": "Compare source offsets, received counts, partition completeness, and downstream checkpoints. Raise alerts for missing expected data even when no job errors occur.",
+      "takeaway": "Raise alerts for missing expected data even when no job errors occur.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

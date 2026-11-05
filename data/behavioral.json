@@ -80,6 +80,441 @@
       "takeaway": "Avoid invented confidence or pretending you have used technology you have not touched.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "Tell me about a time you investigated a problem without clear instructions.",
+      "basic": "Clarify the impact and success criteria, isolate the unknowns, and describe what evidence you gathered.",
+      "strong": "Clarify the impact and success criteria, isolate the unknowns, and describe what evidence you gathered. Use a real STAR example with your own action and outcome.",
+      "takeaway": "Use a real STAR example with your own action and outcome.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe an incident where your first diagnosis was wrong.",
+      "basic": "Explain the initial hypothesis, contradictory evidence, revised test, and corrective action.",
+      "strong": "Explain the initial hypothesis, contradictory evidence, revised test, and corrective action. Show how you avoided repeating the mistaken assumption.",
+      "takeaway": "Show how you avoided repeating the mistaken assumption.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you prioritize an urgent security issue versus a product feature deadline?",
+      "basic": "Assess severity, exploitability, customer impact, and contractual deadlines; escalate risk transparently.",
+      "strong": "Assess severity, exploitability, customer impact, and contractual deadlines; escalate risk transparently. Do not silently trade away security for delivery speed.",
+      "takeaway": "Do not silently trade away security for delivery speed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Tell me about disagreement with a senior engineer.",
+      "basic": "Describe the shared objective, evidence you brought, how you listened, and the final team decision.",
+      "strong": "Describe the shared objective, evidence you brought, how you listened, and the final team decision. Demonstrate respect without claiming you always won.",
+      "takeaway": "Demonstrate respect without claiming you always won.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you explain a complex outage to nontechnical executives?",
+      "basic": "Lead with customer impact, mitigation, next update, and uncertainty, then add technical details on request.",
+      "strong": "Lead with customer impact, mitigation, next update, and uncertainty, then add technical details on request. Avoid jargon and unsupported recovery promises.",
+      "takeaway": "Avoid jargon and unsupported recovery promises.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe a time you influenced a process without formal authority.",
+      "basic": "Use evidence, a small pilot, stakeholder feedback, and measurable results.",
+      "strong": "Use evidence, a small pilot, stakeholder feedback, and measurable results. Be specific about your contribution and the concerns you addressed.",
+      "takeaway": "Be specific about your contribution and the concerns you addressed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle a teammate who misses commitments?",
+      "basic": "Ask about blockers privately, reset expectations together, and escalate risk early if deadlines are threatened.",
+      "strong": "Ask about blockers privately, reset expectations together, and escalate risk early if deadlines are threatened. Avoid assigning motives.",
+      "takeaway": "Avoid assigning motives.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe a time you reduced operational toil.",
+      "basic": "Show the repetitive task, automation or simplification, safety checks, and time or error reduction measured.",
+      "strong": "Show the repetitive task, automation or simplification, safety checks, and time or error reduction measured. Explain ongoing ownership.",
+      "takeaway": "Explain ongoing ownership.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What do you do when you discover a serious bug shortly before release?",
+      "basic": "Assess severity and exposure, communicate clearly, and support a go/no-go decision with evidence.",
+      "strong": "Assess severity and exposure, communicate clearly, and support a go/no-go decision with evidence. Protect users over schedule optics.",
+      "takeaway": "Protect users over schedule optics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Tell me about a production incident you helped resolve.",
+      "basic": "Describe your specific diagnostic actions, coordination, mitigation, and follow-up prevention.",
+      "strong": "Describe your specific diagnostic actions, coordination, mitigation, and follow-up prevention. Separate what you observed from what you infer.",
+      "takeaway": "Separate what you observed from what you infer.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you respond when you do not know the answer in an interview?",
+      "basic": "State the gap candidly, reason from first principles, ask clarifying questions, and outline how you would verify.",
+      "strong": "State the gap candidly, reason from first principles, ask clarifying questions, and outline how you would verify. Avoid pretending to have used tools you have not.",
+      "takeaway": "Avoid pretending to have used tools you have not.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe balancing speed with quality in a project.",
+      "basic": "Explain risk-based scope, automated checks, and conscious tradeoffs.",
+      "strong": "Explain risk-based scope, automated checks, and conscious tradeoffs. Give an example of what you deferred safely versus what you would never skip.",
+      "takeaway": "Give an example of what you deferred safely versus what you would never skip.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you work with a difficult external vendor?",
+      "basic": "Align on evidence, service obligations, escalation paths, and documented actions.",
+      "strong": "Align on evidence, service obligations, escalation paths, and documented actions. Stay professional and preserve a single issue timeline.",
+      "takeaway": "Stay professional and preserve a single issue timeline.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Tell me about learning a new cloud tool rapidly.",
+      "basic": "Describe a specific learning goal, a minimal safe experiment, feedback from documentation or peers, and a tested production contribution.",
+      "strong": "Describe a specific learning goal, a minimal safe experiment, feedback from documentation or peers, and a tested production contribution.",
+      "takeaway": "Describe a specific learning goal, a minimal safe experiment, feedback from documentation or peers, and a tested production contribution.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you respond to conflicting requests from two managers?",
+      "basic": "Clarify priorities, business impact, and due dates, then seek an explicit decision from accountable owners.",
+      "strong": "Clarify priorities, business impact, and due dates, then seek an explicit decision from accountable owners. Keep both stakeholders informed.",
+      "takeaway": "Keep both stakeholders informed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe a project where requirements changed midstream.",
+      "basic": "Show how you validated the new goal, identified affected design and tests, updated estimates, and delivered a revised outcome.",
+      "strong": "Show how you validated the new goal, identified affected design and tests, updated estimates, and delivered a revised outcome.",
+      "takeaway": "Show how you validated the new goal, identified affected design and tests, updated estimates, and delivered a revised outcome.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you build trust with operations teams?",
+      "basic": "Listen to actual workflows, reduce surprises, provide runbooks, and involve operators before disruptive releases.",
+      "strong": "Listen to actual workflows, reduce surprises, provide runbooks, and involve operators before disruptive releases. Follow through on commitments.",
+      "takeaway": "Follow through on commitments.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe a mistake you disclosed proactively.",
+      "basic": "Explain what you noticed, who you informed, how you contained impact, and what guardrail you added.",
+      "strong": "Explain what you noticed, who you informed, how you contained impact, and what guardrail you added. Accountability matters more than a perfect story.",
+      "takeaway": "Accountability matters more than a perfect story.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you challenge an unsafe manufacturing deployment request?",
+      "basic": "State the safety concern and evidence, pause work through authorized channels, and propose a safer validation path.",
+      "strong": "State the safety concern and evidence, pause work through authorized channels, and propose a safer validation path. Never bypass required interlocks.",
+      "takeaway": "Never bypass required interlocks.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Tell me about handling customer information responsibly.",
+      "basic": "Use a real example of minimizing access, secure testing, or privacy-by-design.",
+      "strong": "Use a real example of minimizing access, secure testing, or privacy-by-design. Avoid disclosing confidential customer details in the interview.",
+      "takeaway": "Avoid disclosing confidential customer details in the interview.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you mentor someone with less experience?",
+      "basic": "Assess their goals, offer guided practice and specific feedback, and let them own decisions.",
+      "strong": "Assess their goals, offer guided practice and specific feedback, and let them own decisions. Show a concrete example of improved independence.",
+      "takeaway": "Show a concrete example of improved independence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe receiving critical code-review feedback.",
+      "basic": "Explain the concern, how you reproduced or evaluated it, and what you changed.",
+      "strong": "Explain the concern, how you reproduced or evaluated it, and what you changed. Distinguish constructive disagreement from defensiveness.",
+      "takeaway": "Distinguish constructive disagreement from defensiveness.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you work through ambiguous performance problems?",
+      "basic": "Define metrics, reproduce variance, form ranked hypotheses, and change one factor at a time.",
+      "strong": "Define metrics, reproduce variance, form ranked hypotheses, and change one factor at a time. Communicate uncertainty honestly.",
+      "takeaway": "Communicate uncertainty honestly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What would you do if an automated tool recommended a risky fix?",
+      "basic": "Review scope and evidence, test in a safe environment, and require human approval before consequential production actions.",
+      "strong": "Review scope and evidence, test in a safe environment, and require human approval before consequential production actions. Automation is not accountability.",
+      "takeaway": "Automation is not accountability.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Tell me about a cross-functional project with competing incentives.",
+      "basic": "Identify teams' success criteria, negotiate a shared outcome, and use explicit decision records.",
+      "strong": "Identify teams' success criteria, negotiate a shared outcome, and use explicit decision records. Show personal contributions and tradeoffs.",
+      "takeaway": "Show personal contributions and tradeoffs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you decide whether to escalate an incident?",
+      "basic": "Use severity, user impact, uncertainty, and escalation policy.",
+      "strong": "Use severity, user impact, uncertainty, and escalation policy. Early escalation is better than hiding a growing outage.",
+      "takeaway": "Early escalation is better than hiding a growing outage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Describe a decision you made with incomplete information.",
+      "basic": "State known facts, assumptions, downside risk, and what data you gathered.",
+      "strong": "State known facts, assumptions, downside risk, and what data you gathered. Prefer reversible action and document triggers to revisit.",
+      "takeaway": "Prefer reversible action and document triggers to revisit.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you handle repetitive tasks you dislike?",
+      "basic": "Look for safe automation and process improvements while still completing required work.",
+      "strong": "Look for safe automation and process improvements while still completing required work. Demonstrate reliability before redesign.",
+      "takeaway": "Demonstrate reliability before redesign.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Tell me about a missed deadline.",
+      "basic": "Own your role, explain how you communicated risk early or learned to do so, and describe concrete changes to estimation or dependencies.",
+      "strong": "Own your role, explain how you communicated risk early or learned to do so, and describe concrete changes to estimation or dependencies.",
+      "takeaway": "Own your role, explain how you communicated risk early or learned to do so, and describe concrete changes to estimation or dependencies.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you adapt your communication for leadership and engineers?",
+      "basic": "Start from the audience's decision and translate detail accordingly.",
+      "strong": "Start from the audience's decision and translate detail accordingly. Keep technical evidence available without overwhelming an executive summary.",
+      "takeaway": "Keep technical evidence available without overwhelming an executive summary.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why are you interested in technology work outside big tech?",
+      "basic": "Emphasize real-world reliability, regulated data, safety, and direct customer impact.",
+      "strong": "Emphasize real-world reliability, regulated data, safety, and direct customer impact. Connect motivation to a specific product or operating environment.",
+      "takeaway": "Connect motivation to a specific product or operating environment.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

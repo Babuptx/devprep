@@ -112,6 +112,444 @@
       "takeaway": "Separate rolling back application behavior from restoring deleted data.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "Why can a query become slow after a database grows?",
+      "basic": "A plan that worked for a small table may use scans or poor join order at scale.",
+      "strong": "A plan that worked for a small table may use scans or poor join order at scale. Inspect execution plans and representative cardinality, not just SQL text.",
+      "takeaway": "Inspect execution plans and representative cardinality, not just SQL text.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you prevent two adjusters from overwriting the same claim?",
+      "basic": "Use optimistic version checks or appropriate locks in transactions.",
+      "strong": "Use optimistic version checks or appropriate locks in transactions. Return a conflict requiring review instead of silently dropping an update.",
+      "takeaway": "Return a conflict requiring review instead of silently dropping an update.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between primary key and unique constraint?",
+      "basic": "Both enforce uniqueness but the primary key identifies rows and is generally non-null; additional unique constraints enforce business rules.",
+      "strong": "Both enforce uniqueness but the primary key identifies rows and is generally non-null; additional unique constraints enforce business rules. NULL behavior varies by database.",
+      "takeaway": "NULL behavior varies by database.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does an index help and when does it hurt?",
+      "basic": "An index speeds selective reads and joins but consumes space and slows writes.",
+      "strong": "An index speeds selective reads and joins but consumes space and slows writes. Design around measured access paths and selectivity.",
+      "takeaway": "Design around measured access paths and selectivity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a covering index?",
+      "basic": "It contains all columns needed for a query so table access can sometimes be avoided.",
+      "strong": "It contains all columns needed for a query so table access can sometimes be avoided. Overly wide covering indexes have substantial write and storage cost.",
+      "takeaway": "Overly wide covering indexes have substantial write and storage cost.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is transaction isolation?",
+      "basic": "Isolation determines which concurrent transaction effects are visible.",
+      "strong": "Isolation determines which concurrent transaction effects are visible. Different levels trade concurrency for anomaly prevention.",
+      "takeaway": "Different levels trade concurrency for anomaly prevention.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a lost update anomaly?",
+      "basic": "Two transactions read the same value and later writes overwrite one another.",
+      "strong": "Two transactions read the same value and later writes overwrite one another. Use version checks, locking, or atomic updates.",
+      "takeaway": "Use version checks, locking, or atomic updates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a phantom read?",
+      "basic": "A repeated range query returns new or missing matching rows because another transaction changed the set.",
+      "strong": "A repeated range query returns new or missing matching rows because another transaction changed the set. Stronger isolation or predicate locking can prevent it.",
+      "takeaway": "Stronger isolation or predicate locking can prevent it.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you choose between normalized and denormalized tables?",
+      "basic": "Normalize transactional source-of-truth records for consistency; denormalize read models when measured workloads benefit.",
+      "strong": "Normalize transactional source-of-truth records for consistency; denormalize read models when measured workloads benefit. Maintain update and reconciliation rules.",
+      "takeaway": "Maintain update and reconciliation rules.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is an append-only ledger useful for inventory or payments?",
+      "basic": "Movements are recorded as immutable events, making reconciliation and audit easier.",
+      "strong": "Movements are recorded as immutable events, making reconciliation and audit easier. Current balance is a derived projection that must be kept consistent.",
+      "takeaway": "Current balance is a derived projection that must be kept consistent.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you model effective-dated insurance rates?",
+      "basic": "Store validity intervals with approved versions and enforce non-overlap per rating key.",
+      "strong": "Store validity intervals with approved versions and enforce non-overlap per rating key. Historical quotes should resolve the rule version active at decision time.",
+      "takeaway": "Historical quotes should resolve the rule version active at decision time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What makes a database migration zero-downtime?",
+      "basic": "Expand schema first, deploy compatible readers/writers, backfill safely, then remove deprecated fields later.",
+      "strong": "Expand schema first, deploy compatible readers/writers, backfill safely, then remove deprecated fields later. Coordinate asynchronous consumers too.",
+      "takeaway": "Coordinate asynchronous consumers too.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does connection pooling prevent overload?",
+      "basic": "A pool reuses database connections and caps concurrent demand.",
+      "strong": "A pool reuses database connections and caps concurrent demand. An oversized pool can increase database contention rather than improve throughput.",
+      "takeaway": "An oversized pool can increase database contention rather than improve throughput.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When would you use a read replica?",
+      "basic": "Offload read traffic or support recovery, acknowledging replication lag.",
+      "strong": "Offload read traffic or support recovery, acknowledging replication lag. Do not use a stale replica for consistency-critical decisions.",
+      "takeaway": "Do not use a stale replica for consistency-critical decisions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why are backups different from replicas?",
+      "basic": "Replicas reproduce changes, including accidental deletion; backups preserve recoverable historical states.",
+      "strong": "Replicas reproduce changes, including accidental deletion; backups preserve recoverable historical states. Test restoration and point-in-time recovery.",
+      "takeaway": "Test restoration and point-in-time recovery.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you partition a large events table?",
+      "basic": "Partition by time or another query-aligned key to improve lifecycle management and pruning.",
+      "strong": "Partition by time or another query-aligned key to improve lifecycle management and pruning. Too many partitions or poor keys add complexity.",
+      "takeaway": "Too many partitions or poor keys add complexity.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a hot partition in a distributed database?",
+      "basic": "A skewed key sends disproportionate traffic to one shard.",
+      "strong": "A skewed key sends disproportionate traffic to one shard. Choose better partition keys, split hotspots, or cache appropriately.",
+      "takeaway": "Choose better partition keys, split hotspots, or cache appropriately.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is eventual consistency?",
+      "basic": "Replicas or projections may temporarily disagree while changes propagate.",
+      "strong": "Replicas or projections may temporarily disagree while changes propagate. Applications must define acceptable staleness and conflict behavior.",
+      "takeaway": "Applications must define acceptable staleness and conflict behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you debug a deadlock in SQL?",
+      "basic": "Inspect deadlock graphs and transaction order, reduce lock duration, and acquire resources consistently.",
+      "strong": "Inspect deadlock graphs and transaction order, reduce lock duration, and acquire resources consistently. Retry victims only where operations are safe.",
+      "takeaway": "Retry victims only where operations are safe.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why use EXPLAIN ANALYZE carefully?",
+      "basic": "It shows actual execution behavior but may execute the query and consume resources.",
+      "strong": "It shows actual execution behavior but may execute the query and consume resources. Run safely with representative but controlled workloads.",
+      "takeaway": "Run safely with representative but controlled workloads.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When should a materialized view serve monthly insurance portfolio metrics?",
+      "basic": "It stores a precomputed query result that needs refresh or maintenance.",
+      "strong": "It stores a precomputed query result that needs refresh or maintenance. It accelerates reads while introducing freshness and storage considerations.",
+      "takeaway": "It accelerates reads while introducing freshness and storage considerations.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do window functions differ from GROUP BY?",
+      "basic": "Window functions compute values across related rows while retaining each row.",
+      "strong": "Window functions compute values across related rows while retaining each row. GROUP BY collapses rows into groups.",
+      "takeaway": "GROUP BY collapses rows into groups.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you find the second-highest salary per department?",
+      "basic": "Use DENSE_RANK over each department ordered by salary descending and filter rank two.",
+      "strong": "Use DENSE_RANK over each department ordered by salary descending and filter rank two. Clarify ties and missing second values.",
+      "takeaway": "Clarify ties and missing second values.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between DELETE, TRUNCATE and DROP?",
+      "basic": "DELETE removes rows under a predicate, TRUNCATE clears table contents with DB-specific transactional behavior, and DROP removes the object.",
+      "strong": "DELETE removes rows under a predicate, TRUNCATE clears table contents with DB-specific transactional behavior, and DROP removes the object. Privileges and rollback semantics vary.",
+      "takeaway": "Privileges and rollback semantics vary.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should you model nullable business fields?",
+      "basic": "Distinguish not-known, not-applicable, and intentionally empty where business decisions depend on meaning.",
+      "strong": "Distinguish not-known, not-applicable, and intentionally empty where business decisions depend on meaning. SQL NULL uses three-valued logic.",
+      "takeaway": "SQL NULL uses three-valued logic.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you prevent SQL injection in a dynamic search filter API?",
+      "basic": "Use parameterized queries for values and allowlist identifiers that cannot be bound.",
+      "strong": "Use parameterized queries for values and allowlist identifiers that cannot be bound. Escaping and string concatenation are not robust substitutes.",
+      "takeaway": "Escaping and string concatenation are not robust substitutes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "utilities",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a database change-data-capture stream?",
+      "basic": "CDC emits ordered database changes into downstream consumers.",
+      "strong": "CDC emits ordered database changes into downstream consumers. Plan for schema evolution, replay, and source-log retention.",
+      "takeaway": "Plan for schema evolution, replay, and source-log retention.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you reconcile billing totals across systems?",
+      "basic": "Compare source and target counts, monetary totals, unique IDs, and exception lists by cutoff period.",
+      "strong": "Compare source and target counts, monetary totals, unique IDs, and exception lists by cutoff period. Reconciliation must handle late arrivals and corrections.",
+      "takeaway": "Reconciliation must handle late arrivals and corrections.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When would you choose a document database?",
+      "basic": "When aggregate-oriented access and flexible nested records suit requirements.",
+      "strong": "When aggregate-oriented access and flexible nested records suit requirements. Evaluate transactions, joins, indexing, and future query patterns.",
+      "takeaway": "Evaluate transactions, joins, indexing, and future query patterns.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is an OLTP database compared with OLAP?",
+      "basic": "OLTP handles many small transactional reads/writes; OLAP supports large analytical scans and aggregations.",
+      "strong": "OLTP handles many small transactional reads/writes; OLAP supports large analytical scans and aggregations. Isolation of workloads protects both.",
+      "takeaway": "Isolation of workloads protects both.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What are query selectivity and cardinality?",
+      "basic": "Selectivity measures how narrowly a predicate filters rows; cardinality counts distinct values or result size.",
+      "strong": "Selectivity measures how narrowly a predicate filters rows; cardinality counts distinct values or result size. Optimizers use estimates to choose plans.",
+      "takeaway": "Optimizers use estimates to choose plans.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }

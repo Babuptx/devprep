@@ -80,6 +80,443 @@
       "takeaway": "Avoid assuming a single approach fits every application.",
       "mermaid": "",
       "links": []
+    },
+    {
+      "q": "How would you prevent a customer portal from showing stale claim status?",
+      "basic": "Use controlled cache invalidation or short-lived queries for changing status and display freshness.",
+      "strong": "Use controlled cache invalidation or short-lived queries for changing status and display freshness. Real-time subscriptions still need reconnection and ordering logic.",
+      "takeaway": "Real-time subscriptions still need reconnection and ordering logic.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you improve Core Web Vitals on a content-heavy portal?",
+      "basic": "Measure largest content rendering, interaction delays, and layout stability; reduce critical JavaScript and layout shifts.",
+      "strong": "Measure largest content rendering, interaction delays, and layout stability; reduce critical JavaScript and layout shifts. Optimize images and rendering based on real-user measurements.",
+      "takeaway": "Optimize images and rendering based on real-user measurements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between controlled and uncontrolled form inputs?",
+      "basic": "Controlled inputs bind values to application state; uncontrolled inputs rely on DOM-managed state.",
+      "strong": "Controlled inputs bind values to application state; uncontrolled inputs rely on DOM-managed state. Choose based on validation and performance requirements.",
+      "takeaway": "Choose based on validation and performance requirements.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you implement accessible validation errors?",
+      "basic": "Associate messages with fields, announce errors appropriately, preserve user input, and provide actionable fixes.",
+      "strong": "Associate messages with fields, announce errors appropriately, preserve user input, and provide actionable fixes. Color alone cannot convey failure.",
+      "takeaway": "Color alone cannot convey failure.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you handle authentication tokens in a browser application?",
+      "basic": "Prefer secure, HttpOnly cookies where appropriate and protect against CSRF; avoid storing sensitive tokens in accessible browser storage.",
+      "strong": "Prefer secure, HttpOnly cookies where appropriate and protect against CSRF; avoid storing sensitive tokens in accessible browser storage. Configure origin and cookie policy carefully.",
+      "takeaway": "Configure origin and cookie policy carefully.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why can client-side authorization never replace server checks?",
+      "basic": "Browser code can be modified or bypassed.",
+      "strong": "Browser code can be modified or bypassed. The server must validate identity and object-level permissions for every protected operation.",
+      "takeaway": "The server must validate identity and object-level permissions for every protected operation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you prevent XSS in user-generated support ticket content?",
+      "basic": "Treat user content as data, escape by output context, and sanitize any approved rich HTML.",
+      "strong": "Treat user content as data, escape by output context, and sanitize any approved rich HTML. A Content Security Policy is defense in depth.",
+      "takeaway": "A Content Security Policy is defense in depth.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does a service worker enable?",
+      "basic": "It intercepts supported requests to implement offline caching and background behavior.",
+      "strong": "It intercepts supported requests to implement offline caching and background behavior. Version and invalidate cached resources so stale files do not break deployments.",
+      "takeaway": "Version and invalidate cached resources so stale files do not break deployments.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing",
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you build an offline-capable technician mobile app?",
+      "basic": "Store work orders locally with queued edits and clear sync states.",
+      "strong": "Store work orders locally with queued edits and clear sync states. Resolve conflicts using server versions and field-specific business rules.",
+      "takeaway": "Resolve conflicts using server versions and field-specific business rules.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you prevent duplicate mobile form submissions?",
+      "basic": "Disable repeated submissions client-side for usability and enforce idempotent creation on the server.",
+      "strong": "Disable repeated submissions client-side for usability and enforce idempotent creation on the server. Connectivity retries must reuse the same operation key.",
+      "takeaway": "Connectivity retries must reuse the same operation key.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is hydration in server-rendered web applications?",
+      "basic": "Hydration attaches interactive client code to HTML already rendered by a server.",
+      "strong": "Hydration attaches interactive client code to HTML already rendered by a server. Mismatched client/server output can cause errors or visual jumps.",
+      "takeaway": "Mismatched client/server output can cause errors or visual jumps.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When should you use pagination versus virtualization?",
+      "basic": "Pagination limits retrieved records; virtualization limits mounted DOM elements.",
+      "strong": "Pagination limits retrieved records; virtualization limits mounted DOM elements. Large tables often benefit from both.",
+      "takeaway": "Large tables often benefit from both.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you design responsive tables for complex insurance policies?",
+      "basic": "Prioritize key columns, allow accessible horizontal scrolling or detail views, and avoid hiding essential information on small screens.",
+      "strong": "Prioritize key columns, allow accessible horizontal scrolling or detail views, and avoid hiding essential information on small screens. Test with long labels and zoom.",
+      "takeaway": "Test with long labels and zoom.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is a React effect cleanup for?",
+      "basic": "It releases subscriptions, timers, or in-flight work when dependencies change or components unmount.",
+      "strong": "It releases subscriptions, timers, or in-flight work when dependencies change or components unmount. Otherwise stale callbacks can leak resources or overwrite newer state.",
+      "takeaway": "Otherwise stale callbacks can leak resources or overwrite newer state.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can unnecessary re-renders be diagnosed?",
+      "basic": "Use framework profiling to identify changing props and expensive components.",
+      "strong": "Use framework profiling to identify changing props and expensive components. Memoization helps only when dependencies are stable and measurements justify it.",
+      "takeaway": "Memoization helps only when dependencies are stable and measurements justify it.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you prevent race conditions in search-as-you-type?",
+      "basic": "Debounce requests, cancel obsolete fetches, and accept results only for the newest query.",
+      "strong": "Debounce requests, cancel obsolete fetches, and accept results only for the newest query. A slower earlier response must not replace the latest results.",
+      "takeaway": "A slower earlier response must not replace the latest results.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is semantic HTML and why does it matter?",
+      "basic": "Native buttons, labels, headings, and landmarks support keyboard and assistive technology behavior.",
+      "strong": "Native buttons, labels, headings, and landmarks support keyboard and assistive technology behavior. Prefer semantics over clickable generic containers.",
+      "takeaway": "Prefer semantics over clickable generic containers.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How would you test screen-reader behavior?",
+      "basic": "Use automated accessibility checks plus manual keyboard and screen-reader testing.",
+      "strong": "Use automated accessibility checks plus manual keyboard and screen-reader testing. Verify focus order, announcements, labels, and error recovery.",
+      "takeaway": "Verify focus order, announcements, labels, and error recovery.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is the difference between local and server state?",
+      "basic": "Local state represents UI choices; server state comes from remote authoritative data and needs loading, caching, and invalidation.",
+      "strong": "Local state represents UI choices; server state comes from remote authoritative data and needs loading, caching, and invalidation. Mixing them creates stale views.",
+      "takeaway": "Mixing them creates stale views.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you secure a mobile API connection?",
+      "basic": "Use TLS validation, short-lived credentials, and device-appropriate secret handling.",
+      "strong": "Use TLS validation, short-lived credentials, and device-appropriate secret handling. Avoid treating client obfuscation as a security control.",
+      "takeaway": "Avoid treating client obfuscation as a security control.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "When is optimistic UI appropriate?",
+      "basic": "Update the interface before server confirmation for reversible low-risk actions, then reconcile or revert on failure.",
+      "strong": "Update the interface before server confirmation for reversible low-risk actions, then reconcile or revert on failure. Avoid misleading optimistic confirmations for irreversible payments.",
+      "takeaway": "Avoid misleading optimistic confirmations for irreversible payments.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should you handle international dates and time zones?",
+      "basic": "Store instants in an unambiguous UTC-compatible form and display in a clearly chosen local zone.",
+      "strong": "Store instants in an unambiguous UTC-compatible form and display in a clearly chosen local zone. Calendar dates without times need different semantics.",
+      "takeaway": "Calendar dates without times need different semantics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "Why is currency formatting more than adding a symbol?",
+      "basic": "Currency specifies scale, rounding, separators, and sometimes symbol ambiguity.",
+      "strong": "Currency specifies scale, rounding, separators, and sometimes symbol ambiguity. Use locale-aware formatting and exact monetary arithmetic.",
+      "takeaway": "Use locale-aware formatting and exact monetary arithmetic.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What does CORS actually control?",
+      "basic": "CORS is a browser policy controlling cross-origin response access, not an authentication mechanism.",
+      "strong": "CORS is a browser policy controlling cross-origin response access, not an authentication mechanism. Servers must still enforce authorization independently.",
+      "takeaway": "Servers must still enforce authorization independently.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance",
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How does a browser event loop affect responsiveness?",
+      "basic": "Long-running synchronous JavaScript blocks input handling and painting.",
+      "strong": "Long-running synchronous JavaScript blocks input handling and painting. Split heavy tasks, offload suitable work, or use scheduling primitives.",
+      "takeaway": "Split heavy tasks, offload suitable work, or use scheduling primitives.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How do you limit images transferred on mobile?",
+      "basic": "Use responsive sizes, modern formats, caching, and lazy loading where appropriate.",
+      "strong": "Use responsive sizes, modern formats, caching, and lazy loading where appropriate. Ensure critical hero images are not unnecessarily deferred.",
+      "takeaway": "Ensure critical hero images are not unnecessarily deferred.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What makes frontend error handling resilient?",
+      "basic": "Display actionable retry states, preserve entered data, distinguish network from validation errors, and surface correlation IDs for support.",
+      "strong": "Display actionable retry states, preserve entered data, distinguish network from validation errors, and surface correlation IDs for support.",
+      "takeaway": "Display actionable retry states, preserve entered data, distinguish network from validation errors, and surface correlation IDs for support.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecom"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What is deep linking in a mobile application?",
+      "basic": "It maps a URL to a specific app destination, handling authentication and missing content.",
+      "strong": "It maps a URL to a specific app destination, handling authentication and missing content. Validate deep-link parameters to avoid unsafe navigation.",
+      "takeaway": "Validate deep-link parameters to avoid unsafe navigation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How can feature flags cause frontend consistency bugs?",
+      "basic": "Different clients may cache different flag versions.",
+      "strong": "Different clients may cache different flag versions. Define rollout expectations, safe defaults, and consistency requirements for shared workflows.",
+      "takeaway": "Define rollout expectations, safe defaults, and consistency requirements for shared workflows.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "big-tech"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "How should a UI represent uncertain telemetry?",
+      "basic": "Display stale timestamps, quality indicators, and connectivity errors prominently.",
+      "strong": "Display stale timestamps, quality indicators, and connectivity errors prominently. Never render an invalid sensor reading as silently authoritative.",
+      "takeaway": "Never render an invalid sensor reading as silently authoritative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
+    },
+    {
+      "q": "What makes a frontend component genuinely reusable?",
+      "basic": "It exposes a focused behavioral contract, supports accessibility and predictable state, and avoids embedding one team's business assumptions.",
+      "strong": "It exposes a focused behavioral contract, supports accessibility and predictable state, and avoids embedding one team's business assumptions.",
+      "takeaway": "It exposes a focused behavioral contract, supports accessibility and predictable state, and avoids embedding one team's business assumptions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "original practice question; informed by public interview themes, not a verified employer question",
+      "addedVersion": "3.0"
     }
   ]
 }
