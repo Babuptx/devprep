@@ -1,0 +1,109 @@
+{
+  "id": "ml",
+  "questions": [
+    {
+      "q": "What is supervised versus unsupervised learning?",
+      "basic": "Supervised learning uses labeled examples to predict targets, as in classification or regression.",
+      "strong": "Supervised learning uses labeled examples to predict targets, as in classification or regression. Unsupervised learning finds patterns without supplied target labels, such as clustering or dimensionality reduction. Evaluate whether labels are reliable and what decision the output will support.",
+      "takeaway": "Evaluate whether labels are reliable and what decision the output will support.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain train, validation, and test splits.",
+      "basic": "Training data fits model parameters, validation data helps select hyperparameters and decisions, and a held-out test set estimates final generalization.",
+      "strong": "Training data fits model parameters, validation data helps select hyperparameters and decisions, and a held-out test set estimates final generalization. Splits should prevent leakage between related users, time windows, or duplicate records. Reusing test results for repeated tuning undermines the evaluation.",
+      "takeaway": "Reusing test results for repeated tuning undermines the evaluation.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is overfitting?",
+      "basic": "Overfitting occurs when a model learns training-specific noise and performs worse on new examples.",
+      "strong": "Overfitting occurs when a model learns training-specific noise and performs worse on new examples. Detect it by comparing training and validation behavior. Reduce it with more representative data, regularization, simpler models, augmentation, or appropriate early stopping.",
+      "takeaway": "Reduce it with more representative data, regularization, simpler models, augmentation, or appropriate early stopping.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Bias versus variance?",
+      "basic": "High bias means the model is too constrained to capture important structure; high variance means predictions change too much with sample variation.",
+      "strong": "High bias means the model is too constrained to capture important structure; high variance means predictions change too much with sample variation. Model complexity and regularization often trade one for the other. Diagnose with learning curves and held-out performance rather than the label alone.",
+      "takeaway": "Diagnose with learning curves and held-out performance rather than the label alone.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Precision versus recall?",
+      "basic": "Precision is true positives divided by predicted positives; recall is true positives divided by actual positives.",
+      "strong": "Precision is true positives divided by predicted positives; recall is true positives divided by actual positives. The preferred tradeoff depends on false-positive and false-negative costs. For imbalanced data, inspect precision-recall curves rather than accuracy alone.",
+      "takeaway": "For imbalanced data, inspect precision-recall curves rather than accuracy alone.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is data leakage in machine learning?",
+      "basic": "Leakage happens when features or evaluation procedures expose information unavailable at prediction time or allow test information into training.",
+      "strong": "Leakage happens when features or evaluation procedures expose information unavailable at prediction time or allow test information into training. It produces misleadingly strong metrics. Use time-aware splits, leakage checks, and feature-generation pipelines that mirror deployment.",
+      "takeaway": "Use time-aware splits, leakage checks, and feature-generation pipelines that mirror deployment.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are embeddings?",
+      "basic": "Embeddings map discrete or complex inputs into numeric vectors that preserve task-relevant relationships.",
+      "strong": "Embeddings map discrete or complex inputs into numeric vectors that preserve task-relevant relationships. They support recommendation, semantic similarity, and retrieval. The geometry depends on training objectives and similarity metrics; nearby vectors are not always semantically correct for every task.",
+      "takeaway": "The geometry depends on training objectives and similarity metrics; nearby vectors are not always semantically correct for every task.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is gradient descent?",
+      "basic": "Gradient descent updates parameters in a direction that reduces a differentiable loss based on its gradient.",
+      "strong": "Gradient descent updates parameters in a direction that reduces a differentiable loss based on its gradient. Learning rate, batch size, momentum, and optimizer choice affect convergence and stability. Poor feature scaling or learning rates can cause slow progress or divergence.",
+      "takeaway": "Poor feature scaling or learning rates can cause slow progress or divergence.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is cross-validation?",
+      "basic": "Cross-validation evaluates a model over multiple train/validation splits to estimate stability and support model selection.",
+      "strong": "Cross-validation evaluates a model over multiple train/validation splits to estimate stability and support model selection. Choose folds appropriate to the data structure; random folds can be invalid for temporal or grouped records. Keep a separate final test set when making high-stakes comparisons.",
+      "takeaway": "Keep a separate final test set when making high-stakes comparisons.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a confusion matrix?",
+      "basic": "A confusion matrix counts true positives, false positives, true negatives, and false negatives for a classifier.",
+      "strong": "A confusion matrix counts true positives, false positives, true negatives, and false negatives for a classifier. From these we compute precision, recall, specificity, and related metrics. Always define which class is considered positive and inspect error costs.",
+      "takeaway": "Always define which class is considered positive and inspect error costs.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is model drift?",
+      "basic": "Model performance can degrade when input distributions, target relationships, or user behavior change after deployment.",
+      "strong": "Model performance can degrade when input distributions, target relationships, or user behavior change after deployment. Track data quality, feature statistics, labels when available, and business outcomes. Retraining should be governed by evidence and validation, not merely a fixed calendar.",
+      "takeaway": "Retraining should be governed by evidence and validation, not merely a fixed calendar.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are hyperparameters?",
+      "basic": "Hyperparameters configure training or model structure, such as learning rate, tree depth, and regularization strength.",
+      "strong": "Hyperparameters configure training or model structure, such as learning rate, tree depth, and regularization strength. They are chosen using validation procedures rather than directly optimized as ordinary model weights. Keep experiment tracking and avoid over-searching small validation datasets.",
+      "takeaway": "Keep experiment tracking and avoid over-searching small validation datasets.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How should an ML model be evaluated before release?",
+      "basic": "Compare to a meaningful baseline, assess slice-level performance, calibration, robustness, latency, cost, fairness considerations, and failure cases.",
+      "strong": "Compare to a meaningful baseline, assess slice-level performance, calibration, robustness, latency, cost, fairness considerations, and failure cases. Check offline metrics and controlled online behavior where appropriate. Document intended use, limitations, monitoring, and rollback criteria.",
+      "takeaway": "Document intended use, limitations, monitoring, and rollback criteria.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

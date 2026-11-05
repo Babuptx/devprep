@@ -1,0 +1,101 @@
+{
+  "id": "networking",
+  "questions": [
+    {
+      "q": "What happens during a DNS lookup?",
+      "basic": "A client or resolver locates records mapping a hostname to an IP address through caches and DNS hierarchy.",
+      "strong": "A client or resolver locates records mapping a hostname to an IP address through caches and DNS hierarchy. TTL affects caching and update propagation, while multiple record types serve different purposes. DNS resolution is distinct from establishing the HTTP connection that follows.",
+      "takeaway": "DNS resolution is distinct from establishing the HTTP connection that follows.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "TCP versus UDP?",
+      "basic": "TCP provides an ordered reliable byte stream with congestion control and retransmission.",
+      "strong": "TCP provides an ordered reliable byte stream with congestion control and retransmission. UDP provides datagrams without built-in delivery, ordering, or congestion guarantees, giving applications more control and lower protocol overhead. Protocols such as QUIC build reliability features over UDP.",
+      "takeaway": "Protocols such as QUIC build reliability features over UDP.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is the TCP three-way handshake?",
+      "basic": "A client sends SYN, the server responds with SYN-ACK, and the client acknowledges to establish sequence-number state.",
+      "strong": "A client sends SYN, the server responds with SYN-ACK, and the client acknowledges to establish sequence-number state. TLS negotiation may follow before an HTTPS request. Connection reuse avoids paying this setup cost on every request.",
+      "takeaway": "Connection reuse avoids paying this setup cost on every request.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is TLS and why use it?",
+      "basic": "Transport Layer Security authenticates the server using certificates and encrypts network traffic against passive eavesdropping and many active attacks.",
+      "strong": "Transport Layer Security authenticates the server using certificates and encrypts network traffic against passive eavesdropping and many active attacks. The handshake negotiates cryptographic parameters and key material. Correct certificate validation and modern configurations are essential.",
+      "takeaway": "Correct certificate validation and modern configurations are essential.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain an IP address, subnet, and CIDR.",
+      "basic": "An IP address identifies a network interface for routing, while a subnet describes a block of addresses sharing a prefix.",
+      "strong": "An IP address identifies a network interface for routing, while a subnet describes a block of addresses sharing a prefix. CIDR notation such as /24 specifies how many leading bits form the prefix. Routing, broadcast behavior, and usable address counts depend on IPv4 versus IPv6 conventions.",
+      "takeaway": "Routing, broadcast behavior, and usable address counts depend on IPv4 versus IPv6 conventions.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is NAT?",
+      "basic": "Network Address Translation rewrites IP addresses and often ports as packets cross a gateway.",
+      "strong": "Network Address Translation rewrites IP addresses and often ports as packets cross a gateway. It lets multiple private-addressed hosts share public addresses but complicates inbound connectivity and end-to-end identity. NAT is not a replacement for a firewall policy.",
+      "takeaway": "NAT is not a replacement for a firewall policy.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a firewall versus a load balancer?",
+      "basic": "A firewall controls which flows are permitted based on rules and context; a load balancer distributes accepted requests or connections among backends.",
+      "strong": "A firewall controls which flows are permitted based on rules and context; a load balancer distributes accepted requests or connections among backends. Some products combine capabilities, but the goals differ. Both require monitoring and appropriate default-deny or traffic-handling policies.",
+      "takeaway": "Both require monitoring and appropriate default-deny or traffic-handling policies.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is the difference between a process and a thread?",
+      "basic": "A process has its own virtual address space and OS-managed resources, while threads share much of that process state but have their own stacks and execution contexts.",
+      "strong": "A process has its own virtual address space and OS-managed resources, while threads share much of that process state but have their own stacks and execution contexts. Threads communicate cheaply through shared memory but create synchronization concerns. Processes isolate faults more strongly at greater coordination cost.",
+      "takeaway": "Processes isolate faults more strongly at greater coordination cost.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are race conditions and deadlocks?",
+      "basic": "A race condition occurs when results depend incorrectly on concurrent timing; a deadlock occurs when participants wait indefinitely for resources held by each other.",
+      "strong": "A race condition occurs when results depend incorrectly on concurrent timing; a deadlock occurs when participants wait indefinitely for resources held by each other. Prevent races with correct synchronization and design state ownership. Prevent deadlocks through lock ordering, bounded waits, and simplifying dependency cycles.",
+      "takeaway": "Prevent deadlocks through lock ordering, bounded waits, and simplifying dependency cycles.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is virtual memory?",
+      "basic": "Virtual memory maps process virtual addresses to physical pages or other backing, enabling isolation and flexible allocation.",
+      "strong": "Virtual memory maps process virtual addresses to physical pages or other backing, enabling isolation and flexible allocation. Page faults can load or allocate pages, and excessive paging can cause thrashing. Distinguish virtual address space size from actual resident memory use.",
+      "takeaway": "Distinguish virtual address space size from actual resident memory use.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you investigate a high-CPU Linux process?",
+      "basic": "Check system load and process usage with tools such as top or ps, then inspect threads, profiles, recent changes, and workload patterns.",
+      "strong": "Check system load and process usage with tools such as top or ps, then inspect threads, profiles, recent changes, and workload patterns. Separate CPU saturation from I/O waiting or memory pressure. Gather evidence before restarting a process and losing the failing state.",
+      "takeaway": "Gather evidence before restarting a process and losing the failing state.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a shell pipe?",
+      "basic": "A pipe connects one process's standard output to another process's standard input, allowing command composition.",
+      "strong": "A pipe connects one process's standard output to another process's standard input, allowing command composition. For example, a producer can be filtered by grep and summarized by another tool. Be aware of exit status behavior, quoting, and binary versus text streams.",
+      "takeaway": "Be aware of exit status behavior, quoting, and binary versus text streams.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

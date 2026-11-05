@@ -1,0 +1,109 @@
+{
+  "id": "algorithms",
+  "questions": [
+    {
+      "q": "How do you explain Big-O time and space complexity?",
+      "basic": "Big-O describes how resource usage grows with input size, rather than predicting exact runtime.",
+      "strong": "Big-O describes how resource usage grows with input size, rather than predicting exact runtime. State both time and extra space and identify the dominant operation. For example, a single pass over n items is O(n) time, while a nested all-pairs comparison is O(n squared); constants and cache behavior still matter in practice.",
+      "takeaway": "For example, a single pass over n items is O(n) time, while a nested all-pairs comparison is O(n squared); constants and cache behavior still matter in practice.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "When should you use a hash map instead of a balanced tree?",
+      "basic": "A hash map generally offers expected O(1) lookup and insert and is ideal for frequency counts or key-based access.",
+      "strong": "A hash map generally offers expected O(1) lookup and insert and is ideal for frequency counts or key-based access. A balanced search tree offers O(log n) operations but maintains sorted order and enables range queries. Mention worst-case hashing and memory overhead when explaining the tradeoff.",
+      "takeaway": "Mention worst-case hashing and memory overhead when explaining the tradeoff.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is the two-pointer technique?",
+      "basic": "Maintain two positions that move according to an invariant instead of scanning all pairs.",
+      "strong": "Maintain two positions that move according to an invariant instead of scanning all pairs. For a sorted array two-sum problem, compare the endpoints and move the left pointer when the sum is too small or the right when it is too large. The result is O(n) time and O(1) extra space.",
+      "takeaway": "The result is O(n) time and O(1) extra space.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How does a sliding window work?",
+      "basic": "A window represents a contiguous segment; advance its right edge while maintaining counts or constraints, then move its left edge to restore validity.",
+      "strong": "A window represents a contiguous segment; advance its right edge while maintaining counts or constraints, then move its left edge to restore validity. It is useful for substring and subarray problems such as longest unique-character substring. State exactly why each pointer advances at most n times before claiming O(n).",
+      "takeaway": "State exactly why each pointer advances at most n times before claiming O(n).",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Compare BFS and DFS.",
+      "basic": "Breadth-first search uses a queue and explores level by level, making it useful for shortest paths in unweighted graphs.",
+      "strong": "Breadth-first search uses a queue and explores level by level, making it useful for shortest paths in unweighted graphs. Depth-first search uses recursion or a stack and is useful for connectivity, cycle detection, and backtracking. With adjacency lists both take O(V+E) time; BFS may require substantial frontier memory.",
+      "takeaway": "With adjacency lists both take O(V+E) time; BFS may require substantial frontier memory.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain binary search and its preconditions.",
+      "basic": "Binary search requires a sorted sequence or a monotone predicate.",
+      "strong": "Binary search requires a sorted sequence or a monotone predicate. Compare the middle candidate with the target, then discard half the feasible range after each step. Iterative binary search takes O(log n) comparisons and O(1) extra space; watch loop boundaries and integer overflow when computing the midpoint.",
+      "takeaway": "Iterative binary search takes O(log n) comparisons and O(1) extra space; watch loop boundaries and integer overflow when computing the midpoint.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "When would you choose a heap or priority queue?",
+      "basic": "A heap supports extracting the minimum or maximum in O(log n), with O(1) access to the top.",
+      "strong": "A heap supports extracting the minimum or maximum in O(log n), with O(1) access to the top. It is useful for top-k problems, event scheduling, and Dijkstra's algorithm. Unlike a fully sorted structure, a heap guarantees only the priority property, not ordered iteration.",
+      "takeaway": "Unlike a fully sorted structure, a heap guarantees only the priority property, not ordered iteration.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do merge sort and quicksort differ?",
+      "basic": "Merge sort guarantees O(n log n) time and is stable in typical implementations, but merging arrays needs additional memory.",
+      "strong": "Merge sort guarantees O(n log n) time and is stable in typical implementations, but merging arrays needs additional memory. Quicksort has average O(n log n) performance and good locality, but naive pivot choices can produce O(n squared) worst-case time. Explain which constraints matter before choosing one.",
+      "takeaway": "Explain which constraints matter before choosing one.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is memoization in dynamic programming?",
+      "basic": "Memoization stores results for overlapping subproblems so the same state is not recomputed.",
+      "strong": "Memoization stores results for overlapping subproblems so the same state is not recomputed. Define the state, recurrence, base cases, and storage before implementation. The time complexity is often the number of reachable states times work per state, while memory is proportional to stored states.",
+      "takeaway": "The time complexity is often the number of reachable states times work per state, while memory is proportional to stored states.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "When is a greedy algorithm correct?",
+      "basic": "Greedy algorithms commit to a locally attractive choice; they are fast only when that choice can be proven compatible with global optimality.",
+      "strong": "Greedy algorithms commit to a locally attractive choice; they are fast only when that choice can be proven compatible with global optimality. For interval scheduling, selecting the earliest finishing compatible interval works via an exchange argument. For arbitrary coin systems greedy change-making can fail, so provide a proof or counterexample.",
+      "takeaway": "For arbitrary coin systems greedy change-making can fail, so provide a proof or counterexample.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you detect a cycle in a directed graph?",
+      "basic": "Use DFS colors where visiting means on the active recursion stack and visited means fully processed; an edge to an active node signals a cycle.",
+      "strong": "Use DFS colors where visiting means on the active recursion stack and visited means fully processed; an edge to an active node signals a cycle. Alternatively, Kahn's topological-sort algorithm detects a cycle if it processes fewer than V nodes. Both methods use O(V+E) time.",
+      "takeaway": "Both methods use O(V+E) time.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are union-find and path compression?",
+      "basic": "Disjoint-set union tracks connected components through find and union operations.",
+      "strong": "Disjoint-set union tracks connected components through find and union operations. Union by rank or size together with path compression gives nearly constant amortized time, formally inverse-Ackermann complexity. This structure is valuable in Kruskal's minimum spanning tree and dynamic connectivity.",
+      "takeaway": "This structure is valuable in Kruskal's minimum spanning tree and dynamic connectivity.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you communicate a coding solution during a live interview?",
+      "basic": "Restate inputs and outputs, ask about constraints, work a tiny example, describe brute force, then derive a better approach with a clear invariant.",
+      "strong": "Restate inputs and outputs, ask about constraints, work a tiny example, describe brute force, then derive a better approach with a clear invariant. Write readable code while narrating essential decisions, test empty and boundary inputs, and state time and space complexity. If stuck, explain what you tried and use feedback.",
+      "takeaway": "If stuck, explain what you tried and use feedback.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "api",
+  "questions": [
+    {
+      "q": "What are the key HTTP methods and their semantics?",
+      "basic": "GET retrieves, POST submits or creates, PUT replaces the target representation, PATCH applies a partial update, and DELETE requests removal.",
+      "strong": "GET retrieves, POST submits or creates, PUT replaces the target representation, PATCH applies a partial update, and DELETE requests removal. GET is safe by specification, while PUT and DELETE are idempotent in intended effect. Explain contract-specific behavior rather than assuming every API maps perfectly to CRUD.",
+      "takeaway": "Explain contract-specific behavior rather than assuming every API maps perfectly to CRUD.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What does idempotency mean for payments or retries?",
+      "basic": "An idempotent operation produces the same intended server-side effect if repeated.",
+      "strong": "An idempotent operation produces the same intended server-side effect if repeated. For non-idempotent creations such as charging a card, the client can supply a unique idempotency key that the server records and recognizes. This prevents a network retry from creating duplicate transactions.",
+      "takeaway": "This prevents a network retry from creating duplicate transactions.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How should an API report errors?",
+      "basic": "Use appropriate HTTP status codes plus a consistent body containing a stable error code, human-readable message, and optional validation details.",
+      "strong": "Use appropriate HTTP status codes plus a consistent body containing a stable error code, human-readable message, and optional validation details. Avoid exposing credentials, stack traces, or internal topology. Client errors should be actionable, and transient server errors may include retry guidance.",
+      "takeaway": "Client errors should be actionable, and transient server errors may include retry guidance.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is authentication versus authorization?",
+      "basic": "Authentication establishes identity, while authorization checks whether that identity may perform an action on a specific resource.",
+      "strong": "Authentication establishes identity, while authorization checks whether that identity may perform an action on a specific resource. A correctly signed-in user can still be forbidden from reading another customer's records. Enforce resource-level checks server-side, never just by hiding buttons.",
+      "takeaway": "Enforce resource-level checks server-side, never just by hiding buttons.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "REST versus SOAP: what differs?",
+      "basic": "REST is an architectural style built around resource representations and uniform interface constraints, commonly over HTTP and JSON.",
+      "strong": "REST is an architectural style built around resource representations and uniform interface constraints, commonly over HTTP and JSON. SOAP is a protocol with XML envelopes and formal enterprise standards. Consider compatibility, contracts, security, and existing ecosystem rather than declaring one universally better.",
+      "takeaway": "Consider compatibility, contracts, security, and existing ecosystem rather than declaring one universally better.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is API versioning?",
+      "basic": "Versioning allows clients to migrate when a contract changes incompatibly, using URI paths, headers, or media types.",
+      "strong": "Versioning allows clients to migrate when a contract changes incompatibly, using URI paths, headers, or media types. Prefer additive, backward-compatible changes where possible. Publish deprecation policies and tests for old clients instead of surprising them with breaking behavior.",
+      "takeaway": "Publish deprecation policies and tests for old clients instead of surprising them with breaking behavior.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you design pagination?",
+      "basic": "For small stable datasets offset/limit is simple, but large or changing datasets can cause expensive scans and duplicates or skips.",
+      "strong": "For small stable datasets offset/limit is simple, but large or changing datasets can cause expensive scans and duplicates or skips. Cursor-based pagination references a stable sort key and handles high-volume scrolling more reliably. Return next-page tokens and clear sorting semantics.",
+      "takeaway": "Return next-page tokens and clear sorting semantics.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you protect an API from abuse?",
+      "basic": "Authenticate clients, authorize resources, enforce input limits, validate payloads, throttle by meaningful identities, and monitor suspicious patterns.",
+      "strong": "Authenticate clients, authorize resources, enforce input limits, validate payloads, throttle by meaningful identities, and monitor suspicious patterns. Rate limiting is only one layer; use secure defaults, bounded timeouts, and careful error responses. Treat gateway checks as complementary to service-layer controls.",
+      "takeaway": "Treat gateway checks as complementary to service-layer controls.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you debug a slow API endpoint?",
+      "basic": "Trace latency through gateway, application, database, and downstream dependencies, checking p95/p99 rather than only averages.",
+      "strong": "Trace latency through gateway, application, database, and downstream dependencies, checking p95/p99 rather than only averages. Reproduce with representative traffic, profile hot paths, inspect indexes and connection pools, and measure improvement after one change. Avoid adding servers before finding the bottleneck.",
+      "takeaway": "Avoid adding servers before finding the bottleneck.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a webhook and how do you make it reliable?",
+      "basic": "A webhook delivers event notifications from one service to another over HTTP.",
+      "strong": "A webhook delivers event notifications from one service to another over HTTP. Sign payloads, verify signatures and timestamps, retry transient failures, and design consumers for duplicate and out-of-order events. Acknowledge quickly and queue longer processing rather than holding the sender connection open.",
+      "takeaway": "Acknowledge quickly and queue longer processing rather than holding the sender connection open.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are CORS and preflight requests?",
+      "basic": "Cross-Origin Resource Sharing lets a server authorize browser-based cross-origin reads using response headers.",
+      "strong": "Cross-Origin Resource Sharing lets a server authorize browser-based cross-origin reads using response headers. For certain methods or custom headers, browsers send an OPTIONS preflight request. CORS is a browser enforcement mechanism, not a substitute for authentication or authorization.",
+      "takeaway": "CORS is a browser enforcement mechanism, not a substitute for authentication or authorization.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you document and test an API contract?",
+      "basic": "Define endpoints, schemas, status codes, authentication, examples, and compatibility expectations in a machine-readable contract such as OpenAPI.",
+      "strong": "Define endpoints, schemas, status codes, authentication, examples, and compatibility expectations in a machine-readable contract such as OpenAPI. Generate or run contract tests across client and server changes. Include invalid inputs, empty responses, pagination, and idempotent retry cases.",
+      "takeaway": "Include invalid inputs, empty responses, pagination, and idempotent retry cases.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

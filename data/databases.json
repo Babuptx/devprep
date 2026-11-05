@@ -16,6 +16,102 @@
       "takeaway": "Database reliability isn't just replication—it's failover + recovery + clear failure handling.",
       "mermaid": "graph TD\n                            classDef app fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;\n                            classDef dbPrimary fill:#ef4444,stroke:#b91c1c,stroke-width:2px,color:#fff;\n                            classDef dbReplica fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;\n\n                            App[Application + Circuit Breaker]:::app -->|Write Fails| DB_P[(Primary DB - DOWN)]:::dbPrimary\n                            App -.->|Automatic Failover| DB_S[(Standby Replica - UP)]:::dbReplica\n                            DB_P -. Sync .-> DB_S",
       "links": []
+    },
+    {
+      "q": "Primary key versus foreign key?",
+      "basic": "A primary key uniquely identifies a row, while a foreign key references a key in another or the same table to enforce relationships.",
+      "strong": "A primary key uniquely identifies a row, while a foreign key references a key in another or the same table to enforce relationships. Choose stable keys and appropriate constraints, and index join paths when queries justify it. Referential integrity guards against orphaned references.",
+      "takeaway": "Referential integrity guards against orphaned references.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are INNER and LEFT JOIN?",
+      "basic": "INNER JOIN returns rows satisfying the join condition on both sides; LEFT JOIN returns all left-side rows plus matches, using NULLs for missing right-side values.",
+      "strong": "INNER JOIN returns rows satisfying the join condition on both sides; LEFT JOIN returns all left-side rows plus matches, using NULLs for missing right-side values. Duplicated matching keys can multiply result rows. Write the join condition carefully and test unmatched cases.",
+      "takeaway": "Write the join condition carefully and test unmatched cases.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is normalization and when would you denormalize?",
+      "basic": "Normalization organizes relational tables to reduce duplicated facts and update anomalies.",
+      "strong": "Normalization organizes relational tables to reduce duplicated facts and update anomalies. Denormalization may improve measured read performance but adds consistency and maintenance work. Start with a correct schema and change it for proven access patterns.",
+      "takeaway": "Start with a correct schema and change it for proven access patterns.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a database index?",
+      "basic": "An index is an auxiliary structure, often a B-tree, that can accelerate filtering, joining, or sorting.",
+      "strong": "An index is an auxiliary structure, often a B-tree, that can accelerate filtering, joining, or sorting. Indexes cost storage and make writes more expensive because they must be maintained. Use query plans and realistic workloads rather than indexing every column.",
+      "takeaway": "Use query plans and realistic workloads rather than indexing every column.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain ACID transactions.",
+      "basic": "Atomicity means all-or-nothing operations, consistency means declared rules are preserved, isolation constrains concurrent interactions, and durability means committed results survive specified failures.",
+      "strong": "Atomicity means all-or-nothing operations, consistency means declared rules are preserved, isolation constrains concurrent interactions, and durability means committed results survive specified failures. Isolation levels vary and can allow anomalies. Know what your database guarantees in the actual configuration.",
+      "takeaway": "Know what your database guarantees in the actual configuration.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you handle lost updates?",
+      "basic": "Lost updates happen when concurrent transactions overwrite one another based on stale reads.",
+      "strong": "Lost updates happen when concurrent transactions overwrite one another based on stale reads. Prevent them with appropriate isolation, row locks, atomic update statements, or optimistic version checks. Test concurrent updates rather than assuming a single-user workflow covers the case.",
+      "takeaway": "Test concurrent updates rather than assuming a single-user workflow covers the case.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is sharding?",
+      "basic": "Sharding distributes data partitions across multiple nodes by a chosen key or range.",
+      "strong": "Sharding distributes data partitions across multiple nodes by a chosen key or range. It can increase storage and write capacity but makes cross-shard joins, rebalancing, and hotspot handling harder. The shard key should reflect data distribution and access patterns.",
+      "takeaway": "The shard key should reflect data distribution and access patterns.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is database replication?",
+      "basic": "Replication copies data to other instances for availability, durability, or read scaling depending on topology.",
+      "strong": "Replication copies data to other instances for availability, durability, or read scaling depending on topology. Asynchronous replicas can lag, which affects read-after-write expectations. Plan failover, split-brain protection, and how applications discover the new primary.",
+      "takeaway": "Plan failover, split-brain protection, and how applications discover the new primary.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a SQL query plan?",
+      "basic": "The optimizer's plan describes how tables, filters, joins, and indexes are used.",
+      "strong": "The optimizer's plan describes how tables, filters, joins, and indexes are used. Inspect actual execution metrics when possible to find scans, bad cardinality estimates, and expensive sorts. Tune queries, statistics, or indexes based on evidence and validate before and after.",
+      "takeaway": "Tune queries, statistics, or indexes based on evidence and validate before and after.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are NULL and three-valued logic?",
+      "basic": "NULL represents missing or unknown information, not zero or an empty string.",
+      "strong": "NULL represents missing or unknown information, not zero or an empty string. SQL comparisons involving NULL often evaluate to UNKNOWN rather than true or false. Use IS NULL and understand how WHERE, aggregates, and outer joins handle missing values.",
+      "takeaway": "Use IS NULL and understand how WHERE, aggregates, and outer joins handle missing values.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a materialized view?",
+      "basic": "A materialized view stores a precomputed query result that can make expensive reads faster.",
+      "strong": "A materialized view stores a precomputed query result that can make expensive reads faster. It introduces refresh cost and data-staleness considerations. Choose it for repeated aggregation or complex queries where the maintenance tradeoff is justified.",
+      "takeaway": "Choose it for repeated aggregation or complex queries where the maintenance tradeoff is justified.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a database migration rollback challenge?",
+      "basic": "Code changes can often be rolled back, but destructive schema migrations or irreversible data transformations cannot always be reversed safely.",
+      "strong": "Code changes can often be rolled back, but destructive schema migrations or irreversible data transformations cannot always be reversed safely. Favor additive changes, backups, staged migrations, and reconciliation checks. Separate rolling back application behavior from restoring deleted data.",
+      "takeaway": "Separate rolling back application behavior from restoring deleted data.",
+      "mermaid": "",
+      "links": []
     }
   ]
 }

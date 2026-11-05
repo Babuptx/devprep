@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prep Pro | Technical Interview Guide</title>
+    <title>Prep Pro | 200 Technical Interview Questions</title>
     <meta name="description" content="Interactive technical interview study guide covering system design, databases, AI engineering, and reliability." />
     
     <!-- GitHub Pages release: external CDN assets require internet access -->
@@ -171,6 +171,8 @@
         // --- 1. Data Source ---
         // Load only the small navigation manifest on initial visit.
         let contentData = [];
+        let navigationGroups = [];
+        let openNavigationGroups = new Set();
         let currentCategoryId = null;
         let navigationVersion = 0;
         const categoryCache = new Map();
@@ -210,6 +212,8 @@
                 const manifest = await fetchJson('data/manifest.json');
                 if (!Array.isArray(manifest.categories) || !manifest.categories.length) throw new Error('Invalid topic manifest');
                 contentData = manifest.categories;
+                navigationGroups = manifest.groups || [{id:"topics",title:"Knowledge Areas",categoryIds:contentData.map(c=>c.id)}];
+                openNavigationGroups = new Set(navigationGroups.map(g=>g.id));
                 renderSidebar();
                 await selectCategory(contentData[0].id);
             } catch (error) { displayLoadError(error); }
@@ -218,21 +222,56 @@
         // --- 3. Render Functions ---
         function renderSidebar() {
             const navMenu = document.getElementById('nav-menu');
-            navMenu.innerHTML = '';
-            
-            contentData.forEach(cat => {
-                const isActive = cat.id === currentCategoryId;
-                const activeClass = isActive 
-                    ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400 border-r-4 border-blue-600 dark:border-blue-400' 
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-white border-r-4 border-transparent';
-                
-                navMenu.innerHTML += `
-                    <a href="#" onclick="selectCategory('${cat.id}', event)" class="flex items-center px-4 py-3 transition-colors ${activeClass}">
-                        <span class="mr-3 ${isActive ? '' : 'opacity-70'}">${cat.icon}</span>
-                        ${cat.title}
-                    </a>
-                `;
-            });
+            navMenu.replaceChildren();
+            for (const group of navigationGroups) {
+                const wrapper = document.createElement('section');
+                wrapper.className = 'mb-3';
+                const heading = document.createElement('button');
+                heading.type = 'button';
+                heading.className = 'w-full flex items-center justify-between text-left px-3 py-2 rounded-lg text-xs uppercase tracking-wide font-bold text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500';
+                const expanded = openNavigationGroups.has(group.id);
+                heading.setAttribute('aria-expanded', String(expanded));
+                heading.textContent = group.title;
+                const chevron = document.createElement('span');
+                chevron.textContent = expanded ? '−' : '+';
+                chevron.setAttribute('aria-hidden', 'true');
+                heading.appendChild(chevron);
+                heading.onclick = () => {
+                    if (openNavigationGroups.has(group.id)) openNavigationGroups.delete(group.id);
+                    else openNavigationGroups.add(group.id);
+                    renderSidebar();
+                };
+                wrapper.appendChild(heading);
+                const entries = document.createElement('div');
+                entries.className = expanded ? 'space-y-1 mt-1' : 'hidden';
+                entries.id = 'nav-group-' + group.id;
+                heading.setAttribute('aria-controls', entries.id);
+                for (const id of group.categoryIds) {
+                    const cat = contentData.find(c => c.id === id);
+                    if (!cat) continue;
+                    const active = cat.id === currentCategoryId;
+                    const link = document.createElement('button');
+                    link.type = 'button';
+                    link.className = 'w-full flex items-center gap-2 px-3 py-2 rounded-md text-left text-sm transition-colors ' +
+                        (active ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 font-semibold border-r-4 border-blue-600' : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800');
+                    link.setAttribute('aria-current', active ? 'page' : 'false');
+                    const label = document.createElement('span');
+                    label.className = 'flex-1';
+                    label.textContent = cat.title;
+                    const count = document.createElement('span');
+                    count.className = 'text-xs tabular-nums text-gray-400 dark:text-gray-500';
+                    count.textContent = String(cat.questionCount || 0);
+                    link.append(label,count);
+                    link.onclick = () => selectCategory(cat.id);
+                    entries.appendChild(link);
+                }
+                wrapper.appendChild(entries);
+                navMenu.appendChild(wrapper);
+            }
+            const footer = document.createElement('p');
+            footer.className = 'px-3 pt-2 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700';
+            footer.textContent = contentData.reduce((n,c) => n + (c.questionCount || 0),0) + ' questions · ' + contentData.length + ' knowledge areas';
+            navMenu.appendChild(footer);
         }
 
         async function selectCategory(id, event) {
@@ -293,11 +332,11 @@
 
                         <div class="p-5 lg:p-6 pt-0 border-t border-gray-100 dark:border-gray-800 mt-2 text-gray-700 dark:text-gray-300 leading-relaxed">
                             
-                            <!-- Basic Answer -->
+                            <!-- Quick Answer -->
                             <div class="mb-6 mt-4 opacity-75">
-                                <h4 class="text-sm font-bold text-red-600 dark:text-red-400 mb-1 flex items-center uppercase tracking-wide">
+                                <h4 class="text-sm font-bold text-sky-700 dark:text-sky-300 mb-1 flex items-center uppercase tracking-wide">
                                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                    Basic Answer
+                                    Quick Answer
                                 </h4>
                                 <p class="italic">"${item.basic}"</p>
                             </div>
@@ -325,15 +364,18 @@
                                 ${item.links.filter(link => link.url.startsWith('https://')).map(link => `<a class="text-blue-600 dark:text-blue-400 underline mr-4" href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a>`).join('')}
                               </div>` : ''}
 
+${item.mermaid ? `
                             <!-- Mermaid Diagram container -->
                             <div class="mt-8 mb-6">
-                                <h4 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 text-center">Architecture Visualization</h4>
+                                <h4 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 text-center">Concept Visualization</h4>
                                 <div class="mermaid-container">
                                     <div class="mermaid-target" id="${uniqueId}" data-graph-def="${encodeURIComponent(item.mermaid)}">
                                         <!-- Graph will render here on open -->
                                     </div>
                                 </div>
                             </div>
+
+` : ''}
                         </div>
                     </details>
                 `;

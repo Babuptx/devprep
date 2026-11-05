@@ -1,0 +1,77 @@
+{
+  "id": "security",
+  "questions": [
+    {
+      "q": "What is the principle of least privilege?",
+      "basic": "Grant each user, application, and workload only the permissions necessary for its task and review them periodically.",
+      "strong": "Grant each user, application, and workload only the permissions necessary for its task and review them periodically. Prefer short-lived credentials and narrow resource scopes. Least privilege reduces the impact of credential theft or accidental misuse.",
+      "takeaway": "Least privilege reduces the impact of credential theft or accidental misuse.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are the OWASP Top 10 risks?",
+      "basic": "The OWASP Top 10 is a widely used awareness framework for common web application risk classes such as broken access control, injection, and insecure design.",
+      "strong": "The OWASP Top 10 is a widely used awareness framework for common web application risk classes such as broken access control, injection, and insecure design. Use it as a starting point, not as a complete security test plan. Apply threat modeling, secure coding, and current guidance relevant to your architecture.",
+      "takeaway": "Apply threat modeling, secure coding, and current guidance relevant to your architecture.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you prevent SQL injection?",
+      "basic": "Use parameterized queries and bind variables so data is never interpreted as SQL syntax.",
+      "strong": "Use parameterized queries and bind variables so data is never interpreted as SQL syntax. Validate inputs and limit database privileges as additional layers. Escaping and client-side checks alone are insufficient substitutes for parameterization.",
+      "takeaway": "Escaping and client-side checks alone are insufficient substitutes for parameterization.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How does XSS differ from CSRF?",
+      "basic": "Cross-site scripting runs attacker-controlled script in a victim's browser through an application's content.",
+      "strong": "Cross-site scripting runs attacker-controlled script in a victim's browser through an application's content. Cross-site request forgery tricks an authenticated browser into making an unintended request. Use output encoding and CSP for XSS, and SameSite cookies, CSRF tokens, and origin checks for relevant CSRF threats.",
+      "takeaway": "Use output encoding and CSP for XSS, and SameSite cookies, CSRF tokens, and origin checks for relevant CSRF threats.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is encryption at rest versus in transit?",
+      "basic": "Encryption in transit protects network communication using protocols such as TLS, while encryption at rest protects stored data on disks or services.",
+      "strong": "Encryption in transit protects network communication using protocols such as TLS, while encryption at rest protects stored data on disks or services. Both depend on key management, access controls, and appropriate threat models. Encryption does not stop an authorized but compromised application from reading plaintext.",
+      "takeaway": "Encryption does not stop an authorized but compromised application from reading plaintext.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is threat modeling?",
+      "basic": "Threat modeling systematically identifies assets, trust boundaries, attackers, entry points, and plausible misuse scenarios.",
+      "strong": "Threat modeling systematically identifies assets, trust boundaries, attackers, entry points, and plausible misuse scenarios. Evaluate likelihood and impact, then prioritize mitigations and detection. Revisit the model when architecture or permissions change.",
+      "takeaway": "Revisit the model when architecture or permissions change.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a security control versus a compliance requirement?",
+      "basic": "A security control reduces an actual risk, while a compliance requirement describes an obligation or assessment criterion under a law, contract, or framework.",
+      "strong": "A security control reduces an actual risk, while a compliance requirement describes an obligation or assessment criterion under a law, contract, or framework. Strong programs map controls to risks and evidence, rather than assuming passing an audit means no vulnerabilities. Scope and jurisdiction matter.",
+      "takeaway": "Scope and jurisdiction matter.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How should you manage application secrets?",
+      "basic": "Store secrets in access-controlled secret managers, rotate them, avoid committing them, and audit retrieval.",
+      "strong": "Store secrets in access-controlled secret managers, rotate them, avoid committing them, and audit retrieval. Use workload identity instead of static keys when available. If exposure occurs, revoke and replace credentials because deleting a file does not erase published Git history.",
+      "takeaway": "If exposure occurs, revoke and replace credentials because deleting a file does not erase published Git history.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you respond to a suspected credential leak?",
+      "basic": "Contain exposure by revoking or rotating the credential, investigate usage logs, assess affected resources, and communicate through the incident process.",
+      "strong": "Contain exposure by revoking or rotating the credential, investigate usage logs, assess affected resources, and communicate through the incident process. Remove exposed copies where possible but assume committed credentials are compromised. Add preventive scanning and revise access scope.",
+      "takeaway": "Add preventive scanning and revise access scope.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

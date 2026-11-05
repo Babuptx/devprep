@@ -1,0 +1,101 @@
+{
+  "id": "infra",
+  "questions": [
+    {
+      "q": "What is infrastructure as code?",
+      "basic": "Infrastructure as code expresses infrastructure resources in version-controlled configuration so teams can review, reproduce, and automate environments.",
+      "strong": "Infrastructure as code expresses infrastructure resources in version-controlled configuration so teams can review, reproduce, and automate environments. Plan and apply changes through controlled pipelines and detect drift. Protect state files and secrets because they can contain sensitive configuration.",
+      "takeaway": "Protect state files and secrets because they can contain sensitive configuration.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Docker image versus container?",
+      "basic": "An image is the packaged, layered filesystem and configuration from which containers are created.",
+      "strong": "An image is the packaged, layered filesystem and configuration from which containers are created. A container is an isolated process instance with runtime state and resource constraints. Images improve repeatability, but containers still share the host kernel and require appropriate security configuration.",
+      "takeaway": "Images improve repeatability, but containers still share the host kernel and require appropriate security configuration.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What does an orchestration platform such as Kubernetes provide?",
+      "basic": "It schedules workloads onto cluster nodes, maintains desired replicas, exposes services, and supports rolling updates, health checks, and resource constraints.",
+      "strong": "It schedules workloads onto cluster nodes, maintains desired replicas, exposes services, and supports rolling updates, health checks, and resource constraints. It does not automatically fix application-level failures or poor database design. Start with clear operational needs before adding orchestration complexity.",
+      "takeaway": "Start with clear operational needs before adding orchestration complexity.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a rolling deployment?",
+      "basic": "A rolling deployment gradually replaces old instances with new ones while retaining capacity for serving traffic.",
+      "strong": "A rolling deployment gradually replaces old instances with new ones while retaining capacity for serving traffic. Readiness checks prevent routing to instances that are not ready. Ensure schema/API compatibility across old and new versions, and prepare an immediate rollback path.",
+      "takeaway": "Ensure schema/API compatibility across old and new versions, and prepare an immediate rollback path.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain blue-green deployment.",
+      "basic": "Maintain two production-like environments, with only one receiving normal traffic.",
+      "strong": "Maintain two production-like environments, with only one receiving normal traffic. Deploy and test the idle environment, then switch traffic when it is ready. This reduces cutover risk but consumes additional resources and requires careful handling of database migrations and shared state.",
+      "takeaway": "This reduces cutover risk but consumes additional resources and requires careful handling of database migrations and shared state.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a canary release?",
+      "basic": "Route a small percentage of traffic to the new version, compare errors, latency, and business metrics against the baseline, and expand gradually if healthy.",
+      "strong": "Route a small percentage of traffic to the new version, compare errors, latency, and business metrics against the baseline, and expand gradually if healthy. Canary analysis must account for traffic mix and statistical noise. Roll back quickly when guardrail thresholds fail.",
+      "takeaway": "Roll back quickly when guardrail thresholds fail.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you debug a container that restarts repeatedly?",
+      "basic": "Inspect exit codes, logs, health checks, resource limits, and recent image/config changes.",
+      "strong": "Inspect exit codes, logs, health checks, resource limits, and recent image/config changes. Reproduce with the same image and environment while checking whether the process starts and binds the expected port. Separate application crashes from orchestration restarts due to health probe or memory failures.",
+      "takeaway": "Separate application crashes from orchestration restarts due to health probe or memory failures.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is configuration drift?",
+      "basic": "Drift occurs when actual infrastructure differs from its declared or expected configuration, often after manual changes.",
+      "strong": "Drift occurs when actual infrastructure differs from its declared or expected configuration, often after manual changes. It harms repeatability and incident analysis. Detect changes through plan/diff and inventory checks and reconcile them with reviewed configuration updates.",
+      "takeaway": "Detect changes through plan/diff and inventory checks and reconcile them with reviewed configuration updates.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are secrets and how should they be stored?",
+      "basic": "Secrets such as API keys and database passwords need restricted, audited storage and controlled rotation.",
+      "strong": "Secrets such as API keys and database passwords need restricted, audited storage and controlled rotation. Use a secrets manager or dedicated secure mechanism, inject them at runtime, and avoid embedding them in source control or images. Remove leaked credentials immediately rather than only deleting the commit.",
+      "takeaway": "Remove leaked credentials immediately rather than only deleting the commit.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain immutable infrastructure.",
+      "basic": "Instead of modifying long-lived servers in place, create a new tested image or environment and replace the old instance.",
+      "strong": "Instead of modifying long-lived servers in place, create a new tested image or environment and replace the old instance. This improves reproducibility and rollback clarity. Persist data outside ephemeral instances and account for safe state migrations.",
+      "takeaway": "Persist data outside ephemeral instances and account for safe state migrations.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Why are readiness and liveness probes different?",
+      "basic": "Readiness indicates whether a process should receive traffic, while liveness indicates whether it should be restarted because it is irrecoverably unhealthy.",
+      "strong": "Readiness indicates whether a process should receive traffic, while liveness indicates whether it should be restarted because it is irrecoverably unhealthy. Misconfigured probes can cause restart loops or route traffic to unready workers. Use lightweight checks that reflect the intended semantics.",
+      "takeaway": "Use lightweight checks that reflect the intended semantics.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are service-level indicators and objectives?",
+      "basic": "An SLI is a measured reliability metric such as successful request fraction or latency.",
+      "strong": "An SLI is a measured reliability metric such as successful request fraction or latency. An SLO is the target for that metric over a stated window. Error budgets help teams decide when reliability work should take precedence over release velocity.",
+      "takeaway": "Error budgets help teams decide when reliability work should take precedence over release velocity.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

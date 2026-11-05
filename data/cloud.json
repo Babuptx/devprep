@@ -1,0 +1,93 @@
+{
+  "id": "cloud",
+  "questions": [
+    {
+      "q": "What is an availability zone versus a region?",
+      "basic": "A region is a geographical cloud location; availability zones represent separate fault domains within it.",
+      "strong": "A region is a geographical cloud location; availability zones represent separate fault domains within it. Multi-AZ deployment can withstand certain facility failures, while multi-region design addresses larger outages at greater cost and data complexity. Know the service's actual redundancy guarantees.",
+      "takeaway": "Know the service's actual redundancy guarantees.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What does a virtual private cloud provide?",
+      "basic": "A virtual private cloud offers a logically isolated network environment with subnets, routing, and security controls.",
+      "strong": "A virtual private cloud offers a logically isolated network environment with subnets, routing, and security controls. Public and private subnet behavior depends on routes and internet access gateways rather than the name alone. Combine network isolation with identity, encryption, and host controls.",
+      "takeaway": "Combine network isolation with identity, encryption, and host controls.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Compare IaaS, PaaS, and SaaS.",
+      "basic": "Infrastructure as a Service supplies compute, storage, and networking primitives; Platform as a Service manages more runtime and deployment concerns; Software as a Service delivers a finished application.",
+      "strong": "Infrastructure as a Service supplies compute, storage, and networking primitives; Platform as a Service manages more runtime and deployment concerns; Software as a Service delivers a finished application. The customer/provider responsibility boundary shifts across models. Review actual service contracts rather than assuming one standard division.",
+      "takeaway": "Review actual service contracts rather than assuming one standard division.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is the shared-responsibility security model?",
+      "basic": "The cloud provider secures the facilities and underlying managed platform components while customers secure what they configure, deploy, and store according to the service model.",
+      "strong": "The cloud provider secures the facilities and underlying managed platform components while customers secure what they configure, deploy, and store according to the service model. For a virtual machine, patching the guest OS may be the customer's job; a managed runtime shifts that boundary. Misconfiguration remains a major risk.",
+      "takeaway": "Misconfiguration remains a major risk.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is autoscaling?",
+      "basic": "Autoscaling adjusts the number or size of compute resources based on policy signals such as CPU, queue depth, and demand.",
+      "strong": "Autoscaling adjusts the number or size of compute resources based on policy signals such as CPU, queue depth, and demand. Choose meaningful thresholds, cooldowns, minimum capacity, and safe scaling limits. Autoscaling does not solve database saturation or eliminate startup latency.",
+      "takeaway": "Autoscaling does not solve database saturation or eliminate startup latency.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Object storage versus block storage?",
+      "basic": "Object storage provides durable objects accessed through APIs and is ideal for media, backups, and logs.",
+      "strong": "Object storage provides durable objects accessed through APIs and is ideal for media, backups, and logs. Block storage presents volumes for filesystems or databases needing low-level block access. Choose based on latency, access patterns, consistency, and attachment needs.",
+      "takeaway": "Choose based on latency, access patterns, consistency, and attachment needs.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is serverless computing?",
+      "basic": "Serverless platforms run functions or services while the provider manages much infrastructure provisioning and scaling.",
+      "strong": "Serverless platforms run functions or services while the provider manages much infrastructure provisioning and scaling. They suit event-driven and variable workloads but have limits around execution duration, startup time, concurrency, and vendor integration. Evaluate cost at the actual traffic shape.",
+      "takeaway": "Evaluate cost at the actual traffic shape.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you make a cloud workload cost-efficient?",
+      "basic": "Measure spend by service and workload, then right-size idle capacity, improve utilization, schedule nonproduction shutdown, and optimize storage lifecycle.",
+      "strong": "Measure spend by service and workload, then right-size idle capacity, improve utilization, schedule nonproduction shutdown, and optimize storage lifecycle. Reserved/committed discounts help only with predictable usage. Include reliability and engineering costs rather than minimizing the bill blindly.",
+      "takeaway": "Include reliability and engineering costs rather than minimizing the bill blindly.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How should cloud permissions be managed?",
+      "basic": "Use least-privilege identity roles, short-lived credentials, separation of duties, auditing, and periodic access review.",
+      "strong": "Use least-privilege identity roles, short-lived credentials, separation of duties, auditing, and periodic access review. Prefer workload identities over long-lived keys stored in source code. Test permissions to ensure the service can perform required operations without broad administrative grants.",
+      "takeaway": "Test permissions to ensure the service can perform required operations without broad administrative grants.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a disaster recovery plan?",
+      "basic": "Define critical business services, recovery time objective, recovery point objective, backups, redundancy, and responsible responders.",
+      "strong": "Define critical business services, recovery time objective, recovery point objective, backups, redundancy, and responsible responders. Exercise restore and failover steps; untested backups provide false reassurance. Runbooks should cover both infrastructure restoration and application/data consistency checks.",
+      "takeaway": "Runbooks should cover both infrastructure restoration and application/data consistency checks.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you monitor a cloud service?",
+      "basic": "Collect service-level latency, error rate, throughput, saturation, and dependency health, using logs, metrics, and traces.",
+      "strong": "Collect service-level latency, error rate, throughput, saturation, and dependency health, using logs, metrics, and traces. Alert on user-impacting symptoms and actionable thresholds. Establish baselines, dashboards, and on-call response paths before relying on alerts alone.",
+      "takeaway": "Establish baselines, dashboards, and on-call response paths before relying on alerts alone.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "oop",
+  "questions": [
+    {
+      "q": "What are the four pillars of object-oriented programming?",
+      "basic": "Encapsulation controls access to internal state; abstraction exposes only necessary behavior; inheritance models subtype relationships; polymorphism permits one interface to invoke different implementations.",
+      "strong": "Encapsulation controls access to internal state; abstraction exposes only necessary behavior; inheritance models subtype relationships; polymorphism permits one interface to invoke different implementations. Give a concise example such as a PaymentMethod interface with multiple concrete types. Composition is often preferable when there is no true is-a relationship.",
+      "takeaway": "Composition is often preferable when there is no true is-a relationship.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Distinguish abstraction from encapsulation.",
+      "basic": "Abstraction decides which operations callers need to see, while encapsulation protects internal state and implementation details.",
+      "strong": "Abstraction decides which operations callers need to see, while encapsulation protects internal state and implementation details. A Storage interface abstracts persistence, and private fields encapsulate how an implementation manages connections. Good designs use both to reduce coupling and preserve invariants.",
+      "takeaway": "Good designs use both to reduce coupling and preserve invariants.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "When is composition better than inheritance?",
+      "basic": "Composition builds behavior by assembling collaborating objects rather than inheriting implementation.",
+      "strong": "Composition builds behavior by assembling collaborating objects rather than inheriting implementation. It avoids fragile base-class coupling and allows parts to be swapped or tested independently. Prefer inheritance for genuine substitutable subtype relationships, and composition for configurable has-a relationships.",
+      "takeaway": "Prefer inheritance for genuine substitutable subtype relationships, and composition for configurable has-a relationships.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is method overloading versus overriding?",
+      "basic": "Overloading defines multiple methods with one name but different parameter signatures, usually resolved at compile time.",
+      "strong": "Overloading defines multiple methods with one name but different parameter signatures, usually resolved at compile time. Overriding provides a subclass implementation of an inherited virtual method, enabling runtime dispatch. Do not confuse overloading with different return types alone, which is insufficient in many languages.",
+      "takeaway": "Do not confuse overloading with different return types alone, which is insufficient in many languages.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain interfaces and abstract classes.",
+      "basic": "An interface defines the contract callers depend on, while an abstract class can also provide shared code or state; exact language rules differ.",
+      "strong": "An interface defines the contract callers depend on, while an abstract class can also provide shared code or state; exact language rules differ. Choose a small interface when clients need capabilities without knowledge of implementation. Use an abstract class when related implementations genuinely share behavior.",
+      "takeaway": "Use an abstract class when related implementations genuinely share behavior.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is dynamic dispatch?",
+      "basic": "With polymorphism, the method body chosen can depend on the runtime type of the object rather than the static type of the reference.",
+      "strong": "With polymorphism, the method body chosen can depend on the runtime type of the object rather than the static type of the reference. Java interface methods and C++ virtual functions are common examples. Dynamic dispatch enables extensibility but introduces a level of indirection and design constraints.",
+      "takeaway": "Dynamic dispatch enables extensibility but introduces a level of indirection and design constraints.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain RAII in C++.",
+      "basic": "Resource Acquisition Is Initialization ties a resource's lifetime to the lifetime of an object.",
+      "strong": "Resource Acquisition Is Initialization ties a resource's lifetime to the lifetime of an object. A constructor acquires or establishes ownership, and a destructor releases resources even when exceptions occur. Prefer containers, lock guards, and smart pointers over manual new/delete for clear ownership.",
+      "takeaway": "Prefer containers, lock guards, and smart pointers over manual new/delete for clear ownership.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "When do you choose unique_ptr versus shared_ptr?",
+      "basic": "Use unique_ptr for exclusive ownership because it is simple, movable, and inexpensive.",
+      "strong": "Use unique_ptr for exclusive ownership because it is simple, movable, and inexpensive. Use shared_ptr only when multiple owners genuinely need to extend an object's lifetime; reference counting adds overhead and cycles can prevent release. A weak_ptr breaks shared-ownership cycles without extending lifetime.",
+      "takeaway": "A weak_ptr breaks shared-ownership cycles without extending lifetime.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is the difference between value and reference semantics?",
+      "basic": "Value semantics gives each holder a separate logical value, so modifications do not unintentionally affect others.",
+      "strong": "Value semantics gives each holder a separate logical value, so modifications do not unintentionally affect others. Reference semantics permits multiple names to observe or mutate the same object. Choose carefully based on copying cost, mutability, and ownership; in C++ const references are useful for large read-only arguments.",
+      "takeaway": "Choose carefully based on copying cost, mutability, and ownership; in C++ const references are useful for large read-only arguments.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do exceptions affect program design?",
+      "basic": "Exceptions separate normal result flow from exceptional failures, but resources must still be cleaned up and callers need documented guarantees.",
+      "strong": "Exceptions separate normal result flow from exceptional failures, but resources must still be cleaned up and callers need documented guarantees. In C++, RAII and strong exception safety help prevent leaks or partial state changes. Catch at a layer that can actually recover or add useful context rather than swallowing errors.",
+      "takeaway": "Catch at a layer that can actually recover or add useful context rather than swallowing errors.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is immutability and why is it useful?",
+      "basic": "Immutable values do not change after construction, making state easier to reason about and share across concurrent code.",
+      "strong": "Immutable values do not change after construction, making state easier to reason about and share across concurrent code. The tradeoff is that updates may create new objects or require persistent data structures. Use immutable DTOs and configuration objects when their semantics fit.",
+      "takeaway": "Use immutable DTOs and configuration objects when their semantics fit.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are SOLID principles?",
+      "basic": "SOLID summarizes five design heuristics: single responsibility, open/closed, Liskov substitution, interface segregation, and dependency inversion.",
+      "strong": "SOLID summarizes five design heuristics: single responsibility, open/closed, Liskov substitution, interface segregation, and dependency inversion. They encourage cohesive modules, substitutable types, small contracts, and dependencies on abstractions. Apply them to concrete maintenance problems rather than adding interfaces everywhere.",
+      "takeaway": "Apply them to concrete maintenance problems rather than adding interfaces everywhere.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How does Java garbage collection compare with C++ memory management?",
+      "basic": "Java's managed runtime reclaims unreachable heap objects, while modern C++ relies heavily on deterministic ownership patterns such as RAII.",
+      "strong": "Java's managed runtime reclaims unreachable heap objects, while modern C++ relies heavily on deterministic ownership patterns such as RAII. Garbage collection does not automatically close external resources at the right time. Both approaches require careful design of resource lifetime and object references.",
+      "takeaway": "Both approaches require careful design of resource lifetime and object references.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

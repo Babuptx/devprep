@@ -1,37 +1,199 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "curriculumVersion": "2.0",
+  "targetQuestionCount": 200,
+  "groups": [
+    {
+      "id": "software-engineering",
+      "title": "Software Engineering",
+      "categoryIds": [
+        "algorithms",
+        "oop",
+        "system-design",
+        "api",
+        "frontend"
+      ]
+    },
+    {
+      "id": "infrastructure-cloud",
+      "title": "Infrastructure & Cloud",
+      "categoryIds": [
+        "infra",
+        "cloud",
+        "networking",
+        "cicd"
+      ]
+    },
+    {
+      "id": "data-ai",
+      "title": "Data & AI",
+      "categoryIds": [
+        "databases",
+        "data-engineering",
+        "ml",
+        "ai-engineering"
+      ]
+    },
+    {
+      "id": "security-reliability",
+      "title": "Security & Reliability",
+      "categoryIds": [
+        "security",
+        "performance"
+      ]
+    },
+    {
+      "id": "career-interview",
+      "title": "Career & Interview",
+      "categoryIds": [
+        "behavioral"
+      ]
+    }
+  ],
   "categories": [
     {
+      "id": "algorithms",
+      "title": "Data Structures & Algorithms",
+      "desc": "Data structures, complexity, coding patterns and technical reasoning.",
+      "file": "data/algorithms.json",
+      "questionCount": 13,
+      "target": 13,
+      "group": "software-engineering"
+    },
+    {
+      "id": "oop",
+      "title": "Programming Fundamentals & OOP",
+      "desc": "Language mechanics, design principles and object-oriented software.",
+      "file": "data/oop.json",
+      "questionCount": 13,
+      "target": 13,
+      "group": "software-engineering"
+    },
+    {
       "id": "system-design",
-      "title": "System Design & Architecture",
-      "desc": "Foundational concepts for building scalable, highly available systems.",
-      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\"></path></svg>",
+      "title": "Web & System Architecture",
+      "desc": "Scalable designs, distributed systems and architecture tradeoffs.",
       "file": "data/system-design.json",
-      "questionCount": 3
+      "questionCount": 17,
+      "target": 17,
+      "group": "software-engineering"
+    },
+    {
+      "id": "api",
+      "title": "API Design & Backend Engineering",
+      "desc": "Protocols, data contracts, service boundaries and API reliability.",
+      "file": "data/api.json",
+      "questionCount": 12,
+      "target": 12,
+      "group": "software-engineering"
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend & Mobile Engineering",
+      "desc": "Browser fundamentals, accessible interfaces and mobile development.",
+      "file": "data/frontend.json",
+      "questionCount": 10,
+      "target": 10,
+      "group": "software-engineering"
+    },
+    {
+      "id": "infra",
+      "title": "Infrastructure & DevOps",
+      "desc": "Containers, orchestration, automation and deployment operations.",
+      "file": "data/infra.json",
+      "questionCount": 12,
+      "target": 12,
+      "group": "infrastructure-cloud"
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud Computing",
+      "desc": "Cloud architecture, identity, cost, resilience and managed services.",
+      "file": "data/cloud.json",
+      "questionCount": 11,
+      "target": 11,
+      "group": "infrastructure-cloud"
+    },
+    {
+      "id": "networking",
+      "title": "Networking & Operating Systems",
+      "desc": "Network protocols, Linux, processes, threads and memory.",
+      "file": "data/networking.json",
+      "questionCount": 12,
+      "target": 12,
+      "group": "infrastructure-cloud"
+    },
+    {
+      "id": "cicd",
+      "title": "CI/CD, Testing & Quality",
+      "desc": "Testing strategies, build pipelines, delivery and validation.",
+      "file": "data/cicd.json",
+      "questionCount": 12,
+      "target": 12,
+      "group": "infrastructure-cloud"
     },
     {
       "id": "databases",
-      "title": "Databases & Caching",
-      "desc": "Data storage, retrieval, persistence, and state management.",
-      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4\"></path></svg>",
+      "title": "Database Management & SQL",
+      "desc": "Relational modeling, query design, transactions and caching.",
       "file": "data/databases.json",
-      "questionCount": 2
+      "questionCount": 14,
+      "target": 14,
+      "group": "data-ai"
+    },
+    {
+      "id": "data-engineering",
+      "title": "Data Engineering & Analytics",
+      "desc": "ETL, streaming, quality, warehouses and metrics.",
+      "file": "data/data-engineering.json",
+      "questionCount": 12,
+      "target": 12,
+      "group": "data-ai"
+    },
+    {
+      "id": "ml",
+      "title": "Machine Learning & AI",
+      "desc": "Model fundamentals, evaluation, data leakage and deployment.",
+      "file": "data/ml.json",
+      "questionCount": 13,
+      "target": 13,
+      "group": "data-ai"
     },
     {
       "id": "ai-engineering",
-      "title": "AI Engineering",
-      "desc": "LLMs, Vectors, Prompt Engineering, and AI Infrastructure.",
-      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg>",
+      "title": "AI Engineering & LLMs",
+      "desc": "Retrieval, vector search, agents, prompt safety and AI systems.",
       "file": "data/ai-engineering.json",
-      "questionCount": 2
+      "questionCount": 16,
+      "target": 16,
+      "group": "data-ai"
+    },
+    {
+      "id": "security",
+      "title": "Security & Compliance",
+      "desc": "Secure architecture, access control, privacy and risk.",
+      "file": "data/security.json",
+      "questionCount": 9,
+      "target": 9,
+      "group": "security-reliability"
     },
     {
       "id": "performance",
-      "title": "Performance & Reliability",
-      "desc": "Ensuring systems are fast, resilient, and degrade gracefully.",
-      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>",
+      "title": "Performance, Scalability & Reliability",
+      "desc": "Profiling, caching, tail latency, failure handling and SLOs.",
       "file": "data/performance.json",
-      "questionCount": 2
+      "questionCount": 14,
+      "target": 14,
+      "group": "security-reliability"
+    },
+    {
+      "id": "behavioral",
+      "title": "Behavioral & Leadership",
+      "desc": "STAR stories, judgment, teamwork, ownership and communication.",
+      "file": "data/behavioral.json",
+      "questionCount": 10,
+      "target": 10,
+      "group": "career-interview"
     }
   ]
 }

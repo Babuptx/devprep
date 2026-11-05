@@ -1,0 +1,85 @@
+{
+  "id": "frontend",
+  "questions": [
+    {
+      "q": "What happens when a browser loads a web page?",
+      "basic": "The browser resolves the hostname, establishes transport and TLS as needed, requests resources, parses HTML into a DOM, processes CSS, executes scripts, and performs layout and painting.",
+      "strong": "The browser resolves the hostname, establishes transport and TLS as needed, requests resources, parses HTML into a DOM, processes CSS, executes scripts, and performs layout and painting. Exact scheduling depends on resource priorities and script attributes. Diagnose the critical rendering path rather than assuming all files load sequentially.",
+      "takeaway": "Diagnose the critical rendering path rather than assuming all files load sequentially.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is the DOM and how is it updated?",
+      "basic": "The Document Object Model is the structured object representation of a web document.",
+      "strong": "The Document Object Model is the structured object representation of a web document. JavaScript can read and modify nodes, attributes, and event listeners, causing style/layout/paint work when needed. Batch changes and avoid repeated layout reads and writes that cause thrashing.",
+      "takeaway": "Batch changes and avoid repeated layout reads and writes that cause thrashing.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How does event delegation work?",
+      "basic": "Attach one listener to a common ancestor and inspect the event target as events bubble upward.",
+      "strong": "Attach one listener to a common ancestor and inspect the event target as events bubble upward. This reduces per-element listeners and supports dynamically added children. Check whether the event bubbles and use closest() to identify an intended actionable descendant safely.",
+      "takeaway": "Check whether the event bubbles and use closest() to identify an intended actionable descendant safely.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is responsive design?",
+      "basic": "Responsive design adapts layouts to viewport size and user capabilities using fluid dimensions, breakpoints, and flexible components.",
+      "strong": "Responsive design adapts layouts to viewport size and user capabilities using fluid dimensions, breakpoints, and flexible components. Prefer content-first design, accessible touch targets, readable typography, and actual device testing. A mobile viewport meta tag is necessary but not sufficient.",
+      "takeaway": "A mobile viewport meta tag is necessary but not sufficient.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you prevent cross-site scripting on a frontend?",
+      "basic": "Treat user-provided content as untrusted: render it as text, not HTML; avoid unsafe innerHTML, sanitize carefully when rich HTML is unavoidable, and deploy a restrictive content security policy.",
+      "strong": "Treat user-provided content as untrusted: render it as text, not HTML; avoid unsafe innerHTML, sanitize carefully when rich HTML is unavoidable, and deploy a restrictive content security policy. Framework escaping helps but cannot protect intentionally unsafe injection points.",
+      "takeaway": "Framework escaping helps but cannot protect intentionally unsafe injection points.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is lazy loading in web applications?",
+      "basic": "Lazy loading delays fetching or rendering resources until they are needed, reducing initial network and processing cost.",
+      "strong": "Lazy loading delays fetching or rendering resources until they are needed, reducing initial network and processing cost. Examples include route modules, images below the fold, and DevPrep topic JSON. Balance it against extra navigation requests and provide loading/error states.",
+      "takeaway": "Balance it against extra navigation requests and provide loading/error states.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is an accessible interactive control?",
+      "basic": "Prefer native buttons, links, and form elements with clear labels, keyboard support, focus states, and sufficient contrast.",
+      "strong": "Prefer native buttons, links, and form elements with clear labels, keyboard support, focus states, and sufficient contrast. Custom components must expose correct roles, names, and state to assistive technology. Test keyboard-only interaction and screen readers, not just visual appearance.",
+      "takeaway": "Test keyboard-only interaction and screen readers, not just visual appearance.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you optimize frontend performance?",
+      "basic": "Measure user-facing metrics such as Largest Contentful Paint and Interaction to Next Paint, then reduce blocking scripts, oversized assets, unnecessary rerenders, and network waterfalls.",
+      "strong": "Measure user-facing metrics such as Largest Contentful Paint and Interaction to Next Paint, then reduce blocking scripts, oversized assets, unnecessary rerenders, and network waterfalls. Use caching, code splitting, responsive images, and profiler evidence. Do not optimize solely for bundle size if responsiveness suffers.",
+      "takeaway": "Do not optimize solely for bundle size if responsiveness suffers.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How does mobile app state differ from server state?",
+      "basic": "UI state covers temporary local interactions; server state is authoritative data fetched from an API and may be stale or shared.",
+      "strong": "UI state covers temporary local interactions; server state is authoritative data fetched from an API and may be stale or shared. Design explicit synchronization, offline behavior, retries, and conflict handling. Mobile adds battery, intermittent connectivity, and lifecycle constraints.",
+      "takeaway": "Mobile adds battery, intermittent connectivity, and lifecycle constraints.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are the tradeoffs between native and cross-platform mobile development?",
+      "basic": "Native platforms offer direct access to ecosystem APIs and tooling; cross-platform frameworks share code and can accelerate consistent feature delivery.",
+      "strong": "Native platforms offer direct access to ecosystem APIs and tooling; cross-platform frameworks share code and can accelerate consistent feature delivery. Evaluate UI complexity, device-specific integrations, performance, and team skill. Avoid assuming a single approach fits every application.",
+      "takeaway": "Avoid assuming a single approach fits every application.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

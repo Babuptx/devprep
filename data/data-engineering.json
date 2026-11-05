@@ -1,0 +1,101 @@
+{
+  "id": "data-engineering",
+  "questions": [
+    {
+      "q": "ETL versus ELT?",
+      "basic": "ETL transforms data before loading to the destination, while ELT loads first and transforms within a capable target platform.",
+      "strong": "ETL transforms data before loading to the destination, while ELT loads first and transforms within a capable target platform. The best choice depends on governance, compute location, data volumes, and transformation latency. Both require lineage, monitoring, and validation.",
+      "takeaway": "Both require lineage, monitoring, and validation.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Batch processing versus streaming?",
+      "basic": "Batch processes bounded datasets on schedules; streaming processes arriving events continuously or in micro-batches.",
+      "strong": "Batch processes bounded datasets on schedules; streaming processes arriving events continuously or in micro-batches. Streaming offers lower latency but increases complexity around ordering, replay, deduplication, and state. Choose based on actual freshness requirements rather than defaulting to real time.",
+      "takeaway": "Choose based on actual freshness requirements rather than defaulting to real time.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a data warehouse versus a data lake?",
+      "basic": "A warehouse typically optimizes structured analytical querying and governed models; a data lake holds diverse raw or curated data in flexible formats.",
+      "strong": "A warehouse typically optimizes structured analytical querying and governed models; a data lake holds diverse raw or curated data in flexible formats. Lakehouse approaches blend parts of each. Evaluate schemas, access patterns, governance, cost, and workload separation.",
+      "takeaway": "Evaluate schemas, access patterns, governance, cost, and workload separation.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is data lineage?",
+      "basic": "Lineage records how data travels from sources through transformations to outputs.",
+      "strong": "Lineage records how data travels from sources through transformations to outputs. It helps explain metrics, assess downstream impact of changes, and investigate quality incidents. Keep both dataset-level and column-level lineage where the use case justifies it.",
+      "takeaway": "Keep both dataset-level and column-level lineage where the use case justifies it.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are dimensions and facts in analytics?",
+      "basic": "Fact tables capture measurable events or transactions, while dimension tables describe entities such as customer, date, or product.",
+      "strong": "Fact tables capture measurable events or transactions, while dimension tables describe entities such as customer, date, or product. A star schema organizes facts around related dimensions for reporting. Define grain explicitly to prevent double counting across joins.",
+      "takeaway": "Define grain explicitly to prevent double counting across joins.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you check data quality in a pipeline?",
+      "basic": "Validate schema, types, required values, ranges, uniqueness, referential integrity, timeliness, and reconciliation totals.",
+      "strong": "Validate schema, types, required values, ranges, uniqueness, referential integrity, timeliness, and reconciliation totals. Quarantine invalid records and make failures observable instead of silently coercing input. Use tests at ingestion and at important transformations.",
+      "takeaway": "Use tests at ingestion and at important transformations.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is an idempotent data pipeline?",
+      "basic": "Rerunning a job should not create duplicate records or corrupt the intended final dataset.",
+      "strong": "Rerunning a job should not create duplicate records or corrupt the intended final dataset. Use stable event identifiers, deterministic partition replacement, upserts, or checkpoints as appropriate. Test restarts and partial failures because pipelines are often retried.",
+      "takeaway": "Test restarts and partial failures because pipelines are often retried.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do watermarks help streaming systems?",
+      "basic": "Event time is when an event occurred, while processing time is when it arrived.",
+      "strong": "Event time is when an event occurred, while processing time is when it arrived. A watermark estimates how far event time has progressed so windows can close despite late events. The lateness policy trades completeness against latency and state cost.",
+      "takeaway": "The lateness policy trades completeness against latency and state cost.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is schema evolution?",
+      "basic": "Source or target fields may be added, removed, or changed over time, and producers and consumers need compatibility rules.",
+      "strong": "Source or target fields may be added, removed, or changed over time, and producers and consumers need compatibility rules. Additive fields with defaults are often easier than changing types or meanings. Version schemas, validate payloads, and coordinate breaking changes.",
+      "takeaway": "Version schemas, validate payloads, and coordinate breaking changes.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you reconcile totals between two systems?",
+      "basic": "Define matching business grain, identifiers, currency, time zone, and cutoff windows first.",
+      "strong": "Define matching business grain, identifiers, currency, time zone, and cutoff windows first. Compare counts and aggregates, then investigate unmatched keys, duplicates, late events, and transformation differences. Record exceptions rather than forcing totals to agree artificially.",
+      "takeaway": "Record exceptions rather than forcing totals to agree artificially.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are partitioning and clustering in analytics?",
+      "basic": "Partitioning prunes large data segments by predicates such as date, while clustering or sorting organizes data within storage to accelerate common filters.",
+      "strong": "Partitioning prunes large data segments by predicates such as date, while clustering or sorting organizes data within storage to accelerate common filters. Poorly chosen keys can create too many small partitions or skew. Use query logs to choose keys and monitor maintenance cost.",
+      "takeaway": "Use query logs to choose keys and monitor maintenance cost.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you design a dashboard metric responsibly?",
+      "basic": "Specify the metric's numerator, denominator, time window, filters, deduplication logic, and source-of-truth dataset.",
+      "strong": "Specify the metric's numerator, denominator, time window, filters, deduplication logic, and source-of-truth dataset. Include freshness and caveats so stakeholders do not confuse partial with final results. Test metrics against manually audited samples.",
+      "takeaway": "Test metrics against manually audited samples.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

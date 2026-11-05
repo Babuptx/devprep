@@ -16,6 +16,118 @@
       "takeaway": "Measure first. Optimize RAG chunks and history, but balance cost savings against output quality.",
       "mermaid": "graph TD\n                            classDef raw fill:#94a3b8,stroke:#475569,stroke-width:2px,color:#fff;\n                            classDef opt fill:#22c55e,stroke:#15803d,stroke-width:2px,color:#fff;\n\n                            Raw[Raw Input: 10 Chunks + Full History]:::raw --> Filter{Optimization Pipeline}\n                            Filter -->|Semantic Re-ranking| Keep3[Keep Top 3 Chunks]:::opt\n                            Filter -->|Summarization| SumHist[Summarize History]:::opt\n                            Keep3 --> Final[Optimized Prompt to LLM]\n                            SumHist --> Final",
       "links": []
+    },
+    {
+      "q": "What is retrieval-augmented generation (RAG)?",
+      "basic": "RAG retrieves relevant external information and supplies it as context to a language model rather than depending solely on model parameters.",
+      "strong": "RAG retrieves relevant external information and supplies it as context to a language model rather than depending solely on model parameters. It can support fresher and more traceable answers. Quality depends on chunking, retrieval ranking, source reliability, and the model's ability to use citations accurately.",
+      "takeaway": "Quality depends on chunking, retrieval ranking, source reliability, and the model's ability to use citations accurately.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a context window?",
+      "basic": "A context window is the amount of input and generated token context a model can process in one request, subject to model-specific limits.",
+      "strong": "A context window is the amount of input and generated token context a model can process in one request, subject to model-specific limits. Longer context may raise latency and cost and does not guarantee better retrieval. Choose the smallest sufficient, high-quality context and measure task success.",
+      "takeaway": "Choose the smallest sufficient, high-quality context and measure task success.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is prompt injection?",
+      "basic": "Prompt injection occurs when untrusted input, such as a retrieved document or webpage, tries to redirect model behavior.",
+      "strong": "Prompt injection occurs when untrusted input, such as a retrieved document or webpage, tries to redirect model behavior. Treat external text as data, separate instructions and permissions, and validate tool actions independently. Do not assume that telling a model to ignore malicious text is a complete defense.",
+      "takeaway": "Do not assume that telling a model to ignore malicious text is a complete defense.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is an LLM hallucination?",
+      "basic": "A hallucination is a generated assertion that is unsupported or false, even when confidently worded.",
+      "strong": "A hallucination is a generated assertion that is unsupported or false, even when confidently worded. Reduce it through grounded retrieval, constrained outputs, verification, and explicit uncertainty. Measure factual correctness with representative evaluations because fluent wording is not evidence.",
+      "takeaway": "Measure factual correctness with representative evaluations because fluent wording is not evidence.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you measure RAG quality?",
+      "basic": "Evaluate retrieval relevance and coverage separately from answer correctness and citation faithfulness.",
+      "strong": "Evaluate retrieval relevance and coverage separately from answer correctness and citation faithfulness. Use a labeled set of realistic questions, including unanswerable cases and adversarial or ambiguous wording. Monitor latency, cost, and drift as the corpus changes.",
+      "takeaway": "Monitor latency, cost, and drift as the corpus changes.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a vector database?",
+      "basic": "A vector store indexes embeddings for similarity queries and often combines vector search with metadata filters.",
+      "strong": "A vector store indexes embeddings for similarity queries and often combines vector search with metadata filters. Approximate nearest-neighbor indexes trade some recall for lower latency and cost. Choose metrics and indexing parameters based on measured recall at required throughput.",
+      "takeaway": "Choose metrics and indexing parameters based on measured recall at required throughput.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "When should you use semantic versus keyword search?",
+      "basic": "Keyword search is strong for exact terms, identifiers, and rare phrases, while semantic retrieval helps with paraphrases and concept-level similarity.",
+      "strong": "Keyword search is strong for exact terms, identifiers, and rare phrases, while semantic retrieval helps with paraphrases and concept-level similarity. Hybrid systems combine both and rerank candidates. Evaluate the queries users actually ask rather than assuming embeddings always win.",
+      "takeaway": "Evaluate the queries users actually ask rather than assuming embeddings always win.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is function calling or tool use in AI agents?",
+      "basic": "A model can propose a structured tool invocation, but application code must validate arguments, enforce authorization, execute the tool, and record results.",
+      "strong": "A model can propose a structured tool invocation, but application code must validate arguments, enforce authorization, execute the tool, and record results. Tool use adds capability and risk. Restrict available actions, apply budgets, and require explicit approval for sensitive effects.",
+      "takeaway": "Restrict available actions, apply budgets, and require explicit approval for sensitive effects.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is an AI agent workflow?",
+      "basic": "An agent plans or selects steps, calls tools, observes results, and may iterate toward a goal.",
+      "strong": "An agent plans or selects steps, calls tools, observes results, and may iterate toward a goal. Robust designs bound iterations, separate trusted instructions from retrieved data, and log decisions and failures. Prefer deterministic workflows when autonomy adds little benefit.",
+      "takeaway": "Prefer deterministic workflows when autonomy adds little benefit.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you reduce model inference cost responsibly?",
+      "basic": "Measure tokens, model selection, batching, caching, and retrieval overhead while tracking output quality.",
+      "strong": "Measure tokens, model selection, batching, caching, and retrieval overhead while tracking output quality. Route simple requests to cheaper paths if performance remains acceptable. Do not optimize token count without testing factual accuracy and task completion.",
+      "takeaway": "Do not optimize token count without testing factual accuracy and task completion.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What does temperature control in generation?",
+      "basic": "Temperature adjusts the relative randomness of token sampling by changing how peaked the probability distribution is.",
+      "strong": "Temperature adjusts the relative randomness of token sampling by changing how peaked the probability distribution is. Lower settings often yield more consistent responses, but do not guarantee determinism or factual correctness. Other decoding parameters and model behavior also matter.",
+      "takeaway": "Other decoding parameters and model behavior also matter.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is fine-tuning versus RAG?",
+      "basic": "Fine-tuning changes model parameters to learn behavior or domain patterns; RAG injects external facts at request time.",
+      "strong": "Fine-tuning changes model parameters to learn behavior or domain patterns; RAG injects external facts at request time. Fine-tuning can improve formatting or specialized skills, while RAG fits frequently changing or citable knowledge. Many systems combine them, but both require careful evaluation.",
+      "takeaway": "Many systems combine them, but both require careful evaluation.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you handle personally identifiable information in an AI app?",
+      "basic": "Minimize collection, enforce purpose and retention limits, restrict access, redact or pseudonymize where possible, and use contractual and technical protections with model providers.",
+      "strong": "Minimize collection, enforce purpose and retention limits, restrict access, redact or pseudonymize where possible, and use contractual and technical protections with model providers. Evaluate logs, retrieval stores, and prompts for leakage. Security must be enforced by the application, not entrusted only to the model.",
+      "takeaway": "Security must be enforced by the application, not entrusted only to the model.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you monitor an AI service in production?",
+      "basic": "Track latency, availability, cost, refusal/error rates, retrieval quality, output validity, and user-impacting failure patterns.",
+      "strong": "Track latency, availability, cost, refusal/error rates, retrieval quality, output validity, and user-impacting failure patterns. Use representative evaluations and sampled human review with privacy controls. Detect prompt, corpus, and model-version changes that affect behavior.",
+      "takeaway": "Detect prompt, corpus, and model-version changes that affect behavior.",
+      "mermaid": "",
+      "links": []
     }
   ]
 }

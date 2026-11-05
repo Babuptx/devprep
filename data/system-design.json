@@ -24,6 +24,118 @@
       "takeaway": "Don't scale blindly. Find the bottleneck first.",
       "mermaid": "graph TD\n                            classDef metric fill:#ec4899,stroke:#be185d,stroke-width:2px,color:#fff;\n                            classDef action fill:#14b8a6,stroke:#0f766e,stroke-width:2px,color:#fff;\n\n                            Spike[10X Traffic Spike] --> Measure{Measure Telemetry}:::metric\n                            Measure -->|High CPU/Mem| ScaleAPI[Horizontally Scale APIs]:::action\n                            Measure -->|Slow Queries| ScaleDB[Add Read Replicas / Cache]:::action\n                            Measure -->|Overwhelmed| Limit[Apply Rate Limits & Queues]:::action",
       "links": []
+    },
+    {
+      "q": "How would you design a URL shortener?",
+      "basic": "Start with requirements: create short links, redirect quickly, uniqueness, expiration, and abuse prevention.",
+      "strong": "Start with requirements: create short links, redirect quickly, uniqueness, expiration, and abuse prevention. A stateless API writes mappings to a durable store and serves redirects through cache-backed reads. Explain ID generation, collision handling, hot keys, rate limiting, and whether analytics can be asynchronous.",
+      "takeaway": "Explain ID generation, collision handling, hot keys, rate limiting, and whether analytics can be asynchronous.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is horizontal versus vertical scaling?",
+      "basic": "Vertical scaling adds resources to one machine; horizontal scaling adds more instances.",
+      "strong": "Vertical scaling adds resources to one machine; horizontal scaling adds more instances. Horizontal scaling improves capacity and fault isolation for stateless components but requires coordination and shared-state design. Measure whether the bottleneck is compute, database, storage, or network before scaling.",
+      "takeaway": "Measure whether the bottleneck is compute, database, storage, or network before scaling.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do load balancers increase availability?",
+      "basic": "A load balancer routes requests among healthy service instances using health checks and policies such as round robin or least connections.",
+      "strong": "A load balancer routes requests among healthy service instances using health checks and policies such as round robin or least connections. It improves utilization and can remove unhealthy nodes from rotation. Avoid creating a single failure point by using a redundant or managed balancer arrangement.",
+      "takeaway": "Avoid creating a single failure point by using a redundant or managed balancer arrangement.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you design a notification service?",
+      "basic": "Accept an event through an API or queue, persist delivery intent, and dispatch through channel-specific workers for email, push, or SMS.",
+      "strong": "Accept an event through an API or queue, persist delivery intent, and dispatch through channel-specific workers for email, push, or SMS. Use retry/backoff, deduplication or idempotency keys, rate limits, dead-letter handling, and delivery observability. Define whether ordering and delivery guarantees are required.",
+      "takeaway": "Define whether ordering and delivery guarantees are required.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is an API gateway?",
+      "basic": "An API gateway is an entry layer that routes requests to downstream services and may centralize authentication, throttling, TLS termination, and observability.",
+      "strong": "An API gateway is an entry layer that routes requests to downstream services and may centralize authentication, throttling, TLS termination, and observability. It simplifies clients but must not become a bottleneck or a place for excessive business logic. The gateway and services still need defense in depth.",
+      "takeaway": "The gateway and services still need defense in depth.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What are the tradeoffs of microservices versus a monolith?",
+      "basic": "A monolith has simpler local calls, deployments, and data consistency but can become difficult to evolve when poorly modularized.",
+      "strong": "A monolith has simpler local calls, deployments, and data consistency but can become difficult to evolve when poorly modularized. Microservices allow independent deployments and scaling but add network failures, data ownership, and operational complexity. Start from team boundaries and real scaling needs, not fashion.",
+      "takeaway": "Start from team boundaries and real scaling needs, not fashion.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Explain eventual consistency.",
+      "basic": "Replicas or distributed components may temporarily disagree after a write, but converge when updates propagate under assumed conditions.",
+      "strong": "Replicas or distributed components may temporarily disagree after a write, but converge when updates propagate under assumed conditions. It can improve availability and throughput, but users may read stale data. Discuss which operations tolerate that delay and which need stronger guarantees.",
+      "takeaway": "Discuss which operations tolerate that delay and which need stronger guarantees.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is CAP theorem actually saying?",
+      "basic": "In a distributed data system experiencing a network partition, a design cannot simultaneously guarantee full availability of every request and linearizable consistency.",
+      "strong": "In a distributed data system experiencing a network partition, a design cannot simultaneously guarantee full availability of every request and linearizable consistency. It does not mean systems must always choose exactly two properties in normal operation. Explain the partition scenario and actual business tradeoff.",
+      "takeaway": "Explain the partition scenario and actual business tradeoff.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you design for high availability across zones?",
+      "basic": "Distribute stateless services and critical data replicas across independent failure domains.",
+      "strong": "Distribute stateless services and critical data replicas across independent failure domains. Add health checking, automated traffic failover, backups, and tested recovery procedures. Define recovery time and recovery point objectives, and recognize that replication does not replace backup.",
+      "takeaway": "Define recovery time and recovery point objectives, and recognize that replication does not replace backup.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What role do queues play in system design?",
+      "basic": "Queues decouple producers and consumers, smooth traffic spikes, and support background work.",
+      "strong": "Queues decouple producers and consumers, smooth traffic spikes, and support background work. They introduce retry, ordering, backpressure, duplicate delivery, and visibility concerns. Design consumers to be idempotent where feasible and monitor queue age as well as depth.",
+      "takeaway": "Design consumers to be idempotent where feasible and monitor queue age as well as depth.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is backpressure?",
+      "basic": "Backpressure prevents an overloaded downstream system from accepting unlimited work that it cannot process.",
+      "strong": "Backpressure prevents an overloaded downstream system from accepting unlimited work that it cannot process. Techniques include bounded queues, concurrency limits, rate limiting, and shedding low-priority requests. Without backpressure, a spike can exhaust memory and amplify failures across services.",
+      "takeaway": "Without backpressure, a spike can exhaust memory and amplify failures across services.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you design a rate limiter?",
+      "basic": "Define scope, such as user, API key, or IP, then choose token bucket, sliding window, or fixed window based on burst behavior and fairness.",
+      "strong": "Define scope, such as user, API key, or IP, then choose token bucket, sliding window, or fixed window based on burst behavior and fairness. Store counters locally or centrally depending on distributed consistency requirements. Return clear retry guidance and consider abuse and clock boundaries.",
+      "takeaway": "Return clear retry guidance and consider abuse and clock boundaries.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you estimate system capacity in an interview?",
+      "basic": "Translate requirements into requests per second, peak factor, storage growth, payload sizes, bandwidth, and latency targets.",
+      "strong": "Translate requirements into requests per second, peak factor, storage growth, payload sizes, bandwidth, and latency targets. State assumptions and calculate rough orders of magnitude before choosing infrastructure. Revisit the estimate when selecting cache, partitioning, or replica strategies.",
+      "takeaway": "Revisit the estimate when selecting cache, partitioning, or replica strategies.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you prevent one failing dependency from taking down the whole system?",
+      "basic": "Add deadlines, bounded retries, circuit breakers, bulkheads, and fallbacks for noncritical features.",
+      "strong": "Add deadlines, bounded retries, circuit breakers, bulkheads, and fallbacks for noncritical features. Monitor dependency-specific errors and isolate resources. Retrying indefinitely or hiding critical failures can make the outage worse, so distinguish safe degradation from correctness-critical operations.",
+      "takeaway": "Retrying indefinitely or hiding critical failures can make the outage worse, so distinguish safe degradation from correctness-critical operations.",
+      "mermaid": "",
+      "links": []
     }
   ]
 }

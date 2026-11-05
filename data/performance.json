@@ -16,6 +16,102 @@
       "takeaway": "Average latency can hide problems. p95/p99 tells you about the slow users.",
       "mermaid": "graph LR\n                            classDef time fill:#fbbf24,stroke:#d97706,stroke-width:2px,color:#000;\n                            \n                            User -->|Req Sent T=0| Network[Network Travel]\n                            Network -->|Arrives T=50ms| Server[Server Processing]\n                            Server -->|DB Query| DB[(Database)]\n                            DB -->|Query Done T=150ms| Server\n                            Server -->|Res Sent T=160ms| Network2[Network Travel]\n                            Network2 -->|Res Rcvd T=210ms| User\n                            \n                            Network2 --> Total[Total Latency: 210 ms]:::time",
       "links": []
+    },
+    {
+      "q": "Latency versus throughput?",
+      "basic": "Latency measures how long one operation takes, while throughput measures completed work per unit time.",
+      "strong": "Latency measures how long one operation takes, while throughput measures completed work per unit time. Batching may raise throughput while increasing an individual request's waiting time. Optimize against explicit user and system targets rather than one metric in isolation.",
+      "takeaway": "Optimize against explicit user and system targets rather than one metric in isolation.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What do p50, p95, and p99 latency mean?",
+      "basic": "Percentiles describe the time below which a given proportion of requests complete. p99 highlights the slowest one percent and is often more informative than average latency for interactive services.",
+      "strong": "Percentiles describe the time below which a given proportion of requests complete. p99 highlights the slowest one percent and is often more informative than average latency for interactive services. Calculate against enough representative samples and segment by endpoint or customer when necessary.",
+      "takeaway": "Calculate against enough representative samples and segment by endpoint or customer when necessary.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a bottleneck?",
+      "basic": "A bottleneck is the constrained resource or stage that limits overall throughput or latency.",
+      "strong": "A bottleneck is the constrained resource or stage that limits overall throughput or latency. Profile CPU, memory, storage, locks, network, and dependency timing to identify it. Optimizing a non-bottleneck may barely affect end-to-end performance, as Amdahl's law illustrates.",
+      "takeaway": "Optimizing a non-bottleneck may barely affect end-to-end performance, as Amdahl's law illustrates.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a thread pool and how would you size it?",
+      "basic": "A thread pool reuses a bounded set of workers to execute tasks without creating a thread for every request.",
+      "strong": "A thread pool reuses a bounded set of workers to execute tasks without creating a thread for every request. CPU-bound workloads often favor a pool near available cores, while I/O-bound tasks may benefit from more concurrency. Tune using actual queue depth, utilization, memory use, and latency, because uncontrolled threads can make overload worse.",
+      "takeaway": "Tune using actual queue depth, utilization, memory use, and latency, because uncontrolled threads can make overload worse.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is tail latency amplification in distributed services?",
+      "basic": "A request that fans out to many dependencies is affected by the slowest required response, so occasional p99 delays accumulate across branches.",
+      "strong": "A request that fans out to many dependencies is affected by the slowest required response, so occasional p99 delays accumulate across branches. Use parallelism carefully, enforce deadlines, avoid unnecessary fan-out, and isolate slow dependencies. Monitor end-to-end percentiles rather than assuming each service median predicts the user experience.",
+      "takeaway": "Monitor end-to-end percentiles rather than assuming each service median predicts the user experience.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you debug a production performance regression?",
+      "basic": "First verify the regression under comparable workloads and environments, then check deployment timing, latency distributions, saturation, and dependency metrics.",
+      "strong": "First verify the regression under comparable workloads and environments, then check deployment timing, latency distributions, saturation, and dependency metrics. Profile or trace the changed path and test one hypothesis at a time. Add a benchmark or monitoring guardrail before declaring victory.",
+      "takeaway": "Add a benchmark or monitoring guardrail before declaring victory.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a circuit breaker?",
+      "basic": "A circuit breaker stops sending requests to a repeatedly failing dependency for a period, allowing fast failure and possible recovery.",
+      "strong": "A circuit breaker stops sending requests to a repeatedly failing dependency for a period, allowing fast failure and possible recovery. It should use clear failure thresholds and a controlled half-open probe state. Pair it with timeouts and fallbacks rather than using it instead of sound capacity planning.",
+      "takeaway": "Pair it with timeouts and fallbacks rather than using it instead of sound capacity planning.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a retry storm?",
+      "basic": "A retry storm happens when clients simultaneously repeat failed requests, multiplying load on an already struggling dependency.",
+      "strong": "A retry storm happens when clients simultaneously repeat failed requests, multiplying load on an already struggling dependency. Use bounded exponential backoff with jitter, request budgets, and circuit breakers. Retry only when operation semantics are safe and failure is plausibly transient.",
+      "takeaway": "Retry only when operation semantics are safe and failure is plausibly transient.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you measure and optimize a memory-bound task?",
+      "basic": "Profile cache misses, memory bandwidth, allocation behavior, and access patterns, then improve locality, batching, or layout where meaningful.",
+      "strong": "Profile cache misses, memory bandwidth, allocation behavior, and access patterns, then improve locality, batching, or layout where meaningful. Reducing arithmetic may not help if time is spent waiting on memory. Validate performance with realistic datasets and preserve correctness.",
+      "takeaway": "Validate performance with realistic datasets and preserve correctness.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What does Amdahl's law tell us?",
+      "basic": "Overall speedup is constrained by the fraction of execution that remains unchanged.",
+      "strong": "Overall speedup is constrained by the fraction of execution that remains unchanged. If only 20 percent of time is optimized, even making that part infinitely fast yields at most about 1.25 times total speedup. Measure end-to-end impact before spending effort on a small hotspot.",
+      "takeaway": "Measure end-to-end impact before spending effort on a small hotspot.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is load shedding?",
+      "basic": "Load shedding rejects or defers lower-priority work when capacity is exhausted, protecting service health for remaining requests.",
+      "strong": "Load shedding rejects or defers lower-priority work when capacity is exhausted, protecting service health for remaining requests. It should be deliberate, observable, and fair to users. Combine with backpressure and clear client responses rather than allowing queues to grow without bound.",
+      "takeaway": "Combine with backpressure and clear client responses rather than allowing queues to grow without bound.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is an SLO error budget?",
+      "basic": "An error budget is the allowable unreliability implied by a service-level objective over its measurement window.",
+      "strong": "An error budget is the allowable unreliability implied by a service-level objective over its measurement window. Teams can use consumption of that budget to guide release risk and reliability work. SLO definitions must reflect actual user experience and not be easy to game.",
+      "takeaway": "SLO definitions must reflect actual user experience and not be easy to game.",
+      "mermaid": "",
+      "links": []
     }
   ]
 }

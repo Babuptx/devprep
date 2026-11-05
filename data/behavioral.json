@@ -1,0 +1,85 @@
+{
+  "id": "behavioral",
+  "questions": [
+    {
+      "q": "Tell me about a difficult bug you solved.",
+      "basic": "Explain the situation and stakes, then your specific action: reproduce, minimize, instrument, identify root cause, and verify the fix.",
+      "strong": "Explain the situation and stakes, then your specific action: reproduce, minimize, instrument, identify root cause, and verify the fix. Quantify impact only if you have real evidence, and explain the regression test you added. Conclude with what the experience changed in your debugging process.",
+      "takeaway": "Conclude with what the experience changed in your debugging process.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Describe a time you disagreed with a teammate.",
+      "basic": "State the disagreement without blaming anyone, identify the shared goal, and explain how you gathered evidence or compared alternatives.",
+      "strong": "State the disagreement without blaming anyone, identify the shared goal, and explain how you gathered evidence or compared alternatives. Describe the decision and your contribution, even if your preferred option was not chosen. Emphasize respectful communication and what you learned.",
+      "takeaway": "Emphasize respectful communication and what you learned.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Tell me about learning an unfamiliar technology quickly.",
+      "basic": "Identify what you needed to achieve, your initial gap, and how you structured the learning: docs, a minimal example, hands-on experiments, and targeted questions.",
+      "strong": "Identify what you needed to achieve, your initial gap, and how you structured the learning: docs, a minimal example, hands-on experiments, and targeted questions. Give a truthful outcome and describe how you verified understanding. Avoid claiming expertise from a weekend tutorial.",
+      "takeaway": "Avoid claiming expertise from a weekend tutorial.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you prioritize competing deadlines?",
+      "basic": "Clarify business impact, dependencies, urgency, and effort; ask stakeholders about conflicting priorities before promising everything.",
+      "strong": "Clarify business impact, dependencies, urgency, and effort; ask stakeholders about conflicting priorities before promising everything. Break work into milestones, communicate tradeoffs, and revisit the plan as new information arrives. Describe a real time when this reduced risk or protected a key deliverable.",
+      "takeaway": "Describe a real time when this reduced risk or protected a key deliverable.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Describe a mistake and how you handled it.",
+      "basic": "Choose a genuine, non-catastrophic mistake you can own.",
+      "strong": "Choose a genuine, non-catastrophic mistake you can own. Explain how you discovered it, notified the right people, repaired consequences, and added a preventive change such as a test or checklist. Avoid turning the story into an unconvincing hidden strength.",
+      "takeaway": "Avoid turning the story into an unconvincing hidden strength.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Tell me about receiving critical feedback.",
+      "basic": "Summarize the feedback fairly, show that you clarified the expectation rather than becoming defensive, and describe the concrete improvement you made.",
+      "strong": "Summarize the feedback fairly, show that you clarified the expectation rather than becoming defensive, and describe the concrete improvement you made. If useful, explain how you validated the revised work with the reviewer. End with a learning that applies beyond that one task.",
+      "takeaway": "End with a learning that applies beyond that one task.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you explain a technical issue to a nontechnical person?",
+      "basic": "Begin with the user's impact or decision, use one accessible analogy where helpful, and avoid internal implementation detail until it is needed.",
+      "strong": "Begin with the user's impact or decision, use one accessible analogy where helpful, and avoid internal implementation detail until it is needed. Confirm understanding and offer choices with tradeoffs. Show how your explanation helped someone act, not merely that you spoke clearly.",
+      "takeaway": "Show how your explanation helped someone act, not merely that you spoke clearly.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Describe taking ownership without detailed instructions.",
+      "basic": "Explain how you identified the goal, defined assumptions, planned a safe first step, and sought input at appropriate checkpoints.",
+      "strong": "Explain how you identified the goal, defined assumptions, planned a safe first step, and sought input at appropriate checkpoints. Describe the deliverable and evidence that it helped. Ownership means reducing ambiguity and risk, not working without communication.",
+      "takeaway": "Ownership means reducing ambiguity and risk, not working without communication.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Why do you want to work in engineering?",
+      "basic": "Connect your interest to concrete experiences with building, debugging, or improving systems, then to the prospective team's work.",
+      "strong": "Connect your interest to concrete experiences with building, debugging, or improving systems, then to the prospective team's work. Mention curiosity and customer impact, not generic praise or claims unsupported by your projects. Keep the answer specific, concise, and authentic.",
+      "takeaway": "Keep the answer specific, concise, and authentic.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What should you do when you do not know an interview answer?",
+      "basic": "State what you know, identify the missing assumption, reason from fundamentals, and ask a focused question when needed.",
+      "strong": "State what you know, identify the missing assumption, reason from fundamentals, and ask a focused question when needed. For coding problems, propose a simpler correct solution before optimizing. Avoid invented confidence or pretending you have used technology you have not touched.",
+      "takeaway": "Avoid invented confidence or pretending you have used technology you have not touched.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}

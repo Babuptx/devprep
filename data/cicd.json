@@ -1,0 +1,101 @@
+{
+  "id": "cicd",
+  "questions": [
+    {
+      "q": "What is continuous integration?",
+      "basic": "Developers merge small changes frequently and run automated builds, checks, and tests to detect problems early.",
+      "strong": "Developers merge small changes frequently and run automated builds, checks, and tests to detect problems early. A useful CI pipeline is deterministic, fast enough to encourage frequent integration, and clear about failures. It should not rely on manually repeating local steps.",
+      "takeaway": "It should not rely on manually repeating local steps.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Continuous delivery versus continuous deployment?",
+      "basic": "Continuous delivery keeps changes deployable after automated checks but may require a release approval.",
+      "strong": "Continuous delivery keeps changes deployable after automated checks but may require a release approval. Continuous deployment automatically releases each qualifying change to production. Both require rollback, monitoring, and safe handling of configuration and database changes.",
+      "takeaway": "Both require rollback, monitoring, and safe handling of configuration and database changes.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "Compare unit, integration, and end-to-end tests.",
+      "basic": "Unit tests isolate a small behavior, integration tests check boundaries between components, and end-to-end tests exercise major user workflows.",
+      "strong": "Unit tests isolate a small behavior, integration tests check boundaries between components, and end-to-end tests exercise major user workflows. Use many fast deterministic lower-level tests and fewer costly E2E tests. Test at the lowest level that still proves the requirement.",
+      "takeaway": "Test at the lowest level that still proves the requirement.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a flaky test?",
+      "basic": "A flaky test inconsistently passes or fails without a relevant code change, often because of timing, shared state, ordering, or external dependencies.",
+      "strong": "A flaky test inconsistently passes or fails without a relevant code change, often because of timing, shared state, ordering, or external dependencies. Track its frequency, isolate the cause, and make the environment deterministic. Blind retries can hide regressions and reduce trust in CI.",
+      "takeaway": "Blind retries can hide regressions and reduce trust in CI.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is regression testing?",
+      "basic": "Regression tests protect previously correct behavior after changes and should include a reproducer for bugs that have been fixed.",
+      "strong": "Regression tests protect previously correct behavior after changes and should include a reproducer for bugs that have been fixed. Keep tests readable and assert observable outcomes. A passing suite gives confidence only for the behaviors and environments it actually covers.",
+      "takeaway": "A passing suite gives confidence only for the behaviors and environments it actually covers.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you test an HTTP endpoint?",
+      "basic": "Test nominal requests plus invalid payloads, missing authorization, boundary values, pagination, retries, and failure of downstream dependencies.",
+      "strong": "Test nominal requests plus invalid payloads, missing authorization, boundary values, pagination, retries, and failure of downstream dependencies. Separate contract tests from real integration and E2E workflows. Assert both response semantics and important resulting server state.",
+      "takeaway": "Assert both response semantics and important resulting server state.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you design a good load test?",
+      "basic": "Choose a representative workload and realistic user mix, ramp traffic safely, and measure throughput, latency distributions, errors, and resource saturation.",
+      "strong": "Choose a representative workload and realistic user mix, ramp traffic safely, and measure throughput, latency distributions, errors, and resource saturation. Specify pass/fail thresholds and steady-state duration. Synthetic traffic must not accidentally hit production billing or mutate important customer data.",
+      "takeaway": "Synthetic traffic must not accidentally hit production billing or mutate important customer data.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What is a code coverage metric good for?",
+      "basic": "Coverage shows which code lines or branches executed during tests, not whether assertions are meaningful.",
+      "strong": "Coverage shows which code lines or branches executed during tests, not whether assertions are meaningful. Use it to spot untested paths, particularly risky failure branches. High coverage can coexist with poor tests, so review behavior and mutation or fault-injection where appropriate.",
+      "takeaway": "High coverage can coexist with poor tests, so review behavior and mutation or fault-injection where appropriate.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "What belongs in a CI security stage?",
+      "basic": "Relevant checks can include dependency vulnerability scanning, secret detection, static analysis, infrastructure policy checks, and artifact provenance.",
+      "strong": "Relevant checks can include dependency vulnerability scanning, secret detection, static analysis, infrastructure policy checks, and artifact provenance. Prioritize actionable findings and protect credentials used by the pipeline. Security gates should have an explicit triage and exception process.",
+      "takeaway": "Security gates should have an explicit triage and exception process.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How do you deploy a breaking database schema change safely?",
+      "basic": "Use an expand-migrate-contract strategy: add backward-compatible structures, deploy readers/writers that support both, migrate data, then remove old fields only after clients are upgraded.",
+      "strong": "Use an expand-migrate-contract strategy: add backward-compatible structures, deploy readers/writers that support both, migrate data, then remove old fields only after clients are upgraded. Validate and monitor each phase. A code rollback must remain possible while migration is in progress.",
+      "takeaway": "A code rollback must remain possible while migration is in progress.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How would you investigate a build that passes locally but fails in CI?",
+      "basic": "Compare runtime and dependency versions, operating system, environment variables, timezones, parallelism, and test order.",
+      "strong": "Compare runtime and dependency versions, operating system, environment variables, timezones, parallelism, and test order. Run the same container or command used by CI, preserve failing artifacts, and narrow the difference. Fix root causes rather than relying on repeated reruns.",
+      "takeaway": "Fix root causes rather than relying on repeated reruns.",
+      "mermaid": "",
+      "links": []
+    },
+    {
+      "q": "How should pull-request checks be designed?",
+      "basic": "Run fast mandatory correctness and security checks before merge, with slower broader suites on relevant changes or scheduled pipelines.",
+      "strong": "Run fast mandatory correctness and security checks before merge, with slower broader suites on relevant changes or scheduled pipelines. Make failures easy to diagnose and protect main with review/check requirements. Keep workflow permissions minimal and treat external contributions as untrusted.",
+      "takeaway": "Keep workflow permissions minimal and treat external contributions as untrusted.",
+      "mermaid": "",
+      "links": []
+    }
+  ]
+}
