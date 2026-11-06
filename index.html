@@ -117,6 +117,11 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans antialiased dark:bg-darkbg dark:text-gray-100 flex h-screen overflow-hidden text-base" id="app-body">
 
+    <!-- Fixed sitewide disclaimer: deliberately compact and always visible -->
+    <footer id="site-disclaimer" class="fixed bottom-0 inset-x-0 z-40 border-t border-slate-300/70 dark:border-slate-700 bg-slate-100/95 dark:bg-slate-950/95 text-slate-600 dark:text-slate-300 shadow-sm" role="contentinfo" style="font-size:10px;line-height:1.3;padding:5px 12px;text-align:center;">
+        <strong>Educational disclaimer:</strong> DevPrep is a free, AI-assisted interview study resource, not technical or professional advice. Content may contain errors; verify information against official sources. Provided as-is without warranty or liability. Feedback: <a href="mailto:babuptx@gmail.com" class="underline underline-offset-2 font-semibold text-blue-700 dark:text-blue-300">babuptx@gmail.com</a>.
+    </footer>
+
     <!-- Mobile Overlay -->
     <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-20 hidden lg:hidden" onclick="toggleSidebar()"></div>
 
@@ -181,18 +186,15 @@
         </header>
 
         <!-- Scrollable Content -->
-        <div id="scrollableContent" class="flex-1 overflow-y-auto p-4 lg:p-8 relative w-full">
+        <div id="scrollableContent" class="flex-1 overflow-y-auto p-4 lg:p-8 pb-20 lg:pb-20 relative w-full">
             <div class="max-w-4xl mx-auto space-y-8" id="content-container">
                 <!-- Content injected here by JS -->
             </div>
-            <footer class="max-w-4xl mx-auto mt-10 mb-8 px-4 py-4 rounded-lg border-t border-slate-200 dark:border-slate-700 text-xs leading-relaxed text-slate-600 dark:text-slate-400" role="contentinfo">
-                <strong>Educational disclaimer:</strong> DevPrep is a free, AI-assisted interview study resource, not professional or technical advice. Information may contain errors or omissions; verify important details against official documentation. No warranty or liability is assumed for reliance on its content.
-                Feedback and corrections: <a href="mailto:babuptx@gmail.com" class="font-semibold underline underline-offset-2 text-blue-700 dark:text-blue-300">babuptx@gmail.com</a>.
-            </footer>
+
         </div>
         
         <!-- Go To Top Button -->
-        <button id="goToTopBtn" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl transition-all transform translate-y-20 opacity-0 focus:outline-none z-40" aria-label="Go to top">
+        <button id="goToTopBtn" onclick="scrollToTop()" class="fixed bottom-16 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl transition-all transform translate-y-20 opacity-0 focus:outline-none z-40" aria-label="Go to top">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
         </button>
 
