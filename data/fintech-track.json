@@ -1,0 +1,626 @@
+{
+  "id": "fintech-track",
+  "version": 1,
+  "title": "FinTech Org — Internship Readiness",
+  "audience": "College freshmen and early-career Enterprise Technology internship candidates",
+  "description": "Curated 120-question path drawn from the existing question bank. Employer-neutral; not an official or verified interview question set.",
+  "timedSessions": [
+    {
+      "label": "Coding round",
+      "minutes": 30
+    },
+    {
+      "label": "Mixed interview",
+      "minutes": 45
+    }
+  ],
+  "phases": [
+    "01 · Programming foundations",
+    "02 · Coding problem solving",
+    "03 · SQL & web services",
+    "04 · Cloud, quality & security",
+    "05 · Communication & mock rounds"
+  ],
+  "references": [
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 0
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 1
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 2
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 3
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 4
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 5
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 6
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 7
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 8
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 9
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 10
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "algorithms",
+      "index": 11
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 0
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 1
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 2
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 3
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 4
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 5
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 6
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 7
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 8
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 9
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 10
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 11
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 12
+    },
+    {
+      "phase": "01 · Programming foundations",
+      "source": "oop",
+      "index": 13
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 0
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 2
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 3
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 5
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 6
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 8
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 9
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 11
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 12
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 14
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 15
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 17
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 18
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 20
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 21
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 23
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 24
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 26
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 27
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 29
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 30
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 32
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 33
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 35
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 36
+    },
+    {
+      "phase": "02 · Coding problem solving",
+      "source": "coding",
+      "index": 38
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 0
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 1
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 2
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 3
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 4
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 5
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 6
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 7
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 8
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 9
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 10
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "databases",
+      "index": 11
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 0
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 1
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 2
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 3
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 4
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 5
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 6
+    },
+    {
+      "phase": "03 · SQL & web services",
+      "source": "api",
+      "index": 7
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cloud",
+      "index": 0
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cloud",
+      "index": 1
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cloud",
+      "index": 2
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cloud",
+      "index": 3
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cloud",
+      "index": 4
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cloud",
+      "index": 5
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cicd",
+      "index": 0
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cicd",
+      "index": 1
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cicd",
+      "index": 2
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cicd",
+      "index": 3
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cicd",
+      "index": 4
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cicd",
+      "index": 5
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "cicd",
+      "index": 6
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "infra",
+      "index": 0
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "infra",
+      "index": 1
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "infra",
+      "index": 2
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "infra",
+      "index": 3
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "infra",
+      "index": 4
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "security",
+      "index": 0
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "security",
+      "index": 1
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "security",
+      "index": 2
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "security",
+      "index": 3
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "security",
+      "index": 4
+    },
+    {
+      "phase": "04 · Cloud, quality & security",
+      "source": "security",
+      "index": 5
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 0
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 1
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 2
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 3
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 4
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 5
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 6
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 7
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 8
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 9
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 10
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "behavioral",
+      "index": 11
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 0
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 2
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 4
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 6
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 8
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 10
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 12
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 14
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 16
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 18
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 20
+    },
+    {
+      "phase": "05 · Communication & mock rounds",
+      "source": "mock",
+      "index": 22
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "curriculumVersion": "4.0",
+  "curriculumVersion": "4.1",
   "targetQuestionCount": 1200,
   "groups": [
     {
@@ -82,6 +82,13 @@
       "title": "Mock Interviews & Case Studies",
       "categoryIds": [
         "mock-interviews"
+      ]
+    },
+    {
+      "id": "fintech-track",
+      "title": "FinTech Org — Internship Readiness",
+      "categoryIds": [
+        "fintech-track"
       ]
     }
   ],
@@ -279,6 +286,16 @@
       "target": 50,
       "group": "mock-interviews",
       "newInVersion": "4.0"
+    },
+    {
+      "id": "fintech-track",
+      "title": "FinTech Org — Internship Readiness",
+      "desc": "120 curated freshman-level coding, OOP, SQL, cloud, teamwork and mock-interview practice questions. Tracks your practice locally.",
+      "file": "data/fintech-track.json",
+      "questionCount": 120,
+      "group": "fintech-track",
+      "curatedTrack": true,
+      "newInVersion": "4.1"
     }
   ],
   "sourcePolicy": "Original educational practice questions based on publicly discussed job skills; not employer-verified interview question frequency."

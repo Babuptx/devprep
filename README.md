@@ -54,3 +54,11 @@ Validate with `python -m json.tool` for all JSON and `node --check` for inline a
 No login, API key, analytics, data collection or backend is required. Typography preferences are stored only in the visitor's browser, and the live clock uses the visitor's device time. The Q&A content and source remain available in the public repository.
 
 Feedback and corrections: **babuptx@gmail.com**.
+
+## FinTech Org internship readiness track (v4.1)
+
+- Neutral employer-independent 120-question guided path for college freshmen and early-career technology internship interviews.
+- Five phases: programming/OOP (26), coding reasoning (26), SQL/APIs (20), cloud/testing/security (24), behavioral/mock (24).
+- References original questions by topic and zero-based index in `data/fintech-track.json`; **does not add 120 new questions** or copy the answer content.
+- Completion checklist stored in the local browser and 30/45-minute optional practice timers. No accounts or tracking server.
+- This track is not endorsed by, affiliated with, or based on verified interviews at any specific employer.
