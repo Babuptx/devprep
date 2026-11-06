@@ -1,0 +1,1130 @@
+{
+  "id": "incident-response",
+  "questions": [
+    {
+      "q": "Production triage 01: API p99 latency doubles after release. How do you isolate the root cause?",
+      "basic": "Inspect trace waterfall and deployment markers; start by compare affected endpoints and dependency spans.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query trace waterfall and deployment markers; compare affected endpoints and dependency spans. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: trace waterfall and deployment markers.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 01: What safe immediate mitigation would you choose when api p99 latency doubles after release?",
+      "basic": "Consider this bounded recovery: rollback canary or disable suspect flag.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, rollback canary or disable suspect flag. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 01: What prevention actions follow an incident where api p99 latency doubles after release?",
+      "basic": "Institutionalize latency SLO and release regression gates.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: latency SLO and release regression gates. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: latency SLO and release regression gates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 02: Kubernetes workload repeatedly CrashLoopBackOff. How do you isolate the root cause?",
+      "basic": "Inspect pod events, previous container logs and probes; start by distinguish crash from liveness kill.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query pod events, previous container logs and probes; distinguish crash from liveness kill. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: pod events, previous container logs and probes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 02: What safe immediate mitigation would you choose when kubernetes workload repeatedly crashloopbackoff?",
+      "basic": "Consider this bounded recovery: restore last-known-good image or adjust validated config.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, restore last-known-good image or adjust validated config. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 02: What prevention actions follow an incident where kubernetes workload repeatedly crashloopbackoff?",
+      "basic": "Institutionalize readiness checks and startup-budget tests.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: readiness checks and startup-budget tests. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: readiness checks and startup-budget tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 03: SQL primary is CPU-saturated. How do you isolate the root cause?",
+      "basic": "Inspect query plans, lock waits and top queries; start by check load shift and slow query fingerprints.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query query plans, lock waits and top queries; check load shift and slow query fingerprints. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: query plans, lock waits and top queries.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 03: What safe immediate mitigation would you choose when sql primary is cpu-saturated?",
+      "basic": "Consider this bounded recovery: cap costly queries or route read traffic safely.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, cap costly queries or route read traffic safely. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 03: What prevention actions follow an incident where sql primary is cpu-saturated?",
+      "basic": "Institutionalize index review and query regression benchmark.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: index review and query regression benchmark. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: index review and query regression benchmark.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 04: Cache miss rate spikes suddenly. How do you isolate the root cause?",
+      "basic": "Inspect hit ratio, eviction rate and key cardinality; start by check cold start and invalidation deployment.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query hit ratio, eviction rate and key cardinality; check cold start and invalidation deployment. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: hit ratio, eviction rate and key cardinality.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 04: What safe immediate mitigation would you choose when cache miss rate spikes suddenly?",
+      "basic": "Consider this bounded recovery: prewarm keyspace and tune capacity limits.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, prewarm keyspace and tune capacity limits. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 04: What prevention actions follow an incident where cache miss rate spikes suddenly?",
+      "basic": "Institutionalize cache capacity forecasting and stale-value safeguards.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: cache capacity forecasting and stale-value safeguards. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: cache capacity forecasting and stale-value safeguards.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 05: Intermittent DNS failures inside a cluster. How do you isolate the root cause?",
+      "basic": "Inspect resolver timeout and CoreDNS logs; start by correlate by node, zone and record TTL.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query resolver timeout and CoreDNS logs; correlate by node, zone and record TTL. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: resolver timeout and CoreDNS logs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 05: What safe immediate mitigation would you choose when intermittent dns failures inside a cluster?",
+      "basic": "Consider this bounded recovery: redirect to healthy resolvers after checking scope.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, redirect to healthy resolvers after checking scope. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 05: What prevention actions follow an incident where intermittent dns failures inside a cluster?",
+      "basic": "Institutionalize DNS load tests and redundancy.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: DNS load tests and redundancy. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: DNS load tests and redundancy.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 06: Message queue lag keeps growing. How do you isolate the root cause?",
+      "basic": "Inspect publish-consume rate and poison-message count; start by compare partition skew and downstream latency.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query publish-consume rate and poison-message count; compare partition skew and downstream latency. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: publish-consume rate and poison-message count.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 06: What safe immediate mitigation would you choose when message queue lag keeps growing?",
+      "basic": "Consider this bounded recovery: scale consumers or isolate poison partition.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, scale consumers or isolate poison partition. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 06: What prevention actions follow an incident where message queue lag keeps growing?",
+      "basic": "Institutionalize backpressure alerts and replay tooling.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: backpressure alerts and replay tooling. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: backpressure alerts and replay tooling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 07: A cloud database fails over unexpectedly. How do you isolate the root cause?",
+      "basic": "Inspect replica health, fencing logs and connection errors; start by identify split-brain risk and application retry behavior.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query replica health, fencing logs and connection errors; identify split-brain risk and application retry behavior. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: replica health, fencing logs and connection errors.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 07: What safe immediate mitigation would you choose when a cloud database fails over unexpectedly?",
+      "basic": "Consider this bounded recovery: shift connections only to elected writer.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, shift connections only to elected writer. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 07: What prevention actions follow an incident where a cloud database fails over unexpectedly?",
+      "basic": "Institutionalize failover game days and retry limits.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: failover game days and retry limits. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: failover game days and retry limits.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 08: OAuth login failures appear regionally. How do you isolate the root cause?",
+      "basic": "Inspect auth error codes, clock skew and IdP availability; start by separate token validation from provider outage.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query auth error codes, clock skew and IdP availability; separate token validation from provider outage. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: auth error codes, clock skew and IdP availability.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 08: What safe immediate mitigation would you choose when oauth login failures appear regionally?",
+      "basic": "Consider this bounded recovery: fail safely and route to supported recovery.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, fail safely and route to supported recovery. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 08: What prevention actions follow an incident where oauth login failures appear regionally?",
+      "basic": "Institutionalize synthetic auth monitoring by region.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: synthetic auth monitoring by region. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: synthetic auth monitoring by region.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 09: A batch ETL job exceeds its processing window. How do you isolate the root cause?",
+      "basic": "Inspect stage timings, row counts and warehouse queue waits; start by pinpoint data growth versus contention.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query stage timings, row counts and warehouse queue waits; pinpoint data growth versus contention. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: stage timings, row counts and warehouse queue waits.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 09: What safe immediate mitigation would you choose when a batch etl job exceeds its processing window?",
+      "basic": "Consider this bounded recovery: repartition or allocate temporary capacity.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, repartition or allocate temporary capacity. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 09: What prevention actions follow an incident where a batch etl job exceeds its processing window?",
+      "basic": "Institutionalize volume-aware job SLOs.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: volume-aware job SLOs. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: volume-aware job SLOs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 10: Memory usage rises throughout the day. How do you isolate the root cause?",
+      "basic": "Inspect heap profiles and GC behavior; start by separate live-object retention from cache growth.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query heap profiles and GC behavior; separate live-object retention from cache growth. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: heap profiles and GC behavior.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 10: What safe immediate mitigation would you choose when memory usage rises throughout the day?",
+      "basic": "Consider this bounded recovery: restart with safeguards while mitigating leak.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, restart with safeguards while mitigating leak. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 10: What prevention actions follow an incident where memory usage rises throughout the day?",
+      "basic": "Institutionalize allocation profiling in performance tests.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: allocation profiling in performance tests. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: allocation profiling in performance tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 11: TLS certificates expire on edge gateways. How do you isolate the root cause?",
+      "basic": "Inspect certificate chain and renewal job metrics; start by map affected domains and revocation status.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query certificate chain and renewal job metrics; map affected domains and revocation status. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: certificate chain and renewal job metrics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 11: What safe immediate mitigation would you choose when tls certificates expire on edge gateways?",
+      "basic": "Consider this bounded recovery: rotate trusted cert and test handshake paths.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, rotate trusted cert and test handshake paths. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 11: What prevention actions follow an incident where tls certificates expire on edge gateways?",
+      "basic": "Institutionalize expiry alerts and auto-renew verification.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: expiry alerts and auto-renew verification. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: expiry alerts and auto-renew verification.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 12: Intermittent packet loss across a WAN link. How do you isolate the root cause?",
+      "basic": "Inspect loss, retransmits and interface errors; start by compare path, device and congestion periods.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query loss, retransmits and interface errors; compare path, device and congestion periods. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: loss, retransmits and interface errors.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 12: What safe immediate mitigation would you choose when intermittent packet loss across a wan link?",
+      "basic": "Consider this bounded recovery: fail over verified network path.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, fail over verified network path. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 12: What prevention actions follow an incident where intermittent packet loss across a wan link?",
+      "basic": "Institutionalize link-health SLO and redundancy tests.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: link-health SLO and redundancy tests. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: link-health SLO and redundancy tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 13: Kafka consumer processes duplicates. How do you isolate the root cause?",
+      "basic": "Inspect offset commits and transaction boundaries; start by verify at-least-once delivery assumptions.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query offset commits and transaction boundaries; verify at-least-once delivery assumptions. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: offset commits and transaction boundaries.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 13: What safe immediate mitigation would you choose when kafka consumer processes duplicates?",
+      "basic": "Consider this bounded recovery: dedupe by event ID and replay safely.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, dedupe by event ID and replay safely. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 13: What prevention actions follow an incident where kafka consumer processes duplicates?",
+      "basic": "Institutionalize idempotent consumer contract tests.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: idempotent consumer contract tests. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: idempotent consumer contract tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 14: Disk saturation slows a log service. How do you isolate the root cause?",
+      "basic": "Inspect IO wait, write rate and disk queue depth; start by distinguish storage bottleneck from log storm.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query IO wait, write rate and disk queue depth; distinguish storage bottleneck from log storm. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: IO wait, write rate and disk queue depth.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 14: What safe immediate mitigation would you choose when disk saturation slows a log service?",
+      "basic": "Consider this bounded recovery: throttle verbosity and expand capacity safely.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, throttle verbosity and expand capacity safely. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 14: What prevention actions follow an incident where disk saturation slows a log service?",
+      "basic": "Institutionalize log retention policy and IO budgets.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: log retention policy and IO budgets. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: log retention policy and IO budgets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 15: Service gets 429s from an external API. How do you isolate the root cause?",
+      "basic": "Inspect rate-limit headers and outbound request traces; start by spot retry storms and concurrency violations.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query rate-limit headers and outbound request traces; spot retry storms and concurrency violations. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: rate-limit headers and outbound request traces.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 15: What safe immediate mitigation would you choose when service gets 429s from an external api?",
+      "basic": "Consider this bounded recovery: back off with jitter and honor Retry-After.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, back off with jitter and honor Retry-After. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 15: What prevention actions follow an incident where service gets 429s from an external api?",
+      "basic": "Institutionalize client-side quotas and bulkheads.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: client-side quotas and bulkheads. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: client-side quotas and bulkheads.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 16: A deployment causes elevated 5xx errors. How do you isolate the root cause?",
+      "basic": "Inspect diff, feature flags and canary error rates; start by compare versions with traffic normalization.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query diff, feature flags and canary error rates; compare versions with traffic normalization. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: diff, feature flags and canary error rates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 16: What safe immediate mitigation would you choose when a deployment causes elevated 5xx errors?",
+      "basic": "Consider this bounded recovery: roll back or disable culprit feature.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, roll back or disable culprit feature. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 16: What prevention actions follow an incident where a deployment causes elevated 5xx errors?",
+      "basic": "Institutionalize progressive delivery with automated abort.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: progressive delivery with automated abort. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: progressive delivery with automated abort.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 17: An alert storm overwhelms on-call responders. How do you isolate the root cause?",
+      "basic": "Inspect alert cardinality and dependency map; start by group symptoms around shared upstream failure.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query alert cardinality and dependency map; group symptoms around shared upstream failure. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: alert cardinality and dependency map.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 17: What safe immediate mitigation would you choose when an alert storm overwhelms on-call responders?",
+      "basic": "Consider this bounded recovery: dedupe/silence redundant symptoms temporarily.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, dedupe/silence redundant symptoms temporarily. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 17: What prevention actions follow an incident where an alert storm overwhelms on-call responders?",
+      "basic": "Institutionalize actionable alert ownership and routing.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: actionable alert ownership and routing. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: actionable alert ownership and routing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 18: Unexpected cloud bill jump. How do you isolate the root cause?",
+      "basic": "Inspect billing dimensions and new resource inventory; start by isolate SKU and team without breaking workloads.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query billing dimensions and new resource inventory; isolate SKU and team without breaking workloads. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: billing dimensions and new resource inventory.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 18: What safe immediate mitigation would you choose when unexpected cloud bill jump?",
+      "basic": "Consider this bounded recovery: halt runaway noncritical batch work.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, halt runaway noncritical batch work. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 18: What prevention actions follow an incident where unexpected cloud bill jump?",
+      "basic": "Institutionalize budget anomaly alerts and tagging policy.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: budget anomaly alerts and tagging policy. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: budget anomaly alerts and tagging policy.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 19: Time synchronization drift breaks distributed jobs. How do you isolate the root cause?",
+      "basic": "Inspect NTP offset, timestamps and signature validation; start by check node skew and event-time comparisons.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query NTP offset, timestamps and signature validation; check node skew and event-time comparisons. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: NTP offset, timestamps and signature validation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 19: What safe immediate mitigation would you choose when time synchronization drift breaks distributed jobs?",
+      "basic": "Consider this bounded recovery: quarantine skewed nodes and correct clocks.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, quarantine skewed nodes and correct clocks. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 19: What prevention actions follow an incident where time synchronization drift breaks distributed jobs?",
+      "basic": "Institutionalize clock health monitoring and UTC storage.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: clock health monitoring and UTC storage. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: clock health monitoring and UTC storage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 20: Read replica shows stale data. How do you isolate the root cause?",
+      "basic": "Inspect replication lag and read routing metrics; start by identify read-after-write consistency needs.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query replication lag and read routing metrics; identify read-after-write consistency needs. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: replication lag and read routing metrics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 20: What safe immediate mitigation would you choose when read replica shows stale data?",
+      "basic": "Consider this bounded recovery: route critical reads to writer temporarily.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, route critical reads to writer temporarily. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 20: What prevention actions follow an incident where read replica shows stale data?",
+      "basic": "Institutionalize consistency contracts and replica-lag alerts.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: consistency contracts and replica-lag alerts. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: consistency contracts and replica-lag alerts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 21: An OT gateway intermittently disconnects. How do you isolate the root cause?",
+      "basic": "Inspect gateway logs, field network telemetry and heartbeat; start by separate plant network partitions from sensor failures.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query gateway logs, field network telemetry and heartbeat; separate plant network partitions from sensor failures. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: gateway logs, field network telemetry and heartbeat.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 21: What safe immediate mitigation would you choose when an ot gateway intermittently disconnects?",
+      "basic": "Consider this bounded recovery: fail safe and avoid remote unsafe commands.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, fail safe and avoid remote unsafe commands. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 21: What prevention actions follow an incident where an ot gateway intermittently disconnects?",
+      "basic": "Institutionalize OT change control and redundant communications.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: OT change control and redundant communications. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: OT change control and redundant communications.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 22: Factory telemetry arrives in large bursts. How do you isolate the root cause?",
+      "basic": "Inspect ingest rate, buffer depth and timestamps; start by determine buffering outage versus real production surge.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query ingest rate, buffer depth and timestamps; determine buffering outage versus real production surge. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: ingest rate, buffer depth and timestamps.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 22: What safe immediate mitigation would you choose when factory telemetry arrives in large bursts?",
+      "basic": "Consider this bounded recovery: increase buffer or scale ingest without dropping sequence.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, increase buffer or scale ingest without dropping sequence. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 22: What prevention actions follow an incident where factory telemetry arrives in large bursts?",
+      "basic": "Institutionalize bounded queues and replayable event logs.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: bounded queues and replayable event logs. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: bounded queues and replayable event logs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 23: Grid outage map displays wrong affected homes. How do you isolate the root cause?",
+      "basic": "Inspect GIS version, feeder topology and OMS updates; start by check topology sync and delayed switching operations.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query GIS version, feeder topology and OMS updates; check topology sync and delayed switching operations. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: GIS version, feeder topology and OMS updates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 23: What safe immediate mitigation would you choose when grid outage map displays wrong affected homes?",
+      "basic": "Consider this bounded recovery: correct displayed mapping after dispatcher validation.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, correct displayed mapping after dispatcher validation. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 23: What prevention actions follow an incident where grid outage map displays wrong affected homes?",
+      "basic": "Institutionalize topology change reconciliation tests.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: topology change reconciliation tests. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: topology change reconciliation tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 24: A payment webhook arrives twice. How do you isolate the root cause?",
+      "basic": "Inspect event IDs and delivery/retry history; start by separate duplicate delivery from second payment.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query event IDs and delivery/retry history; separate duplicate delivery from second payment. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: event IDs and delivery/retry history.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 24: What safe immediate mitigation would you choose when a payment webhook arrives twice?",
+      "basic": "Consider this bounded recovery: make processing idempotent and reconcile ledger.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, make processing idempotent and reconcile ledger. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 24: What prevention actions follow an incident where a payment webhook arrives twice?",
+      "basic": "Institutionalize webhook contract and duplicate tests.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: webhook contract and duplicate tests. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: webhook contract and duplicate tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production triage 25: An agent executes an unapproved tool call. How do you isolate the root cause?",
+      "basic": "Inspect tool audit logs, permissions and prompt payload; start by identify policy bypass and affected records.",
+      "strong": "Establish the incident start time, customer impact and SLO movement. Query tool audit logs, permissions and prompt payload; identify policy bypass and affected records. Compare healthy versus affected partitions and deploy boundaries, then state evidence for and against your hypothesis. Preserve identifiers and logs rather than guessing from one graph.",
+      "takeaway": "Best first signal: tool audit logs, permissions and prompt payload.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Production recovery 25: What safe immediate mitigation would you choose when an agent executes an unapproved tool call?",
+      "basic": "Consider this bounded recovery: revoke tool scope and stop automation.",
+      "strong": "Prioritize safety and customer impact before root-cause certainty. With a named incident commander and rollback trigger, revoke tool scope and stop automation. Verify recovery via error rate, saturation and user-visible behavior; if a change fails, revert rather than stacking unrelated interventions. Communicate the next checkpoint.",
+      "takeaway": "Restore safely, validate externally, and avoid opaque changes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Postmortem 25: What prevention actions follow an incident where an agent executes an unapproved tool call?",
+      "basic": "Institutionalize policy evaluation and approval-gated actions.",
+      "strong": "Write a blameless timeline with contributing technical and organizational conditions. Turn the finding into owners, deadlines and measurable controls: policy evaluation and approval-gated actions. Add a regression or game-day test for the original failure, measure detection/recovery time, and verify effectiveness in a follow-up review.",
+      "takeaway": "Long-term prevention: policy evaluation and approval-gated actions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    }
+  ]
+}

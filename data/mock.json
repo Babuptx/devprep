@@ -1,0 +1,755 @@
+{
+  "id": "mock-interviews",
+  "questions": [
+    {
+      "q": "Mock interview round 01: Design a highly available claim submission portal. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for 99.95% uptime, attachment uploads, 5k peak RPS and clarify failure modes and separate API/storage paths.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about 99.95% uptime, attachment uploads, 5k peak RPS. Sketch requirements, critical invariants and the dominant failure path. Work through clarify failure modes and separate API/storage paths; quantify one major trade-off: trade consistency and latency with measured SLOs. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 01: The interviewer challenges your design for design a highly available claim submission portal. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against 99.95% uptime, attachment uploads, 5k peak RPS, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using trade consistency and latency with measured SLOs, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with clarify failure modes and separate API/storage paths. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 02: Design an outage notification service for a utility. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for millions of subscribers, storms, SMS provider limits and draw event pipeline and customer dedupe.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about millions of subscribers, storms, SMS provider limits. Sketch requirements, critical invariants and the dominant failure path. Work through draw event pipeline and customer dedupe; quantify one major trade-off: prioritize credible updates over noisy frequency. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 02: The interviewer challenges your design for design an outage notification service for a utility. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against millions of subscribers, storms, SMS provider limits, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using prioritize credible updates over noisy frequency, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with draw event pipeline and customer dedupe. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 03: Design a multi-region customer identity API. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for regional residency and subsecond authentication and cover token lifecycle and outage fallback.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about regional residency and subsecond authentication. Sketch requirements, critical invariants and the dominant failure path. Work through cover token lifecycle and outage fallback; quantify one major trade-off: avoid leaking authentication across residency borders. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 03: The interviewer challenges your design for design a multi-region customer identity api. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against regional residency and subsecond authentication, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using avoid leaking authentication across residency borders, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with cover token lifecycle and outage fallback. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 04: Review a pull request that adds retries to payments. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for transient 5xx, non-idempotent charge endpoint and ask for idempotency keys and retry budgets.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about transient 5xx, non-idempotent charge endpoint. Sketch requirements, critical invariants and the dominant failure path. Work through ask for idempotency keys and retry budgets; quantify one major trade-off: reject uncontrolled duplicate-charge exposure. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 04: The interviewer challenges your design for review a pull request that adds retries to payments. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against transient 5xx, non-idempotent charge endpoint, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using reject uncontrolled duplicate-charge exposure, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with ask for idempotency keys and retry budgets. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 05: Design a telecom call-detail billing pipeline. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for billions of events, late arrivals and reconciliation and model event-time partitions and dedupe.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about billions of events, late arrivals and reconciliation. Sketch requirements, critical invariants and the dominant failure path. Work through model event-time partitions and dedupe; quantify one major trade-off: favor correctness and auditability over one-pass speed. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 05: The interviewer challenges your design for design a telecom call-detail billing pipeline. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against billions of events, late arrivals and reconciliation, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using favor correctness and auditability over one-pass speed, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with model event-time partitions and dedupe. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 06: Discuss a sudden SLO breach with a skeptical VP. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for incomplete trace data and rising customer complaints and state impact, uncertainty and next checkpoint.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about incomplete trace data and rising customer complaints. Sketch requirements, critical invariants and the dominant failure path. Work through state impact, uncertainty and next checkpoint; quantify one major trade-off: avoid declaring unverified root cause. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 06: The interviewer challenges your design for discuss a sudden slo breach with a skeptical vp. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against incomplete trace data and rising customer complaints, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using avoid declaring unverified root cause, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with state impact, uncertainty and next checkpoint. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 07: Plan replacement of a 30-year-old mainframe service. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for core insurance policy records and no downtime allowance and strangler migration and event parity tests.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about core insurance policy records and no downtime allowance. Sketch requirements, critical invariants and the dominant failure path. Work through strangler migration and event parity tests; quantify one major trade-off: favor incremental switchovers with rollback. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 07: The interviewer challenges your design for plan replacement of a 30-year-old mainframe service. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against core insurance policy records and no downtime allowance, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using favor incremental switchovers with rollback, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with strangler migration and event parity tests. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 08: Design near-real-time fraud scoring. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for millisecond authorization budget and imbalanced labels and separate model prediction and rules decision.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about millisecond authorization budget and imbalanced labels. Sketch requirements, critical invariants and the dominant failure path. Work through separate model prediction and rules decision; quantify one major trade-off: monitor false positives and fairness. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 08: The interviewer challenges your design for design near-real-time fraud scoring. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against millisecond authorization budget and imbalanced labels, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using monitor false positives and fairness, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with separate model prediction and rules decision. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 09: Choose data storage for an IoT sensor platform. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for high write throughput, retention tiers and device gaps and clarify query patterns and downsampling.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about high write throughput, retention tiers and device gaps. Sketch requirements, critical invariants and the dominant failure path. Work through clarify query patterns and downsampling; quantify one major trade-off: avoid assuming one datastore fits all uses. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 09: The interviewer challenges your design for choose data storage for an iot sensor platform. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against high write throughput, retention tiers and device gaps, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using avoid assuming one datastore fits all uses, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with clarify query patterns and downsampling. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 10: Respond to a leaked production API key. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for potential abuse, rotation complexity and audit requirements and contain scope, rotate and trace usage.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about potential abuse, rotation complexity and audit requirements. Sketch requirements, critical invariants and the dominant failure path. Work through contain scope, rotate and trace usage; quantify one major trade-off: preserve forensic evidence. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 10: The interviewer challenges your design for respond to a leaked production api key. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against potential abuse, rotation complexity and audit requirements, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using preserve forensic evidence, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with contain scope, rotate and trace usage. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 11: Explain an AI agent's architecture to an auditor. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for tool calls, approvals and regulated customer data and show decision logs and deterministic controls.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about tool calls, approvals and regulated customer data. Sketch requirements, critical invariants and the dominant failure path. Work through show decision logs and deterministic controls; quantify one major trade-off: never treat generated explanation as audit evidence. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 11: The interviewer challenges your design for explain an ai agent's architecture to an auditor. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against tool calls, approvals and regulated customer data, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using never treat generated explanation as audit evidence, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with show decision logs and deterministic controls. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 12: Handle a live coding interview with unclear constraints. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for problem statement omits duplicate and ordering behavior and ask clarifying examples and define contract.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about problem statement omits duplicate and ordering behavior. Sketch requirements, critical invariants and the dominant failure path. Work through ask clarifying examples and define contract; quantify one major trade-off: prioritize correctness and communication over speed. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 12: The interviewer challenges your design for handle a live coding interview with unclear constraints. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against problem statement omits duplicate and ordering behavior, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using prioritize correctness and communication over speed, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with ask clarifying examples and define contract. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 13: Design an API rate limiter for multiple tenants. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for burst traffic and enterprise service tiers and compare token buckets and distributed counters.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about burst traffic and enterprise service tiers. Sketch requirements, critical invariants and the dominant failure path. Work through compare token buckets and distributed counters; quantify one major trade-off: fairness versus strict accuracy tradeoff. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 13: The interviewer challenges your design for design an api rate limiter for multiple tenants. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against burst traffic and enterprise service tiers, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using fairness versus strict accuracy tradeoff, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with compare token buckets and distributed counters. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 14: Plan a deployment for safety-critical factory controllers. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for shift change windows and stop-the-line costs and separate validation from live activation.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about shift change windows and stop-the-line costs. Sketch requirements, critical invariants and the dominant failure path. Work through separate validation from live activation; quantify one major trade-off: safety gate always overrides rollout speed. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 14: The interviewer challenges your design for plan a deployment for safety-critical factory controllers. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against shift change windows and stop-the-line costs, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using safety gate always overrides rollout speed, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with separate validation from live activation. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 15: Investigate inconsistent financial settlement totals. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for late transactions, timezone rules and partial retries and triangulate source ledger and events.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about late transactions, timezone rules and partial retries. Sketch requirements, critical invariants and the dominant failure path. Work through triangulate source ledger and events; quantify one major trade-off: never repair by changing totals without lineage. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 15: The interviewer challenges your design for investigate inconsistent financial settlement totals. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against late transactions, timezone rules and partial retries, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using never repair by changing totals without lineage, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with triangulate source ledger and events. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 16: Evaluate a vector database vendor. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for multi-tenant isolation, hybrid search and cost growth and benchmark recall, p95 and governance controls.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about multi-tenant isolation, hybrid search and cost growth. Sketch requirements, critical invariants and the dominant failure path. Work through benchmark recall, p95 and governance controls; quantify one major trade-off: vendor features are not a substitute for tests. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 16: The interviewer challenges your design for evaluate a vector database vendor. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against multi-tenant isolation, hybrid search and cost growth, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using vendor features are not a substitute for tests, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with benchmark recall, p95 and governance controls. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 17: Conduct a blameless postmortem for a region outage. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for infrastructure errors and uncertain primary trigger and timeline evidence, contributing factors, action owners.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about infrastructure errors and uncertain primary trigger. Sketch requirements, critical invariants and the dominant failure path. Work through timeline evidence, contributing factors, action owners; quantify one major trade-off: avoid individual blame and weak action items. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 17: The interviewer challenges your design for conduct a blameless postmortem for a region outage. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against infrastructure errors and uncertain primary trigger, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using avoid individual blame and weak action items, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with timeline evidence, contributing factors, action owners. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 18: Design feature flags for an enterprise mobile app. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for offline devices, sensitive features and rollout targeting and central policy with cached safe defaults.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about offline devices, sensitive features and rollout targeting. Sketch requirements, critical invariants and the dominant failure path. Work through central policy with cached safe defaults; quantify one major trade-off: never use client flags for true authorization. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 18: The interviewer challenges your design for design feature flags for an enterprise mobile app. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against offline devices, sensitive features and rollout targeting, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using never use client flags for true authorization, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with central policy with cached safe defaults. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 19: Talk through a system design when the interviewer interrupts. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for ambiguous scale assumptions and limited time and summarize decisions and invite tradeoff prioritization.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about ambiguous scale assumptions and limited time. Sketch requirements, critical invariants and the dominant failure path. Work through summarize decisions and invite tradeoff prioritization; quantify one major trade-off: adapt depth without losing core rationale. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 19: The interviewer challenges your design for talk through a system design when the interviewer interrupts. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against ambiguous scale assumptions and limited time, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using adapt depth without losing core rationale, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with summarize decisions and invite tradeoff prioritization. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 20: Migrate an on-prem warehouse to the cloud. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for strict lineage requirements and mixed batch streams and dual writes, reconciliation and phased consumers.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about strict lineage requirements and mixed batch streams. Sketch requirements, critical invariants and the dominant failure path. Work through dual writes, reconciliation and phased consumers; quantify one major trade-off: cost-control and recovery must be explicit. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 20: The interviewer challenges your design for migrate an on-prem warehouse to the cloud. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against strict lineage requirements and mixed batch streams, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using cost-control and recovery must be explicit, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with dual writes, reconciliation and phased consumers. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 21: Design reliable scheduled jobs across time zones. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for DST shifts, missed execution and retries and persist execution instants and recurrence rules.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about DST shifts, missed execution and retries. Sketch requirements, critical invariants and the dominant failure path. Work through persist execution instants and recurrence rules; quantify one major trade-off: do not naively add 24 hours for local schedules. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 21: The interviewer challenges your design for design reliable scheduled jobs across time zones. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against DST shifts, missed execution and retries, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using do not naively add 24 hours for local schedules, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with persist execution instants and recurrence rules. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 22: Resolve disagreement between engineering and security. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for release deadline and critical vulnerability and quantify exploitability and offer mitigations.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about release deadline and critical vulnerability. Sketch requirements, critical invariants and the dominant failure path. Work through quantify exploitability and offer mitigations; quantify one major trade-off: make risk acceptance explicit and authorized. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 22: The interviewer challenges your design for resolve disagreement between engineering and security. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against release deadline and critical vulnerability, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using make risk acceptance explicit and authorized, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with quantify exploitability and offer mitigations. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 23: Explain test strategy for a new authentication flow. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for unit, integration, contract and abuse tests and map failure modes to pyramid and threat tests.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about unit, integration, contract and abuse tests. Sketch requirements, critical invariants and the dominant failure path. Work through map failure modes to pyramid and threat tests; quantify one major trade-off: test negative and expired-token cases. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 23: The interviewer challenges your design for explain test strategy for a new authentication flow. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against unit, integration, contract and abuse tests, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using test negative and expired-token cases, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with map failure modes to pyramid and threat tests. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 24: Design a real-time manufacturing dashboard. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for sensor loss and operator safety cues and show freshness, provenance and stale states.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about sensor loss and operator safety cues. Sketch requirements, critical invariants and the dominant failure path. Work through show freshness, provenance and stale states; quantify one major trade-off: never present missing data as zero. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 24: The interviewer challenges your design for design a real-time manufacturing dashboard. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against sensor loss and operator safety cues, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using never present missing data as zero, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with show freshness, provenance and stale states. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interview round 25: Answer a behavioral question about a failed launch. How would you lead the first 15 minutes?",
+      "basic": "State assumptions for you own a mistake, remediation and stakeholder impact and structure STAR with measurable learning.",
+      "strong": "Interview plan: begin with the business goal and ask two clarifying questions about you own a mistake, remediation and stakeholder impact. Sketch requirements, critical invariants and the dominant failure path. Work through structure STAR with measurable learning; quantify one major trade-off: avoid blaming others or hiding customer impact. Close with a concrete success metric and a plan to validate assumptions.",
+      "takeaway": "A strong interview response is structured, evidence-aware and collaborative.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    },
+    {
+      "q": "Mock interviewer follow-up 25: The interviewer challenges your design for answer a behavioral question about a failed launch. How do you defend or revise it?",
+      "basic": "Restate the concern, test it against you own a mistake, remediation and stakeholder impact, and revise assumptions as needed.",
+      "strong": "Answer in three stages: acknowledge the concern without conceding untested facts, compare at least two options using avoid blaming others or hiding customer impact, and propose a bounded experiment or migration plan. Offer explicit failure handling aligned with structure STAR with measurable learning. Strong candidates communicate uncertainty and invite constraint prioritization rather than inventing metrics.",
+      "takeaway": "Treat pushback as a trade-off discussion, not an argument.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "mock-rubric"
+    }
+  ]
+}

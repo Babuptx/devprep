@@ -1,29 +1,56 @@
-# DevPrep / Prep Pro — 700 interview practice questions
+# DevPrep / Prep Pro — 1,200 Technical Interview Practice Questions
 
-**v3.0 (2026-11-05):** Adds 500 original, scenario-based interview practice Q&As across the existing 16 knowledge areas, for 700 total. Five collapsible navigation groups and all original 200 questions remain intact.
+Free public static study guide with an original, modular question bank for software engineering, cloud, data/AI, security, reliability, careers, coding challenges, agentic AI, enterprise applications and mock interviews.
 
-- Q&A data remains split across 16 JSON topic files and fetched only on selection.
-- The topic sidebar displays actual question counts; local topic search filters the selected subject without downloading other categories.
-- Each new item includes an interview-style question, direct baseline answer, deeper explanation, takeaway, topical tags and provenance.
-- Original practice synthesis is informed by public 2025–26 interview accounts and engineering references, **not** a claim that questions were personally asked by specific employers or ranked by measured frequency.
-- See `research/SOURCES.md` for research provenance and caveats.
-- No backend, API credentials or personal candidate records are required.
+**Live:** https://babuptx.github.io/devprep/  
+**Repository:** https://github.com/Babuptx/devprep
 
-## GitHub Pages
+## Release v4.0
 
-Repo: https://github.com/Babuptx/devprep  
-Site: https://babuptx.github.io/devprep/
+- **1,200 questions**: previous 700 retained and 500 new original practice Q&As added.
+- **10 collapsible major groups, 21 knowledge areas**, all groups collapsed initially.
+- The **five new groups** contain: Coding Challenges & Algorithmic Thinking (150), Agentic AI & Developer Automation (100), Industry IT & Enterprise Applications (125), Production Troubleshooting & SRE (75), and Mock Interviews & Case Studies (50).
+- Coding challenges intentionally use **thinking hints**, reasoning, edge cases, and target complexity instead of full working code.
+- Agentic AI includes design, evaluation, failure analysis and governance scenarios. Enterprise IT covers insurance, telecommunications, manufacturing, utilities, and financial services. SRE covers triage, recovery and postmortems. Mock interviews teach answer structure and handling follow-up questions.
+- Consistent inline SVG icons appear in the group navigation, topics, and reading pane; no new icon-library dependency.
+- One **slim fixed header** carries the Prep Pro brand, current area, local clock, font family/size controls, expand answers, and theme toggle.
+- A **tiny fixed disclaimer footer** remains visible. Compact colored group bars and global navigation expand/collapse stay in the sidebar.
+- Every topic is a separate JSON file and loaded **on demand**, retaining in-browser caching and topic search.
 
-Deploy `main` / `(root)` via Settings → Pages. Use an HTTP server when previewing locally (fetching topic JSON from `file://` is restricted in browsers).
+## Structure
 
-## Repository structure
+```text
+index.html                      Application shell, responsive navigation and UI
+README.md                       Release and maintenance documentation
+data/manifest.json              Navigation/group metadata, counts, paths
+ data/*.json                     21 independent topic JSON files
+research/SOURCES.md             Prior public-source coverage and editorial policy
+```
 
-`index.html` contains the lightweight UI and navigation logic; `data/manifest.json` contains all categories and counts; 16 `data/*.json` files contain question records; `research/SOURCES.md` explains research sourcing.
+## Question counts
 
-## Future scope
+| Group | New v4.0 questions |
+|---|---:|
+| Coding Challenges & Algorithmic Thinking | 150 |
+| Agentic AI & Developer Automation | 100 |
+| Industry IT & Enterprise Applications | 125 |
+| Production Troubleshooting & SRE | 75 |
+| Mock Interviews & Case Studies | 50 |
+| **Total added** | **500** |
+| **All questions after release** | **1,200** |
 
-The requested separate section for **coding prompts with algorithmic hints or pseudocode rather than complete solutions** is intentionally deferred to the next release. Do not blend its format into these 500 conceptual and scenario questions.
+## Editorial integrity
 
-## Content and rights
+The question sets are **original educational scenarios** informed by broad public discussion of interview topics and enterprise engineering practice. They are **not** verbatim confidential interview prompts, verified question lists from named employers, or empirically ranked by interview frequency. Responses are supplementary teaching material and must be checked against official technical references for consequential decisions.
 
-Questions are original study prompts; public community reports are inspiration, not verified private interview records. Reuse only with suitable attribution of cited sources and without copying proprietary question banks.
+## Updating data
+
+Edit a single topic JSON file; update its `questionCount` in the manifest. Each Q&A keeps `q`, `basic`, `strong`, `takeaway`, optional `mermaid`, and optional `links`. Recent questions also include difficulty, industry tags, provenance, and version metadata.
+
+Validate with `python -m json.tool` for all JSON and `node --check` for inline app scripts before deployment. Use GitHub Pages from `main` / root. Local previews require a local HTTP server; direct `file://` opening may block `fetch` for topic JSON. Static-site CDN resources require internet access.
+
+## Privacy and accessibility
+
+No login, API key, analytics, data collection or backend is required. Typography preferences are stored only in the visitor's browser, and the live clock uses the visitor's device time. The Q&A content and source remain available in the public repository.
+
+Feedback and corrections: **babuptx@gmail.com**.

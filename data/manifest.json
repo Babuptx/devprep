@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "curriculumVersion": "3.0",
-  "targetQuestionCount": 700,
+  "curriculumVersion": "4.0",
+  "targetQuestionCount": 1200,
   "groups": [
     {
       "id": "software-engineering",
@@ -47,6 +47,41 @@
       "title": "Career & Interview",
       "categoryIds": [
         "behavioral"
+      ]
+    },
+    {
+      "id": "coding-challenges",
+      "title": "Coding Challenges & Algorithmic Thinking",
+      "categoryIds": [
+        "coding-challenges"
+      ]
+    },
+    {
+      "id": "agentic-ai",
+      "title": "Agentic AI & Developer Automation",
+      "categoryIds": [
+        "agentic-ai"
+      ]
+    },
+    {
+      "id": "industry-it",
+      "title": "Industry IT & Enterprise Applications",
+      "categoryIds": [
+        "industry-it"
+      ]
+    },
+    {
+      "id": "incident-response",
+      "title": "Production Troubleshooting & SRE",
+      "categoryIds": [
+        "incident-response"
+      ]
+    },
+    {
+      "id": "mock-interviews",
+      "title": "Mock Interviews & Case Studies",
+      "categoryIds": [
+        "mock-interviews"
       ]
     }
   ],
@@ -194,7 +229,57 @@
       "questionCount": 41,
       "target": 10,
       "group": "career-interview"
+    },
+    {
+      "id": "coding-challenges",
+      "title": "Coding Challenges & Algorithmic Thinking",
+      "desc": "Coding prompts, hints, complexity and edge-case reasoning",
+      "file": "data/coding.json",
+      "questionCount": 150,
+      "target": 150,
+      "group": "coding-challenges",
+      "newInVersion": "4.0"
+    },
+    {
+      "id": "agentic-ai",
+      "title": "Agentic AI & Developer Automation",
+      "desc": "AI agents, tool use, safety, evaluation and assisted development",
+      "file": "data/agentic.json",
+      "questionCount": 100,
+      "target": 100,
+      "group": "agentic-ai",
+      "newInVersion": "4.0"
+    },
+    {
+      "id": "industry-it",
+      "title": "Industry IT & Enterprise Applications",
+      "desc": "Insurance, telecom, manufacturing, utilities and financial services",
+      "file": "data/industry.json",
+      "questionCount": 125,
+      "target": 125,
+      "group": "industry-it",
+      "newInVersion": "4.0"
+    },
+    {
+      "id": "incident-response",
+      "title": "Production Troubleshooting & SRE",
+      "desc": "Realistic incident triage, recovery, and prevention",
+      "file": "data/incidents.json",
+      "questionCount": 75,
+      "target": 75,
+      "group": "incident-response",
+      "newInVersion": "4.0"
+    },
+    {
+      "id": "mock-interviews",
+      "title": "Mock Interviews & Case Studies",
+      "desc": "Practical scenarios, interviewer follow-ups and scoring guidance",
+      "file": "data/mock.json",
+      "questionCount": 50,
+      "target": 50,
+      "group": "mock-interviews",
+      "newInVersion": "4.0"
     }
   ],
-  "sourcePolicy": "Public-source-informed, original practice questions; no frequency ranking or verified company attribution."
+  "sourcePolicy": "Original educational practice questions based on publicly discussed job skills; not employer-verified interview question frequency."
 }

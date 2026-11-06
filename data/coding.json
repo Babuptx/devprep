@@ -1,0 +1,2255 @@
+{
+  "id": "coding-challenges",
+  "questions": [
+    {
+      "q": "Coding prompt 01: Find two numbers with a target sum in an unsorted list. What is your starting algorithm?",
+      "basic": "Hint: consider hash map of seen values and target complements; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether hash map of seen values and target complements is suitable. The important condition is that duplicates and negative numbers are allowed. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on hash map of seen values and target complements; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 01: How does your approach change when duplicates and negative numbers are allowed?",
+      "basic": "Hint: revisit the assumptions behind hash map of seen values and target complements.",
+      "strong": "Thinking hint: identify exactly which assumption duplicates and negative numbers are allowed changes. Keep the invariant of hash map of seen values and target complements only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: do not reuse the same list index.",
+      "takeaway": "Edge conditions matter: do not reuse the same list index.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 01: How would you test and analyze a solution for Find two numbers with a target sum in an unsorted list?",
+      "basic": "Hint: derive tests from the invariant; discuss expected O(n) time and O(n) space.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: do not reuse the same list index. Explain whether runtime counts input, output or both; the expected target is expected O(n) time and O(n) space. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: expected O(n) time and O(n) space; validate do not reuse the same list index.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 02: Find three numbers that sum to a target. What is your starting algorithm?",
+      "basic": "Hint: consider sorting plus fixed index and inward two pointers; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether sorting plus fixed index and inward two pointers is suitable. The important condition is that unique triplets are needed. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on sorting plus fixed index and inward two pointers; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 02: How does your approach change when unique triplets are needed?",
+      "basic": "Hint: revisit the assumptions behind sorting plus fixed index and inward two pointers.",
+      "strong": "Thinking hint: identify exactly which assumption unique triplets are needed changes. Keep the invariant of sorting plus fixed index and inward two pointers only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: skip duplicates without skipping valid triplets.",
+      "takeaway": "Edge conditions matter: skip duplicates without skipping valid triplets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 02: How would you test and analyze a solution for Find three numbers that sum to a target?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n²) time after sorting.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: skip duplicates without skipping valid triplets. Explain whether runtime counts input, output or both; the expected target is O(n²) time after sorting. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n²) time after sorting; validate skip duplicates without skipping valid triplets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 03: Longest substring with no repeated characters. What is your starting algorithm?",
+      "basic": "Hint: consider sliding window with last-seen positions; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether sliding window with last-seen positions is suitable. The important condition is that Unicode characters may appear. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on sliding window with last-seen positions; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 03: How does your approach change when Unicode characters may appear?",
+      "basic": "Hint: revisit the assumptions behind sliding window with last-seen positions.",
+      "strong": "Thinking hint: identify exactly which assumption Unicode characters may appear changes. Keep the invariant of sliding window with last-seen positions only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: move the left bound forward only.",
+      "takeaway": "Edge conditions matter: move the left bound forward only.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 03: How would you test and analyze a solution for Longest substring with no repeated characters?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time with a hash map.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: move the left bound forward only. Explain whether runtime counts input, output or both; the expected target is O(n) time with a hash map. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time with a hash map; validate move the left bound forward only.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 04: Minimum window containing every required character. What is your starting algorithm?",
+      "basic": "Hint: consider frequency counts and expandable/contractible window; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether frequency counts and expandable/contractible window is suitable. The important condition is that required characters may repeat. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on frequency counts and expandable/contractible window; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 04: How does your approach change when required characters may repeat?",
+      "basic": "Hint: revisit the assumptions behind frequency counts and expandable/contractible window.",
+      "strong": "Thinking hint: identify exactly which assumption required characters may repeat changes. Keep the invariant of frequency counts and expandable/contractible window only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: count fulfilled multiplicities rather than distinct types.",
+      "takeaway": "Edge conditions matter: count fulfilled multiplicities rather than distinct types.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 04: How would you test and analyze a solution for Minimum window containing every required character?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time with character-index maps.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: count fulfilled multiplicities rather than distinct types. Explain whether runtime counts input, output or both; the expected target is O(n) time with character-index maps. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time with character-index maps; validate count fulfilled multiplicities rather than distinct types.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 05: Count subarrays with sum equal to k. What is your starting algorithm?",
+      "basic": "Hint: consider prefix sums and a frequency map; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether prefix sums and a frequency map is suitable. The important condition is that values may be negative. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on prefix sums and a frequency map; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 05: How does your approach change when values may be negative?",
+      "basic": "Hint: revisit the assumptions behind prefix sums and a frequency map.",
+      "strong": "Thinking hint: identify exactly which assumption values may be negative changes. Keep the invariant of prefix sums and a frequency map only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: two pointers fail when negative values occur.",
+      "takeaway": "Edge conditions matter: two pointers fail when negative values occur.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 05: How would you test and analyze a solution for Count subarrays with sum equal to k?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) expected time and O(n) space.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: two pointers fail when negative values occur. Explain whether runtime counts input, output or both; the expected target is O(n) expected time and O(n) space. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) expected time and O(n) space; validate two pointers fail when negative values occur.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 06: Maximum sum of a fixed-length subarray. What is your starting algorithm?",
+      "basic": "Hint: consider rolling window sum; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether rolling window sum is suitable. The important condition is that k can exceed the list length. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on rolling window sum; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 06: How does your approach change when k can exceed the list length?",
+      "basic": "Hint: revisit the assumptions behind rolling window sum.",
+      "strong": "Thinking hint: identify exactly which assumption k can exceed the list length changes. Keep the invariant of rolling window sum only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: validate window boundaries and empty inputs.",
+      "takeaway": "Edge conditions matter: validate window boundaries and empty inputs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 06: How would you test and analyze a solution for Maximum sum of a fixed-length subarray?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time and O(1) extra space.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: validate window boundaries and empty inputs. Explain whether runtime counts input, output or both; the expected target is O(n) time and O(1) extra space. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time and O(1) extra space; validate validate window boundaries and empty inputs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 07: Maximum subarray total with negative numbers. What is your starting algorithm?",
+      "basic": "Hint: consider Kadane-style rolling best suffix; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether Kadane-style rolling best suffix is suitable. The important condition is that all elements may be negative. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on Kadane-style rolling best suffix; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 07: How does your approach change when all elements may be negative?",
+      "basic": "Hint: revisit the assumptions behind Kadane-style rolling best suffix.",
+      "strong": "Thinking hint: identify exactly which assumption all elements may be negative changes. Keep the invariant of Kadane-style rolling best suffix only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: do not silently allow the empty subarray.",
+      "takeaway": "Edge conditions matter: do not silently allow the empty subarray.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 07: How would you test and analyze a solution for Maximum subarray total with negative numbers?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time and O(1) extra space.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: do not silently allow the empty subarray. Explain whether runtime counts input, output or both; the expected target is O(n) time and O(1) extra space. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time and O(1) extra space; validate do not silently allow the empty subarray.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 08: Product of array except self without division. What is your starting algorithm?",
+      "basic": "Hint: consider prefix products and suffix products; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether prefix products and suffix products is suitable. The important condition is that zero values are present. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on prefix products and suffix products; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 08: How does your approach change when zero values are present?",
+      "basic": "Hint: revisit the assumptions behind prefix products and suffix products.",
+      "strong": "Thinking hint: identify exactly which assumption zero values are present changes. Keep the invariant of prefix products and suffix products only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: account for multiple zeros.",
+      "takeaway": "Edge conditions matter: account for multiple zeros.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 08: How would you test and analyze a solution for Product of array except self without division?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time and O(1) auxiliary space beyond output.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: account for multiple zeros. Explain whether runtime counts input, output or both; the expected target is O(n) time and O(1) auxiliary space beyond output. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time and O(1) auxiliary space beyond output; validate account for multiple zeros.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 09: Rotate an array by k positions. What is your starting algorithm?",
+      "basic": "Hint: consider reverse sections or use modular indexing; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether reverse sections or use modular indexing is suitable. The important condition is that k may exceed the array length. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on reverse sections or use modular indexing; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 09: How does your approach change when k may exceed the array length?",
+      "basic": "Hint: revisit the assumptions behind reverse sections or use modular indexing.",
+      "strong": "Thinking hint: identify exactly which assumption k may exceed the array length changes. Keep the invariant of reverse sections or use modular indexing only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: reduce k modulo n and handle n=0.",
+      "takeaway": "Edge conditions matter: reduce k modulo n and handle n=0.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 09: How would you test and analyze a solution for Rotate an array by k positions?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time and O(1) space for reverse strategy.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: reduce k modulo n and handle n=0. Explain whether runtime counts input, output or both; the expected target is O(n) time and O(1) space for reverse strategy. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time and O(1) space for reverse strategy; validate reduce k modulo n and handle n=0.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 10: Merge overlapping meeting intervals. What is your starting algorithm?",
+      "basic": "Hint: consider sort by start then merge active interval; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether sort by start then merge active interval is suitable. The important condition is that touching endpoints may or may not count as overlap. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on sort by start then merge active interval; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 10: How does your approach change when touching endpoints may or may not count as overlap?",
+      "basic": "Hint: revisit the assumptions behind sort by start then merge active interval.",
+      "strong": "Thinking hint: identify exactly which assumption touching endpoints may or may not count as overlap changes. Keep the invariant of sort by start then merge active interval only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: state closed versus half-open interval semantics.",
+      "takeaway": "Edge conditions matter: state closed versus half-open interval semantics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 10: How would you test and analyze a solution for Merge overlapping meeting intervals?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n log n) time and O(n) output.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: state closed versus half-open interval semantics. Explain whether runtime counts input, output or both; the expected target is O(n log n) time and O(n) output. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n log n) time and O(n) output; validate state closed versus half-open interval semantics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 11: Insert a new interval into ordered disjoint intervals. What is your starting algorithm?",
+      "basic": "Hint: consider scan before overlap, merge overlap, append rest; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether scan before overlap, merge overlap, append rest is suitable. The important condition is that input ordering is guaranteed. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on scan before overlap, merge overlap, append rest; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 11: How does your approach change when input ordering is guaranteed?",
+      "basic": "Hint: revisit the assumptions behind scan before overlap, merge overlap, append rest.",
+      "strong": "Thinking hint: identify exactly which assumption input ordering is guaranteed changes. Keep the invariant of scan before overlap, merge overlap, append rest only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: handle new interval after all existing ones.",
+      "takeaway": "Edge conditions matter: handle new interval after all existing ones.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 11: How would you test and analyze a solution for Insert a new interval into ordered disjoint intervals?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: handle new interval after all existing ones. Explain whether runtime counts input, output or both; the expected target is O(n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time; validate handle new interval after all existing ones.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 12: Find a peak element in a numeric list. What is your starting algorithm?",
+      "basic": "Hint: consider binary search on slope direction; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether binary search on slope direction is suitable. The important condition is that local maximum rather than global maximum is sufficient. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on binary search on slope direction; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 12: How does your approach change when local maximum rather than global maximum is sufficient?",
+      "basic": "Hint: revisit the assumptions behind binary search on slope direction.",
+      "strong": "Thinking hint: identify exactly which assumption local maximum rather than global maximum is sufficient changes. Keep the invariant of binary search on slope direction only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: guard midpoint plus one bounds.",
+      "takeaway": "Edge conditions matter: guard midpoint plus one bounds.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 12: How would you test and analyze a solution for Find a peak element in a numeric list?",
+      "basic": "Hint: derive tests from the invariant; discuss O(log n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: guard midpoint plus one bounds. Explain whether runtime counts input, output or both; the expected target is O(log n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(log n) time; validate guard midpoint plus one bounds.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 13: Find first and last occurrence in a sorted list. What is your starting algorithm?",
+      "basic": "Hint: consider two boundary-biased binary searches; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether two boundary-biased binary searches is suitable. The important condition is that many duplicate keys exist. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on two boundary-biased binary searches; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 13: How does your approach change when many duplicate keys exist?",
+      "basic": "Hint: revisit the assumptions behind two boundary-biased binary searches.",
+      "strong": "Thinking hint: identify exactly which assumption many duplicate keys exist changes. Keep the invariant of two boundary-biased binary searches only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: avoid stopping at an arbitrary match.",
+      "takeaway": "Edge conditions matter: avoid stopping at an arbitrary match.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 13: How would you test and analyze a solution for Find first and last occurrence in a sorted list?",
+      "basic": "Hint: derive tests from the invariant; discuss O(log n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: avoid stopping at an arbitrary match. Explain whether runtime counts input, output or both; the expected target is O(log n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(log n) time; validate avoid stopping at an arbitrary match.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 14: Search a rotated sorted array. What is your starting algorithm?",
+      "basic": "Hint: consider compare sorted half then discard impossible half; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether compare sorted half then discard impossible half is suitable. The important condition is that array may contain duplicates. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on compare sorted half then discard impossible half; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 14: How does your approach change when array may contain duplicates?",
+      "basic": "Hint: revisit the assumptions behind compare sorted half then discard impossible half.",
+      "strong": "Thinking hint: identify exactly which assumption array may contain duplicates changes. Keep the invariant of compare sorted half then discard impossible half only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: duplicates can degrade worst-case runtime.",
+      "takeaway": "Edge conditions matter: duplicates can degrade worst-case runtime.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 14: How would you test and analyze a solution for Search a rotated sorted array?",
+      "basic": "Hint: derive tests from the invariant; discuss O(log n) typical, O(n) worst with duplicates.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: duplicates can degrade worst-case runtime. Explain whether runtime counts input, output or both; the expected target is O(log n) typical, O(n) worst with duplicates. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(log n) typical, O(n) worst with duplicates; validate duplicates can degrade worst-case runtime.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 15: Find median of two sorted arrays. What is your starting algorithm?",
+      "basic": "Hint: consider binary search over partition boundary; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether binary search over partition boundary is suitable. The important condition is that arrays may have different sizes. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on binary search over partition boundary; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 15: How does your approach change when arrays may have different sizes?",
+      "basic": "Hint: revisit the assumptions behind binary search over partition boundary.",
+      "strong": "Thinking hint: identify exactly which assumption arrays may have different sizes changes. Keep the invariant of binary search over partition boundary only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: partition comparison must handle empty sides.",
+      "takeaway": "Edge conditions matter: partition comparison must handle empty sides.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 15: How would you test and analyze a solution for Find median of two sorted arrays?",
+      "basic": "Hint: derive tests from the invariant; discuss O(log(min(m,n))) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: partition comparison must handle empty sides. Explain whether runtime counts input, output or both; the expected target is O(log(min(m,n))) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(log(min(m,n))) time; validate partition comparison must handle empty sides.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 16: Return k largest values from a stream. What is your starting algorithm?",
+      "basic": "Hint: consider bounded min-heap of size k; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether bounded min-heap of size k is suitable. The important condition is that stream cannot fit in memory. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on bounded min-heap of size k; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 16: How does your approach change when stream cannot fit in memory?",
+      "basic": "Hint: revisit the assumptions behind bounded min-heap of size k.",
+      "strong": "Thinking hint: identify exactly which assumption stream cannot fit in memory changes. Keep the invariant of bounded min-heap of size k only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: treat ties deterministically when needed.",
+      "takeaway": "Edge conditions matter: treat ties deterministically when needed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 16: How would you test and analyze a solution for Return k largest values from a stream?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n log k) time and O(k) memory.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: treat ties deterministically when needed. Explain whether runtime counts input, output or both; the expected target is O(n log k) time and O(k) memory. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n log k) time and O(k) memory; validate treat ties deterministically when needed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 17: Find top k frequent items. What is your starting algorithm?",
+      "basic": "Hint: consider frequency map plus heap or bucket grouping; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether frequency map plus heap or bucket grouping is suitable. The important condition is that equal-frequency ties must be stable. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on frequency map plus heap or bucket grouping; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 17: How does your approach change when equal-frequency ties must be stable?",
+      "basic": "Hint: revisit the assumptions behind frequency map plus heap or bucket grouping.",
+      "strong": "Thinking hint: identify exactly which assumption equal-frequency ties must be stable changes. Keep the invariant of frequency map plus heap or bucket grouping only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: do not confuse most frequent with highest-valued.",
+      "takeaway": "Edge conditions matter: do not confuse most frequent with highest-valued.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 17: How would you test and analyze a solution for Find top k frequent items?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n log k) heap approach.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: do not confuse most frequent with highest-valued. Explain whether runtime counts input, output or both; the expected target is O(n log k) heap approach. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n log k) heap approach; validate do not confuse most frequent with highest-valued.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 18: Find shortest path in a weighted road graph. What is your starting algorithm?",
+      "basic": "Hint: consider Dijkstra with priority queue; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether Dijkstra with priority queue is suitable. The important condition is that weights are nonnegative. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on Dijkstra with priority queue; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 18: How does your approach change when weights are nonnegative?",
+      "basic": "Hint: revisit the assumptions behind Dijkstra with priority queue.",
+      "strong": "Thinking hint: identify exactly which assumption weights are nonnegative changes. Keep the invariant of Dijkstra with priority queue only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: negative edges invalidate Dijkstra.",
+      "takeaway": "Edge conditions matter: negative edges invalidate Dijkstra.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 18: How would you test and analyze a solution for Find shortest path in a weighted road graph?",
+      "basic": "Hint: derive tests from the invariant; discuss O((V+E) log V) typical.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: negative edges invalidate Dijkstra. Explain whether runtime counts input, output or both; the expected target is O((V+E) log V) typical. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O((V+E) log V) typical; validate negative edges invalidate Dijkstra.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 19: Find shortest path in a maze with equal step costs. What is your starting algorithm?",
+      "basic": "Hint: consider breadth-first search over grid cells; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether breadth-first search over grid cells is suitable. The important condition is that walls and unreachable goal exist. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on breadth-first search over grid cells; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 19: How does your approach change when walls and unreachable goal exist?",
+      "basic": "Hint: revisit the assumptions behind breadth-first search over grid cells.",
+      "strong": "Thinking hint: identify exactly which assumption walls and unreachable goal exist changes. Keep the invariant of breadth-first search over grid cells only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: mark visited when enqueuing.",
+      "takeaway": "Edge conditions matter: mark visited when enqueuing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 19: How would you test and analyze a solution for Find shortest path in a maze with equal step costs?",
+      "basic": "Hint: derive tests from the invariant; discuss O(rows×cols) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: mark visited when enqueuing. Explain whether runtime counts input, output or both; the expected target is O(rows×cols) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(rows×cols) time; validate mark visited when enqueuing.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 20: Detect cycles in directed dependency graph. What is your starting algorithm?",
+      "basic": "Hint: consider depth-first active recursion set or topological order; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether depth-first active recursion set or topological order is suitable. The important condition is that a project may depend on itself. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on depth-first active recursion set or topological order; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 20: How does your approach change when a project may depend on itself?",
+      "basic": "Hint: revisit the assumptions behind depth-first active recursion set or topological order.",
+      "strong": "Thinking hint: identify exactly which assumption a project may depend on itself changes. Keep the invariant of depth-first active recursion set or topological order only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: distinguish visiting from fully explored.",
+      "takeaway": "Edge conditions matter: distinguish visiting from fully explored.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 20: How would you test and analyze a solution for Detect cycles in directed dependency graph?",
+      "basic": "Hint: derive tests from the invariant; discuss O(V+E) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: distinguish visiting from fully explored. Explain whether runtime counts input, output or both; the expected target is O(V+E) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(V+E) time; validate distinguish visiting from fully explored.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 21: Find a valid ordering of build tasks. What is your starting algorithm?",
+      "basic": "Hint: consider topological sort using indegrees; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether topological sort using indegrees is suitable. The important condition is that some dependencies may form cycles. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on topological sort using indegrees; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 21: How does your approach change when some dependencies may form cycles?",
+      "basic": "Hint: revisit the assumptions behind topological sort using indegrees.",
+      "strong": "Thinking hint: identify exactly which assumption some dependencies may form cycles changes. Keep the invariant of topological sort using indegrees only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: report impossibility rather than partial order.",
+      "takeaway": "Edge conditions matter: report impossibility rather than partial order.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 21: How would you test and analyze a solution for Find a valid ordering of build tasks?",
+      "basic": "Hint: derive tests from the invariant; discuss O(V+E) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: report impossibility rather than partial order. Explain whether runtime counts input, output or both; the expected target is O(V+E) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(V+E) time; validate report impossibility rather than partial order.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 22: Count islands in a binary grid. What is your starting algorithm?",
+      "basic": "Hint: consider BFS or DFS flood fill; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether BFS or DFS flood fill is suitable. The important condition is that adjacency is four-directional. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on BFS or DFS flood fill; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 22: How does your approach change when adjacency is four-directional?",
+      "basic": "Hint: revisit the assumptions behind BFS or DFS flood fill.",
+      "strong": "Thinking hint: identify exactly which assumption adjacency is four-directional changes. Keep the invariant of BFS or DFS flood fill only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: avoid diagonal connections unless specified.",
+      "takeaway": "Edge conditions matter: avoid diagonal connections unless specified.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 22: How would you test and analyze a solution for Count islands in a binary grid?",
+      "basic": "Hint: derive tests from the invariant; discuss O(rows×cols) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: avoid diagonal connections unless specified. Explain whether runtime counts input, output or both; the expected target is O(rows×cols) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(rows×cols) time; validate avoid diagonal connections unless specified.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 23: Find connected components in a huge sparse graph. What is your starting algorithm?",
+      "basic": "Hint: consider iterative DFS or union-find; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether iterative DFS or union-find is suitable. The important condition is that recursive depth may overflow. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on iterative DFS or union-find; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 23: How does your approach change when recursive depth may overflow?",
+      "basic": "Hint: revisit the assumptions behind iterative DFS or union-find.",
+      "strong": "Thinking hint: identify exactly which assumption recursive depth may overflow changes. Keep the invariant of iterative DFS or union-find only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: store adjacency efficiently.",
+      "takeaway": "Edge conditions matter: store adjacency efficiently.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 23: How would you test and analyze a solution for Find connected components in a huge sparse graph?",
+      "basic": "Hint: derive tests from the invariant; discuss O(V+E) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: store adjacency efficiently. Explain whether runtime counts input, output or both; the expected target is O(V+E) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(V+E) time; validate store adjacency efficiently.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 24: Check whether undirected edges create a cycle. What is your starting algorithm?",
+      "basic": "Hint: consider disjoint-set union with path compression; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether disjoint-set union with path compression is suitable. The important condition is that edges arrive incrementally. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on disjoint-set union with path compression; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 24: How does your approach change when edges arrive incrementally?",
+      "basic": "Hint: revisit the assumptions behind disjoint-set union with path compression.",
+      "strong": "Thinking hint: identify exactly which assumption edges arrive incrementally changes. Keep the invariant of disjoint-set union with path compression only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: an edge joining already connected nodes closes a cycle.",
+      "takeaway": "Edge conditions matter: an edge joining already connected nodes closes a cycle.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 24: How would you test and analyze a solution for Check whether undirected edges create a cycle?",
+      "basic": "Hint: derive tests from the invariant; discuss near O(E α(V)) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: an edge joining already connected nodes closes a cycle. Explain whether runtime counts input, output or both; the expected target is near O(E α(V)) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: near O(E α(V)) time; validate an edge joining already connected nodes closes a cycle.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 25: Compute minimum spanning network cost. What is your starting algorithm?",
+      "basic": "Hint: consider Kruskal with sorted edges and disjoint set; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether Kruskal with sorted edges and disjoint set is suitable. The important condition is that graph can be disconnected. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on Kruskal with sorted edges and disjoint set; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 25: How does your approach change when graph can be disconnected?",
+      "basic": "Hint: revisit the assumptions behind Kruskal with sorted edges and disjoint set.",
+      "strong": "Thinking hint: identify exactly which assumption graph can be disconnected changes. Keep the invariant of Kruskal with sorted edges and disjoint set only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: state that no spanning tree exists if components remain.",
+      "takeaway": "Edge conditions matter: state that no spanning tree exists if components remain.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 25: How would you test and analyze a solution for Compute minimum spanning network cost?",
+      "basic": "Hint: derive tests from the invariant; discuss O(E log E) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: state that no spanning tree exists if components remain. Explain whether runtime counts input, output or both; the expected target is O(E log E) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(E log E) time; validate state that no spanning tree exists if components remain.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 26: Find lowest common ancestor in a binary tree. What is your starting algorithm?",
+      "basic": "Hint: consider recursive tree traversal or parent ancestry; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether recursive tree traversal or parent ancestry is suitable. The important condition is that tree nodes are unique references. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on recursive tree traversal or parent ancestry; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 26: How does your approach change when tree nodes are unique references?",
+      "basic": "Hint: revisit the assumptions behind recursive tree traversal or parent ancestry.",
+      "strong": "Thinking hint: identify exactly which assumption tree nodes are unique references changes. Keep the invariant of recursive tree traversal or parent ancestry only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: handle missing node assumptions explicitly.",
+      "takeaway": "Edge conditions matter: handle missing node assumptions explicitly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 26: How would you test and analyze a solution for Find lowest common ancestor in a binary tree?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time for one query.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: handle missing node assumptions explicitly. Explain whether runtime counts input, output or both; the expected target is O(n) time for one query. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time for one query; validate handle missing node assumptions explicitly.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 27: Validate a binary search tree. What is your starting algorithm?",
+      "basic": "Hint: consider DFS with inherited strict lower/upper bounds; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether DFS with inherited strict lower/upper bounds is suitable. The important condition is that subtree keys may violate distant ancestor bounds. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on DFS with inherited strict lower/upper bounds; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 27: How does your approach change when subtree keys may violate distant ancestor bounds?",
+      "basic": "Hint: revisit the assumptions behind DFS with inherited strict lower/upper bounds.",
+      "strong": "Thinking hint: identify exactly which assumption subtree keys may violate distant ancestor bounds changes. Keep the invariant of DFS with inherited strict lower/upper bounds only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: checking only immediate children is insufficient.",
+      "takeaway": "Edge conditions matter: checking only immediate children is insufficient.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 27: How would you test and analyze a solution for Validate a binary search tree?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: checking only immediate children is insufficient. Explain whether runtime counts input, output or both; the expected target is O(n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time; validate checking only immediate children is insufficient.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 28: Serialize and deserialize a binary tree. What is your starting algorithm?",
+      "basic": "Hint: consider preorder traversal with null markers; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether preorder traversal with null markers is suitable. The important condition is that tree can be skewed. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on preorder traversal with null markers; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 28: How does your approach change when tree can be skewed?",
+      "basic": "Hint: revisit the assumptions behind preorder traversal with null markers.",
+      "strong": "Thinking hint: identify exactly which assumption tree can be skewed changes. Keep the invariant of preorder traversal with null markers only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: preserve structural nulls unambiguously.",
+      "takeaway": "Edge conditions matter: preserve structural nulls unambiguously.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 28: How would you test and analyze a solution for Serialize and deserialize a binary tree?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time and storage.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: preserve structural nulls unambiguously. Explain whether runtime counts input, output or both; the expected target is O(n) time and storage. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time and storage; validate preserve structural nulls unambiguously.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 29: Find kth smallest value in a binary search tree. What is your starting algorithm?",
+      "basic": "Hint: consider inorder traversal with count; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether inorder traversal with count is suitable. The important condition is that tree may be extremely skewed. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on inorder traversal with count; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 29: How does your approach change when tree may be extremely skewed?",
+      "basic": "Hint: revisit the assumptions behind inorder traversal with count.",
+      "strong": "Thinking hint: identify exactly which assumption tree may be extremely skewed changes. Keep the invariant of inorder traversal with count only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: confirm k within number of nodes.",
+      "takeaway": "Edge conditions matter: confirm k within number of nodes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 29: How would you test and analyze a solution for Find kth smallest value in a binary search tree?",
+      "basic": "Hint: derive tests from the invariant; discuss O(h+k) time for iterative traversal.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: confirm k within number of nodes. Explain whether runtime counts input, output or both; the expected target is O(h+k) time for iterative traversal. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(h+k) time for iterative traversal; validate confirm k within number of nodes.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 30: Implement an lru cache. What is your starting algorithm?",
+      "basic": "Hint: consider hash map plus doubly linked list; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether hash map plus doubly linked list is suitable. The important condition is that both get and put must be constant-time. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on hash map plus doubly linked list; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 30: How does your approach change when both get and put must be constant-time?",
+      "basic": "Hint: revisit the assumptions behind hash map plus doubly linked list.",
+      "strong": "Thinking hint: identify exactly which assumption both get and put must be constant-time changes. Keep the invariant of hash map plus doubly linked list only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: update recency on reads and overwrites.",
+      "takeaway": "Edge conditions matter: update recency on reads and overwrites.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 30: How would you test and analyze a solution for Implement an LRU cache?",
+      "basic": "Hint: derive tests from the invariant; discuss O(1) average per operation.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: update recency on reads and overwrites. Explain whether runtime counts input, output or both; the expected target is O(1) average per operation. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(1) average per operation; validate update recency on reads and overwrites.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 31: Implement a ttl cache with expiration. What is your starting algorithm?",
+      "basic": "Hint: consider hash map with expiry timestamps and lazy cleanup; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether hash map with expiry timestamps and lazy cleanup is suitable. The important condition is that clock jumps or idle keys can occur. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on hash map with expiry timestamps and lazy cleanup; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 31: How does your approach change when clock jumps or idle keys can occur?",
+      "basic": "Hint: revisit the assumptions behind hash map with expiry timestamps and lazy cleanup.",
+      "strong": "Thinking hint: identify exactly which assumption clock jumps or idle keys can occur changes. Keep the invariant of hash map with expiry timestamps and lazy cleanup only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: use monotonic elapsed-time where appropriate.",
+      "takeaway": "Edge conditions matter: use monotonic elapsed-time where appropriate.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 31: How would you test and analyze a solution for Implement a TTL cache with expiration?",
+      "basic": "Hint: derive tests from the invariant; discuss O(1) expected lookup plus cleanup costs.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: use monotonic elapsed-time where appropriate. Explain whether runtime counts input, output or both; the expected target is O(1) expected lookup plus cleanup costs. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(1) expected lookup plus cleanup costs; validate use monotonic elapsed-time where appropriate.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 32: Match parentheses and brackets in a string. What is your starting algorithm?",
+      "basic": "Hint: consider stack of expected closing brackets; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether stack of expected closing brackets is suitable. The important condition is that string can contain quotes or escaped characters. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on stack of expected closing brackets; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 32: How does your approach change when string can contain quotes or escaped characters?",
+      "basic": "Hint: revisit the assumptions behind stack of expected closing brackets.",
+      "strong": "Thinking hint: identify exactly which assumption string can contain quotes or escaped characters changes. Keep the invariant of stack of expected closing brackets only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: define whether quoted brackets count.",
+      "takeaway": "Edge conditions matter: define whether quoted brackets count.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 32: How would you test and analyze a solution for Match parentheses and brackets in a string?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time and O(n) stack.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: define whether quoted brackets count. Explain whether runtime counts input, output or both; the expected target is O(n) time and O(n) stack. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time and O(n) stack; validate define whether quoted brackets count.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 33: Evaluate reverse polish notation. What is your starting algorithm?",
+      "basic": "Hint: consider operand stack and operation dispatch; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether operand stack and operation dispatch is suitable. The important condition is that integer division semantics differ by language. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on operand stack and operation dispatch; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 33: How does your approach change when integer division semantics differ by language?",
+      "basic": "Hint: revisit the assumptions behind operand stack and operation dispatch.",
+      "strong": "Thinking hint: identify exactly which assumption integer division semantics differ by language changes. Keep the invariant of operand stack and operation dispatch only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: check stack underflow and divide by zero.",
+      "takeaway": "Edge conditions matter: check stack underflow and divide by zero.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 33: How would you test and analyze a solution for Evaluate reverse Polish notation?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: check stack underflow and divide by zero. Explain whether runtime counts input, output or both; the expected target is O(n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time; validate check stack underflow and divide by zero.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 34: Decode nested repeat expressions like 3[a2[b]]. What is your starting algorithm?",
+      "basic": "Hint: consider stack of saved prefixes and repeat counts; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether stack of saved prefixes and repeat counts is suitable. The important condition is that repeat counts may have multiple digits. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on stack of saved prefixes and repeat counts; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 34: How does your approach change when repeat counts may have multiple digits?",
+      "basic": "Hint: revisit the assumptions behind stack of saved prefixes and repeat counts.",
+      "strong": "Thinking hint: identify exactly which assumption repeat counts may have multiple digits changes. Keep the invariant of stack of saved prefixes and repeat counts only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: preserve nesting and output-size limits.",
+      "takeaway": "Edge conditions matter: preserve nesting and output-size limits.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 34: How would you test and analyze a solution for Decode nested repeat expressions like 3[a2[b]]?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n+output length) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: preserve nesting and output-size limits. Explain whether runtime counts input, output or both; the expected target is O(n+output length) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n+output length) time; validate preserve nesting and output-size limits.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 35: Design a trie with prefix lookup. What is your starting algorithm?",
+      "basic": "Hint: consider tree of character transitions and terminal markers; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether tree of character transitions and terminal markers is suitable. The important condition is that alphabet may be broad or multilingual. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on tree of character transitions and terminal markers; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 35: How does your approach change when alphabet may be broad or multilingual?",
+      "basic": "Hint: revisit the assumptions behind tree of character transitions and terminal markers.",
+      "strong": "Thinking hint: identify exactly which assumption alphabet may be broad or multilingual changes. Keep the invariant of tree of character transitions and terminal markers only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: prefix existence differs from complete-word membership.",
+      "takeaway": "Edge conditions matter: prefix existence differs from complete-word membership.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 35: How would you test and analyze a solution for Design a trie with prefix lookup?",
+      "basic": "Hint: derive tests from the invariant; discuss O(L) query per string length L.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: prefix existence differs from complete-word membership. Explain whether runtime counts input, output or both; the expected target is O(L) query per string length L. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(L) query per string length L; validate prefix existence differs from complete-word membership.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 36: Find word transformations with one-letter changes. What is your starting algorithm?",
+      "basic": "Hint: consider BFS over wildcard-pattern neighbors; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether BFS over wildcard-pattern neighbors is suitable. The important condition is that dictionary may contain many similar words. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on BFS over wildcard-pattern neighbors; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 36: How does your approach change when dictionary may contain many similar words?",
+      "basic": "Hint: revisit the assumptions behind BFS over wildcard-pattern neighbors.",
+      "strong": "Thinking hint: identify exactly which assumption dictionary may contain many similar words changes. Keep the invariant of BFS over wildcard-pattern neighbors only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: prune visited words before adding to queue.",
+      "takeaway": "Edge conditions matter: prune visited words before adding to queue.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 36: How would you test and analyze a solution for Find word transformations with one-letter changes?",
+      "basic": "Hint: derive tests from the invariant; discuss near O(N×L²) naive pattern construction.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: prune visited words before adding to queue. Explain whether runtime counts input, output or both; the expected target is near O(N×L²) naive pattern construction. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: near O(N×L²) naive pattern construction; validate prune visited words before adding to queue.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 37: Calculate edit distance between two strings. What is your starting algorithm?",
+      "basic": "Hint: consider dynamic programming on prefix lengths; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether dynamic programming on prefix lengths is suitable. The important condition is that insertion deletion substitution each cost one. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on dynamic programming on prefix lengths; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 37: How does your approach change when insertion deletion substitution each cost one?",
+      "basic": "Hint: revisit the assumptions behind dynamic programming on prefix lengths.",
+      "strong": "Thinking hint: identify exactly which assumption insertion deletion substitution each cost one changes. Keep the invariant of dynamic programming on prefix lengths only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: initialize empty-prefix base cases.",
+      "takeaway": "Edge conditions matter: initialize empty-prefix base cases.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 37: How would you test and analyze a solution for Calculate edit distance between two strings?",
+      "basic": "Hint: derive tests from the invariant; discuss O(mn) time and O(min(m,n)) space possible.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: initialize empty-prefix base cases. Explain whether runtime counts input, output or both; the expected target is O(mn) time and O(min(m,n)) space possible. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(mn) time and O(min(m,n)) space possible; validate initialize empty-prefix base cases.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 38: Find longest increasing subsequence length. What is your starting algorithm?",
+      "basic": "Hint: consider tails array with binary-search replacement; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether tails array with binary-search replacement is suitable. The important condition is that strictly increasing vs nondecreasing matters. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on tails array with binary-search replacement; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 38: How does your approach change when strictly increasing vs nondecreasing matters?",
+      "basic": "Hint: revisit the assumptions behind tails array with binary-search replacement.",
+      "strong": "Thinking hint: identify exactly which assumption strictly increasing vs nondecreasing matters changes. Keep the invariant of tails array with binary-search replacement only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: replace tails without claiming it is the actual subsequence.",
+      "takeaway": "Edge conditions matter: replace tails without claiming it is the actual subsequence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 38: How would you test and analyze a solution for Find longest increasing subsequence length?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n log n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: replace tails without claiming it is the actual subsequence. Explain whether runtime counts input, output or both; the expected target is O(n log n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n log n) time; validate replace tails without claiming it is the actual subsequence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 39: Determine whether a subset sums to target. What is your starting algorithm?",
+      "basic": "Hint: consider boolean DP over achievable sums; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether boolean DP over achievable sums is suitable. The important condition is that values are nonnegative for classic variant. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on boolean DP over achievable sums; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 39: How does your approach change when values are nonnegative for classic variant?",
+      "basic": "Hint: revisit the assumptions behind boolean DP over achievable sums.",
+      "strong": "Thinking hint: identify exactly which assumption values are nonnegative for classic variant changes. Keep the invariant of boolean DP over achievable sums only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: iterate sums backward for 0/1 selection.",
+      "takeaway": "Edge conditions matter: iterate sums backward for 0/1 selection.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 39: How would you test and analyze a solution for Determine whether a subset sums to target?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n×target) pseudo-polynomial time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: iterate sums backward for 0/1 selection. Explain whether runtime counts input, output or both; the expected target is O(n×target) pseudo-polynomial time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n×target) pseudo-polynomial time; validate iterate sums backward for 0/1 selection.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 40: Find minimum coins for amount. What is your starting algorithm?",
+      "basic": "Hint: consider bottom-up dynamic programming by amount; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether bottom-up dynamic programming by amount is suitable. The important condition is that some amounts are impossible. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on bottom-up dynamic programming by amount; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 40: How does your approach change when some amounts are impossible?",
+      "basic": "Hint: revisit the assumptions behind bottom-up dynamic programming by amount.",
+      "strong": "Thinking hint: identify exactly which assumption some amounts are impossible changes. Keep the invariant of bottom-up dynamic programming by amount only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: do not confuse minimum coin count with greedy optimality.",
+      "takeaway": "Edge conditions matter: do not confuse minimum coin count with greedy optimality.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 40: How would you test and analyze a solution for Find minimum coins for amount?",
+      "basic": "Hint: derive tests from the invariant; discuss O(amount×coin types) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: do not confuse minimum coin count with greedy optimality. Explain whether runtime counts input, output or both; the expected target is O(amount×coin types) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(amount×coin types) time; validate do not confuse minimum coin count with greedy optimality.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 41: Schedule weighted nonoverlapping jobs. What is your starting algorithm?",
+      "basic": "Hint: consider sort by finishing time plus predecessor binary search and DP; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether sort by finishing time plus predecessor binary search and DP is suitable. The important condition is that jobs have different profits. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on sort by finishing time plus predecessor binary search and DP; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 41: How does your approach change when jobs have different profits?",
+      "basic": "Hint: revisit the assumptions behind sort by finishing time plus predecessor binary search and DP.",
+      "strong": "Thinking hint: identify exactly which assumption jobs have different profits changes. Keep the invariant of sort by finishing time plus predecessor binary search and DP only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: define endpoint touching semantics.",
+      "takeaway": "Edge conditions matter: define endpoint touching semantics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 41: How would you test and analyze a solution for Schedule weighted nonoverlapping jobs?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n log n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: define endpoint touching semantics. Explain whether runtime counts input, output or both; the expected target is O(n log n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n log n) time; validate define endpoint touching semantics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 42: Find maximum profit from one stock buy and sell. What is your starting algorithm?",
+      "basic": "Hint: consider running minimum and best later difference; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether running minimum and best later difference is suitable. The important condition is that no profitable trade can occur. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on running minimum and best later difference; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 42: How does your approach change when no profitable trade can occur?",
+      "basic": "Hint: revisit the assumptions behind running minimum and best later difference.",
+      "strong": "Thinking hint: identify exactly which assumption no profitable trade can occur changes. Keep the invariant of running minimum and best later difference only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: allow zero profit if skipping trade is permitted.",
+      "takeaway": "Edge conditions matter: allow zero profit if skipping trade is permitted.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 42: How would you test and analyze a solution for Find maximum profit from one stock buy and sell?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: allow zero profit if skipping trade is permitted. Explain whether runtime counts input, output or both; the expected target is O(n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time; validate allow zero profit if skipping trade is permitted.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 43: Find optimal buy/sell profit with cooldown. What is your starting algorithm?",
+      "basic": "Hint: consider finite-state dynamic programming; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether finite-state dynamic programming is suitable. The important condition is that selling prevents an immediate next-day purchase. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on finite-state dynamic programming; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 43: How does your approach change when selling prevents an immediate next-day purchase?",
+      "basic": "Hint: revisit the assumptions behind finite-state dynamic programming.",
+      "strong": "Thinking hint: identify exactly which assumption selling prevents an immediate next-day purchase changes. Keep the invariant of finite-state dynamic programming only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: separate holding sold and resting states.",
+      "takeaway": "Edge conditions matter: separate holding sold and resting states.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 43: How would you test and analyze a solution for Find optimal buy/sell profit with cooldown?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) time and O(1) space.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: separate holding sold and resting states. Explain whether runtime counts input, output or both; the expected target is O(n) time and O(1) space. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) time and O(1) space; validate separate holding sold and resting states.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 44: Merge k sorted lists. What is your starting algorithm?",
+      "basic": "Hint: consider min-heap holding one head from each list; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether min-heap holding one head from each list is suitable. The important condition is that some lists are empty. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on min-heap holding one head from each list; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 44: How does your approach change when some lists are empty?",
+      "basic": "Hint: revisit the assumptions behind min-heap holding one head from each list.",
+      "strong": "Thinking hint: identify exactly which assumption some lists are empty changes. Keep the invariant of min-heap holding one head from each list only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: only advance source whose item was removed.",
+      "takeaway": "Edge conditions matter: only advance source whose item was removed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 44: How would you test and analyze a solution for Merge k sorted lists?",
+      "basic": "Hint: derive tests from the invariant; discuss O(N log k) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: only advance source whose item was removed. Explain whether runtime counts input, output or both; the expected target is O(N log k) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(N log k) time; validate only advance source whose item was removed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 45: Find median in an incoming stream. What is your starting algorithm?",
+      "basic": "Hint: consider max-heap lower half and min-heap upper half; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether max-heap lower half and min-heap upper half is suitable. The important condition is that queries arrive between insertions. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on max-heap lower half and min-heap upper half; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 45: How does your approach change when queries arrive between insertions?",
+      "basic": "Hint: revisit the assumptions behind max-heap lower half and min-heap upper half.",
+      "strong": "Thinking hint: identify exactly which assumption queries arrive between insertions changes. Keep the invariant of max-heap lower half and min-heap upper half only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: rebalance sizes and maintain heap order.",
+      "takeaway": "Edge conditions matter: rebalance sizes and maintain heap order.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 45: How would you test and analyze a solution for Find median in an incoming stream?",
+      "basic": "Hint: derive tests from the invariant; discuss O(log n) insertion and O(1) median.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: rebalance sizes and maintain heap order. Explain whether runtime counts input, output or both; the expected target is O(log n) insertion and O(1) median. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(log n) insertion and O(1) median; validate rebalance sizes and maintain heap order.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 46: Design a rate limiter for request timestamps. What is your starting algorithm?",
+      "basic": "Hint: consider sliding time window with deque or bucket counters; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether sliding time window with deque or bucket counters is suitable. The important condition is that bursty traffic crosses minute boundaries. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on sliding time window with deque or bucket counters; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 46: How does your approach change when bursty traffic crosses minute boundaries?",
+      "basic": "Hint: revisit the assumptions behind sliding time window with deque or bucket counters.",
+      "strong": "Thinking hint: identify exactly which assumption bursty traffic crosses minute boundaries changes. Keep the invariant of sliding time window with deque or bucket counters only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: fixed windows permit boundary bursts.",
+      "takeaway": "Edge conditions matter: fixed windows permit boundary bursts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 46: How would you test and analyze a solution for Design a rate limiter for request timestamps?",
+      "basic": "Hint: derive tests from the invariant; discuss amortized O(1) per timestamp.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: fixed windows permit boundary bursts. Explain whether runtime counts input, output or both; the expected target is amortized O(1) per timestamp. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: amortized O(1) per timestamp; validate fixed windows permit boundary bursts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 47: Detect duplicate events within a time horizon. What is your starting algorithm?",
+      "basic": "Hint: consider hash map of last-seen positions or expiry buckets; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether hash map of last-seen positions or expiry buckets is suitable. The important condition is that events can arrive out of order. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on hash map of last-seen positions or expiry buckets; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 47: How does your approach change when events can arrive out of order?",
+      "basic": "Hint: revisit the assumptions behind hash map of last-seen positions or expiry buckets.",
+      "strong": "Thinking hint: identify exactly which assumption events can arrive out of order changes. Keep the invariant of hash map of last-seen positions or expiry buckets only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: define event time versus processing time.",
+      "takeaway": "Edge conditions matter: define event time versus processing time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 47: How would you test and analyze a solution for Detect duplicate events within a time horizon?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n) expected time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: define event time versus processing time. Explain whether runtime counts input, output or both; the expected target is O(n) expected time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n) expected time; validate define event time versus processing time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 48: Plan tasks using minimum parallel workers. What is your starting algorithm?",
+      "basic": "Hint: consider sort starts and track earliest end in a min-heap; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether sort starts and track earliest end in a min-heap is suitable. The important condition is that tasks have start and finish timestamps. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on sort starts and track earliest end in a min-heap; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 48: How does your approach change when tasks have start and finish timestamps?",
+      "basic": "Hint: revisit the assumptions behind sort starts and track earliest end in a min-heap.",
+      "strong": "Thinking hint: identify exactly which assumption tasks have start and finish timestamps changes. Keep the invariant of sort starts and track earliest end in a min-heap only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: release all resources that have completed.",
+      "takeaway": "Edge conditions matter: release all resources that have completed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 48: How would you test and analyze a solution for Plan tasks using minimum parallel workers?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n log n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: release all resources that have completed. Explain whether runtime counts input, output or both; the expected target is O(n log n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n log n) time; validate release all resources that have completed.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 49: Compare semantic versions correctly. What is your starting algorithm?",
+      "basic": "Hint: consider split numeric components then compare integers; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether split numeric components then compare integers is suitable. The important condition is that leading zeros and prerelease labels may appear. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on split numeric components then compare integers; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 49: How does your approach change when leading zeros and prerelease labels may appear?",
+      "basic": "Hint: revisit the assumptions behind split numeric components then compare integers.",
+      "strong": "Thinking hint: identify exactly which assumption leading zeros and prerelease labels may appear changes. Keep the invariant of split numeric components then compare integers only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: lexicographic string order is wrong for multi-digit parts.",
+      "takeaway": "Edge conditions matter: lexicographic string order is wrong for multi-digit parts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 49: How would you test and analyze a solution for Compare semantic versions correctly?",
+      "basic": "Hint: derive tests from the invariant; discuss O(component count) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: lexicographic string order is wrong for multi-digit parts. Explain whether runtime counts input, output or both; the expected target is O(component count) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(component count) time; validate lexicographic string order is wrong for multi-digit parts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding prompt 50: Find maximum overlap among time intervals. What is your starting algorithm?",
+      "basic": "Hint: consider sorted start/end sweep line; first clarify input assumptions.",
+      "strong": "Thinking hint: start with a small example, identify the state that needs to be remembered, and test whether sorted start/end sweep line is suitable. The important condition is that simultaneous starts and finishes occur. Describe invariants aloud before offering pseudocode; do not begin with a brute-force implementation unless using it to establish correctness.",
+      "takeaway": "Focus on sorted start/end sweep line; justify why it fits the problem before coding.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding follow-up 50: How does your approach change when simultaneous starts and finishes occur?",
+      "basic": "Hint: revisit the assumptions behind sorted start/end sweep line.",
+      "strong": "Thinking hint: identify exactly which assumption simultaneous starts and finishes occur changes. Keep the invariant of sorted start/end sweep line only if it still holds; otherwise describe a revised data structure or additional state. Explain memory tradeoffs and how you would detect when the constraint is violated. Pay special attention to this trap: tie ordering determines endpoint semantics.",
+      "takeaway": "Edge conditions matter: tie ordering determines endpoint semantics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    },
+    {
+      "q": "Coding review 50: How would you test and analyze a solution for Find maximum overlap among time intervals?",
+      "basic": "Hint: derive tests from the invariant; discuss O(n log n) time.",
+      "strong": "Thinking hint: write tests for empty and minimal inputs, a representative normal case, repeated values, and a specifically adversarial case: tie ordering determines endpoint semantics. Explain whether runtime counts input, output or both; the expected target is O(n log n) time. State a correctness invariant in plain English rather than writing complete code.",
+      "takeaway": "Complexity expectation: O(n log n) time; validate tie ordering determines endpoint semantics.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "cross-industry"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "coding-hint"
+    }
+  ]
+}

@@ -1,0 +1,1880 @@
+{
+  "id": "industry-it",
+  "questions": [
+    {
+      "q": "Insurance scenario 01: Design a reliable integration for Claims intake and triage.",
+      "basic": "Use idempotent claim identifier, PII minimization and validation.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses idempotent claim identifier, PII minimization and validation. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for duplicate uploads or conflicting claimant fields.",
+      "takeaway": "Anchor the design on idempotent claim identifier, PII minimization and validation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance incident 01: How would you respond to duplicate uploads or conflicting claimant fields during Claims intake and triage?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Claims intake and triage. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that duplicate uploads or conflicting claimant fields is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is duplicate uploads or conflicting claimant fields.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance data quality 01: How do you reconcile inconsistent records in Claims intake and triage?",
+      "basic": "Use an authoritative source, stable identifiers and claim change history, consent, access logs.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use idempotent claim identifier, PII minimization and validation to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for duplicate uploads or conflicting claimant fields.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance controls 01: What security, compliance and audit controls would you require for Claims intake and triage?",
+      "basic": "Implement least privilege, separation of duties, retention rules and claim change history, consent, access logs.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include claim change history, consent, access logs. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: claim change history, consent, access logs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scaling trade-off 01: How would you reduce latency or cost for Claims intake and triage without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where idempotent claim identifier, PII minimization and validation remains intact. Show a capacity model and rollback plan, and protect against duplicate uploads or conflicting claimant fields; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scenario 02: Design a reliable integration for Policy issuance and endorsement.",
+      "basic": "Use effective-date versioning and immutable policy snapshots.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses effective-date versioning and immutable policy snapshots. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for backdated edits or contradictory coverage.",
+      "takeaway": "Anchor the design on effective-date versioning and immutable policy snapshots.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance incident 02: How would you respond to backdated edits or contradictory coverage during Policy issuance and endorsement?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Policy issuance and endorsement. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that backdated edits or contradictory coverage is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is backdated edits or contradictory coverage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance data quality 02: How do you reconcile inconsistent records in Policy issuance and endorsement?",
+      "basic": "Use an authoritative source, stable identifiers and underwriter approval and policy-event audit.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use effective-date versioning and immutable policy snapshots to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for backdated edits or contradictory coverage.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance controls 02: What security, compliance and audit controls would you require for Policy issuance and endorsement?",
+      "basic": "Implement least privilege, separation of duties, retention rules and underwriter approval and policy-event audit.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include underwriter approval and policy-event audit. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: underwriter approval and policy-event audit.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scaling trade-off 02: How would you reduce latency or cost for Policy issuance and endorsement without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where effective-date versioning and immutable policy snapshots remains intact. Show a capacity model and rollback plan, and protect against backdated edits or contradictory coverage; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scenario 03: Design a reliable integration for Premium rating engine.",
+      "basic": "Use versioned rating rules and reproducible inputs.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses versioned rating rules and reproducible inputs. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for rounding differences or regional regulation mismatches.",
+      "takeaway": "Anchor the design on versioned rating rules and reproducible inputs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance incident 03: How would you respond to rounding differences or regional regulation mismatches during Premium rating engine?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Premium rating engine. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that rounding differences or regional regulation mismatches is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is rounding differences or regional regulation mismatches.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance data quality 03: How do you reconcile inconsistent records in Premium rating engine?",
+      "basic": "Use an authoritative source, stable identifiers and rating-factor trace and approval history.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use versioned rating rules and reproducible inputs to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for rounding differences or regional regulation mismatches.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance controls 03: What security, compliance and audit controls would you require for Premium rating engine?",
+      "basic": "Implement least privilege, separation of duties, retention rules and rating-factor trace and approval history.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include rating-factor trace and approval history. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: rating-factor trace and approval history.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scaling trade-off 03: How would you reduce latency or cost for Premium rating engine without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where versioned rating rules and reproducible inputs remains intact. Show a capacity model and rollback plan, and protect against rounding differences or regional regulation mismatches; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scenario 04: Design a reliable integration for Fraud investigation workflow.",
+      "basic": "Use separation of signals from fraud determinations and investigator review.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses separation of signals from fraud determinations and investigator review. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for false-positive investigations harming customers.",
+      "takeaway": "Anchor the design on separation of signals from fraud determinations and investigator review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance incident 04: How would you respond to false-positive investigations harming customers during Fraud investigation workflow?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Fraud investigation workflow. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that false-positive investigations harming customers is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is false-positive investigations harming customers.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance data quality 04: How do you reconcile inconsistent records in Fraud investigation workflow?",
+      "basic": "Use an authoritative source, stable identifiers and reviewed evidence, override rationale and retention.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use separation of signals from fraud determinations and investigator review to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for false-positive investigations harming customers.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance controls 04: What security, compliance and audit controls would you require for Fraud investigation workflow?",
+      "basic": "Implement least privilege, separation of duties, retention rules and reviewed evidence, override rationale and retention.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include reviewed evidence, override rationale and retention. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: reviewed evidence, override rationale and retention.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scaling trade-off 04: How would you reduce latency or cost for Fraud investigation workflow without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where separation of signals from fraud determinations and investigator review remains intact. Show a capacity model and rollback plan, and protect against false-positive investigations harming customers; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scenario 05: Design a reliable integration for Reinsurance and catastrophe exposure reporting.",
+      "basic": "Use reconciled exposure snapshots and delayed-event handling.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses reconciled exposure snapshots and delayed-event handling. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for inconsistent peril geocoding or stale policy facts.",
+      "takeaway": "Anchor the design on reconciled exposure snapshots and delayed-event handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance incident 05: How would you respond to inconsistent peril geocoding or stale policy facts during Reinsurance and catastrophe exposure reporting?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Reinsurance and catastrophe exposure reporting. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that inconsistent peril geocoding or stale policy facts is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is inconsistent peril geocoding or stale policy facts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance data quality 05: How do you reconcile inconsistent records in Reinsurance and catastrophe exposure reporting?",
+      "basic": "Use an authoritative source, stable identifiers and ledger reconciliation and regulatory reporting trace.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use reconciled exposure snapshots and delayed-event handling to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for inconsistent peril geocoding or stale policy facts.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance controls 05: What security, compliance and audit controls would you require for Reinsurance and catastrophe exposure reporting?",
+      "basic": "Implement least privilege, separation of duties, retention rules and ledger reconciliation and regulatory reporting trace.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include ledger reconciliation and regulatory reporting trace. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: ledger reconciliation and regulatory reporting trace.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Insurance scaling trade-off 05: How would you reduce latency or cost for Reinsurance and catastrophe exposure reporting without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where reconciled exposure snapshots and delayed-event handling remains intact. Show a capacity model and rollback plan, and protect against inconsistent peril geocoding or stale policy facts; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "insurance"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scenario 06: Design a reliable integration for Subscriber provisioning.",
+      "basic": "Use idempotent orders and network inventory state machine.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses idempotent orders and network inventory state machine. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for partial SIM activation or duplicate requests.",
+      "takeaway": "Anchor the design on idempotent orders and network inventory state machine.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications incident 06: How would you respond to partial SIM activation or duplicate requests during Subscriber provisioning?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Subscriber provisioning. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that partial SIM activation or duplicate requests is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is partial SIM activation or duplicate requests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications data quality 06: How do you reconcile inconsistent records in Subscriber provisioning?",
+      "basic": "Use an authoritative source, stable identifiers and carrier operations and customer-impact history.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use idempotent orders and network inventory state machine to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for partial SIM activation or duplicate requests.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications controls 06: What security, compliance and audit controls would you require for Subscriber provisioning?",
+      "basic": "Implement least privilege, separation of duties, retention rules and carrier operations and customer-impact history.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include carrier operations and customer-impact history. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: carrier operations and customer-impact history.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scaling trade-off 06: How would you reduce latency or cost for Subscriber provisioning without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where idempotent orders and network inventory state machine remains intact. Show a capacity model and rollback plan, and protect against partial SIM activation or duplicate requests; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scenario 07: Design a reliable integration for Call-detail record billing.",
+      "basic": "Use event-time windows, deduplication and rated event lineage.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses event-time windows, deduplication and rated event lineage. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for late CDRs or repeated rating.",
+      "takeaway": "Anchor the design on event-time windows, deduplication and rated event lineage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications incident 07: How would you respond to late CDRs or repeated rating during Call-detail record billing?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Call-detail record billing. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that late CDRs or repeated rating is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is late CDRs or repeated rating.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications data quality 07: How do you reconcile inconsistent records in Call-detail record billing?",
+      "basic": "Use an authoritative source, stable identifiers and rating version and settlement reconciliation.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use event-time windows, deduplication and rated event lineage to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for late CDRs or repeated rating.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications controls 07: What security, compliance and audit controls would you require for Call-detail record billing?",
+      "basic": "Implement least privilege, separation of duties, retention rules and rating version and settlement reconciliation.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include rating version and settlement reconciliation. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: rating version and settlement reconciliation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scaling trade-off 07: How would you reduce latency or cost for Call-detail record billing without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where event-time windows, deduplication and rated event lineage remains intact. Show a capacity model and rollback plan, and protect against late CDRs or repeated rating; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scenario 08: Design a reliable integration for Network fault correlation.",
+      "basic": "Use topology-aware alarm grouping with dependency links.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses topology-aware alarm grouping with dependency links. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for alarm storms hiding a root outage.",
+      "takeaway": "Anchor the design on topology-aware alarm grouping with dependency links.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications incident 08: How would you respond to alarm storms hiding a root outage during Network fault correlation?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Network fault correlation. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that alarm storms hiding a root outage is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is alarm storms hiding a root outage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications data quality 08: How do you reconcile inconsistent records in Network fault correlation?",
+      "basic": "Use an authoritative source, stable identifiers and acknowledgment and escalation histories.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use topology-aware alarm grouping with dependency links to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for alarm storms hiding a root outage.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications controls 08: What security, compliance and audit controls would you require for Network fault correlation?",
+      "basic": "Implement least privilege, separation of duties, retention rules and acknowledgment and escalation histories.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include acknowledgment and escalation histories. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: acknowledgment and escalation histories.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scaling trade-off 08: How would you reduce latency or cost for Network fault correlation without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where topology-aware alarm grouping with dependency links remains intact. Show a capacity model and rollback plan, and protect against alarm storms hiding a root outage; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scenario 09: Design a reliable integration for 5G capacity planning.",
+      "basic": "Use traffic forecasts and measured cell utilization.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses traffic forecasts and measured cell utilization. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for peak-hour congestion and unexpected mobility.",
+      "takeaway": "Anchor the design on traffic forecasts and measured cell utilization.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications incident 09: How would you respond to peak-hour congestion and unexpected mobility during 5G capacity planning?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for 5G capacity planning. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that peak-hour congestion and unexpected mobility is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is peak-hour congestion and unexpected mobility.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications data quality 09: How do you reconcile inconsistent records in 5G capacity planning?",
+      "basic": "Use an authoritative source, stable identifiers and model assumptions and field acceptance evidence.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use traffic forecasts and measured cell utilization to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for peak-hour congestion and unexpected mobility.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications controls 09: What security, compliance and audit controls would you require for 5G capacity planning?",
+      "basic": "Implement least privilege, separation of duties, retention rules and model assumptions and field acceptance evidence.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include model assumptions and field acceptance evidence. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: model assumptions and field acceptance evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scaling trade-off 09: How would you reduce latency or cost for 5G capacity planning without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where traffic forecasts and measured cell utilization remains intact. Show a capacity model and rollback plan, and protect against peak-hour congestion and unexpected mobility; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scenario 10: Design a reliable integration for Number porting workflow.",
+      "basic": "Use transaction state machine and regulatory deadlines.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses transaction state machine and regulatory deadlines. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for port-in success but routing still stale.",
+      "takeaway": "Anchor the design on transaction state machine and regulatory deadlines.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications incident 10: How would you respond to port-in success but routing still stale during Number porting workflow?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Number porting workflow. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that port-in success but routing still stale is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is port-in success but routing still stale.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications data quality 10: How do you reconcile inconsistent records in Number porting workflow?",
+      "basic": "Use an authoritative source, stable identifiers and cross-carrier acknowledgments and customer consent.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use transaction state machine and regulatory deadlines to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for port-in success but routing still stale.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications controls 10: What security, compliance and audit controls would you require for Number porting workflow?",
+      "basic": "Implement least privilege, separation of duties, retention rules and cross-carrier acknowledgments and customer consent.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include cross-carrier acknowledgments and customer consent. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: cross-carrier acknowledgments and customer consent.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Telecommunications scaling trade-off 10: How would you reduce latency or cost for Number porting workflow without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where transaction state machine and regulatory deadlines remains intact. Show a capacity model and rollback plan, and protect against port-in success but routing still stale; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "telecommunications"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scenario 11: Design a reliable integration for Manufacturing execution system work orders.",
+      "basic": "Use ERP-MES identity mapping and production-state events.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses ERP-MES identity mapping and production-state events. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for duplicate work orders or lost scan events.",
+      "takeaway": "Anchor the design on ERP-MES identity mapping and production-state events.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing incident 11: How would you respond to duplicate work orders or lost scan events during Manufacturing execution system work orders?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Manufacturing execution system work orders. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that duplicate work orders or lost scan events is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is duplicate work orders or lost scan events.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing data quality 11: How do you reconcile inconsistent records in Manufacturing execution system work orders?",
+      "basic": "Use an authoritative source, stable identifiers and lot genealogy and operator signoff.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use ERP-MES identity mapping and production-state events to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for duplicate work orders or lost scan events.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing controls 11: What security, compliance and audit controls would you require for Manufacturing execution system work orders?",
+      "basic": "Implement least privilege, separation of duties, retention rules and lot genealogy and operator signoff.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include lot genealogy and operator signoff. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: lot genealogy and operator signoff.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scaling trade-off 11: How would you reduce latency or cost for Manufacturing execution system work orders without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where ERP-MES identity mapping and production-state events remains intact. Show a capacity model and rollback plan, and protect against duplicate work orders or lost scan events; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scenario 12: Design a reliable integration for Production quality inspection.",
+      "basic": "Use calibrated measurements with limits and hold/release workflow.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses calibrated measurements with limits and hold/release workflow. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for sensor drift or units mismatch.",
+      "takeaway": "Anchor the design on calibrated measurements with limits and hold/release workflow.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing incident 12: How would you respond to sensor drift or units mismatch during Production quality inspection?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Production quality inspection. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that sensor drift or units mismatch is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is sensor drift or units mismatch.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing data quality 12: How do you reconcile inconsistent records in Production quality inspection?",
+      "basic": "Use an authoritative source, stable identifiers and calibration records and defect disposition.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use calibrated measurements with limits and hold/release workflow to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for sensor drift or units mismatch.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing controls 12: What security, compliance and audit controls would you require for Production quality inspection?",
+      "basic": "Implement least privilege, separation of duties, retention rules and calibration records and defect disposition.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include calibration records and defect disposition. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: calibration records and defect disposition.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scaling trade-off 12: How would you reduce latency or cost for Production quality inspection without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where calibrated measurements with limits and hold/release workflow remains intact. Show a capacity model and rollback plan, and protect against sensor drift or units mismatch; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scenario 13: Design a reliable integration for Predictive maintenance planning.",
+      "basic": "Use historian signals and scheduled service ticket integration.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses historian signals and scheduled service ticket integration. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for missing vibration data or spurious alerts.",
+      "takeaway": "Anchor the design on historian signals and scheduled service ticket integration.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing incident 13: How would you respond to missing vibration data or spurious alerts during Predictive maintenance planning?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Predictive maintenance planning. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that missing vibration data or spurious alerts is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is missing vibration data or spurious alerts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing data quality 13: How do you reconcile inconsistent records in Predictive maintenance planning?",
+      "basic": "Use an authoritative source, stable identifiers and technician disposition and asset history.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use historian signals and scheduled service ticket integration to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for missing vibration data or spurious alerts.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing controls 13: What security, compliance and audit controls would you require for Predictive maintenance planning?",
+      "basic": "Implement least privilege, separation of duties, retention rules and technician disposition and asset history.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include technician disposition and asset history. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: technician disposition and asset history.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scaling trade-off 13: How would you reduce latency or cost for Predictive maintenance planning without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where historian signals and scheduled service ticket integration remains intact. Show a capacity model and rollback plan, and protect against missing vibration data or spurious alerts; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scenario 14: Design a reliable integration for Warehouse barcode inventory.",
+      "basic": "Use reservation and serial/lot tracking with offline sync.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses reservation and serial/lot tracking with offline sync. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for two devices allocating the same scarce part.",
+      "takeaway": "Anchor the design on reservation and serial/lot tracking with offline sync.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing incident 14: How would you respond to two devices allocating the same scarce part during Warehouse barcode inventory?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Warehouse barcode inventory. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that two devices allocating the same scarce part is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is two devices allocating the same scarce part.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing data quality 14: How do you reconcile inconsistent records in Warehouse barcode inventory?",
+      "basic": "Use an authoritative source, stable identifiers and movement ledger and shrinkage reconciliation.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use reservation and serial/lot tracking with offline sync to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for two devices allocating the same scarce part.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing controls 14: What security, compliance and audit controls would you require for Warehouse barcode inventory?",
+      "basic": "Implement least privilege, separation of duties, retention rules and movement ledger and shrinkage reconciliation.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include movement ledger and shrinkage reconciliation. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: movement ledger and shrinkage reconciliation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scaling trade-off 14: How would you reduce latency or cost for Warehouse barcode inventory without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where reservation and serial/lot tracking with offline sync remains intact. Show a capacity model and rollback plan, and protect against two devices allocating the same scarce part; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scenario 15: Design a reliable integration for Industrial robot deployment.",
+      "basic": "Use segmented OT network and safety-gated software rollout.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses segmented OT network and safety-gated software rollout. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for unexpected controller reboot during motion.",
+      "takeaway": "Anchor the design on segmented OT network and safety-gated software rollout.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing incident 15: How would you respond to unexpected controller reboot during motion during Industrial robot deployment?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Industrial robot deployment. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that unexpected controller reboot during motion is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is unexpected controller reboot during motion.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing data quality 15: How do you reconcile inconsistent records in Industrial robot deployment?",
+      "basic": "Use an authoritative source, stable identifiers and safety approvals and signed firmware provenance.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use segmented OT network and safety-gated software rollout to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for unexpected controller reboot during motion.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing controls 15: What security, compliance and audit controls would you require for Industrial robot deployment?",
+      "basic": "Implement least privilege, separation of duties, retention rules and safety approvals and signed firmware provenance.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include safety approvals and signed firmware provenance. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: safety approvals and signed firmware provenance.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Manufacturing scaling trade-off 15: How would you reduce latency or cost for Industrial robot deployment without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where segmented OT network and safety-gated software rollout remains intact. Show a capacity model and rollback plan, and protect against unexpected controller reboot during motion; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "manufacturing"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scenario 16: Design a reliable integration for Smart meter consumption ingest.",
+      "basic": "Use event-time ingestion and idempotent meter readings.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses event-time ingestion and idempotent meter readings. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for backfilled intervals and meter clock drift.",
+      "takeaway": "Anchor the design on event-time ingestion and idempotent meter readings.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities incident 16: How would you respond to backfilled intervals and meter clock drift during Smart meter consumption ingest?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Smart meter consumption ingest. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that backfilled intervals and meter clock drift is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is backfilled intervals and meter clock drift.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities data quality 16: How do you reconcile inconsistent records in Smart meter consumption ingest?",
+      "basic": "Use an authoritative source, stable identifiers and bill trace from reading to tariff calculation.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use event-time ingestion and idempotent meter readings to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for backfilled intervals and meter clock drift.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities controls 16: What security, compliance and audit controls would you require for Smart meter consumption ingest?",
+      "basic": "Implement least privilege, separation of duties, retention rules and bill trace from reading to tariff calculation.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include bill trace from reading to tariff calculation. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: bill trace from reading to tariff calculation.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scaling trade-off 16: How would you reduce latency or cost for Smart meter consumption ingest without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where event-time ingestion and idempotent meter readings remains intact. Show a capacity model and rollback plan, and protect against backfilled intervals and meter clock drift; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scenario 17: Design a reliable integration for Grid outage management.",
+      "basic": "Use SCADA-safe integration with geographic customer mapping.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses SCADA-safe integration with geographic customer mapping. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for stale outage polygons or dispatch conflicts.",
+      "takeaway": "Anchor the design on SCADA-safe integration with geographic customer mapping.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities incident 17: How would you respond to stale outage polygons or dispatch conflicts during Grid outage management?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Grid outage management. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that stale outage polygons or dispatch conflicts is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is stale outage polygons or dispatch conflicts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities data quality 17: How do you reconcile inconsistent records in Grid outage management?",
+      "basic": "Use an authoritative source, stable identifiers and dispatcher action logs and restoration estimates.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use SCADA-safe integration with geographic customer mapping to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for stale outage polygons or dispatch conflicts.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities controls 17: What security, compliance and audit controls would you require for Grid outage management?",
+      "basic": "Implement least privilege, separation of duties, retention rules and dispatcher action logs and restoration estimates.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include dispatcher action logs and restoration estimates. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: dispatcher action logs and restoration estimates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scaling trade-off 17: How would you reduce latency or cost for Grid outage management without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where SCADA-safe integration with geographic customer mapping remains intact. Show a capacity model and rollback plan, and protect against stale outage polygons or dispatch conflicts; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scenario 18: Design a reliable integration for Demand-response dispatch.",
+      "basic": "Use customer enrollment, verified event limits and opt-out logic.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses customer enrollment, verified event limits and opt-out logic. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for duplicate control event or consent failure.",
+      "takeaway": "Anchor the design on customer enrollment, verified event limits and opt-out logic.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities incident 18: How would you respond to duplicate control event or consent failure during Demand-response dispatch?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Demand-response dispatch. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that duplicate control event or consent failure is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is duplicate control event or consent failure.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities data quality 18: How do you reconcile inconsistent records in Demand-response dispatch?",
+      "basic": "Use an authoritative source, stable identifiers and utility-program attestations and event evidence.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use customer enrollment, verified event limits and opt-out logic to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for duplicate control event or consent failure.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities controls 18: What security, compliance and audit controls would you require for Demand-response dispatch?",
+      "basic": "Implement least privilege, separation of duties, retention rules and utility-program attestations and event evidence.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include utility-program attestations and event evidence. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: utility-program attestations and event evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scaling trade-off 18: How would you reduce latency or cost for Demand-response dispatch without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where customer enrollment, verified event limits and opt-out logic remains intact. Show a capacity model and rollback plan, and protect against duplicate control event or consent failure; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scenario 19: Design a reliable integration for Transformer condition monitoring.",
+      "basic": "Use telemetry thresholds, alarm hysteresis and asset registry mapping.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses telemetry thresholds, alarm hysteresis and asset registry mapping. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for intermittent sensor dropout or false hotspots.",
+      "takeaway": "Anchor the design on telemetry thresholds, alarm hysteresis and asset registry mapping.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities incident 19: How would you respond to intermittent sensor dropout or false hotspots during Transformer condition monitoring?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Transformer condition monitoring. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that intermittent sensor dropout or false hotspots is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is intermittent sensor dropout or false hotspots.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities data quality 19: How do you reconcile inconsistent records in Transformer condition monitoring?",
+      "basic": "Use an authoritative source, stable identifiers and maintenance case trace and safety review.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use telemetry thresholds, alarm hysteresis and asset registry mapping to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for intermittent sensor dropout or false hotspots.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities controls 19: What security, compliance and audit controls would you require for Transformer condition monitoring?",
+      "basic": "Implement least privilege, separation of duties, retention rules and maintenance case trace and safety review.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include maintenance case trace and safety review. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: maintenance case trace and safety review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scaling trade-off 19: How would you reduce latency or cost for Transformer condition monitoring without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where telemetry thresholds, alarm hysteresis and asset registry mapping remains intact. Show a capacity model and rollback plan, and protect against intermittent sensor dropout or false hotspots; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scenario 20: Design a reliable integration for Energy settlement and tariff billing.",
+      "basic": "Use interval aggregation with timezone-aware tariff rules.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses interval aggregation with timezone-aware tariff rules. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for DST double hours and disputed credits.",
+      "takeaway": "Anchor the design on interval aggregation with timezone-aware tariff rules.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities incident 20: How would you respond to DST double hours and disputed credits during Energy settlement and tariff billing?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Energy settlement and tariff billing. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that DST double hours and disputed credits is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is DST double hours and disputed credits.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities data quality 20: How do you reconcile inconsistent records in Energy settlement and tariff billing?",
+      "basic": "Use an authoritative source, stable identifiers and regulator-ready calculation lineage.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use interval aggregation with timezone-aware tariff rules to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for DST double hours and disputed credits.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities controls 20: What security, compliance and audit controls would you require for Energy settlement and tariff billing?",
+      "basic": "Implement least privilege, separation of duties, retention rules and regulator-ready calculation lineage.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include regulator-ready calculation lineage. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: regulator-ready calculation lineage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Utilities scaling trade-off 20: How would you reduce latency or cost for Energy settlement and tariff billing without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where interval aggregation with timezone-aware tariff rules remains intact. Show a capacity model and rollback plan, and protect against DST double hours and disputed credits; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "utilities"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scenario 21: Design a reliable integration for Card authorization gateway.",
+      "basic": "Use risk controls and idempotent authorization IDs.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses risk controls and idempotent authorization IDs. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for retries causing double holds.",
+      "takeaway": "Anchor the design on risk controls and idempotent authorization IDs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services incident 21: How would you respond to retries causing double holds during Card authorization gateway?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Card authorization gateway. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that retries causing double holds is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is retries causing double holds.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services data quality 21: How do you reconcile inconsistent records in Card authorization gateway?",
+      "basic": "Use an authoritative source, stable identifiers and authorization decision trace and PCI scope.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use risk controls and idempotent authorization IDs to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for retries causing double holds.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services controls 21: What security, compliance and audit controls would you require for Card authorization gateway?",
+      "basic": "Implement least privilege, separation of duties, retention rules and authorization decision trace and PCI scope.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include authorization decision trace and PCI scope. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: authorization decision trace and PCI scope.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scaling trade-off 21: How would you reduce latency or cost for Card authorization gateway without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where risk controls and idempotent authorization IDs remains intact. Show a capacity model and rollback plan, and protect against retries causing double holds; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scenario 22: Design a reliable integration for ACH payment settlement.",
+      "basic": "Use double-entry records and pending-final state transitions.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses double-entry records and pending-final state transitions. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for returns and settlement timing mismatches.",
+      "takeaway": "Anchor the design on double-entry records and pending-final state transitions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services incident 22: How would you respond to returns and settlement timing mismatches during ACH payment settlement?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for ACH payment settlement. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that returns and settlement timing mismatches is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is returns and settlement timing mismatches.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services data quality 22: How do you reconcile inconsistent records in ACH payment settlement?",
+      "basic": "Use an authoritative source, stable identifiers and reconciliation ledger and exception queue.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use double-entry records and pending-final state transitions to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for returns and settlement timing mismatches.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services controls 22: What security, compliance and audit controls would you require for ACH payment settlement?",
+      "basic": "Implement least privilege, separation of duties, retention rules and reconciliation ledger and exception queue.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include reconciliation ledger and exception queue. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: reconciliation ledger and exception queue.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scaling trade-off 22: How would you reduce latency or cost for ACH payment settlement without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where double-entry records and pending-final state transitions remains intact. Show a capacity model and rollback plan, and protect against returns and settlement timing mismatches; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scenario 23: Design a reliable integration for Loan origination workflow.",
+      "basic": "Use versioned underwriting inputs and adverse-action reasoning.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses versioned underwriting inputs and adverse-action reasoning. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for incomplete application and policy mismatch.",
+      "takeaway": "Anchor the design on versioned underwriting inputs and adverse-action reasoning.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services incident 23: How would you respond to incomplete application and policy mismatch during Loan origination workflow?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Loan origination workflow. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that incomplete application and policy mismatch is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is incomplete application and policy mismatch.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services data quality 23: How do you reconcile inconsistent records in Loan origination workflow?",
+      "basic": "Use an authoritative source, stable identifiers and consent and lending decision audit.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use versioned underwriting inputs and adverse-action reasoning to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for incomplete application and policy mismatch.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services controls 23: What security, compliance and audit controls would you require for Loan origination workflow?",
+      "basic": "Implement least privilege, separation of duties, retention rules and consent and lending decision audit.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include consent and lending decision audit. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: consent and lending decision audit.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scaling trade-off 23: How would you reduce latency or cost for Loan origination workflow without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where versioned underwriting inputs and adverse-action reasoning remains intact. Show a capacity model and rollback plan, and protect against incomplete application and policy mismatch; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scenario 24: Design a reliable integration for Trading market-data capture.",
+      "basic": "Use sequence numbering, gap detection and replay.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses sequence numbering, gap detection and replay. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for out-of-order tick events during market bursts.",
+      "takeaway": "Anchor the design on sequence numbering, gap detection and replay.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services incident 24: How would you respond to out-of-order tick events during market bursts during Trading market-data capture?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Trading market-data capture. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that out-of-order tick events during market bursts is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is out-of-order tick events during market bursts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services data quality 24: How do you reconcile inconsistent records in Trading market-data capture?",
+      "basic": "Use an authoritative source, stable identifiers and exchange timestamp lineage and incident evidence.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use sequence numbering, gap detection and replay to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for out-of-order tick events during market bursts.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services controls 24: What security, compliance and audit controls would you require for Trading market-data capture?",
+      "basic": "Implement least privilege, separation of duties, retention rules and exchange timestamp lineage and incident evidence.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include exchange timestamp lineage and incident evidence. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: exchange timestamp lineage and incident evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scaling trade-off 24: How would you reduce latency or cost for Trading market-data capture without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where sequence numbering, gap detection and replay remains intact. Show a capacity model and rollback plan, and protect against out-of-order tick events during market bursts; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scenario 25: Design a reliable integration for Regulatory reporting pipeline.",
+      "basic": "Use reconciled immutable snapshots and controlled release.",
+      "strong": "Clarify consumers, system of record, input/output contracts, peak and batch loads, and legal constraints. The key design uses reconciled immutable snapshots and controlled release. Define state transitions, retries, observability and reconciliation across system boundaries. Demonstrate a degraded-mode operation for incorrect entity aggregation and amended filings.",
+      "takeaway": "Anchor the design on reconciled immutable snapshots and controlled release.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services incident 25: How would you respond to incorrect entity aggregation and amended filings during Regulatory reporting pipeline?",
+      "basic": "Establish impact, protect transactions or physical safety, and trace the failing boundary.",
+      "strong": "Gather timestamps and identifiers across the source, queue, service and destination. Compare expected versus observed state for Regulatory reporting pipeline. Pause unsafe writes if necessary, replay idempotently, and distinguish root cause from downstream symptoms. Validate that incorrect entity aggregation and amended filings is resolved with sample reconciliation before resuming throughput.",
+      "takeaway": "The specific failure to test is incorrect entity aggregation and amended filings.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services data quality 25: How do you reconcile inconsistent records in Regulatory reporting pipeline?",
+      "basic": "Use an authoritative source, stable identifiers and approval chain, source lineage and retention.",
+      "strong": "Define source-of-truth ownership and compare record counts, totals, versions and timestamps across boundaries. Use reconciled immutable snapshots and controlled release to prevent repeat divergence and capture exceptions for human review. Do not silently repair historic values; preserve before/after evidence and account for incorrect entity aggregation and amended filings.",
+      "takeaway": "Data repair needs reproducible lineage and exception handling.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services controls 25: What security, compliance and audit controls would you require for Regulatory reporting pipeline?",
+      "basic": "Implement least privilege, separation of duties, retention rules and approval chain, source lineage and retention.",
+      "strong": "Tie permissions to each actor and environment, protect sensitive records in transit and at rest, and log authorization and changes. The control evidence should include approval chain, source lineage and retention. Test both unauthorized requests and operational recovery. Avoid relying only on dashboards when an auditor needs immutable primary records.",
+      "takeaway": "Auditable control evidence: approval chain, source lineage and retention.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "Financial Services scaling trade-off 25: How would you reduce latency or cost for Regulatory reporting pipeline without weakening correctness?",
+      "basic": "Measure throughput, error budgets and reconciliation lag before optimizing.",
+      "strong": "Identify which operations are interactive versus eventual and benchmark the expensive stages. Consider batching, indexing, caching or partitioning only where reconciled immutable snapshots and controlled release remains intact. Show a capacity model and rollback plan, and protect against incorrect entity aggregation and amended filings; track financial savings alongside correctness and audit coverage.",
+      "takeaway": "Never trade away correctness or safety without explicit risk review.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "financial-services"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    }
+  ]
+}

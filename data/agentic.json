@@ -1,0 +1,1505 @@
+{
+  "id": "agentic-ai",
+  "questions": [
+    {
+      "q": "AI architecture 01: How would you design A support knowledge assistant with policy documents?",
+      "basic": "Build around versioned retrieval with access-controlled citations and abstention.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses versioned retrieval with access-controlled citations and abstention. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat stale pages and cross-tenant leakage as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against stale pages and cross-tenant leakage.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 01: What offline and production tests prove A support knowledge assistant with policy documents is dependable?",
+      "basic": "Measure answer groundedness, citation accuracy and access-policy tests on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and stale pages and cross-tenant leakage. Track answer groundedness, citation accuracy and access-policy tests; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose stale pages and cross-tenant leakage, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 01: Users report stale pages and cross-tenant leakage in A support knowledge assistant with policy documents. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce stale pages and cross-tenant leakage with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 01: What approval, privacy, cost and fallback rules belong in A support knowledge assistant with policy documents?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover stale pages and cross-tenant leakage; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 02: How would you design A customer-service agent that calls insurance claim tools?",
+      "basic": "Build around typed tool schemas with least-privilege authorization and confirmations.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses typed tool schemas with least-privilege authorization and confirmations. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat irreversible payment or claim updates as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against irreversible payment or claim updates.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 02: What offline and production tests prove A customer-service agent that calls insurance claim tools is dependable?",
+      "basic": "Measure correct tool choice, transaction success and escalation rate on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and irreversible payment or claim updates. Track correct tool choice, transaction success and escalation rate; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose irreversible payment or claim updates, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 02: Users report irreversible payment or claim updates in A customer-service agent that calls insurance claim tools. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce irreversible payment or claim updates with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 02: What approval, privacy, cost and fallback rules belong in A customer-service agent that calls insurance claim tools?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover irreversible payment or claim updates; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 03: How would you design An LLM system that drafts network-change plans?",
+      "basic": "Build around retrieval of current topology plus approval-gated execution.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses retrieval of current topology plus approval-gated execution. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat hallucinated device configuration as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against hallucinated device configuration.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 03: What offline and production tests prove An LLM system that drafts network-change plans is dependable?",
+      "basic": "Measure change success, rollback readiness and unauthorized action checks on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and hallucinated device configuration. Track change success, rollback readiness and unauthorized action checks; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose hallucinated device configuration, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 03: Users report hallucinated device configuration in An LLM system that drafts network-change plans. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce hallucinated device configuration with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 03: What approval, privacy, cost and fallback rules belong in An LLM system that drafts network-change plans?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover hallucinated device configuration; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 04: How would you design An autonomous incident triage assistant?",
+      "basic": "Build around read-only observability tools and structured hypothesis tracking.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses read-only observability tools and structured hypothesis tracking. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat confusing correlation with causality as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against confusing correlation with causality.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 04: What offline and production tests prove An autonomous incident triage assistant is dependable?",
+      "basic": "Measure root-cause precision, evidence citations and time to triage on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and confusing correlation with causality. Track root-cause precision, evidence citations and time to triage; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose confusing correlation with causality, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 04: Users report confusing correlation with causality in An autonomous incident triage assistant. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce confusing correlation with causality with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 04: What approval, privacy, cost and fallback rules belong in An autonomous incident triage assistant?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover confusing correlation with causality; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 05: How would you design A document extraction workflow for invoices?",
+      "basic": "Build around layout-aware OCR plus field schema validation and human review.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses layout-aware OCR plus field schema validation and human review. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat silent amount or currency errors as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against silent amount or currency errors.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 05: What offline and production tests prove A document extraction workflow for invoices is dependable?",
+      "basic": "Measure field-level exact match and manual correction rate on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and silent amount or currency errors. Track field-level exact match and manual correction rate; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose silent amount or currency errors, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 05: Users report silent amount or currency errors in A document extraction workflow for invoices. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce silent amount or currency errors with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 05: What approval, privacy, cost and fallback rules belong in A document extraction workflow for invoices?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover silent amount or currency errors; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 06: How would you design A multilingual chatbot for utility outage reports?",
+      "basic": "Build around locale-specific prompts, grounded outage data and fallback routing.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses locale-specific prompts, grounded outage data and fallback routing. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat unsafe promises about restoration time as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against unsafe promises about restoration time.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 06: What offline and production tests prove A multilingual chatbot for utility outage reports is dependable?",
+      "basic": "Measure intent accuracy by language and successful handoff on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and unsafe promises about restoration time. Track intent accuracy by language and successful handoff; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose unsafe promises about restoration time, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 06: Users report unsafe promises about restoration time in A multilingual chatbot for utility outage reports. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce unsafe promises about restoration time with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 06: What approval, privacy, cost and fallback rules belong in A multilingual chatbot for utility outage reports?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover unsafe promises about restoration time; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 07: How would you design A vector search service for engineering runbooks?",
+      "basic": "Build around hybrid lexical-vector search with access filters and reranking.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses hybrid lexical-vector search with access filters and reranking. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat semantically similar but obsolete runbooks as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against semantically similar but obsolete runbooks.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 07: What offline and production tests prove A vector search service for engineering runbooks is dependable?",
+      "basic": "Measure recall at k, nDCG and access-policy correctness on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and semantically similar but obsolete runbooks. Track recall at k, nDCG and access-policy correctness; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose semantically similar but obsolete runbooks, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 07: Users report semantically similar but obsolete runbooks in A vector search service for engineering runbooks. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce semantically similar but obsolete runbooks with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 07: What approval, privacy, cost and fallback rules belong in A vector search service for engineering runbooks?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover semantically similar but obsolete runbooks; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 08: How would you design An internal source-code explanation assistant?",
+      "basic": "Build around repository-aware retrieval and branch-pinned references.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses repository-aware retrieval and branch-pinned references. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat exposure of secrets or stale branch information as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against exposure of secrets or stale branch information.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 08: What offline and production tests prove An internal source-code explanation assistant is dependable?",
+      "basic": "Measure answer validity on held-out repos and citation correctness on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and exposure of secrets or stale branch information. Track answer validity on held-out repos and citation correctness; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose exposure of secrets or stale branch information, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 08: Users report exposure of secrets or stale branch information in An internal source-code explanation assistant. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce exposure of secrets or stale branch information with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 08: What approval, privacy, cost and fallback rules belong in An internal source-code explanation assistant?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover exposure of secrets or stale branch information; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 09: How would you design A meeting-note assistant that creates action items?",
+      "basic": "Build around speaker-aware transcription plus structured extraction with review.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses speaker-aware transcription plus structured extraction with review. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat assigning tasks to the wrong person as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against assigning tasks to the wrong person.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 09: What offline and production tests prove A meeting-note assistant that creates action items is dependable?",
+      "basic": "Measure action-item precision, owner attribution and correction rate on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and assigning tasks to the wrong person. Track action-item precision, owner attribution and correction rate; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose assigning tasks to the wrong person, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 09: Users report assigning tasks to the wrong person in A meeting-note assistant that creates action items. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce assigning tasks to the wrong person with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 09: What approval, privacy, cost and fallback rules belong in A meeting-note assistant that creates action items?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover assigning tasks to the wrong person; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 10: How would you design An AI copilot for SQL query generation?",
+      "basic": "Build around schema-constrained SQL planning and read-only execution sandbox.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses schema-constrained SQL planning and read-only execution sandbox. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat destructive queries and leaked rows as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against destructive queries and leaked rows.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 10: What offline and production tests prove An AI copilot for SQL query generation is dependable?",
+      "basic": "Measure execution correctness, cost limits and sensitive-data safeguards on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and destructive queries and leaked rows. Track execution correctness, cost limits and sensitive-data safeguards; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose destructive queries and leaked rows, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 10: Users report destructive queries and leaked rows in An AI copilot for SQL query generation. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce destructive queries and leaked rows with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 10: What approval, privacy, cost and fallback rules belong in An AI copilot for SQL query generation?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover destructive queries and leaked rows; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 11: How would you design A factory maintenance troubleshooting assistant?",
+      "basic": "Build around retrieval from approved maintenance manuals with technician confirmation.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses retrieval from approved maintenance manuals with technician confirmation. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat unsafe machine-operating instructions as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against unsafe machine-operating instructions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 11: What offline and production tests prove A factory maintenance troubleshooting assistant is dependable?",
+      "basic": "Measure diagnostic usefulness and safe escalation rate on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and unsafe machine-operating instructions. Track diagnostic usefulness and safe escalation rate; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose unsafe machine-operating instructions, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 11: Users report unsafe machine-operating instructions in A factory maintenance troubleshooting assistant. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce unsafe machine-operating instructions with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 11: What approval, privacy, cost and fallback rules belong in A factory maintenance troubleshooting assistant?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover unsafe machine-operating instructions; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 12: How would you design An LLM recommender for cloud cost optimization?",
+      "basic": "Build around billing data joins, deterministic calculations and ranked suggestions.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses billing data joins, deterministic calculations and ranked suggestions. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat recommending capacity cuts that violate SLOs as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against recommending capacity cuts that violate SLOs.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 12: What offline and production tests prove An LLM recommender for cloud cost optimization is dependable?",
+      "basic": "Measure verified savings, false-positive rate and implementation effort on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and recommending capacity cuts that violate SLOs. Track verified savings, false-positive rate and implementation effort; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose recommending capacity cuts that violate SLOs, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 12: Users report recommending capacity cuts that violate SLOs in An LLM recommender for cloud cost optimization. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce recommending capacity cuts that violate SLOs with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 12: What approval, privacy, cost and fallback rules belong in An LLM recommender for cloud cost optimization?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover recommending capacity cuts that violate SLOs; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 13: How would you design An agent that coordinates multiple specialized tools?",
+      "basic": "Build around explicit state machine and tool contract validation.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses explicit state machine and tool contract validation. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat unbounded tool loops or missing confirmations as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against unbounded tool loops or missing confirmations.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 13: What offline and production tests prove An agent that coordinates multiple specialized tools is dependable?",
+      "basic": "Measure task completion, retry efficiency and failure recovery on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and unbounded tool loops or missing confirmations. Track task completion, retry efficiency and failure recovery; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose unbounded tool loops or missing confirmations, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 13: Users report unbounded tool loops or missing confirmations in An agent that coordinates multiple specialized tools. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce unbounded tool loops or missing confirmations with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 13: What approval, privacy, cost and fallback rules belong in An agent that coordinates multiple specialized tools?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover unbounded tool loops or missing confirmations; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 14: How would you design An AI review assistant for pull requests?",
+      "basic": "Build around diff-aware retrieval with evidence and narrow comment scopes.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses diff-aware retrieval with evidence and narrow comment scopes. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat false-positive noise and unsafe code suggestions as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against false-positive noise and unsafe code suggestions.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 14: What offline and production tests prove An AI review assistant for pull requests is dependable?",
+      "basic": "Measure accepted findings, precision and developer trust on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and false-positive noise and unsafe code suggestions. Track accepted findings, precision and developer trust; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose false-positive noise and unsafe code suggestions, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 14: Users report false-positive noise and unsafe code suggestions in An AI review assistant for pull requests. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce false-positive noise and unsafe code suggestions with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 14: What approval, privacy, cost and fallback rules belong in An AI review assistant for pull requests?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover false-positive noise and unsafe code suggestions; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 15: How would you design A speech-to-text customer call summarizer?",
+      "basic": "Build around streaming transcription plus PII redaction and grounded summarization.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses streaming transcription plus PII redaction and grounded summarization. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat confusing speaker identity or account numbers as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against confusing speaker identity or account numbers.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 15: What offline and production tests prove A speech-to-text customer call summarizer is dependable?",
+      "basic": "Measure word error rate, summary factuality and privacy compliance on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and confusing speaker identity or account numbers. Track word error rate, summary factuality and privacy compliance; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose confusing speaker identity or account numbers, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 15: Users report confusing speaker identity or account numbers in A speech-to-text customer call summarizer. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce confusing speaker identity or account numbers with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 15: What approval, privacy, cost and fallback rules belong in A speech-to-text customer call summarizer?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover confusing speaker identity or account numbers; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 16: How would you design An enterprise translation agent for technical manuals?",
+      "basic": "Build around domain glossary, terminology constraints and reviewer feedback.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses domain glossary, terminology constraints and reviewer feedback. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat mistranslated safety warnings as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against mistranslated safety warnings.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 16: What offline and production tests prove An enterprise translation agent for technical manuals is dependable?",
+      "basic": "Measure terminology fidelity and critical-instruction accuracy on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and mistranslated safety warnings. Track terminology fidelity and critical-instruction accuracy; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose mistranslated safety warnings, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 16: Users report mistranslated safety warnings in An enterprise translation agent for technical manuals. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce mistranslated safety warnings with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 16: What approval, privacy, cost and fallback rules belong in An enterprise translation agent for technical manuals?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover mistranslated safety warnings; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 17: How would you design A predictive asset-failure model with LLM explanations?",
+      "basic": "Build around sensor anomaly model plus grounded explanation layer.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses sensor anomaly model plus grounded explanation layer. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat causal claims unsupported by telemetry as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against causal claims unsupported by telemetry.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 17: What offline and production tests prove A predictive asset-failure model with LLM explanations is dependable?",
+      "basic": "Measure precision-recall, lead time and human interpretation on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and causal claims unsupported by telemetry. Track precision-recall, lead time and human interpretation; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose causal claims unsupported by telemetry, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 17: Users report causal claims unsupported by telemetry in A predictive asset-failure model with LLM explanations. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce causal claims unsupported by telemetry with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 17: What approval, privacy, cost and fallback rules belong in A predictive asset-failure model with LLM explanations?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover causal claims unsupported by telemetry; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 18: How would you design A natural-language dashboard assistant?",
+      "basic": "Build around semantic metrics layer with governed dimension definitions.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses semantic metrics layer with governed dimension definitions. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat different definitions of active users as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against different definitions of active users.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 18: What offline and production tests prove A natural-language dashboard assistant is dependable?",
+      "basic": "Measure metric consistency, query correctness and user comprehension on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and different definitions of active users. Track metric consistency, query correctness and user comprehension; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose different definitions of active users, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 18: Users report different definitions of active users in A natural-language dashboard assistant. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce different definitions of active users with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 18: What approval, privacy, cost and fallback rules belong in A natural-language dashboard assistant?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover different definitions of active users; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 19: How would you design An agent that manages calendar-based maintenance windows?",
+      "basic": "Build around calendar API reads, conflict validation and approval workflow.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses calendar API reads, conflict validation and approval workflow. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat overwriting operational blackout periods as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against overwriting operational blackout periods.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 19: What offline and production tests prove An agent that manages calendar-based maintenance windows is dependable?",
+      "basic": "Measure conflict detection and authorized bookings on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and overwriting operational blackout periods. Track conflict detection and authorized bookings; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose overwriting operational blackout periods, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 19: Users report overwriting operational blackout periods in An agent that manages calendar-based maintenance windows. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce overwriting operational blackout periods with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 19: What approval, privacy, cost and fallback rules belong in An agent that manages calendar-based maintenance windows?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover overwriting operational blackout periods; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 20: How would you design An AI privacy classification pipeline for documents?",
+      "basic": "Build around rules plus supervised model and conservative manual review.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses rules plus supervised model and conservative manual review. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat undetected regulated data as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against undetected regulated data.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 20: What offline and production tests prove An AI privacy classification pipeline for documents is dependable?",
+      "basic": "Measure sensitive-document recall and audit coverage on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and undetected regulated data. Track sensitive-document recall and audit coverage; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose undetected regulated data, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 20: Users report undetected regulated data in An AI privacy classification pipeline for documents. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce undetected regulated data with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 20: What approval, privacy, cost and fallback rules belong in An AI privacy classification pipeline for documents?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover undetected regulated data; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 21: How would you design A retrieval chatbot with frequently changing product catalogs?",
+      "basic": "Build around incremental indexing and freshness metadata.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses incremental indexing and freshness metadata. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat obsolete pricing and products as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against obsolete pricing and products.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 21: What offline and production tests prove A retrieval chatbot with frequently changing product catalogs is dependable?",
+      "basic": "Measure freshness lag, answer correctness and search recall on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and obsolete pricing and products. Track freshness lag, answer correctness and search recall; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose obsolete pricing and products, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 21: Users report obsolete pricing and products in A retrieval chatbot with frequently changing product catalogs. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce obsolete pricing and products with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 21: What approval, privacy, cost and fallback rules belong in A retrieval chatbot with frequently changing product catalogs?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover obsolete pricing and products; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 22: How would you design A multi-agent research assistant for architecture choices?",
+      "basic": "Build around explicit planner-executor-reviewer separation with bounded budgets.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses explicit planner-executor-reviewer separation with bounded budgets. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat agent consensus without independent evidence as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against agent consensus without independent evidence.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 22: What offline and production tests prove A multi-agent research assistant for architecture choices is dependable?",
+      "basic": "Measure quality rubric, source quality and total latency on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and agent consensus without independent evidence. Track quality rubric, source quality and total latency; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose agent consensus without independent evidence, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 22: Users report agent consensus without independent evidence in A multi-agent research assistant for architecture choices. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce agent consensus without independent evidence with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 22: What approval, privacy, cost and fallback rules belong in A multi-agent research assistant for architecture choices?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover agent consensus without independent evidence; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 23: How would you design An assistant that generates Kubernetes YAML?",
+      "basic": "Build around schema-validated generation and policy-as-code checks.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses schema-validated generation and policy-as-code checks. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat privileged containers and exposed secrets as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against privileged containers and exposed secrets.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 23: What offline and production tests prove An assistant that generates Kubernetes YAML is dependable?",
+      "basic": "Measure deployability, policy compliance and drift resistance on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and privileged containers and exposed secrets. Track deployability, policy compliance and drift resistance; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose privileged containers and exposed secrets, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 23: Users report privileged containers and exposed secrets in An assistant that generates Kubernetes YAML. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce privileged containers and exposed secrets with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 23: What approval, privacy, cost and fallback rules belong in An assistant that generates Kubernetes YAML?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover privileged containers and exposed secrets; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 24: How would you design A customer identity verification assistant?",
+      "basic": "Build around step-up auth routed to deterministic identity services.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses step-up auth routed to deterministic identity services. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat LLM replacing authentication controls as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against LLM replacing authentication controls.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 24: What offline and production tests prove A customer identity verification assistant is dependable?",
+      "basic": "Measure false accept/false reject and auditability on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and LLM replacing authentication controls. Track false accept/false reject and auditability; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose LLM replacing authentication controls, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 24: Users report LLM replacing authentication controls in A customer identity verification assistant. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce LLM replacing authentication controls with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 24: What approval, privacy, cost and fallback rules belong in A customer identity verification assistant?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover LLM replacing authentication controls; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI architecture 25: How would you design An AI search system for archived telecom tickets?",
+      "basic": "Build around ticket segmentation, hybrid retrieval and tenant-bound authorization.",
+      "strong": "Start by defining authorized users, data boundaries, and what the system must not do. The central design uses ticket segmentation, hybrid retrieval and tenant-bound authorization. Sketch ingestion, retrieval or tool access, generation, policy checks, telemetry, and escalation to a human. Treat confusing incident timelines and customer contexts as a first-class threat rather than an afterthought.",
+      "takeaway": "Explicitly guard against confusing incident timelines and customer contexts.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI evaluation 25: What offline and production tests prove An AI search system for archived telecom tickets is dependable?",
+      "basic": "Measure resolution relevance, privacy compliance and reduction in repeat work on representative held-out cases.",
+      "strong": "Build a fixed evaluation set covering happy paths, ambiguous requests, denial cases and confusing incident timelines and customer contexts. Track resolution relevance, privacy compliance and reduction in repeat work; segment by customer cohort, version and input freshness. Use human adjudication of disagreements, compare to a baseline, and define rollback thresholds before moving from shadow to live mode.",
+      "takeaway": "Choose metrics that expose confusing incident timelines and customer contexts, not just answer fluency.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI incident 25: Users report confusing incident timelines and customer contexts in An AI search system for archived telecom tickets. What do you investigate?",
+      "basic": "Collect reproducible prompts, source versions, tool traces, access decisions and model configuration.",
+      "strong": "Triage impact and suspend unsafe capabilities if needed. Inspect traces from input to retrieval/tool use to output, especially authorization and freshness gates. Reproduce confusing incident timelines and customer contexts with a sanitized fixture, compare against the last known-good release, fix the relevant control, then add the case to regression evaluation and monitor recurrence.",
+      "takeaway": "Contain unsafe actions first; preserve evidence for regression tests.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "advanced",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    },
+    {
+      "q": "AI governance 25: What approval, privacy, cost and fallback rules belong in An AI search system for archived telecom tickets?",
+      "basic": "Separate generated recommendations from authorized business actions.",
+      "strong": "Use data classification, minimal tool scopes, usage budgets, policy checks and immutable audit events. Require a human to approve materially consequential actions. Provide deterministic fallback or support escalation when evidence is thin. Governance must explicitly cover confusing incident timelines and customer contexts; revisit controls after each model or tool version change.",
+      "takeaway": "LLM output is evidence to review, not automatic authority.",
+      "mermaid": "",
+      "links": [],
+      "difficulty": "intermediate",
+      "industries": [
+        "enterprise-ai"
+      ],
+      "provenance": "Original practice scenario informed by current enterprise interview themes; no verified company attribution or frequency claim.",
+      "addedVersion": "4.0",
+      "format": "scenario"
+    }
+  ]
+}
