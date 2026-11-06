@@ -86,9 +86,33 @@
         .app-text-base { font-size: 1rem; line-height: 1.5rem; }
         .app-text-lg { font-size: 1.125rem; line-height: 1.75rem; }
         
-        .content-container p, .content-container li {
-            margin-bottom: 0.75em;
-        }
+        .content-container p, .content-container li { margin-bottom: 0.75em; }
+        /* Reader controls work with existing Tailwind typography classes. */
+        body { font-family: var(--reader-font, 'Inter', Arial, sans-serif) !important; }
+        body.app-text-sm { --reader-size: 0.875rem; }
+        body.app-text-base { --reader-size: 1rem; }
+        body.app-text-lg { --reader-size: 1.125rem; }
+        #content-container .content-container .leading-relaxed,
+        #content-container .content-container .leading-relaxed p,
+        #content-container .content-container .leading-relaxed li { font-size: var(--reader-size, 1rem) !important; line-height: 1.7; }
+        #content-container .content-container summary h3 { font-size: calc(var(--reader-size, 1rem) + 0.125rem) !important; line-height: 1.45; }
+        .nav-group-heading { border: 1px solid rgba(28,70,108,.14); color: #183b59; transition: filter .15s ease; }
+        .nav-group-heading:hover { filter: brightness(.97); }
+        .nav-group-heading:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .nav-group-heading[data-tone="0"] { background: linear-gradient(100deg,#eff7ff,#dfedfb); }
+        .nav-group-heading[data-tone="1"] { background: linear-gradient(100deg,#dfedfb,#c9e0f4); }
+        .nav-group-heading[data-tone="2"] { background: linear-gradient(100deg,#c9e0f4,#b1d2ee); }
+        .nav-group-heading[data-tone="3"] { background: linear-gradient(100deg,#b1d2ee,#90bce3); }
+        .nav-group-heading[data-tone="4"] { background: linear-gradient(100deg,#90bce3,#6c9fce); color:#102d46; }
+        .dark .nav-group-heading { border-color: rgba(185,213,240,.2); color: #eaf3ff; }
+        .dark .nav-group-heading[data-tone="0"] { background: linear-gradient(100deg,#243851,#2a4260); }
+        .dark .nav-group-heading[data-tone="1"] { background: linear-gradient(100deg,#2a4260,#315171); }
+        .dark .nav-group-heading[data-tone="2"] { background: linear-gradient(100deg,#315171,#3b6084); }
+        .dark .nav-group-heading[data-tone="3"] { background: linear-gradient(100deg,#3b6084,#46729b); }
+        .dark .nav-group-heading[data-tone="4"] { background: linear-gradient(100deg,#46729b,#537fa8); }
+        #local-clock { font-variant-numeric: tabular-nums; }
+        @media (max-width: 480px) { #local-clock { font-size: 10px; } }
+        @media (prefers-reduced-motion: reduce) { details[open] summary ~ * { animation: none; } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans antialiased dark:bg-darkbg dark:text-gray-100 flex h-screen overflow-hidden text-base" id="app-body">
@@ -107,7 +131,14 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
-        <div class="flex-1 overflow-y-auto p-4">
+        <div class="flex items-center justify-between gap-2 px-4 py-2 border-b border-gray-100 dark:border-gray-700">
+            <span class="text-[11px] uppercase tracking-wider font-bold text-slate-500 dark:text-slate-300">Knowledge Areas</span>
+            <div class="flex items-center gap-1" role="group" aria-label="Knowledge area groups">
+                <button type="button" onclick="setAllNavigationGroups(true)" aria-label="Expand all knowledge groups" title="Expand all groups" class="w-7 h-7 rounded-md font-bold text-blue-800 dark:text-blue-200 bg-blue-50 dark:bg-slate-700 hover:bg-blue-100">+</button>
+                <button type="button" onclick="setAllNavigationGroups(false)" aria-label="Collapse all knowledge groups" title="Collapse all groups" class="w-7 h-7 rounded-md font-bold text-blue-800 dark:text-blue-200 bg-blue-50 dark:bg-slate-700 hover:bg-blue-100">−</button>
+            </div>
+        </div>
+        <div class="flex-1 overflow-y-auto p-3">
             <nav id="nav-menu" class="space-y-1.5 text-sm font-medium">
                 <!-- Navigation items injected here by JS -->
             </nav>
@@ -117,35 +148,34 @@
     <!-- Main Content Area -->
     <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
         
-        <!-- Header / Toolbar -->
-        <header class="h-16 bg-white dark:bg-darkcard border-b border-gray-200 dark:border-darkborder flex items-center justify-between px-4 lg:px-8 shrink-0 shadow-sm z-10">
-            <div class="flex items-center">
-                <button class="mr-4 lg:hidden text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onclick="toggleSidebar()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <!-- Compact toolbar / device-local live time -->
+        <header class="min-h-[44px] bg-slate-900 text-slate-50 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 px-3 lg:px-5 py-1 shrink-0 shadow-sm z-10" aria-label="Reading controls">
+            <div class="flex items-center gap-2 min-w-0">
+                <button type="button" class="lg:hidden p-1 rounded hover:bg-slate-700" aria-label="Open navigation" onclick="toggleSidebar()">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
-                <h2 id="header-title" class="text-xl font-semibold hidden sm:block text-gray-800 dark:text-gray-100">Knowledge Base</h2>
+                <h2 id="header-title" class="text-sm font-semibold text-slate-100 truncate max-w-[280px] hidden md:block">Knowledge Base</h2>
+                <time id="local-clock" class="text-[11px] text-slate-300 whitespace-nowrap font-mono" title="Local time from your device">Local time loading…</time>
             </div>
-            
-            <div class="flex items-center space-x-2 sm:space-x-3">
-                <!-- Expand/Collapse All -->
-                <button id="toggleAllBtn" onclick="toggleAllAnswers()" class="px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 dark:text-blue-300 dark:bg-blue-900/30 dark:border-blue-800 dark:hover:bg-blue-900/50 transition shadow-sm">
-                    Expand All
-                </button>
-
-                <!-- Font Size Selector -->
-                <div class="relative flex items-center bg-gray-100 dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 p-0.5 shadow-sm">
-                    <svg class="w-4 h-4 text-gray-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-                    <select id="fontSizeSelector" onchange="changeFontSize()" class="appearance-none bg-transparent border-none text-gray-700 text-sm focus:ring-0 block pl-2 pr-6 py-1 dark:text-gray-200 cursor-pointer outline-none">
-                        <option value="app-text-sm">Small</option>
-                        <option value="app-text-base" selected>Medium</option>
-                        <option value="app-text-lg">Large</option>
-                    </select>
-                </div>
-
-                <!-- Dark Mode Toggle -->
-                <button onclick="toggleDarkMode()" class="p-2 rounded-md bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 transition shadow-sm border border-gray-200 dark:border-gray-700" aria-label="Toggle Dark Mode">
-                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 3.22a1 1 0 011.415 0l.708.708a1 1 0 01-1.414 1.414l-.708-.708a1 1 0 010-1.414zM16 10a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zm-3.22 4.22a1 1 0 010 1.415l-.708.708a1 1 0 11-1.414-1.414l.708-.708a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-3.22a1 1 0 01-1.415 0l-.708-.708a1 1 0 111.414-1.414l.708.708a1 1 0 010 1.414zM4 10a1 1 0 01-1 1H2a1 1 0 110-2h1a1 1 0 011 1zm3.22-4.22a1 1 0 010-1.415l.708-.708a1 1 0 111.414 1.414l-.708.708a1 1 0 01-1.414 0z"></path><path d="M10 15a5 5 0 100-10 5 5 0 000 10z"></path></svg>
-                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 block dark:hidden text-gray-700" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <div class="flex flex-wrap items-center gap-1.5">
+                <button id="toggleAllBtn" type="button" onclick="toggleAllAnswers()" class="px-2 py-1 text-xs font-semibold text-slate-100 bg-slate-700 border border-slate-600 rounded hover:bg-slate-600" aria-label="Expand or collapse answers in selected topic">Expand Answers</button>
+                <label for="fontFamilySelector" class="sr-only">Reading font</label>
+                <select id="fontFamilySelector" onchange="changeFontFamily()" aria-label="Reading font" title="Reading font" class="px-2 py-1 rounded border border-slate-600 bg-slate-800 text-slate-100 text-xs cursor-pointer">
+                    <option value="inter">Inter</option>
+                    <option value="arial">Arial</option>
+                    <option value="verdana">Verdana</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="system">System</option>
+                </select>
+                <label for="fontSizeSelector" class="sr-only">Reading font size</label>
+                <select id="fontSizeSelector" onchange="changeFontSize()" aria-label="Reading font size" title="Reading font size" class="px-2 py-1 rounded border border-slate-600 bg-slate-800 text-slate-100 text-xs cursor-pointer">
+                    <option value="app-text-sm">Small</option>
+                    <option value="app-text-base" selected>Medium</option>
+                    <option value="app-text-lg">Large</option>
+                </select>
+                <button type="button" onclick="toggleDarkMode()" class="p-1.5 rounded border border-slate-600 bg-slate-800 hover:bg-slate-700" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden dark:block text-amber-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 3.22a1 1 0 011.415 0l.708.708a1 1 0 01-1.414 1.414l-.708-.708a1 1 0 010-1.414zM16 10a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zm-3.22 4.22a1 1 0 010 1.415l-.708.708a1 1 0 11-1.414-1.414l.708-.708a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-3.22a1 1 0 01-1.415 0l-.708-.708a1 1 0 111.414-1.414l.708.708a1 1 0 010-1.414zM4 10a1 1 0 01-1 1H2a1 1 0 110-2h1a1 1 0 011 1zm3.22-4.22a1 1 0 010-1.415l.708-.708a1 1 0 111.414 1.414l-.708.708a1 1 0 01-1.414 0z"></path><path d="M10 15a5 5 0 100-10 5 5 0 000 10z"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="w-4 h-4 block dark:hidden text-slate-200" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 </button>
             </div>
         </header>
@@ -155,8 +185,10 @@
             <div class="max-w-4xl mx-auto space-y-8" id="content-container">
                 <!-- Content injected here by JS -->
             </div>
-            <!-- Spacer -->
-            <div class="h-32"></div>
+            <footer class="max-w-4xl mx-auto mt-10 mb-8 px-4 py-4 rounded-lg border-t border-slate-200 dark:border-slate-700 text-xs leading-relaxed text-slate-600 dark:text-slate-400" role="contentinfo">
+                <strong>Educational disclaimer:</strong> DevPrep is a free, AI-assisted interview study resource, not professional or technical advice. Information may contain errors or omissions; verify important details against official documentation. No warranty or liability is assumed for reliance on its content.
+                Feedback and corrections: <a href="mailto:babuptx@gmail.com" class="font-semibold underline underline-offset-2 text-blue-700 dark:text-blue-300">babuptx@gmail.com</a>.
+            </footer>
         </div>
         
         <!-- Go To Top Button -->
@@ -205,6 +237,9 @@
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
+            restoreReaderPreferences();
+            updateLocalClock();
+            window.setInterval(updateLocalClock, 1000);
             mermaid.initialize({ startOnLoad: false,
                 theme: document.documentElement.classList.contains('dark') ? 'dark' : 'base',
                 securityLevel: 'strict' });
@@ -213,24 +248,31 @@
                 if (!Array.isArray(manifest.categories) || !manifest.categories.length) throw new Error('Invalid topic manifest');
                 contentData = manifest.categories;
                 navigationGroups = manifest.groups || [{id:"topics",title:"Knowledge Areas",categoryIds:contentData.map(c=>c.id)}];
-                openNavigationGroups = new Set(navigationGroups.map(g=>g.id));
+                openNavigationGroups = new Set();
                 renderSidebar();
                 await selectCategory(contentData[0].id);
             } catch (error) { displayLoadError(error); }
         });
 
         // --- 3. Render Functions ---
+        function setAllNavigationGroups(expand) {
+            openNavigationGroups = expand ? new Set(navigationGroups.map(group => group.id)) : new Set();
+            renderSidebar();
+        }
+
         function renderSidebar() {
             const navMenu = document.getElementById('nav-menu');
             navMenu.replaceChildren();
-            for (const group of navigationGroups) {
+            for (const [groupIndex, group] of navigationGroups.entries()) {
                 const wrapper = document.createElement('section');
                 wrapper.className = 'mb-3';
                 const heading = document.createElement('button');
                 heading.type = 'button';
-                heading.className = 'w-full flex items-center justify-between text-left px-3 py-2 rounded-lg text-xs uppercase tracking-wide font-bold text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500';
+                heading.className = 'nav-group-heading w-full flex items-center justify-between text-left px-3 py-2.5 rounded-lg text-xs uppercase tracking-wide font-bold';
+                heading.dataset.tone = String(groupIndex % 5);
                 const expanded = openNavigationGroups.has(group.id);
                 heading.setAttribute('aria-expanded', String(expanded));
+                heading.setAttribute('aria-label', (expanded ? 'Collapse ' : 'Expand ') + group.title);
                 heading.textContent = group.title;
                 const chevron = document.createElement('span');
                 chevron.textContent = expanded ? '−' : '+';
@@ -287,7 +329,7 @@
             const sidebar = document.getElementById('sidebar');
             if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 1024) toggleSidebar();
             allExpanded = false;
-            document.getElementById('toggleAllBtn').textContent = 'Expand All';
+            document.getElementById('toggleAllBtn').textContent = 'Expand Answers';
             scrollToTop();
             try {
                 const category = await getCategory(id);
@@ -498,13 +540,49 @@ ${item.mermaid ? `
             document.documentElement.classList.remove('dark');
         }
 
-        // Font Size Logic
+        // User-selected typography is stored only in this device/browser.
+        const fontFamilies = {
+            inter: "'Inter',Arial,sans-serif",
+            arial: "Arial,Helvetica,sans-serif",
+            verdana: "Verdana,Geneva,sans-serif",
+            georgia: "Georgia,'Times New Roman',serif",
+            system: "system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+        };
+        function safePreference(key, fallback) {
+            try { return localStorage.getItem(key) || fallback; } catch (_) { return fallback; }
+        }
+        function savePreference(key, value) {
+            try { localStorage.setItem(key, value); } catch (_) {}
+        }
+        function changeFontFamily() {
+            const value = document.getElementById('fontFamilySelector').value;
+            document.body.style.setProperty('--reader-font', fontFamilies[value] || fontFamilies.inter);
+            savePreference('devprep-font', value);
+        }
         function changeFontSize() {
             const selector = document.getElementById('fontSizeSelector');
             const body = document.getElementById('app-body');
-            
             body.classList.remove('app-text-sm', 'app-text-base', 'app-text-lg');
             body.classList.add(selector.value);
+            savePreference('devprep-size', selector.value);
+        }
+        function restoreReaderPreferences() {
+            const font = safePreference('devprep-font','inter');
+            document.getElementById('fontFamilySelector').value = fontFamilies[font] ? font : 'inter';
+            changeFontFamily();
+            const size = safePreference('devprep-size','app-text-base');
+            document.getElementById('fontSizeSelector').value = ['app-text-sm','app-text-base','app-text-lg'].includes(size) ? size : 'app-text-base';
+            changeFontSize();
+        }
+        function updateLocalClock() {
+            const now = new Date();
+            const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            const pad = n => String(n).padStart(2,'0');
+            const hour = now.getHours() % 12 || 12;
+            const clock = `${days[now.getDay()]}, ${pad(now.getDate())}-${months[now.getMonth()]}-${now.getFullYear()}, ${pad(hour)}:${pad(now.getMinutes())}:${pad(now.getSeconds())} ${now.getHours() >= 12 ? 'PM' : 'AM'}`;
+            const target = document.getElementById('local-clock');
+            if (target) { target.textContent = clock; target.dateTime = now.toISOString(); }
         }
 
         // Expand/Collapse All
@@ -520,7 +598,7 @@ ${item.mermaid ? `
 
             });
             
-            btn.textContent = allExpanded ? "Collapse All" : "Expand All";
+            btn.textContent = allExpanded ? "Collapse Answers" : "Expand Answers";
         }
 
         // Scroll to Top Logic
